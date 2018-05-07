@@ -1,0 +1,301 @@
+\usepackage[hyperpageref]{backref}
+\usepackage[nottoc]{tocbibind}
+\usepackage{bibentry,bookmark,hyperxmp}
+\usepackage{etoolbox,xstring}
+\usepackage{algorithm,algpseudocode}
+\usepackage{multirow,tabu,rotating}
+\usepackage{parcolumns}
+%\usepackage{makeidx}
+%\makeindex
+
+\DeclareGraphicsExtensions{.pdf}
+
+\hypersetup{
+  pdfauthor         = {Iñaki Úcar Marqués},
+  pdfcopyright      = {© The author. Some rights reserved. This document is under terms of Creative Commons license Attribution - Non Commercial - Non Derivatives.},
+  pdflicenseurl     = {http://creativecommons.org/licenses/by-nc-nd/3.0/es/},
+  pdfkeywords       = {Energy Efficiency, Wireless Networks, User Device},
+  pdfsubject        = {Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.},
+  pdfencoding       = auto,
+  bookmarksnumbered = true,
+  bookmarksdepth    = 3,
+  pdfborder         = {0 0 0},
+  colorlinks        = true,
+  citecolor         = DarkGreen,
+  linkcolor         = DarkBlue,
+  urlcolor          = DarkGreen
+}
+
+\renewcommand{\bibname}{References}
+\def\HighlightName#1{\IfSubStr{#1}{Ucar}{\textbf{#1}}{#1}}
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{\marginnote{\ifcase #1 No citations\or p. #2\else pp. #2\fi}}
+\renewcommand*{\doi}[1]{\href{http://dx.doi.org/#1}{\smallcaps{DOI}: #1}}
+\publisher{Universidad Carlos III de Madrid}
+\definecolor{uc3m}{cmyk}{0.9827, 1, 0.2624, 0.1077}
+
+% \RequirePackage[letterpaper,left=1in,top=1in,headsep=2\baselineskip,textwidth=26pc,marginparsep=2pc,marginparwidth=12pc,textheight=44\baselineskip,headheight=\baselineskip]{geometry}
+% therefore, margins for letter paper are: 1 in left, 1-0.142 in right
+\newcommand{\increaseinnermargin}{
+  \setlength{\evensidemargin}{-0.242in} %twoside
+  %\setlength{\evensidemargin}{\evensidemargin-0.1in} %symmetric
+  \setlength{\oddsidemargin}{0.1in}
+}
+\increaseinnermargin
+
+\newcommand{\restorefullwidth}{
+  \newgeometry{
+    left = 1in, top = 1in, headsep = 2\baselineskip,
+    textwidth = 40pc, marginparsep = 0pc, marginparwidth = 0pc,
+    textheight = 44\baselineskip, headheight = \baselineskip
+  }
+  \fancyhfoffset[RO]{0pt}
+  \increaseinnermargin
+}
+
+\newcommand{\restorewidth}{
+  \restoregeometry
+  \fancyhfoffset[RO]{{\marginparsep+\marginparwidth}}
+}
+
+% patch part toc line; hackish, but it works: don't touch it
+\makeatletter
+\let\oldcontentsline\contentsline
+\def\contentsline#1#2{%
+  \expandafter\ifx\csname l@#1\endcsname\l@part
+    \expandafter\@firstoftwo \else \expandafter\@secondoftwo \fi
+  {\oldcontentsline{#1}{\allcaps{Part\quad#2}}}
+  {\oldcontentsline{#1}{#2}}
+}
+\makeatother
+
+\newcommand{\partseparator}{
+  \noindent\leavevmode\leaders\hrule height 0.8ex depth \dimexpr0.4pt-0.8ex\hfill\kern0pt
+  \newline~\vspace{-0.5\baselineskip}\newline}
+
+\titlecontents{part}%
+  [0pt]% distance from left margin
+  {}{}{}{} % leave blank; the patch above does the rest
+  [\vspace*{0.5\baselineskip}]% after
+
+\titlecontents{chapter}%
+  [4em]% distance from left margin
+  {}% above (global formatting of entry)
+  {\contentslabel{2em}\textit}% before w/ label (label = ``Chapter 1'')
+  {\hspace{0em}\textit}% before w/o label
+  {\qquad\thecontentspage}% filler and page (leaders and page num)
+  [\vspace*{0.5\baselineskip}]% after
+
+\titlecontents{section}%
+  [6em]% distance from left margin
+  {}% above (global formatting of entry)
+  {\contentslabel{2em}\textit}% before w/ label (label = ``Chapter 1'')
+  {\hspace{0em}\textit}% before w/o label
+  {\qquad\thecontentspage}% filler and page (leaders and page num)
+  [\vspace*{0.5\baselineskip}]% after
+
+\titleformat{\part}%
+  [block]% shape
+  {\begin{fullwidth}}% format applied to label+text
+  {\itshape\Huge\hfill \partname~\thepart}% label
+  {0pt}% horizontal separation between label and title body
+  {\Huge\rmfamily\itshape\quad}% before the title body
+  [\end{fullwidth}]% after the title body
+
+ \titleformat{\chapter}
+  [block]% shape
+  {\relax\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\begin{fullwidth}}{}}% format applied to label+text
+  {\itshape\huge\thechapter}% label
+  {1em}% horizontal separation between label and title body
+  {\huge\rmfamily\itshape}% before the title body
+  [\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\end{fullwidth}}{}]% after the title body
+
+\makeatletter
+\renewcommand{\maketitlepage}{%
+  \frontmatter\pagenumbering{roman}
+  \begin{fullwidth}\flushright
+  \thispagestyle{empty}\setlength{\parindent}{0pt}
+  {\includegraphics[width=\textwidth]{uc3m.eps}\par}
+  
+  \begingroup\color{uc3m}
+    \vspace{2in}{\fontsize{14}{20}\selectfont\textsf{\smallcaps{Tesis doctoral}}\par}
+    \vspace{0.2in}{\fontsize{22}{34}\selectfont\@title\par}
+  \endgroup
+  
+  \vspace{0.2in}{\fontsize{14}{26}\selectfont\textsf{\smallcaps{Autor: \@author}}\par}
+  {\fontsize{14}{20}\selectfont\textsf{\smallcaps{Director: Dr. Arturo Azcorra Saloña}}\par}
+  
+  \vfill{\fontsize{14}{20}\selectfont
+    \textit{Doctorado en Ingeniería Telemática $\cdot$ Leganés, mayo de 2018}
+  \par}
+  \end{fullwidth}
+  
+  \newpage
+  
+  % copyright page
+  \begingroup
+  ~\vfill
+  \thispagestyle{empty}\setlength{\parindent}{0pt}
+  \setlength{\parskip}{\baselineskip}
+  Copyright \copyright\ \the\year\ \thanklessauthor
+  
+  \par\smallcaps{Published by \thanklesspublisher}
+  
+  \begin{fullwidth}
+    \par Licensed under the Creative Commons License version 3.0 under the terms of Attribution, Non-Commercial and No-Derivatives (the ``License''); you may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc-nd/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \smallcaps{``AS IS'' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\index{license}
+  \end{fullwidth}
+  
+  \par\textit{First printing, May 2018}
+  \endgroup
+  
+  \newpage
+  
+  \begin{fullwidth}\flushright
+  \thispagestyle{empty}\setlength{\parindent}{0pt}
+  {\includegraphics[width=\textwidth]{uc3m.eps}\par}
+  
+  \begingroup\color{uc3m}
+    \vspace{2in}{\fontsize{14}{20}\selectfont\textsf{\smallcaps{Tesis doctoral}}\par}
+    \vspace{0.2in}{\fontsize{14}{20}\selectfont\@title\par}
+  \endgroup
+  
+  \vspace{0.2in}{Autor: \@author\par}
+  {Director: Dr. Arturo Azcorra Saloña\par}
+  
+  \vfill\extrarowsep=5mm\begin{tabu}{X[3]X[1]}
+    Tribunal Calificador: & Firma: \\
+    \toprule
+    Presidente: & \\
+    Vocal: & \\
+    Secretario: & \\
+    \bottomrule
+    Calificación:
+  \end{tabu}
+  
+  \vfill{\textit{Leganés, a \qquad de \qquad\qquad de 2018}\par}
+  \end{fullwidth}
+  
+  \cleardoublepage
+  
+  \begingroup
+  ~\vfill
+  \thispagestyle{empty}
+  \begin{fullwidth}
+  \begin{doublespace}
+  \begin{flushright}
+    {\fontsize{14}{18}\selectfont
+    ``Good scientific writing is not a matter of life and death; \\\textbf{it is much more serious than that}.''}
+    
+    \bigskip---Robert A. Day, in \emph{How to Write and Publish a Scientific Paper}.
+  \end{flushright}
+  \end{doublespace}
+  \end{fullwidth}
+  \vfill\vfill
+  \endgroup
+}
+\makeatother
+
+% abstract(s)
+\newenvironment{abstract}{
+  \restorefullwidth
+  \let\cleardoublepage\clearpage
+  \begin{parcolumns}[colwidths={1=.441\linewidth},rulebetween]{2}
+  \chapter*{Abstract\hskip 0pt plus .466 fill Resumen\hfill}
+}{\end{parcolumns}}
+
+% list of figures and tables
+\newcommand{\listoffiguresandtables}{
+  \begingroup
+  \makeatletter
+  %\listoffigures
+  \chapter*{List of Figures and Tables}
+  \addcontentsline{toc}{chapter}{List of Figures and Tables}
+  \section*{List of Figures}
+  \@starttoc{lof}
+  \let\clearpage\relax
+  %\listoftables
+  \section*{List of Tables}
+  \@starttoc{lot}
+  \makeatother
+  \endgroup
+}
+
+% equation numbers as marginnotes
+\makeatletter
+\let\orig@maketag@@@\maketag@@@
+\renewcommand{\eqref}[1]{\textup{\let\maketag@@@\orig@maketag@@@\tagform@{\ref{#1}}}}
+\def\maketag@@@#1{\hbox{\rlap{\kern\marginparsep\m@th\normalfont#1}\kern1sp}}
+\makeatother
+
+% algorithm
+\makeatletter
+\newcommand{\StatexIndent}[1][3]{%
+  \setlength\@tempdima{\algorithmicindent}%
+  \Statex\hskip\dimexpr#1\@tempdima\relax}
+
+\newcommand*{\algrule}[1][\algorithmicindent]{\makebox[#1][l]{\hspace*{.5em}\vrule height .75\baselineskip depth .25\baselineskip}}%
+
+\newcount\ALG@printindent@tempcnta
+\def\ALG@printindent{%
+  \ifnum \theALG@nested>0% is there anything to print
+    \ifx\ALG@text\ALG@x@notext% is this an end group without any text?
+      % do nothing
+      \addvspace{-3pt}% FUDGE for cases where no text is shown, to make the rules line up
+    \else
+      \unskip
+      % draw a rule for each indent level
+      \ALG@printindent@tempcnta=1
+      \loop
+          \algrule[\csname ALG@ind@\the\ALG@printindent@tempcnta\endcsname]%
+          \advance \ALG@printindent@tempcnta 1
+      \ifnum \ALG@printindent@tempcnta<\numexpr\theALG@nested+1\relax% can't do <=, so add one to RHS and use < instead
+      \repeat
+    \fi
+  \fi
+}%
+% the following line injects our new indent handling code in place of the default spacing
+\patchcmd{\ALG@doentity}{\noindent\hskip\ALG@tlm}{\ALG@printindent}{}{\errmessage{failed to patch}}
+\makeatother
+
+\newcommand{\PSalgorithm}[3]{
+\begin{figure}[#1]
+\begin{algorithm}[H]
+ \setstretch{1}
+ \caption{#3}
+ \label{#2}
+ \begin{algorithmic}[1]
+ \State ... \Comment {Initialisation}
+ \State \textbf{global} $C \gets$ \textbf{true} \Comment {Contention flag}
+ \Loop \Comment {Main loop}
+  \State ...
+  \While {bytes remaining} \Comment {Receiving loop}
+    \State \Call {Read}{}
+    \If {$R_A = $ BSSID OR ($T_A = $ BSSID AND
+    \StatexIndent[2] \quad $R_A$ is other unicast MAC) }
+      \State \Call {Set\_Sleep}{$\Delta t_\mathrm{DATA}, \Delta t_\mathrm{NAV}$}
+    \EndIf
+  \EndWhile
+  \State \Call {Check\_FCS}{} \Comment {Frame received}
+  \If {is Beacon AND $\Delta t_\mathrm{NAV}>0$} \Comment {CFP starts}
+    \State $C \gets$ \textbf{false}
+  \ElsIf {is CF\_End} \Comment {CFP ends}
+    \State $C \gets$ \textbf{true}
+  \EndIf
+  \State ...
+ \EndLoop
+ \Procedure {Set\_Sleep}{$\Delta t_\mathrm{DATA}, \Delta t_\mathrm{NAV}$}
+  \State $\Delta t_\mathrm{sleep} \gets \Delta t_\mathrm{DATA} + \Delta t_\mathrm{SIFS}$
+  \If {$C$ AND is not CTS AND $\Delta t_\mathrm{NAV} \le 32 767$}
+    \State $\Delta t_\mathrm{sleep} \gets \Delta t_\mathrm{sleep} + \Delta t_\mathrm{NAV}$
+  \EndIf
+  \If {$\Delta t_\mathrm{sleep} \ge \Delta t_\mathrm{sleep,min}$}
+    \State \Call{Sleep}{$\Delta t_\mathrm{sleep}$}
+    \State \Call{Wait}{$\Delta t_\mathrm{DIFS} - \Delta t_\mathrm{SIFS}$}
+    \State \textbf{go to} Main loop
+  \EndIf
+  \State \textbf{go to} Receiving loop
+ \EndProcedure
+ \end{algorithmic}
+\end{algorithm}
+\end{figure}
+}

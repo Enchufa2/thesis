@@ -1,0 +1,6 @@
+\backmatter
+\fancyhead[RO]{\smallcaps{\newlinetospace{References}}\quad\thepage}
+
+`r if (knitr::is_html_output()) '
+# References {-}
+'`

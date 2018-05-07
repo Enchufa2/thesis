@@ -1,0 +1,177 @@
+\addtocontents{toc}{\partseparator}
+
+# (PART) Simulation {-}
+
+# Performance of RA-TPC Algorithms in 802.11 {#ch:07}
+
+`r tufte::newthought("So far")`, we have demonstrated through numerical analysis, and validated experimentally^[See Appendix \@ref(experimental-validation-of-ra-tpc-inefficiencies).], the existence of a trade-off between two competing performance figures, namely, goodput and energy efficiency. This issue arises even for a single spatial stream in absence of interference. Furthermore, we have discussed in Section \@ref(heuristics-for-ra-tpc-algorithms) some ideas about the kind of mechanisms that energy-aware RA-TPC algorithms may incorporate, to leverage the behaviour that we have identified in our analysis in these so-called *mode transitions*. Summing up, the algorithms should be *conservative* during these transitions.
+
+During that discussion, we neglected the challenge of estimating channel conditions. But in practice, any RA-TPC algorithm has imperfect channel knowledge, and therefore will adapt to changing conditions in a suboptimal way. In this chapter, we will analyse and compare the performance of several representative existing RA algorithms, which also incorporate TPC, to confirm whether the *conservativeness* in such decisions may have a positive impact on the achieved performance.
+
+In the following, we first present the algorithms considered and describe a simple simulation scenario to test them. Our results will lead us to a more detailed discussion about *conservativeness* at mode transitions.
+
+## Algorithms Considered
+
+If we take a look at the actual operation of WiFi networks, the Minstrel`r margincite("minstrel")` algorithm, which was integrated into the Linux kernel, has become the *de facto* standard due to its relatively good performance and robustness. However, Minstrel does not consider TPC and, in consequence, there is no TPC in today's WiFi deployments. Moreover, despite some promising proposals have been presented in the literature, there are very few of them implemented, although there are some ongoing efforts such as the work by the authors of *Minstrel-Piano* [@huehn2012], who are pushing to release an enhanced version of the latter for the Linux kernel with the goal of promoting it upstream.^[[https://github.com/thuehn/Minstrel-Blues](https://github.com/thuehn/Minstrel-Blues)]
+
+As already stated, RA is a very prolific research line in the literature, but the main corpus is dedicated to the MCS adjustment without taking into account the TXP^[See @biaz2008 for a survey.]. There is some work considering TPC, but the motivation is typically the performance degradation due to network densification, and the aim is interference mitigation and not energy efficiency. Given that we are interested in assessing RA implementations with TPC support, we consider only open-source algorithms that can be tested using the NS-3 Network Simulator^[[https://www.nsnam.org](https://www.nsnam.org)]. After a thorough analysis of the literature, we considered the following set of algorithms: 
+
+Power-controlled Auto Rate Fallback
+  ~ (PARF),`r margincite("Akella:2005")` which is based on *Auto Rate Fallback* (ARF) [@kamerman1997wavelan], one of the earliest RA schemes for 802.11. ARF rate adaptation is based on the frame loss ratio. It tunes the MCS in a very straightforward and intuitive way. The procedure starts with the lowest possible MCS. Then, if either a timer expires or the number of consecutive successful transmissions reach a threshold, the MCS is increased and the timer is reset. The MCS is decreased if either the first transmission at a new rate fails or two consecutive transmissions fail. PARF builds on ARF and tries to reduce the TXP if there is no loss until a minimum threshold is reached or until transmissions start to fail. If transmission fails persist, the TXP is increased.
+  
+Minstrel-Piano
+  ~ (MP)`r margincite("huehn2012")` is based on Minstrel [@minstrel]. Minstrel performs per-frame rate adaptation based on throughput. It randomly probes the MCS space and computes an exponential weighted moving average (EWMA) on the transmission probability for each rate, in order to keep a long-term history of the channel state. As the previous algorithm, MP adds TPC without interfering with the normal operation of Minstrel. It incorporates to the TPC the same concepts and techniques than Minstrel uses for the MCS adjustment, i.e., it tries to learn the impact of the TXP on the achieved throughput.
+  
+Robust Rate and Power Adaptation Algorithm
+  ~ (RRPAA) and *Power, Rate and Carrier-Sense Control* (PRCS),`r margincite("richart2015")` which are based on *Robust Rate Adaptation Algorithm* (RRAA) [@Wong2006]. RRAA consists of two functional blocks, namely, rate adaptation and collisions elimination. It performs rate adaptation based on loss ratio estimation over short windows, and reduces collisions with a RTS-based strategy. The procedure starts at the maximum MCS. The loss ratio for each window of transmissions is available for rate adjustment in the next window. There are two thresholds involved in this adjustment: if the loss ratio is below both of them, the MCS is increased; if it is above, the MCS is decreased; and if it is in between, the MCS remains unchanged. RRPAA and PRCS build on this and try to use the lowest possible TXP without degrading the throughput. For this purpose, they firstly find the best MCS at the maximum TXP and, from there, they jointly adjust the MCS and TXP for each window based on a similar thresholding system. RRPAA and PRCS are very similar and only differ in implementation details.
+
+Based on their behaviour, these algorithms can be classified into three distinct classes. First of all, MP is the most aggressive technique, given that it constantly samples the whole MCS/TXP space searching for the best possible configuration. On the opposite end, RRPAA and PRCS do not sample the whole MCS/TXP space. Instead, they are based on a windowed estimation of the loss ratio, which makes the MCS/TXP transitions much lazier. Finally, PARF falls in between, as it changes the MCS/TXP to the next available proactively if a number of transmissions are successful, but it falls back to the previous one if the new one fails. In practice, this may result in some instability during transitions.
+
+## Simulation Scenario
+
+This evaluation is publicly available,^[[https://github.com/Enchufa2/ns-3-dev-git](https://github.com/Enchufa2/ns-3-dev-git)] and builds upon the code provided by @richart2015^[[https://github.com/mrichart/ns-3-dev-git](https://github.com/mrichart/ns-3-dev-git)]. We assessed the proposed algorithms in the toy scenario depicted in Figure \@ref(fig:simulation). It consists of a single access point (AP) and a single mobile node connected to this AP configured with the 802.11a PHY. The mobile node at the farthest distance at which is able to communicate at the lowest possible rate (6 Mbps) and highest TXP (17 dBm), and then it moves at constant speed towards the AP. The simulation stops when the node is directly in front of the AP and it is able to communicate at the highest possible rate (54 Mbps) and lowest TXP (0 dBm). This way, we sweep through all mode transitions available.
+
+(ref:simulation) Simulation scenario.
+
+```{r simulation, out.width=web.tex('50%', '100%'), fig.margin=TRUE, fig.cap='(ref:simulation)'}
+knitr::include_graphics(c("img/07/simulation.png"))
+```
+
+For the whole simulation, the AP tries to constantly saturate the channel by sending full-size UDP packets to the node. Every transmission attempt is monitored, as well as every successful transmission. The first part allows us to compute the transmission time, while the latter allows us to compute the reception time (of the ACKs) and the goodput achieved.
+
+The simulation model assembles the power model from Equation \@ref(eq:new-energy-model) with the parametrisation previously made (see Table \@ref(tab:regressions-tx)) for all the devices considered in Section \@ref(numerical-results): HTC Legend, Linksys WRT54G, Raspberry Pi, Samsung Galaxy Note 10.1 and Soekris net4826-48. Thus, the total energy consumed is computed for all the devices and each run using the computed transmission time, reception time and idle time. Beacons are ignored and considered as idle time.
+
+We set up one simulation for each algorithm (PARF, MP, PRCS, RRPAA) with a fixed seed, and perform 10 independent runs for each simulation. We use boxplots to show aggregated results unless otherwise mentioned.
+
+## Results and Discussion
+
+We first analyse the goodput achieved per each algorithm, which are depicted in Figure \@ref(fig:ns3-goodput). The median of the average goodput across several runs for RRPAA is the highest, followed by PRCS, PARF and MP. PRCS and RRPAA, which are very similar mechanisms, show a higher variability across replications compared to PARF and MP, which have little dispersion.
+
+(ref:ns3-goodput) Goodput achieved per simulated algorithm.
+
+```{r ns3-goodput, fig.width=web.tex(textwidth, marginwidth), fig.margin=TRUE, fig.cap='(ref:ns3-goodput)', warning=FALSE, message=FALSE}
+library(dplyr)
+
+devices <- list(htc="HTC Legend", linksys="Linksys", rpi="Raspberry Pi", galaxy="Samsung Galaxy Note", soekris="Soekris")
+
+format_alg <- function(x) x %>%
+  mutate(alg = sub("MinstrelBlues", "MP", alg)) %>%
+  mutate(alg = toupper(alg))
+
+col_names=c("end", "init", "t_tx", "t_rx", "bytes", "device", "J", "alg", "run")
+
+df <- readr::read_delim("data/07/results.txt", delim=" ", col_names=col_names) %>%
+  filter(bytes > 0) %>%
+  mutate(device = unlist(devices[device])) %>%
+  format_alg() %>%
+  mutate(Mbps = bytes * 8 / 1e6 / (end - init),
+         MbpJ = bytes * 8 / 1e6 / J)
+
+traces <- lapply(Sys.glob("data/07/results/*"), function(i) {
+  s <- strsplit(basename(tools::file_path_sans_ext(i)), "-")[[1]]
+  readr::read_delim(i, delim=" ", col_names=c("t", "rate", "txpower")) %>%
+    mutate(alg=s[1], run=as.integer(s[2]))
+}) %>% bind_rows() %>% format_alg()
+
+df <- traces %>%
+  group_by(alg, run) %>%
+  mutate(diff = c(0, diff(t))) %>%
+  summarise(rate = sum(diff * rate)/max(t), txpower = sum(diff * txpower)/max(t)) %>%
+  filter(txpower > 0) %>%
+  right_join(df)
+
+ggplot(df, aes(alg, Mbps)) + 
+  ylab("Goodput [Mbps]") + xlab("Algorithm") +
+  geom_boxplot() + theme(axis.title.x=element_blank())
+```
+
+Figure \@ref(fig:ns3-efficiency) shows the energy efficiency achieved per algorithm, computed for all the devices considered. As expected, the numerical values of the energy efficiency achieved are different across devices, but the relative performance is essentially the same, as in the previous case. Indeed, the efficiency follows the pattern seen in Figure \@ref(fig:ns3-goodput): RRPAA results the most energy efficient in our scenario, followed by PRCS, PARF and MP. PRCS and RRPAA exhibit the same variability across replications as in the case of goodput, which is particularly notable for the most efficient devices, i.e., the HTC Legend and the Samsung Galaxy Note.
+
+(ref:ns3-efficiency) Energy efficiency achieved per simulated algorithm and device.
+
+```{r ns3-efficiency, fig.width=12, fig.fullwidth=TRUE, fig.cap='(ref:ns3-efficiency)'}
+ggplot(df, aes(alg, MbpJ)) + 
+  facet_grid(~device) + geom_boxplot() +
+  ylab("Energy Efficiency [MbpJ]") + xlab("Algorithm")
+```
+
+In order to shed some light into the reasons behind the differences in performance, Figures \@ref(fig:ns3-evol) show the behaviour of each algorithm throughout the simulation time for one run, showing the evolution of the MCS and TXP chosen by each algorithm, respectively. Here, we can clearly differentiate that there are two kinds of behaviour: while MP and PARF are constantly sampling other MCSs and TXPs, PRCS and RRPAA are much more conservative in that sense, and tend to keep the same configuration for longer periods of time.
+
+(ref:ns3-evol) MCS (top) and TXP (bottom) evolution per algorithm for a selected run.
+
+```{r ns3-evol, fig.show='hold', fig.width=12, fig.fullwidth=TRUE, fig.cap='(ref:ns3-evol)'}
+filter(traces, run==1) %>%
+  group_by(alg, run) %>%
+  filter(rate != lag(rate, default=1)) %>%
+  ggplot(aes(t, rate)) + 
+  geom_step(alpha=0.5) + facet_grid(~alg) +
+  scale_y_continuous(breaks = as.numeric(levels(factor(traces$rate)))) +
+  ylab("Data Rate [Mbps]") + xlab("Simulation Time [s]")
+
+filter(traces, run==1) %>%
+  group_by(alg, run) %>%
+  filter(txpower != lag(txpower, default=1)) %>%
+  ggplot(aes(t, txpower)) + 
+  geom_step(alpha=0.5) + facet_grid(~alg) +
+  ylab("Tx Power [dBm]") + xlab("Simulation Time [s]")
+```
+
+MP randomly explores the whole MCS/TXP space above a basic *guaranteed* value, and this is the explanation for the apparently uniformly greyed zone. Also, this aggressive approach is clearly a disadvantage in the considered toy scenario (deterministic walk, one-to-one, no obstacles), and this is why the achieved goodput in Figure \@ref(fig:ns3-goodput) is slightly smaller than the one achieved by the others. PARF, on its part, only explores the immediately higher MCS/TXP, which leads to a higher goodput and efficiency.
+
+On the other hand, PRCS and RRPAA sampling is much more sparse in time. As a consequence, Figures \@ref(fig:ns3-evol) show more differences across replications, leading to the high variability shown in Figure \@ref(fig:ns3-goodput) compared to MP and PARF.
+  
+In terms of TXP, all the algorithms exhibit a similar *aggressiveness*, in the sense that they use a high TXP value in general. Indeed, as Figure \@ref(fig:ns3-evol) (bottom) shows, the TXP is the highest possible until the very end of the simulation, when the STA is very close to the AP. This is the cause for the high correlation between Figures \@ref(fig:ns3-goodput) and \@ref(fig:ns3-efficiency).
+  
+A noteworthy characteristic of PRCS and RRPAA is that, in general, they *delay* the MCS change decision, as depicted in Figure \@ref(fig:ns3-evol) (top). Most of the times, they do not even use the whole space of MCS available, unlike MP and PARF. Because of this, they tend to achieve the best goodput and energy efficiency.
+
+## Conservativeness at Mode Transitions
+
+Building on the concept of *conservativeness* (i.e., the tendency to select a lower MCS/TXP in the transition regions), we explore whether there is any correlation with the energy efficiency achieved by a certain algorithm and this tendency. For that purpose, we first define a proper metric.
+
+In the first place, we define the *normalised average MCS* as the area under the curve in Figure \@ref(fig:ns3-evol) (top) normalised by the total simulation time and the maximum MCS:
+
+\begin{equation}
+ \widehat{\mathrm{MCS}} = \frac{1}{\max(\mathrm{MCS}) \cdot t_\mathrm{sim}}\int_0^{t_\mathrm{sim}} \mathrm{MCS}(t)dt
+ (\#eq:MCShat)
+\end{equation}
+
+where $t_\mathrm{sim}$ is the simulation time and $\max(\mathrm{MCS})$ is 54 Mbps in our case. The same concept can be applied to the TXP:
+
+\begin{equation}
+ \widehat{\mathrm{TXP}} = \frac{1}{\max(\mathrm{TXP}) \cdot t_\mathrm{sim}}\int_0^{t_\mathrm{sim}} \mathrm{TXP}(t)dt
+ (\#eq:TXPhat)
+\end{equation}
+
+where $\max(\mathrm{TXP})$ is 17 dBm in our case. Both $\widehat{\mathrm{MCS}}$ and $\widehat{\mathrm{TXP}}$ are unitless scores between 0 and 1, and lower values mean a more conservative algorithm. Therefore, we can define a *Conservativeness Index* (CI) as the inverse of the product of both scores:
+
+\begin{equation}
+ \mathrm{CI} = \frac{1}{\widehat{\mathrm{MCS}} \cdot \widehat{\mathrm{TXP}}}
+ (\#eq:CI)
+\end{equation}
+
+where $\mathrm{CI}>1$.
+
+We computed the CI^[It must be taken into account that the CI is not suitable for comparing *any* algorithm. For instance, in an extreme case, an "algorithm" could select 6 Mbps and 0 dBm always, resulting in a very low CI, but a very bad performance at the same time. The CI should only be used for comparing similarly performant algorithms, as it is the case in our study given the results shown in Figures \@ref(fig:ns3-goodput) and \@ref(fig:ns3-efficiency).] for each device and run, and the final results are depicted in Figure \@ref(fig:ns3-conservativeness) as the average CI across different runs vs. the median energy efficiency in Figure \@ref(fig:ns3-efficiency).
+
+(ref:ns3-conservativeness) Relationship between Conservativeness Index (tendency to select lower MCS and TXP) and energy effienciency per simulated device.
+
+```{r ns3-conservativeness, fig.pos='!b', fig.width=12, fig.fullwidth=TRUE, fig.cap='(ref:ns3-conservativeness)'}
+df %>%
+  group_by(device, alg) %>%
+  mutate(ci = (54*17) / (txpower * rate)) %>%
+  summarise(ci = mean(ci), MbpJ = median(MbpJ)) %>%
+  ggplot(aes(MbpJ, ci)) + geom_line(alpha=.5) + geom_point(color="white", size=6) +
+  geom_point(aes(color=alg)) + facet_grid(~device, scales="free") + labs(color="Algorithm") +
+  ylab(expression("Average CI")) + xlab("Median Energy Efficiency [MbpJ]") +
+  theme(legend.justification=c(0,1), legend.position=c(0,1))
+```
+
+The results in Figure \@ref(fig:ns3-conservativeness) show a positive non-linear relationship between the CI of an algorithm and the energy efficiency achieved for all the devices considered. MP is the algorithm with the lowest CI, which is in consonance with its aggressiveness (i.e., frequent jumps between MCS/TXP values, as shown in Figures \@ref(fig:ns3-evol), and the goodput achieved was also the lowest, as depicted in Figure \@ref(fig:ns3-goodput). On the other hand, PARF, PRCS and RRPAA achieved a similar performance in terms of goodput, but the ones with the most conservative behaviour (PRCS and RRPAA, as it can be seen in Figures \@ref(fig:ns3-evol)) also achieve both the highest CI and energy efficiency.
+
+This result evidences that the performance gaps uncovered by Figure \@ref(fig:efficiency-goodput) under optimal conditions have also an impact in real-world RA-TPC algorithms. Therefore, we confirm that this issue must be taken into account in the design of more energy-efficient rate and transmission power control algorithms.
+
+## Summary
+
+We have extended`r margincite("contrib-07")` our results from Chapter \@ref(ch:06) regarding the role of *conservativeness* at mode transitions in achieving better energy efficiency in RA-TPC algorithms. We have developed a metric to compare algorithms, and we have assessed the performance of four state-of-the-art schemes through simulation. We have demonstrated that certain conservativeness can resolve the trade-off between throughput and energy efficiency optimality, thus making a difference for properly designed energy-aware algorithms.
+
+Further research is needed to develop proper heuristics to leverage these findings. In particular, the *downwards* direction, as described in Section \@ref(heuristics-for-ra-tpc-algorithms), is the most challenging, because it requires predicting the evolution of the channel state.
