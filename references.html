@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Energy Efficiency in Wireless Communications for Mobile User Devices</title>
+  <meta name="description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  
+  <meta name="twitter:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  
+
+<meta name="author" content="Iñaki Úcar">
+
+
+<meta name="date" content="2018-05-07">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="performance-evaluation-of-simmer.html">
+
+<style type="text/css">
+p.abstract{
+  text-align: center;
+  font-weight: bold;
+}
+div.abstract{
+  margin: auto;
+  width: 90%;
+}
+</style>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Contents</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#cross-factor-towards-a-new-energy-model"><i class="fa fa-check"></i><b>1.1</b> Cross-Factor: Towards a New Energy Model</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#micro-sleep-opportunities-in-802.11"><i class="fa fa-check"></i><b>1.2</b> Micro-Sleep Opportunities in 802.11</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#rate-adaptation-and-power-control-in-802.11"><i class="fa fa-check"></i><b>1.3</b> Rate Adaptation and Power Control in 802.11</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#applied-simulation-modelling-for-energy-efficiency"><i class="fa fa-check"></i><b>1.4</b> Applied Simulation Modelling for Energy Efficiency</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#thesis-overview"><i class="fa fa-check"></i><b>1.5</b> Thesis Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-02.html"><a href="ch-02.html"><i class="fa fa-check"></i><b>2</b> Related Work</a><ul>
+<li class="chapter" data-level="2.1" data-path="ch-02.html"><a href="ch-02.html#energy-profiling-for-wireless-communications"><i class="fa fa-check"></i><b>2.1</b> Energy Profiling for Wireless Communications</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-02.html"><a href="ch-02.html#energy-consumption-of-network-stacks"><i class="fa fa-check"></i><b>2.2</b> Energy Consumption of Network Stacks</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-02.html"><a href="ch-02.html#micro-sleep-opportunities-in-802.11-1"><i class="fa fa-check"></i><b>2.3</b> Micro-Sleep Opportunities in 802.11</a></li>
+<li class="chapter" data-level="2.4" data-path="ch-02.html"><a href="ch-02.html#rate-adaptation-and-power-control-in-802.11-1"><i class="fa fa-check"></i><b>2.4</b> Rate Adaptation and Power Control in 802.11</a></li>
+<li class="chapter" data-level="2.5" data-path="ch-02.html"><a href="ch-02.html#discrete-event-simulation-of-network-systems"><i class="fa fa-check"></i><b>2.5</b> Discrete-Event Simulation of Network Systems</a></li>
+</ul></li>
+<li class="part"><span><b>I Experimentation</b></span></li>
+<li class="chapter" data-level="3" data-path="ch-03.html"><a href="ch-03.html"><i class="fa fa-check"></i><b>3</b> A Comprehensive Energy Measurement Framework</a><ul>
+<li class="chapter" data-level="3.1" data-path="ch-03.html"><a href="ch-03.html#instrumentation"><i class="fa fa-check"></i><b>3.1</b> Instrumentation</a></li>
+<li class="chapter" data-level="3.2" data-path="ch-03.html"><a href="ch-03.html#measurement-and-uncertainty-analysis"><i class="fa fa-check"></i><b>3.2</b> Measurement and Uncertainty Analysis</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="ch-03.html"><a href="ch-03.html#propagation-of-uncertainty"><i class="fa fa-check"></i><b>3.2.1</b> Propagation of Uncertainty</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ch-03.html"><a href="ch-03.html#reporting-uncertainty"><i class="fa fa-check"></i><b>3.2.2</b> Reporting Uncertainty</a></li>
+<li class="chapter" data-level="3.2.3" data-path="ch-03.html"><a href="ch-03.html#automated-uncertainty-handling-in-r-the-errors-package"><i class="fa fa-check"></i><b>3.2.3</b> Automated Uncertainty Handling in R: The <code>errors</code> Package</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ch-03.html"><a href="ch-03.html#whole-device-measurements"><i class="fa fa-check"></i><b>3.3</b> Whole-Device Measurements</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="ch-03.html"><a href="ch-03.html#validation"><i class="fa fa-check"></i><b>3.3.1</b> Validation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="ch-03.html"><a href="ch-03.html#per-component-measurements"><i class="fa fa-check"></i><b>3.4</b> Per-Component Measurements</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="ch-03.html"><a href="ch-03.html#characterisation-of-a-cots-device"><i class="fa fa-check"></i><b>3.4.1</b> Characterisation of a COTS Device</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="ch-03.html"><a href="ch-03.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch-04.html"><a href="ch-04.html"><i class="fa fa-check"></i><b>4</b> Deseeding Energy Consumption of Network Stacks</a><ul>
+<li class="chapter" data-level="4.1" data-path="ch-04.html"><a href="ch-04.html#anatomy-of-a-laptop-computer"><i class="fa fa-check"></i><b>4.1</b> Anatomy of a Laptop Computer</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-04.html"><a href="ch-04.html#cross-factor-separating-the-wheat-from-the-chaff"><i class="fa fa-check"></i><b>4.2</b> Cross-Factor: Separating the Wheat from the Chaff</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-04.html"><a href="ch-04.html#power-consumption-in-unattended-idle-mode"><i class="fa fa-check"></i><b>4.3</b> Power Consumption in Unattended Idle Mode</a></li>
+<li class="chapter" data-level="4.4" data-path="ch-04.html"><a href="ch-04.html#power-consumption-with-full-cpuidle-subsystem"><i class="fa fa-check"></i><b>4.4</b> Power Consumption with Full <code>cpuidle</code> Subsystem</a></li>
+<li class="chapter" data-level="4.5" data-path="ch-04.html"><a href="ch-04.html#exploring-the-cpuidle-subsystem"><i class="fa fa-check"></i><b>4.5</b> Exploring the <code>cpuidle</code> Subsystem</a></li>
+<li class="chapter" data-level="4.6" data-path="ch-04.html"><a href="ch-04.html#summary-1"><i class="fa fa-check"></i><b>4.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ch-05.html"><a href="ch-05.html"><i class="fa fa-check"></i><b>5</b> Leveraging Micro-Sleep Opportunities in 802.11</a><ul>
+<li class="chapter" data-level="5.1" data-path="ch-05.html"><a href="ch-05.html#state-transition-times"><i class="fa fa-check"></i><b>5.1</b> State Transition Times in 802.11 Cards</a></li>
+<li class="chapter" data-level="5.2" data-path="ch-05.html"><a href="ch-05.html#protocol-analysis-and-practical-issues"><i class="fa fa-check"></i><b>5.2</b> Protocol Analysis and Practical Issues</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="ch-05.html"><a href="ch-05.html#identifying-potential-micro-sleep-opportunities"><i class="fa fa-check"></i><b>5.2.1</b> Identifying Potential Micro-Sleep Opportunities</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ch-05.html"><a href="ch-05.html#impact-of-capture-effect"><i class="fa fa-check"></i><b>5.2.2</b> Impact of Capture Effect</a></li>
+<li class="chapter" data-level="5.2.3" data-path="ch-05.html"><a href="ch-05.html#impact-of-errors-in-the-mac-header"><i class="fa fa-check"></i><b>5.2.3</b> Impact of Errors in the MAC Header</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="ch-05.html"><a href="ch-05.html#munap-algorithm"><i class="fa fa-check"></i><b>5.3</b> <span class="math inline">\(\mu\)</span>Nap Algorithm</a></li>
+<li class="chapter" data-level="5.4" data-path="ch-05.html"><a href="ch-05.html#performance-evaluation"><i class="fa fa-check"></i><b>5.4</b> Performance Evaluation</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="ch-05.html"><a href="ch-05.html#evaluation-with-real-traces"><i class="fa fa-check"></i><b>5.4.1</b> Evaluation with Real Traces</a></li>
+<li class="chapter" data-level="5.4.2" data-path="ch-05.html"><a href="ch-05.html#impact-of-timing-constraints"><i class="fa fa-check"></i><b>5.4.2</b> Impact of Timing Constraints</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="ch-05.html"><a href="ch-05.html#summary-2"><i class="fa fa-check"></i><b>5.5</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>II Mathematical Modelling</b></span></li>
+<li class="chapter" data-level="6" data-path="ch-06.html"><a href="ch-06.html"><i class="fa fa-check"></i><b>6</b> Rate Adaptation and Power Control in 802.11</a><ul>
+<li class="chapter" data-level="6.1" data-path="ch-06.html"><a href="ch-06.html#joint-goodput-energy-model"><i class="fa fa-check"></i><b>6.1</b> Joint Goodput-Energy Model</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-06.html"><a href="ch-06.html#numerical-results"><i class="fa fa-check"></i><b>6.2</b> Numerical Results</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="ch-06.html"><a href="ch-06.html#optimal-goodput"><i class="fa fa-check"></i><b>6.2.1</b> Optimal Goodput</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ch-06.html"><a href="ch-06.html#extension-of-the-energy-parametrisation"><i class="fa fa-check"></i><b>6.2.2</b> Extension of the Energy Parametrisation</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ch-06.html"><a href="ch-06.html#energy-consumption"><i class="fa fa-check"></i><b>6.2.3</b> Energy Consumption</a></li>
+<li class="chapter" data-level="6.2.4" data-path="ch-06.html"><a href="ch-06.html#energy-efficiency-vs.optimal-goodput"><i class="fa fa-check"></i><b>6.2.4</b> Energy Efficiency vs. Optimal Goodput</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ch-06.html"><a href="ch-06.html#discussion"><i class="fa fa-check"></i><b>6.3</b> Discussion</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="ch-06.html"><a href="ch-06.html#sensitivity-to-energy-parameter-scaling"><i class="fa fa-check"></i><b>6.3.1</b> Sensitivity to Energy Parameter Scaling</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ch-06.html"><a href="ch-06.html#heuristics-for-ra-tpc-algorithms"><i class="fa fa-check"></i><b>6.3.2</b> Heuristics for RA-TPC Algorithms</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="ch-06.html"><a href="ch-06.html#summary-3"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>III Simulation</b></span></li>
+<li class="chapter" data-level="7" data-path="ch-07.html"><a href="ch-07.html"><i class="fa fa-check"></i><b>7</b> Performance of RA-TPC Algorithms in 802.11</a><ul>
+<li class="chapter" data-level="7.1" data-path="ch-07.html"><a href="ch-07.html#algorithms-considered"><i class="fa fa-check"></i><b>7.1</b> Algorithms Considered</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-07.html"><a href="ch-07.html#simulation-scenario"><i class="fa fa-check"></i><b>7.2</b> Simulation Scenario</a></li>
+<li class="chapter" data-level="7.3" data-path="ch-07.html"><a href="ch-07.html#results-and-discussion"><i class="fa fa-check"></i><b>7.3</b> Results and Discussion</a></li>
+<li class="chapter" data-level="7.4" data-path="ch-07.html"><a href="ch-07.html#conservativeness-at-mode-transitions"><i class="fa fa-check"></i><b>7.4</b> Conservativeness at Mode Transitions</a></li>
+<li class="chapter" data-level="7.5" data-path="ch-07.html"><a href="ch-07.html#summary-4"><i class="fa fa-check"></i><b>7.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ch-08.html"><a href="ch-08.html"><i class="fa fa-check"></i><b>8</b> A Novel Discrete-Event Simulation Framework</a><ul>
+<li class="chapter" data-level="8.1" data-path="ch-08.html"><a href="ch-08.html#the-simulation-core-design"><i class="fa fa-check"></i><b>8.1</b> The Simulation Core Design</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="ch-08.html"><a href="ch-08.html#terminology"><i class="fa fa-check"></i><b>8.1.1</b> Terminology</a></li>
+<li class="chapter" data-level="8.1.2" data-path="ch-08.html"><a href="ch-08.html#architecture"><i class="fa fa-check"></i><b>8.1.2</b> Architecture</a></li>
+<li class="chapter" data-level="8.1.3" data-path="ch-08.html"><a href="ch-08.html#the-event-queue"><i class="fa fa-check"></i><b>8.1.3</b> The Event Queue</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="ch-08.html"><a href="ch-08.html#a-brief-introduction-to-simmer"><i class="fa fa-check"></i><b>8.2</b> A Brief Introduction to <code>simmer</code></a></li>
+<li class="chapter" data-level="8.3" data-path="ch-08.html"><a href="ch-08.html#use-case-energy-efficiency-for-massive-iot"><i class="fa fa-check"></i><b>8.3</b> Use case: Energy Efficiency for Massive IoT</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-08.html"><a href="ch-08.html#summary-5"><i class="fa fa-check"></i><b>8.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ch-09.html"><a href="ch-09.html"><i class="fa fa-check"></i><b>9</b> Conclusions and Future Work</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="measurement-circuitry-schematics.html"><a href="measurement-circuitry-schematics.html"><i class="fa fa-check"></i><b>A</b> Measurement Circuitry Schematics</a></li>
+<li class="chapter" data-level="B" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html"><i class="fa fa-check"></i><b>B</b> Experimental Validation of RA-TPC Inefficiencies</a><ul>
+<li class="chapter" data-level="B.1" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html#experimental-setup"><i class="fa fa-check"></i><b>B.1</b> Experimental Setup</a></li>
+<li class="chapter" data-level="B.2" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html#methodology-and-results"><i class="fa fa-check"></i><b>B.2</b> Methodology and Results</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html"><i class="fa fa-check"></i><b>C</b> Performance Evaluation of <code>simmer</code></a><ul>
+<li class="chapter" data-level="C.1" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html#comparison-with-similar-frameworks"><i class="fa fa-check"></i><b>C.1</b> Comparison with Similar Frameworks</a></li>
+<li class="chapter" data-level="C.2" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html#the-cost-of-calling-r-from-c"><i class="fa fa-check"></i><b>C.2</b> The Cost of Calling R from C++</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">
+Licensed under <img alt="Creative Commons License" style="border-width:0;vertical-align:bottom" 
+src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Energy Efficiency in Wireless Communications for Mobile User Devices</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+
+<div id="refs" class="references">
+<div>
+<p>Agrawal, D.P. 2004. “Analysis and optimization of energy efficiency in 802.11 distributed coordination function.” In <em>IEEE International Conference on Performance, Computing, and Communications, 2004</em>, 707–12. IEEE. doi:<a href="https://doi.org/10.1109/PCCC.2004.1395159">10.1109/PCCC.2004.1395159</a>.</p>
+</div>
+<div>
+<p>Akella, Aditya, Glenn Judd, Srinivasan Seshan, and Peter Steenkiste. 2005. “Self-Management in Chaotic Wireless Deployments.” In <em>Proceedings of the 11th Annual International Conference on Mobile Computing and Networking</em>, 185–99. MobiCom ’05. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/1080829.1080849">10.1145/1080829.1080849</a>.</p>
+</div>
+<div>
+<p>Andres-Maldonado, P., P. Ameigeiras, J. Prados-Garzon, J. J. Ramos-Munoz, and J. M. Lopez-Soler. 2017. “Optimized Lte Data Transmission Procedures for Iot: Device Side Energy Consumption Analysis.” In <em>2017 Ieee International Conference on Communications Workshops (Icc Workshops)</em>, 540–45. doi:<a href="https://doi.org/10.1109/ICCW.2017.7962714">10.1109/ICCW.2017.7962714</a>.</p>
+</div>
+<div>
+<p>Arras, K.O. 1998. “An Introduction to Error Propagation: Derivation, Meaning and Examples of Cy = Fx Cx Fx’,” September.</p>
+</div>
+<div>
+<p>Azcorra, Arturo, Iñaki Ucar, Albert Banchs, Francesco Gringoli, and Pablo Serrano. 2017. “<span class="math inline">\(\mu\)</span>Nap: Practical micro-sleeps for 802.11 WLANs.” <em>Computer Communications</em> 110 (September): 175–86. doi:<a href="https://doi.org/10.1016/j.comcom.2017.06.008">10.1016/j.comcom.2017.06.008</a>.</p>
+</div>
+<div>
+<p>———. 2018. Energy-saving method based on micro-shutdowns for a wireless device in a telecommunications network, issued January 2018. <a href="http://www.google.com/patents/WO2018015601" class="uri">http://www.google.com/patents/WO2018015601</a>.</p>
+</div>
+<div>
+<p>Bache, Stefan Milton, and Hadley Wickham. 2014. <em>Magrittr: A Forward-Pipe Operator for R</em>. <a href="https://CRAN.R-project.org/package=magrittr" class="uri">https://CRAN.R-project.org/package=magrittr</a>.</p>
+</div>
+<div>
+<p>Baek, S.J., G. DeVeciana, and X. Su. 2004. “Minimizing Energy Consumption in Large-Scale Sensor Networks Through Distributed Data Compression and Hierarchical Aggregation.” <em>IEEE Journal on Selected Areas in Communications</em> 22 (6): 1130–40. doi:<a href="https://doi.org/10.1109/JSAC.2004.830934">10.1109/JSAC.2004.830934</a>.</p>
+</div>
+<div>
+<p>Bahouth, A., S. Crites, N. Matloff, and T. Williamson. 2007. “Revisiting the Issue of Performance Enhancement of Discrete Event Simulation Software.” In <em>Simulation Symposium, 2007. Anss ’07. 40th Annual</em>, 114–22. doi:<a href="https://doi.org/10.1109/ANSS.2007.36">10.1109/ANSS.2007.36</a>.</p>
+</div>
+<div>
+<p>Baiamonte, V., and C.-F. Chiasserini. 2006. “Saving Energy during Channel Contention in 802.11 WLANs.” <em>Mobile Networks and Applications</em> 11 (2). Springer-Verlag New York, Inc.: 287–96. doi:<a href="https://doi.org/10.1007/s11036-006-4480-x">10.1007/s11036-006-4480-x</a>.</p>
+</div>
+<div>
+<p>Balaji, Bharathan, Bheemarjuna Reddy Tamma, and B. S. Manoj. 2010. “A Novel Power Saving Strategy for Greening IEEE 802.11 Based Wireless Networks.” In <em>2010 Ieee Global Telecommunications Conference Globecom 2010</em>, 1–5. IEEE. doi:<a href="https://doi.org/10.1109/GLOCOM.2010.5684071">10.1109/GLOCOM.2010.5684071</a>.</p>
+</div>
+<div>
+<p>Balasubramanian, Niranjan, Aruna Balasubramanian, and Arun Venkataramani. 2009. “Energy consumption in mobile phones: a measurement study and implications for network applications.” In <em>Proceedings of the 9th Acm Sigcomm Conference on Internet Measurement Conference - Imc ’09</em>, 280. New York, New York, USA: ACM Press. doi:<a href="https://doi.org/10.1145/1644893.1644927">10.1145/1644893.1644927</a>.</p>
+</div>
+<div>
+<p>Banks, J. 2005. <em>Discrete-Event System Simulation</em>. Prentice-Hall International Series in Industrial and Systems Engineering. Pearson Prentice Hall.</p>
+</div>
+<div>
+<p>Barroso, Luiz André, and Urs Hölzle. 2007. “The Case for Energy-Proportional Computing.” <em>Computer</em> 40 (12): 33–37. doi:<a href="https://doi.org/10.1109/MC.2007.443">10.1109/MC.2007.443</a>.</p>
+</div>
+<div>
+<p>Bartzoudis, N., O. Font-Bach, M. Miozzo, C. Donato, P. Harbanau, M. Requena, D. López, et al. 2017. “Energy footprint reduction in 5G reconfigurable hotspots via function partitioning and bandwidth adaptation.” In <em>2017 Fifth International Workshop on Cloud Technologies and Energy Efficiency in Mobile Communication Networks (Cleen)</em>, 1–6. doi:<a href="https://doi.org/10.23919/CLEEN.2017.8045934">10.23919/CLEEN.2017.8045934</a>.</p>
+</div>
+<div>
+<p>Basu, Prithwish, and Jason Redi. 2004. “Effect of Overhearing Transmissions on Energy Efficiency in Dense Sensor Networks.” In <em>Proceedings of the 3rd International Symposium on Information Processing in Sensor Networks</em>, 196–204. IPSN ’04. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/984622.984652">10.1145/984622.984652</a>.</p>
+</div>
+<div>
+<p>Becam, Didier, Patrick Brigant, Robert Cohen, and Jacques Szpirglas. 1985. “Validité Du Modèle de Neyman Pour Les Processus d’erreurs Sur Des Liaisons Numériques à 2 et 140 Mbit/S.” In <em>Annales Des Télécommunications</em>, 40:17–25. Springer.</p>
+</div>
+<div>
+<p>Bellosta, Carlos J. Gil. 2015. <em>RPython: Package Allowing R to Call Python</em>. <a href="https://CRAN.R-project.org/package=rPython" class="uri">https://CRAN.R-project.org/package=rPython</a>.</p>
+</div>
+<div>
+<p>Berger, Daniel S., Francesco Gringoli, Nicolò Facchi, Ivan Martinovic, and Jens Schmitt. 2014. “Gaining Insight on Friendly Jamming in a Real-World Ieee 802.11 Network.” In <em>Proceedings of the 2014 Acm Conference on Security and Privacy in Wireless &amp;#38; Mobile Networks</em>, 105–16. WiSec ’14. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/2627393.2627403">10.1145/2627393.2627403</a>.</p>
+</div>
+<div>
+<p>Biaz, S., and S. Wu. 2008. “Rate Adaptation Algorithms for Ieee 802.11 Networks: A Survey and Comparison.” In <em>2008 Ieee Symposium on Computers and Communications</em>, 130–36. doi:<a href="https://doi.org/10.1109/ISCC.2008.4625680">10.1109/ISCC.2008.4625680</a>.</p>
+</div>
+<div>
+<p>BIPM, IEC, IFCC, ILAC, IUPAC, IUPAP, ISO, and OIML. 2008. “Evaluation of Measurement Data – Guide to the Expression of Uncertainty in Measurement, 1st edn. JCGM 100:2008.” <em>Joint Committee for Guides in Metrology</em>. <a href="https://www.bipm.org/en/publications/guides/gum.html" class="uri">https://www.bipm.org/en/publications/guides/gum.html</a>.</p>
+</div>
+<div>
+<p>———. 2012. “The International Vocabulary of Metrology – Basic and General Concepts and Associated Terms (VIM), 3rd edn. JCGM 200:2012.” <em>Joint Committee for Guides in Metrology</em>. <a href="http://www.bipm.org/vim" class="uri">http://www.bipm.org/vim</a>.</p>
+</div>
+<div>
+<p>Bruno, R., M. Conti, and E. Gregori. 2002. “Optimization of efficiency and energy consumption in p-persistent CSMA-based wireless LANs.” <em>IEEE Transactions on Mobile Computing</em> 1 (1): 10–31. doi:<a href="https://doi.org/10.1109/TMC.2002.1011056">10.1109/TMC.2002.1011056</a>.</p>
+</div>
+<div>
+<p>Carroll, Aaron, and Gernot Heiser. 2010. “An Analysis of Power Consumption in a Smartphone.” In <em>USENIX Annual Technical Conference</em>, 14:21–21. Boston, MA.</p>
+</div>
+<div>
+<p>Carvalho, M.M., C.B. Margi, K. Obraczka, and J.J. Garcia-Luna-Aceves. 2004. “Modeling energy consumption in single-hop IEEE 802.11 ad hoc networks.” In <em>Proceedings. 13th International Conference on Computer Communications and Networks (Ieee Cat. No.04EX969)</em>, 367–72. IEEE. doi:<a href="https://doi.org/10.1109/ICCCN.2004.1401671">10.1109/ICCCN.2004.1401671</a>.</p>
+</div>
+<div>
+<p>Chang, Winston. 2017. <em>R6: Classes with Reference Semantics</em>. <a href="https://CRAN.R-project.org/package=R6" class="uri">https://CRAN.R-project.org/package=R6</a>.</p>
+</div>
+<div>
+<p>Cheng, R. G., C. H. Wei, S. L. Tsao, and F. C. Ren. 2012. “RACH Collision Probability for Machine-Type Communications.” In <em>2012 Ieee 75th Vehicular Technology Conference (Vtc Spring)</em>, 1–5. doi:<a href="https://doi.org/10.1109/VETECS.2012.6240129">10.1109/VETECS.2012.6240129</a>.</p>
+</div>
+<div>
+<p>Cornaglia, Bruno, and Marco Spini. 1996. “Letter: New Statistical Model for Burst Error Distribution.” <em>European Transactions on Telecommunications</em> 7 (3). Wiley Online Library: 267–72.</p>
+</div>
+<div>
+<p>Creus, Gerard Bosch, and Mika Kuulusa. 2007. “Optimizing Mobile Software with Built-in Power Profiling.” In <em>Mobile Phone Programming</em>, 449–62. Springer.</p>
+</div>
+<div>
+<p>Dong, Mian, and Lin Zhong. 2011. “Self-Constructive High-Rate System Energy Modeling for Battery-Powered Mobile Systems.” In <em>Proceedings of the 9th International Conference on Mobile Systems, Applications, and Services</em>, 335–48. ACM.</p>
+</div>
+<div>
+<p>Ebert, Jean-Pierre, Brian Burns, and Adam Wolisz, and Adam Wolisz. 2002. “A trace-based approach for determining the energy consumption of a WLAN network interface.” In <em>Proceedings of European Wireless</em>, 230–36.</p>
+</div>
+<div>
+<p>Eddelbuettel, Dirk. 2013. <em>Seamless R and C++ Integration with Rcpp</em>. New York, NY, USA: Springer-Verlag.</p>
+</div>
+<div>
+<p>Eddelbuettel, Dirk, and Romain François. 2011. “Rcpp: Seamless R and C++ Integration.” <em>Journal of Statistical Software</em> 40 (8): 1–18. doi:<a href="https://doi.org/10.18637/jss.v040.i08">10.18637/jss.v040.i08</a>.</p>
+</div>
+<div>
+<p>Ergen, M., and P. Varaiya. 2007. “Decomposition of Energy Consumption in IEEE 802.11.” In <em>2007 Ieee International Conference on Communications</em>, 403–8. IEEE. doi:<a href="https://doi.org/10.1109/ICC.2007.73">10.1109/ICC.2007.73</a>.</p>
+</div>
+<div>
+<p>Eryigit, S., G. Gur, S. Bayhan, and T. Tugcu. 2014. “Energy Efficiency Is a Subtle Concept: Fundamental Trade-Offs for Cognitive Radio Networks.” <em>Communications Magazine, IEEE</em> 52 (7): 30–36. doi:<a href="https://doi.org/10.1109/MCOM.2014.6852080">10.1109/MCOM.2014.6852080</a>.</p>
+</div>
+<div>
+<p>Feeney, L.M., and M. Nilsson. 2001. “Investigating the energy consumption of a wireless network interface in an ad hoc networking environment.” In <em>Proceedings Ieee Infocom 2001. Conference on Computer Communications. Twentieth Annual Joint Conference of the Ieee Computer and Communications Society</em>, 3:1548–57. IEEE. doi:<a href="https://doi.org/10.1109/INFCOM.2001.916651">10.1109/INFCOM.2001.916651</a>.</p>
+</div>
+<div>
+<p>Flater, David. 2018. “Architecture for software-assisted quantity calculus.” <em>Computer Standards &amp; Interfaces</em> 56: 144–47. doi:<a href="https://doi.org/10.1016/j.csi.2017.10.002">10.1016/j.csi.2017.10.002</a>.</p>
+</div>
+<div>
+<p>Garcia-Saavedra, Andres, Pablo Serrano, Albert Banchs, and Matthias Hollick. 2011. “Energy-efficient fair channel access for IEEE 802.11 WLANs.” In <em>2011 Ieee International Symposium on a World of Wireless, Mobile and Multimedia Networks</em>, 1–9. IEEE. doi:<a href="https://doi.org/10.1109/WoWMoM.2011.5986436">10.1109/WoWMoM.2011.5986436</a>.</p>
+</div>
+<div>
+<p>———. 2012. “Balancing energy efficiency and throughput fairness in IEEE 802.11 WLANs.” <em>Pervasive and Mobile Computing</em> 8 (5): 631–45. doi:<a href="https://doi.org/10.1016/j.pmcj.2012.03.006">10.1016/j.pmcj.2012.03.006</a>.</p>
+</div>
+<div>
+<p>Gomez, Karina, Roberto Riggio, Tinku Rasheed, Daniele Miorandi, and Fabrizio Granelli. 2012. “Energino: A Hardware and Software Solution for Energy Consumption Monitoring.” In <em>Modeling and Optimization in Mobile, Ad Hoc and Wireless Networks (Wiopt), 2012 10th International Symposium on</em>, 311–17. IEEE.</p>
+</div>
+<div>
+<p>Gong, Yu, Oliver Keys, and Martin Maechler. 2017. <em>Rjulia: Integrating R and Julia – Calling Julia from R</em>. <a href="https://github.com/armgong/rjulia" class="uri">https://github.com/armgong/rjulia</a>.</p>
+</div>
+<div>
+<p>Gringoli, Francesco, and Lorenzo Nava. 2015. “OpenFWWF - Open FirmWare for WiFi networks.”</p>
+</div>
+<div>
+<p>Gringoli, Francesco, Pablo Serrano, Iñaki Ucar, Nicolò Facchi, and Arturo Azcorra. 2017. “Experimental QoE evaluation of multicast video delivery over IEEE 802.11aa WLANs.” <em>IEEE Transactions on Mobile Computing</em> (under review).</p>
+</div>
+<div>
+<p>Grover, Pulkit. 2015. “Information Friction and Its Implications on Minimum Energy Required for Communication.” <em>IEEE Transactions on Information Theory</em> 61 (2): 895–907. doi:<a href="https://doi.org/10.1109/TIT.2014.2365777">10.1109/TIT.2014.2365777</a>.</p>
+</div>
+<div>
+<p>Grupp, L.M., AM. Caulfield, J. Coburn, S. Swanson, E. Yaakobi, P.H. Siegel, and J.K. Wolf. 2009. “Characterizing flash memory: Anomalies, observations, and applications.”</p>
+</div>
+<div>
+<p>Gupta, A., and P. Mohapatra. 2007. “Energy Consumption and Conservation in Wifi Based Phones: A Measurement-Based Study.” In <em>2007 4th Annual Ieee Communications Society Conference on Sensor, Mesh and Ad Hoc Communications and Networks</em>, 122–31. doi:<a href="https://doi.org/10.1109/SAHCN.2007.4292824">10.1109/SAHCN.2007.4292824</a>.</p>
+</div>
+<div>
+<p>Havinga, Paul J.M., and Gerard J.M. Smit. 2000. “Energy-Efficient Tdma Medium Access Control Protocol Scheduling.” In <em>Asian International Mobile Computing Conference, Amoc</em>, 1–10.</p>
+</div>
+<div>
+<p>He, Xin, and Frank Y. Li. 2010. “Throughput and energy efficiency comparison of one-hop, two-hop, virtual relay and cooperative retransmission schemes.” In <em>2010 European Wireless Conference (Ew)</em>, 580–87. IEEE. doi:<a href="https://doi.org/10.1109/EW.2010.5483469">10.1109/EW.2010.5483469</a>.</p>
+</div>
+<div>
+<p>Hoymann, C., D. Astely, M. Stattin, G. Wikstrom, J. F. Cheng, A. Hoglund, M. Frenne, R. Blasco, J. Huschke, and F. Gunnarsson. 2016. “LTE Release 14 Outlook.” <em>IEEE Communications Magazine</em> 54 (6): 44–49. doi:<a href="https://doi.org/10.1109/MCOM.2016.7497765">10.1109/MCOM.2016.7497765</a>.</p>
+</div>
+<div>
+<p>Huang, K.D., K.R. Duffy, and D. Malone. 2013. “H-RCA: 802.11 Collision-Aware Rate Control.” <em>Networking, IEEE/ACM Transactions on</em> 21 (4): 1021–34. doi:<a href="https://doi.org/10.1109/TNET.2012.2216891">10.1109/TNET.2012.2216891</a>.</p>
+</div>
+<div>
+<p>Huehn, T., and C. Sengul. 2012. “Practical Power and Rate Control for Wifi.” In <em>2012 21st International Conference on Computer Communications and Networks (Icccn)</em>, 1–7. doi:<a href="https://doi.org/10.1109/ICCCN.2012.6289295">10.1109/ICCCN.2012.6289295</a>.</p>
+</div>
+<div>
+<p>Hylick, Anthony, Ripduman Sohan, Andrew Rice, and Brian Jones. 2008. “An Analysis of Hard Drive Energy Consumption.” In <em>2008 Ieee International Symposium on Modeling, Analysis and Simulation of Computers and Telecommunication Systems</em>, 1–10. IEEE. doi:<a href="https://doi.org/10.1109/MASCOT.2008.4770567">10.1109/MASCOT.2008.4770567</a>.</p>
+</div>
+<div>
+<p>IEEE. 2012a. “IEEE Standard for Ethernet - Section 6.” <em>IEEE Std 802.3-2012 (Revision to IEEE Std 802.3-2008)</em>, December, 1–0. doi:<a href="https://doi.org/10.1109/IEEESTD.2012.6419740">10.1109/IEEESTD.2012.6419740</a>.</p>
+</div>
+<div>
+<p>———. 2012b. “IEEE Standard for Information technology–Telecommunications and information exchange between systems Local and metropolitan area networks–Specific requirements Part 11: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) Specifications.” <em>IEEE Std 802.11-2012 (Revision of IEEE Std 802.11-2007)</em>, March, 1–2793. doi:<a href="https://doi.org/10.1109/IEEESTD.2012.6178212">10.1109/IEEESTD.2012.6178212</a>.</p>
+</div>
+<div>
+<p>Irvin, David R. 1991. “Monitoring the Performance of Commercial T1-Rate Transmission Service.” <em>IBM Journal of Research and Development</em> 35 (5.6). IBM: 805–14.</p>
+</div>
+<div>
+<p>ITU-R. 2005. “Allowable error performance for a satellite hypothetical reference digital path in the fixed-satellite service operating below 15 GHz when forming part of an international connection in an integrated services digital network.” S-Series: Fixed-satellite service. International Telecommunication Union.</p>
+</div>
+<div>
+<p>———. 2015. “P.1238: Propagation data and prediction methods for the planning of indoor radiocommunication systems and radio local area networks in the frequency range 300 MHz to 100 GHz.” Recommendation P.1238. jul: International Telecommunication Union.</p>
+</div>
+<div>
+<p>Jang, Ki-Young, Shuai Hao, Anmol Sheth, and Ramesh Govindan. 2011. “Snooze: energy management in 802.11n WLANs.” In <em>Proceedings of the Seventh Conference on Emerging Networking Experiments and Technologies on - Conext ’11</em>, 1–12. New York, New York, USA: ACM Press. doi:<a href="https://doi.org/10.1145/2079296.2079308">10.1145/2079296.2079308</a>.</p>
+</div>
+<div>
+<p>Jha, Vikas, and Rajive Bagrodia. 2000. “Simultaneous Events and Lookahead in Simulation Protocols.” <em>ACM Trans. Model. Comput. Simul.</em> 10 (3). New York, NY, USA: ACM: 241–67. doi:<a href="https://doi.org/10.1145/361026.361032">10.1145/361026.361032</a>.</p>
+</div>
+<div>
+<p>Jung, Eun-Sun, and N. H. Vaidya. 2002. “An Energy Efficient Mac Protocol for Wireless Lans.” In <em>INFOCOM 2002. Twenty-First Annual Joint Conference of the Ieee Computer and Communications Societies. Proceedings. Ieee</em>, 3:1756–64 vol.3. doi:<a href="https://doi.org/10.1109/INFCOM.2002.1019429">10.1109/INFCOM.2002.1019429</a>.</p>
+</div>
+<div>
+<p>Jung, Wonwoo, Chulkoo Kang, Chanmin Yoon, Donwon Kim, and Hojung Cha. 2012. “DevScope: A Nonintrusive and Online Power Analysis Tool for Smartphone Hardware Components.” In <em>Proceedings of the Eighth Ieee/Acm/Ifip International Conference on Hardware/Software Codesign and System Synthesis</em>, 353–62. ACM.</p>
+</div>
+<div>
+<p>Jyh-Cheng Chen, and Kai-wen Cheng. 2008. “EDCA/CA: Enhancement of IEEE 802.11e EDCA by Contention Adaption for Energy Efficiency.” <em>IEEE Transactions on Wireless Communications</em> 7 (8): 2866–70. doi:<a href="https://doi.org/10.1109/TWC.2008.070168">10.1109/TWC.2008.070168</a>.</p>
+</div>
+<div>
+<p>Kalic, G., I. Bojic, and M. Kusek. 2012. “Energy Consumption in Android Phones When Using Wireless Communication Technologies.” In <em>2012 Proceedings of the 35th International Convention Mipro</em>, 754–59.</p>
+</div>
+<div>
+<p>Kamerman, A., and L. Monteban. 1997. “WaveLAN-II: A high-performance wireless LAN for the unlicensed band.” <em>Bell Labs Technical Journal</em> 2 (3): 118–33. doi:<a href="https://doi.org/10.1002/bltj.2069">10.1002/bltj.2069</a>.</p>
+</div>
+<div>
+<p>Kamerman, Ad, and Leo Monteban. 1997. “WaveLAN-Ii: A High-Performance Wireless Lan for the Unlicensed Band.” <em>Bell Labs Technical Journal</em> 2 (3). Alcatel-Lucent: 118–33.</p>
+</div>
+<div>
+<p>Khan, Muhammad Owais, Vacha Dave, Yi-Chao Chen, Oliver Jensen, Lili Qiu, Apurv Bhartia, and Swati Rallapalli. 2013. “Model-Driven Energy-Aware Rate Adaptation.” In <em>Proceedings of the Fourteenth Acm International Symposium on Mobile Ad Hoc Networking and Computing</em>, 217–26. MobiHoc ’13. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/2491288.2491300">10.1145/2491288.2491300</a>.</p>
+</div>
+<div>
+<p>Kim, Dongwon, Wonwoo Jung, and Hojung Cha. 2013. “Runtime Power Estimation of Mobile Amoled Displays.” In <em>Design, Automation &amp; Test in Europe Conference &amp; Exhibition (Date), 2013</em>, 61–64. IEEE.</p>
+</div>
+<div>
+<p>Lauwens, Ben. 2017. <em>SimJulia.jl: Combined Continuous-Time / Discrete-Event Process Oriented Simulation Framework Written in Julia</em>. <a href="https://github.com/BenLauwens/SimJulia.jl" class="uri">https://github.com/BenLauwens/SimJulia.jl</a>.</p>
+</div>
+<div>
+<p>Lee, Jeongkeun, Wonho Kim, Sung-Ju Lee, Daehyung Jo, Jiho Ryu, Taekyoung Kwon, and Yanghee Choi. 2007. “An experimental study on the capture effect in 802.11a networks.” In <em>Proceedings of the the Second Acm International Workshop on Wireless Network Testbeds, Experimental Evaluation and Characterization - Wintech ’07</em>, 19. New York, New York, USA: ACM Press. doi:<a href="https://doi.org/10.1145/1287767.1287772">10.1145/1287767.1287772</a>.</p>
+</div>
+<div>
+<p>Li, Chi-Yu, Chunyi Peng, Songwu Lu, and Xinbing Wang. 2012. “Energy-based Rate Adaptation for 802.11n.” In <em>Proceedings of the 18th Annual International Conference on Mobile Computing and Networking</em>, 341–52. Mobicom ’12. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/2348543.2348585">10.1145/2348543.2348585</a>.</p>
+</div>
+<div>
+<p>Liu, Jiayang, and Lin Zhong. 2008. “Micro power management of active 802.11 interfaces.” In <em>Proceeding of the 6th International Conference on Mobile Systems, Applications, and Services - Mobisys ’08</em>, 146. New York, New York, USA: ACM Press. doi:<a href="https://doi.org/10.1145/1378600.1378617">10.1145/1378600.1378617</a>.</p>
+</div>
+<div>
+<p>Luke Tierney. 2016. <em>A Byte-Code Compiler for R</em>. Department of Statistics; Actuarial Science, University of Iowa. <a href="https://www.stat.uiowa.edu/~luke/R/compiler/compiler.pdf" class="uri">https://www.stat.uiowa.edu/~luke/R/compiler/compiler.pdf</a>.</p>
+</div>
+<div>
+<p>Mannweiler, C., M. Breitbach, H. Droste, I. L. Pavón, I. Ucar, P. Schneider, M. Doll, and J. R. Sanchez. 2017. “5G NORMA: System architecture for programmable multi-tenant 5G mobile networks.” In <em>2017 European Conference on Networks and Communications (Eucnc)</em>, 1–6. doi:<a href="https://doi.org/10.1109/EuCNC.2017.7980662">10.1109/EuCNC.2017.7980662</a>.</p>
+</div>
+<div>
+<p>Manweiler, Justin, and Romit Roy Choudhury. 2011. “Avoiding the Rush Hours: WiFi Energy Management via Traffic Isolation.” In <em>Proceedings of the 9th International Conference on Mobile Systems, Applications, and Services</em>, 253–66. ACM.</p>
+</div>
+<div>
+<p>Matloff, Norman. 2011. <em>The Art of R Programming: A Tour of Statistical Software Design</em>. 1st ed. San Francisco, CA, USA: No Starch Press.</p>
+</div>
+<div>
+<p>Mcgregor, A., and D. Smithies. 2017. “Rate adaptation for 802.11 wireless networks: Minstrel.” <a href="http://blog.cerowrt.org/papers/minstrel-sigcomm-final.pdf" class="uri">http://blog.cerowrt.org/papers/minstrel-sigcomm-final.pdf</a>.</p>
+</div>
+<div>
+<p>Mersmann, Olaf. 2015. <em>Microbenchmark: Accurate Timing Functions</em>. <a href="https://CRAN.R-project.org/package=microbenchmark" class="uri">https://CRAN.R-project.org/package=microbenchmark</a>.</p>
+</div>
+<div>
+<p>National Instruments. 2014. “Using a Unity Gain Buffer (Voltage Follower) with a DAQ Device.” White paper. <a href="http://www.ni.com/white-paper/4494/en/" class="uri">http://www.ni.com/white-paper/4494/en/</a>.</p>
+</div>
+<div>
+<p>Neyman, Jerzy. 1939. “On a New Class of ’Contagious’ Distributions, Applicable in Entomology and Bacteriology.” <em>The Annals of Mathematical Statistics</em> 10 (1). JSTOR: 35–57.</p>
+</div>
+<div>
+<p>Nurminen, Jukka K., and Janne Noyranen. 2008. “Energy-Consumption in Mobile Peer-to-Peer - Quantitative Results from File Sharing.” In <em>2008 5th Ieee Consumer Communications and Networking Conference</em>, 729–33. IEEE. doi:<a href="https://doi.org/10.1109/ccnc08.2007.167">10.1109/ccnc08.2007.167</a>.</p>
+</div>
+<div>
+<p>Oliner, Adam J, Anand P Iyer, Eemil Lagerspetz, Sasu Tarkoma, and Ion Stoica. 2012. “Collaborative Energy Debugging for Mobile Devices.” In <em>HotDep</em>.</p>
+</div>
+<div>
+<p>Palacios, R., F. Granelli, D. Gajic, C. Liß, and D. Kliazovich. 2013. “An Energy-Efficient Point Coordination Function Using Bidirectional Transmissions of Fixed Duration for Infrastructure Ieee 802.11 Wlans.” In <em>2013 Ieee International Conference on Communications (Icc)</em>, 2443–8. doi:<a href="https://doi.org/10.1109/ICC.2013.6654898">10.1109/ICC.2013.6654898</a>.</p>
+</div>
+<div>
+<p>Palacios, R., F. Granelli, D. Kliazovich, L. Alonso, and J. Alonso-Zarate. 2013. “An Energy Efficient Distributed Coordination Function Using Bidirectional Transmissions and Sleep Periods for Ieee 802.11 Wlans.” In <em>2013 Ieee Global Communications Conference (Globecom)</em>, 1619–25. doi:<a href="https://doi.org/10.1109/GLOCOM.2013.6831305">10.1109/GLOCOM.2013.6831305</a>.</p>
+</div>
+<div>
+<p>Palacios, R., G. M. Mekonnen, J. Alonso-Zarate, D. Kliazovich, and F. Granelli. 2015. “Analysis of an Energy-Efficient Mac Protocol Based on Polling for Ieee 802.11 Wlans.” In <em>2015 Ieee International Conference on Communications (Icc)</em>, 5941–7. doi:<a href="https://doi.org/10.1109/ICC.2015.7249269">10.1109/ICC.2015.7249269</a>.</p>
+</div>
+<div>
+<p>Palacios-Trujillo, R., J. Alonso-Zarate, F. Granelli, F. H. P. Fitzek, and N. L. S. da Fonseca. 2015. “Network Coding and Duty Cycling in Ieee 802.11 Wireless Networks with Bidirectional Transmissions and Sleeping Periods.” In <em>2015 Ieee Global Communications Conference (Globecom)</em>, 1–7. doi:<a href="https://doi.org/10.1109/GLOCOM.2015.7417689">10.1109/GLOCOM.2015.7417689</a>.</p>
+</div>
+<div>
+<p>Pathak, Abhinav, Y Charlie Hu, Ming Zhang, Paramvir Bahl, and Yi-Min Wang. 2011. “Fine-Grained Power Modeling for Smartphones Using System Call Tracing.” In <em>Proceedings of the Sixth Conference on Computer Systems</em>, 153–68. ACM.</p>
+</div>
+<div>
+<p>Pathak, Abhinav, Y. Charlie Hu, and Ming Zhang. 2011. “Bootstrapping energy debugging on smartphones.” In <em>Proceedings of the 10th Acm Workshop on Hot Topics in Networks - Hotnets ’11</em>, 1–6. New York, New York, USA: ACM Press. doi:<a href="https://doi.org/10.1145/2070562.2070567">10.1145/2070562.2070567</a>.</p>
+</div>
+<div>
+<p>Pebesma, Edzer, and Thomas Mailund. 2018. <em>Units: Measurement Units for R Vectors</em>. <a href="https://CRAN.R-project.org/package=units" class="uri">https://CRAN.R-project.org/package=units</a>.</p>
+</div>
+<div>
+<p>Pebesma, Edzer, Thomas Mailund, and James Hiebert. 2016. “Measurement Units in R.” <em>The R Journal</em> 8 (2): 486–94. <a href="https://journal.r-project.org/archive/2016/RJ-2016-061/index.html" class="uri">https://journal.r-project.org/archive/2016/RJ-2016-061/index.html</a>.</p>
+</div>
+<div>
+<p>Perez-Costa, X., and D. Camps-Mur. 2010. “IEEE 802.11E QoS and power saving features overview and analysis of combined performance [Accepted from Open Call.” <em>IEEE Wireless Communications</em> 17 (4): 88–96. doi:<a href="https://doi.org/10.1109/MWC.2010.5547926">10.1109/MWC.2010.5547926</a>.</p>
+</div>
+<div>
+<p>Prasad, Rajan, Abhishek Kumar, Rahul Bhatia, and Bheemarjuna Reddy Tamma. 2014. “Ubersleep: An innovative mechanism to save energy in IEEE 802.11 based WLANs.” In <em>2014 Ieee International Conference on Electronics, Computing and Communication Technologies (Conecct)</em>, 1–6. IEEE. doi:<a href="https://doi.org/10.1109/CONECCT.2014.6740349">10.1109/CONECCT.2014.6740349</a>.</p>
+</div>
+<div>
+<p>Qiao, Daji, Sunghyun Choi, and K.G. Shin. 2002. “Goodput analysis and link adaptation for IEEE 802.11a wireless LANs.” <em>Mobile Computing, IEEE Transactions on</em> 1 (4): 278–92. doi:<a href="https://doi.org/10.1109/TMC.2002.1175541">10.1109/TMC.2002.1175541</a>.</p>
+</div>
+<div>
+<p>Qiao, Daji, Sunghyun Choi, Amit Jain, and Kang G Shin. 2003. “MiSer: An Optimal Low-Energy Transmission Strategy for Ieee 802.11 a/H.” In <em>Proceedings of the 9th Annual International Conference on Mobile Computing and Networking</em>, 161–75. ACM.</p>
+</div>
+<div>
+<p>R Core Team. 2017. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
+</div>
+<div>
+<p>Rice, Andrew, and Simon Hay. 2010. “Measuring mobile phone energy consumption for 802.11 wireless networking.” <em>Pervasive and Mobile Computing</em> 6 (6). Elsevier Science Publishers B. V.: 593–606. doi:<a href="https://doi.org/10.1016/j.pmcj.2010.07.005">10.1016/j.pmcj.2010.07.005</a>.</p>
+</div>
+<div>
+<p>Richart, M., J. Visca, and J. Baliosian. 2015. “Rate, Power and Carrier-Sense Threshold Coordinated Management for High-Density Ieee 802.11 Networks.” In <em>2015 Ifip/Ieee International Symposium on Integrated Network Management (Im)</em>, 139–46. doi:<a href="https://doi.org/10.1109/INM.2015.7140286">10.1109/INM.2015.7140286</a>.</p>
+</div>
+<div>
+<p>Riggio, Roberto, Cigdem Sengul, Karina Mabell Gomez, and Tinku Rasheed. 2012. “Energino: Energy Saving Tips for Your Wireless Network.” In <em>Proceedings of the Acm Sigcomm 2012 Conference on Applications, Technologies, Architectures, and Protocols for Computer Communication</em>, 273–74. ACM.</p>
+</div>
+<div>
+<p>Rönngren, Robert, and Michael Liljenstam. 1999. “On Event Ordering in Parallel Discrete Event Simulation.” In <em>Proceedings of the Thirteenth Workshop on Parallel and Distributed Simulation</em>, 38–45. PADS ’99. Washington, DC, USA: IEEE Computer Society.</p>
+</div>
+<div>
+<p>Samdanis, Konstantinos, Peter Rost, Andreas Maeder, Michela Meo, and Christos Verikoukis. 2015. <em>Green Communications: Principles, Concepts and Practice</em>. Wiley &amp; Sons.</p>
+</div>
+<div>
+<p>Santhapuri, Naveen, Romit Roy Choudhury, Justin Manweiler, Srihari Nelakuduti, Souvik Sen, and Kamesh Munagala. 2008. “Message in Message Mim: A Case for Reordering Transmissions in Wireless Networks.” In <em>In Hotnets</em>.</p>
+</div>
+<div>
+<p>Schulman, Aaron, Dave Levin, and Neil Spring. 2009. “CRAWDAD Data Set Umd/Sigcomm2008 (V. 2009-03-02).” <a href="http://crawdad.org/umd/sigcomm2008/" class="uri">http://crawdad.org/umd/sigcomm2008/</a>.</p>
+</div>
+<div>
+<p>Serrano, P., A. Garcia-Saavedra, G. Bianchi, A. Banchs, and A. Azcorra. 2015. “Per-Frame Energy Consumption in 802.11 Devices and Its Implication on Modeling and Design.” <em>IEEE/ACM Transactions on Networking</em> 23 (4): 1243–56. doi:<a href="https://doi.org/10.1109/TNET.2014.2322262">10.1109/TNET.2014.2322262</a>.</p>
+</div>
+<div>
+<p>Serrano, Pablo, Antonio de la Oliva, Paul Patras, Vincenzo Mancuso, and Albert Banchs. 2012. “Greening wireless communications: Status and future directions.” <em>Computer Communications</em> 35 (14): 1651–61. doi:<a href="https://doi.org/10.1016/j.comcom.2012.06.011">10.1016/j.comcom.2012.06.011</a>.</p>
+</div>
+<div>
+<p>Sharma, Abhishek B., Leana Golubchik, Ramesh Govindan, and Michael J. Neely. 2009. “Dynamic data compression in multi-hop wireless networks.” <em>ACM SIGMETRICS Performance Evaluation Review</em> 37 (1). ACM: 145–45–156–56. doi:<a href="https://doi.org/10.1145/2492101.1555367">10.1145/2492101.1555367</a>.</p>
+</div>
+<div>
+<p>Shih, Eugene, Paramvir Bahl, and Michael J. Sinclair. 2002. “Wake on wireless: an event driven energy saving strategy for battery operated devices.” In <em>Proceedings of the 8th Annual International Conference on Mobile Computing and Networking - Mobicom ’02</em>, 160. New York, New York, USA: ACM Press. doi:<a href="https://doi.org/10.1145/570645.570666">10.1145/570645.570666</a>.</p>
+</div>
+<div>
+<p>Tarkoma, S., M. Siekkinen, E. Lagerspetz, and Y. Xiao. 2014. <em>Smartphone Energy Consumption: Modeling and Optimization</em>. Smartphone Energy Consumption: Modeling and Optimization. Cambridge University Press.</p>
+</div>
+<div>
+<p>Team SimPy. 2017. <em>SimPy: Discrete-Event Simulation for Python</em>. <a href="https://simpy.readthedocs.io/en/latest/" class="uri">https://simpy.readthedocs.io/en/latest/</a>.</p>
+</div>
+<div>
+<p>Tiwari, Vivek, Sharad Malik, Andrew Wolfe, and Mike Tien-Chien Lee. 1996. “Instruction level power analysis and optimization of software.” <em>Journal of VLSI Signal Processing Systems for Signal, Image, and Video Technology</em> 13 (2-3). Kluwer Academic Publishers: 223–38. doi:<a href="https://doi.org/10.1007/BF01130407">10.1007/BF01130407</a>.</p>
+</div>
+<div>
+<p>Ucar, Iñaki. 2018. <em>Errors: Uncertainty Propagation for R Vectors</em>. <a href="https://CRAN.R-project.org/package=errors" class="uri">https://CRAN.R-project.org/package=errors</a>.</p>
+</div>
+<div>
+<p>Ucar, Iñaki, and Arturo Azcorra. 2015. “Deseeding energy consumption of network stacks.” In <em>IEEE 1st International Forum on Research and Technologies for Society and Industry Leveraging a Better Tomorrow (Rtsi)</em>, 7–16. doi:<a href="https://doi.org/10.1109/RTSI.2015.7325085">10.1109/RTSI.2015.7325085</a>.</p>
+</div>
+<div>
+<p>Ucar, Iñaki, and Bart Smeets. 2018. <em>Simmer: Discrete-Event Simulation for R</em>. <a href="https://CRAN.R-project.org/package=simmer" class="uri">https://CRAN.R-project.org/package=simmer</a>.</p>
+</div>
+<div>
+<p>Ucar, Iñaki, Arturo Azcorra, and Albert Banchs. 2014. “Deseeding Energy Consumption of Network Stacks.” In <em>6th Annual International Imdea Networks Workshop</em>.</p>
+</div>
+<div>
+<p>Ucar, Iñaki, Carlos Donato, Pablo Serrano, Andres Garcia-Saavedra, Arturo Azcorra, and Albert Banchs. 2016. “Revisiting 802.11 Rate Adaptation from Energy Consumption’s Perspective.” In <em>Proceedings of the 19th Acm International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems</em>, 27–34. MSWiM ’16. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/2988287.2989149">10.1145/2988287.2989149</a>.</p>
+</div>
+<div>
+<p>———. 2018. “On the energy efficiency of rate and transmission power control in 802.11.” <em>Computer Communications</em> 117 (February): 164–74. doi:<a href="https://doi.org/10.1016/j.comcom.2017.07.002">10.1016/j.comcom.2017.07.002</a>.</p>
+</div>
+<div>
+<p>Ucar, Iñaki, José Alberto Hernández, Pablo Serrano, and Arturo Azcorra. 2018. “Design and Analysis of 5G Scenarios with simmer: An R Package for Fast DES Prototyping.” <em>IEEE Communications Magazine</em>. doi:<a href="https://doi.org/10.1109/MCOM.2018.1700960">10.1109/MCOM.2018.1700960</a>.</p>
+</div>
+<div>
+<p>Ucar, Iñaki, Edzer Pebesma, and Arturo Azcorra. 2018. “Measurement Errors in R.” <em>R Journal</em> (submitted). <a href="https://arxiv.org/abs/1804.08552" class="uri">https://arxiv.org/abs/1804.08552</a>.</p>
+</div>
+<div>
+<p>Ucar, Iñaki, Bart Smeets, and Arturo Azcorra. 2018. “simmer: Discrete-Event Simulation for R.” <em>Journal of Statistical Software</em> (accepted for publication). <a href="https://arxiv.org/abs/1705.09746" class="uri">https://arxiv.org/abs/1705.09746</a>.</p>
+</div>
+<div>
+<p>Vaidya, N.H. 2002. “An energy efficient MAC protocol for wireless LANs.” In <em>Proceedings.Twenty-First Annual Joint Conference of the Ieee Computer and Communications Societies</em>, 3:1756–64. IEEE. doi:<a href="https://doi.org/10.1109/INFCOM.2002.1019429">10.1109/INFCOM.2002.1019429</a>.</p>
+</div>
+<div>
+<p>Wang, Le, and Jukka Manner. 2010. “Energy Consumption Analysis of WLAN, 2G and 3G interfaces.” In <em>2010 Ieee/Acm Int’l Conference on Green Computing and Communications &amp; Int’l Conference on Cyber, Physical and Social Computing</em>, 300–307. IEEE. doi:<a href="https://doi.org/10.1109/GreenCom-CPSCom.2010.81">10.1109/GreenCom-CPSCom.2010.81</a>.</p>
+</div>
+<div>
+<p>Wang, Wei, Wai Kay Leong, and Ben Leong. 2014. “Potential Pitfalls of the Message in Message Mechanism in Modern 802.11 Networks.” In <em>Proceedings of the 9th Acm International Workshop on Wireless Network Testbeds, Experimental Evaluation and Characterization</em>, 41–48. WiNTECH ’14. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/2643230.2643231">10.1145/2643230.2643231</a>.</p>
+</div>
+<div>
+<p>Weingartner, E., H. vom Lehn, and K. Wehrle. 2009. “A Performance Comparison of Recent Network Simulators.” In <em>2009 Ieee International Conference on Communications</em>, 1–5. doi:<a href="https://doi.org/10.1109/ICC.2009.5198657">10.1109/ICC.2009.5198657</a>.</p>
+</div>
+<div>
+<p>Wickham, Hadley, and Winston Chang. 2016. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2" class="uri">https://CRAN.R-project.org/package=ggplot2</a>.</p>
+</div>
+<div>
+<p>Wickham, Hadley, and Romain Francois. 2017. <em>Dplyr: A Grammar of Data Manipulation</em>. <a href="https://CRAN.R-project.org/package=dplyr" class="uri">https://CRAN.R-project.org/package=dplyr</a>.</p>
+</div>
+<div>
+<p>Wong, Starsky H. Y., Hao Yang, Songwu Lu, and Vaduvur Bharghavan. 2006. “Robust Rate Adaptation for 802.11 Wireless Networks.” In <em>Proceedings of the 12th Annual International Conference on Mobile Computing and Networking</em>, 146–57. MobiCom ’06. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/1161089.1161107">10.1145/1161089.1161107</a>.</p>
+</div>
+<div>
+<p>Xiao, Y., R. S. Kalyanaraman, and A. Yla-Jaaski. 2008. “Energy Consumption of Mobile YouTube: Quantitative Measurement and Analysis.” In <em>2008 the Second International Conference on Next Generation Mobile Applications, Services, and Technologies</em>, 61–69. doi:<a href="https://doi.org/10.1109/NGMAST.2008.26">10.1109/NGMAST.2008.26</a>.</p>
+</div>
+<div>
+<p>Xu, Fengyuan, Yunxin Liu, Qun Li, and Yongguang Zhang. 2013. “V-Edge: Fast Self-Constructive Power Modeling of Smartphones Based on Battery Voltage Dynamics.” In <em>Nsdi</em>, 13:43–56.</p>
+</div>
+<div>
+<p>Zhang, Lide, Birjodh Tiwana, Zhiyun Qian, Zhaoguang Wang, Robert P Dick, Zhuoqing Morley Mao, and Lei Yang. 2010. “Accurate Online Power Estimation and Automatic Battery Behavior Based Power Model Generation for Smartphones.” In <em>Proceedings of the Eighth Ieee/Acm/Ifip International Conference on Hardware/Software Codesign and System Synthesis</em>, 105–14. ACM.</p>
+</div>
+<div>
+<p>Zhang, Xinyu, and Kang G. Shin. 2012. “E-MiLi: Energy-Minimizing Idle Listening in Wireless Networks.” <em>IEEE Transactions on Mobile Computing</em> 11 (9): 1441–54. doi:<a href="https://doi.org/10.1109/TMC.2012.112">10.1109/TMC.2012.112</a>.</p>
+</div>
+<div>
+<p>Zhang, Yifan, Xudong Wang, Xuanzhe Liu, Yunxin Liu, Łi Zhuang, and Feng Zhao. 2013. “Towards Better Cpu Power Management on Multicore Smartphones.” In <em>Proceedings of the Workshop on Power-Aware Computing and Systems</em>, 11. ACM.</p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="performance-evaluation-of-simmer.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["thesis.pdf"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

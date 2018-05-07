@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Energy Efficiency in Wireless Communications for Mobile User Devices</title>
+  <meta name="description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  
+  <meta name="twitter:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  
+
+<meta name="author" content="Iñaki Úcar">
+
+
+<meta name="date" content="2018-05-07">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="ch-02.html">
+<link rel="next" href="ch-04.html">
+<style type="text/css">
+p.abstract{
+  text-align: center;
+  font-weight: bold;
+}
+div.abstract{
+  margin: auto;
+  width: 90%;
+}
+</style>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Contents</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#cross-factor-towards-a-new-energy-model"><i class="fa fa-check"></i><b>1.1</b> Cross-Factor: Towards a New Energy Model</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#micro-sleep-opportunities-in-802.11"><i class="fa fa-check"></i><b>1.2</b> Micro-Sleep Opportunities in 802.11</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#rate-adaptation-and-power-control-in-802.11"><i class="fa fa-check"></i><b>1.3</b> Rate Adaptation and Power Control in 802.11</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#applied-simulation-modelling-for-energy-efficiency"><i class="fa fa-check"></i><b>1.4</b> Applied Simulation Modelling for Energy Efficiency</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#thesis-overview"><i class="fa fa-check"></i><b>1.5</b> Thesis Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-02.html"><a href="ch-02.html"><i class="fa fa-check"></i><b>2</b> Related Work</a><ul>
+<li class="chapter" data-level="2.1" data-path="ch-02.html"><a href="ch-02.html#energy-profiling-for-wireless-communications"><i class="fa fa-check"></i><b>2.1</b> Energy Profiling for Wireless Communications</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-02.html"><a href="ch-02.html#energy-consumption-of-network-stacks"><i class="fa fa-check"></i><b>2.2</b> Energy Consumption of Network Stacks</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-02.html"><a href="ch-02.html#micro-sleep-opportunities-in-802.11-1"><i class="fa fa-check"></i><b>2.3</b> Micro-Sleep Opportunities in 802.11</a></li>
+<li class="chapter" data-level="2.4" data-path="ch-02.html"><a href="ch-02.html#rate-adaptation-and-power-control-in-802.11-1"><i class="fa fa-check"></i><b>2.4</b> Rate Adaptation and Power Control in 802.11</a></li>
+<li class="chapter" data-level="2.5" data-path="ch-02.html"><a href="ch-02.html#discrete-event-simulation-of-network-systems"><i class="fa fa-check"></i><b>2.5</b> Discrete-Event Simulation of Network Systems</a></li>
+</ul></li>
+<li class="part"><span><b>I Experimentation</b></span></li>
+<li class="chapter" data-level="3" data-path="ch-03.html"><a href="ch-03.html"><i class="fa fa-check"></i><b>3</b> A Comprehensive Energy Measurement Framework</a><ul>
+<li class="chapter" data-level="3.1" data-path="ch-03.html"><a href="ch-03.html#instrumentation"><i class="fa fa-check"></i><b>3.1</b> Instrumentation</a></li>
+<li class="chapter" data-level="3.2" data-path="ch-03.html"><a href="ch-03.html#measurement-and-uncertainty-analysis"><i class="fa fa-check"></i><b>3.2</b> Measurement and Uncertainty Analysis</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="ch-03.html"><a href="ch-03.html#propagation-of-uncertainty"><i class="fa fa-check"></i><b>3.2.1</b> Propagation of Uncertainty</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ch-03.html"><a href="ch-03.html#reporting-uncertainty"><i class="fa fa-check"></i><b>3.2.2</b> Reporting Uncertainty</a></li>
+<li class="chapter" data-level="3.2.3" data-path="ch-03.html"><a href="ch-03.html#automated-uncertainty-handling-in-r-the-errors-package"><i class="fa fa-check"></i><b>3.2.3</b> Automated Uncertainty Handling in R: The <code>errors</code> Package</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ch-03.html"><a href="ch-03.html#whole-device-measurements"><i class="fa fa-check"></i><b>3.3</b> Whole-Device Measurements</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="ch-03.html"><a href="ch-03.html#validation"><i class="fa fa-check"></i><b>3.3.1</b> Validation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="ch-03.html"><a href="ch-03.html#per-component-measurements"><i class="fa fa-check"></i><b>3.4</b> Per-Component Measurements</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="ch-03.html"><a href="ch-03.html#characterisation-of-a-cots-device"><i class="fa fa-check"></i><b>3.4.1</b> Characterisation of a COTS Device</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="ch-03.html"><a href="ch-03.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch-04.html"><a href="ch-04.html"><i class="fa fa-check"></i><b>4</b> Deseeding Energy Consumption of Network Stacks</a><ul>
+<li class="chapter" data-level="4.1" data-path="ch-04.html"><a href="ch-04.html#anatomy-of-a-laptop-computer"><i class="fa fa-check"></i><b>4.1</b> Anatomy of a Laptop Computer</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-04.html"><a href="ch-04.html#cross-factor-separating-the-wheat-from-the-chaff"><i class="fa fa-check"></i><b>4.2</b> Cross-Factor: Separating the Wheat from the Chaff</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-04.html"><a href="ch-04.html#power-consumption-in-unattended-idle-mode"><i class="fa fa-check"></i><b>4.3</b> Power Consumption in Unattended Idle Mode</a></li>
+<li class="chapter" data-level="4.4" data-path="ch-04.html"><a href="ch-04.html#power-consumption-with-full-cpuidle-subsystem"><i class="fa fa-check"></i><b>4.4</b> Power Consumption with Full <code>cpuidle</code> Subsystem</a></li>
+<li class="chapter" data-level="4.5" data-path="ch-04.html"><a href="ch-04.html#exploring-the-cpuidle-subsystem"><i class="fa fa-check"></i><b>4.5</b> Exploring the <code>cpuidle</code> Subsystem</a></li>
+<li class="chapter" data-level="4.6" data-path="ch-04.html"><a href="ch-04.html#summary-1"><i class="fa fa-check"></i><b>4.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ch-05.html"><a href="ch-05.html"><i class="fa fa-check"></i><b>5</b> Leveraging Micro-Sleep Opportunities in 802.11</a><ul>
+<li class="chapter" data-level="5.1" data-path="ch-05.html"><a href="ch-05.html#state-transition-times"><i class="fa fa-check"></i><b>5.1</b> State Transition Times in 802.11 Cards</a></li>
+<li class="chapter" data-level="5.2" data-path="ch-05.html"><a href="ch-05.html#protocol-analysis-and-practical-issues"><i class="fa fa-check"></i><b>5.2</b> Protocol Analysis and Practical Issues</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="ch-05.html"><a href="ch-05.html#identifying-potential-micro-sleep-opportunities"><i class="fa fa-check"></i><b>5.2.1</b> Identifying Potential Micro-Sleep Opportunities</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ch-05.html"><a href="ch-05.html#impact-of-capture-effect"><i class="fa fa-check"></i><b>5.2.2</b> Impact of Capture Effect</a></li>
+<li class="chapter" data-level="5.2.3" data-path="ch-05.html"><a href="ch-05.html#impact-of-errors-in-the-mac-header"><i class="fa fa-check"></i><b>5.2.3</b> Impact of Errors in the MAC Header</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="ch-05.html"><a href="ch-05.html#munap-algorithm"><i class="fa fa-check"></i><b>5.3</b> <span class="math inline">\(\mu\)</span>Nap Algorithm</a></li>
+<li class="chapter" data-level="5.4" data-path="ch-05.html"><a href="ch-05.html#performance-evaluation"><i class="fa fa-check"></i><b>5.4</b> Performance Evaluation</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="ch-05.html"><a href="ch-05.html#evaluation-with-real-traces"><i class="fa fa-check"></i><b>5.4.1</b> Evaluation with Real Traces</a></li>
+<li class="chapter" data-level="5.4.2" data-path="ch-05.html"><a href="ch-05.html#impact-of-timing-constraints"><i class="fa fa-check"></i><b>5.4.2</b> Impact of Timing Constraints</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="ch-05.html"><a href="ch-05.html#summary-2"><i class="fa fa-check"></i><b>5.5</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>II Mathematical Modelling</b></span></li>
+<li class="chapter" data-level="6" data-path="ch-06.html"><a href="ch-06.html"><i class="fa fa-check"></i><b>6</b> Rate Adaptation and Power Control in 802.11</a><ul>
+<li class="chapter" data-level="6.1" data-path="ch-06.html"><a href="ch-06.html#joint-goodput-energy-model"><i class="fa fa-check"></i><b>6.1</b> Joint Goodput-Energy Model</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-06.html"><a href="ch-06.html#numerical-results"><i class="fa fa-check"></i><b>6.2</b> Numerical Results</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="ch-06.html"><a href="ch-06.html#optimal-goodput"><i class="fa fa-check"></i><b>6.2.1</b> Optimal Goodput</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ch-06.html"><a href="ch-06.html#extension-of-the-energy-parametrisation"><i class="fa fa-check"></i><b>6.2.2</b> Extension of the Energy Parametrisation</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ch-06.html"><a href="ch-06.html#energy-consumption"><i class="fa fa-check"></i><b>6.2.3</b> Energy Consumption</a></li>
+<li class="chapter" data-level="6.2.4" data-path="ch-06.html"><a href="ch-06.html#energy-efficiency-vs.optimal-goodput"><i class="fa fa-check"></i><b>6.2.4</b> Energy Efficiency vs. Optimal Goodput</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ch-06.html"><a href="ch-06.html#discussion"><i class="fa fa-check"></i><b>6.3</b> Discussion</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="ch-06.html"><a href="ch-06.html#sensitivity-to-energy-parameter-scaling"><i class="fa fa-check"></i><b>6.3.1</b> Sensitivity to Energy Parameter Scaling</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ch-06.html"><a href="ch-06.html#heuristics-for-ra-tpc-algorithms"><i class="fa fa-check"></i><b>6.3.2</b> Heuristics for RA-TPC Algorithms</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="ch-06.html"><a href="ch-06.html#summary-3"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>III Simulation</b></span></li>
+<li class="chapter" data-level="7" data-path="ch-07.html"><a href="ch-07.html"><i class="fa fa-check"></i><b>7</b> Performance of RA-TPC Algorithms in 802.11</a><ul>
+<li class="chapter" data-level="7.1" data-path="ch-07.html"><a href="ch-07.html#algorithms-considered"><i class="fa fa-check"></i><b>7.1</b> Algorithms Considered</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-07.html"><a href="ch-07.html#simulation-scenario"><i class="fa fa-check"></i><b>7.2</b> Simulation Scenario</a></li>
+<li class="chapter" data-level="7.3" data-path="ch-07.html"><a href="ch-07.html#results-and-discussion"><i class="fa fa-check"></i><b>7.3</b> Results and Discussion</a></li>
+<li class="chapter" data-level="7.4" data-path="ch-07.html"><a href="ch-07.html#conservativeness-at-mode-transitions"><i class="fa fa-check"></i><b>7.4</b> Conservativeness at Mode Transitions</a></li>
+<li class="chapter" data-level="7.5" data-path="ch-07.html"><a href="ch-07.html#summary-4"><i class="fa fa-check"></i><b>7.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ch-08.html"><a href="ch-08.html"><i class="fa fa-check"></i><b>8</b> A Novel Discrete-Event Simulation Framework</a><ul>
+<li class="chapter" data-level="8.1" data-path="ch-08.html"><a href="ch-08.html#the-simulation-core-design"><i class="fa fa-check"></i><b>8.1</b> The Simulation Core Design</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="ch-08.html"><a href="ch-08.html#terminology"><i class="fa fa-check"></i><b>8.1.1</b> Terminology</a></li>
+<li class="chapter" data-level="8.1.2" data-path="ch-08.html"><a href="ch-08.html#architecture"><i class="fa fa-check"></i><b>8.1.2</b> Architecture</a></li>
+<li class="chapter" data-level="8.1.3" data-path="ch-08.html"><a href="ch-08.html#the-event-queue"><i class="fa fa-check"></i><b>8.1.3</b> The Event Queue</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="ch-08.html"><a href="ch-08.html#a-brief-introduction-to-simmer"><i class="fa fa-check"></i><b>8.2</b> A Brief Introduction to <code>simmer</code></a></li>
+<li class="chapter" data-level="8.3" data-path="ch-08.html"><a href="ch-08.html#use-case-energy-efficiency-for-massive-iot"><i class="fa fa-check"></i><b>8.3</b> Use case: Energy Efficiency for Massive IoT</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-08.html"><a href="ch-08.html#summary-5"><i class="fa fa-check"></i><b>8.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ch-09.html"><a href="ch-09.html"><i class="fa fa-check"></i><b>9</b> Conclusions and Future Work</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="measurement-circuitry-schematics.html"><a href="measurement-circuitry-schematics.html"><i class="fa fa-check"></i><b>A</b> Measurement Circuitry Schematics</a></li>
+<li class="chapter" data-level="B" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html"><i class="fa fa-check"></i><b>B</b> Experimental Validation of RA-TPC Inefficiencies</a><ul>
+<li class="chapter" data-level="B.1" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html#experimental-setup"><i class="fa fa-check"></i><b>B.1</b> Experimental Setup</a></li>
+<li class="chapter" data-level="B.2" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html#methodology-and-results"><i class="fa fa-check"></i><b>B.2</b> Methodology and Results</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html"><i class="fa fa-check"></i><b>C</b> Performance Evaluation of <code>simmer</code></a><ul>
+<li class="chapter" data-level="C.1" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html#comparison-with-similar-frameworks"><i class="fa fa-check"></i><b>C.1</b> Comparison with Similar Frameworks</a></li>
+<li class="chapter" data-level="C.2" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html#the-cost-of-calling-r-from-c"><i class="fa fa-check"></i><b>C.2</b> The Cost of Calling R from C++</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">
+Licensed under <img alt="Creative Commons License" style="border-width:0;vertical-align:bottom" 
+src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Energy Efficiency in Wireless Communications for Mobile User Devices</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch:03" class="section level1">
+<h1><span class="header-section-number">3</span> A Comprehensive Energy Measurement Framework</h1>
+<p><span class="newthought">Energy measurements</span> are typically conducted in an <em>ad-hoc</em> manner, with hardware and software tools specifically designed for a particular use case, and thus for limited electrical specifications. In this thesis, we are interested in measuring from small hardware components, such as wireless interfaces, to <em>energy debugging</em> <span class="citation">(Pathak, Hu, and Zhang <a href="#ref-Pathak2011">2011</a>)</span>, which implies whole-device mesurements. At the same time, potential wireless devices range from wearables and smartphones to access points and laptop computers. As a result, a flexible and reusable energy measurement framework for wireless communications must be able to cover a wide spectrum of electrical specifications (current, voltage and power) without losing accuracy or precision.</p>
+<p>The main specifications for our framework are the following:</p>
+<ul>
+<li>High-accuracy, high-precision; in the range of mW.</li>
+<li>Avoid losing information between sampling periods, with events (transmission and reception of wireless frames) that last tens of microseconds.</li>
+<li>Support for a wide range of devices, from low- to high-powered devices, while keeping accuracy and precision.</li>
+<li>Support for synchronous measurements of multiple devices under test (DUTs), for network-related energy measurements (e.g., protocol/algorithm testing, energy optimisation of a network as a whole) as well as <em>stacked</em> measurements (e.g., measuring different components of a device at the same time).</li>
+</ul>
+<p>Based on the above, we fist describe the selected instrumentation. A brief discussion follows about how to handle measurements and their associated uncertainty. We develop a method for automatic propagation and representation of uncertainty within the R language <span class="citation">(R Core Team <a href="#ref-R-base">2017</a>)</span>. Then, a testbed for whole-device measurements is proposed and validated. Finally, a complementary setup for per-component measurements is described and demonstrated by characterising a wireless interface.</p>
+<div id="instrumentation" class="section level2">
+<h2><span class="header-section-number">3.1</span> Instrumentation</h2>
+<p>Although there are integrated solutions in the market, known as <em>power analysers</em>, these are expensive instruments mainly aimed at characterising AC power (e.g., power factor, harmonics). Instead, we are interested in (time varying) DC power, and breaking the problem into its constituent parts (i.e., power supply, signal adaptation and data acquisition) enables not only more flexibility, but a wider choice at lower prices.</p>
+<p>The most power-hungry devices within the scope of this thesis are laptop computers. Most of these devices rarely surpass the barrier of 100 W<a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a>. Therefore, we selected the Keithley 2304A DC Power Supply, which is optimised for testing battery-operated wireless communication devices<a href="#fn14" class="footnoteRef" id="fnref14"><sup>14</sup></a> that undergo substantial load changes for very short time intervals. This power supply simulates a battery’s response during a large load change by minimising the maximum drop in voltage and recovering to within 100 mV of the original voltage within 40 <span class="math inline">\(\mu\)</span>s.</p>
+<p>As the measurement device, we selected the National Instruments PCI-6289 card, a high-accuracy multifunction data acquisition (DAQ) device. It has 32 analogue inputs (16 differential or 32 single ended) with 7 input ranges optimised for 18-bit input accuracy, up to 625 kS/s single channel or 500 kS/s multi-channel (aggregate). The timing resolution is 50 ns with an accuracy of 50 ppm of sample rate.</p>
+<p>Finally, the required signals (current and voltage) must be extracted and adapted to the DAQ’s input specifications. A custom three-port circuit, specifically designed by our university’s Technical Office in Electronics, converts the current signal to voltage, and adapts the voltage signal to the DAQ’s input limits without loss of precision. Two distinct designs, with different input specifications, were built (see Appendix <a href="measurement-circuitry-schematics.html#measurement-circuitry-schematics">A</a> for further details).</p>
+
+<div class="figure" style="text-align: center"><span id="fig:circuit"></span>
+<img src="img/03/circuit.png" alt="Measurement circuit (simplified) devoted to extract and adapt the signals to the DAQ input requirements." width="50%" />
+<p class="caption">
+Figure 3.1: Measurement circuit (simplified) devoted to extract and adapt the signals to the DAQ input requirements.
+</p>
+</div>
+<p>Figure <a href="ch-03.html#fig:circuit">3.1</a> shows a simplified scheme of this circuit. The voltage drop in a small and high-precision resistor is amplified to measure the current signal. At the same time, a resistive divider couples the voltage signal. Considering that the DAQ card has certain settling time, it can be modelled as a small capacity which acts as a low pass filter. Thus, two buffers (voltage followers) are placed before the DAQ card to decrease the output impedance of the circuit <span class="citation">(National Instruments <a href="#ref-ni2014">2014</a>)</span>.</p>
+<p>A small command-line tool<a href="#fn15" class="footnoteRef" id="fnref15"><sup>15</sup></a> was developed to perform measurements on the DAQ card using the open-source Comedi<a href="#fn16" class="footnoteRef" id="fnref16"><sup>16</sup></a> drivers and libraries.</p>
+<p>Regarding the kernel instrumentation, we take advantage of SystemTap<a href="#fn17" class="footnoteRef" id="fnref17"><sup>17</sup></a>, an open-source infrastructure around the Linux kernel that dramatically simplifies information gathering on a running Linux system (kernel, modules and applications). It provides a scripting language for writing instrumentation. A SystemTap script is parsed into C code, compiled into a kernel module and hot-plugged into a live running system.</p>
+</div>
+<div id="measurement-and-uncertainty-analysis" class="section level2">
+<h2><span class="header-section-number">3.2</span> Measurement and Uncertainty Analysis</h2>
+<p>The International Vocabulary of Metrology (VIM) defines a <em>quantity</em> as follows <span class="citation">(BIPM et al. <a href="#ref-VIM:2012">2012</a>)</span>:</p>
+<blockquote>
+<p><em>A property of a phenomenon, body, or substance, where the property has a magnitude that can be expressed as a number and a reference</em>.</p>
+</blockquote>
+<p>where most typically the number is a <em>quantity value</em>, attributed to a <em>measurand</em> and experimentally obtained via some measurement procedure, and the reference is a <em>measurement unit</em>.</p>
+<p>Additionally, any quantity value must accommodate some indication about the quality of the measurement, a quantifiable attribute known as <em>uncertainty</em> (also traditionally known as <em>error</em>). The Guide to the Expression of Uncertainty in Measurement (GUM) defines <em>uncertainty</em> as follows <span class="citation">(BIPM et al. <a href="#ref-GUM:2008">2008</a>)</span>:</p>
+<p>0</p>
+<blockquote>
+<p><em>A parameter, associated with the result of a measurement, that characterises the dispersion of the values that could reasonably be attributed to the measurand</em>.</p>
+</blockquote>
+
+<p>Uncertainty can be mainly classified into <em>standard uncertainty</em>, which is the result of a direct measurement (e.g., electrical voltage measured with a voltmeter, or current measured with a amperimeter), and <em>combined standard uncertainty</em>, which is the result of an indirect measurement (i.e., the standard uncertainty when the result is derived from a number of other quantities by the means of some mathematical relationship; e.g., electrical power as a product of voltage and current). Therefore, provided a set of quantities with known uncertainties, the process of obtaining the uncertainty of a derived measurement is called <em>propagation of uncertainty</em>.</p>
+<p><span class="newthought">Traditionally</span>, computational systems have treated these three components (quantity values, measurement units and uncertainty) separately. Data consisted of bare numbers, and mathematical operations applied to them solely. Units were just metadata, and error propagation was an unpleasant task requiring additional effort and complex operations. Nowadays though, many software libraries have formalised <em>quantity calculus</em> as method of including units within the scope of mathematical operations, thus preserving dimensional correctness and protecting us from computing nonsensical combinations of quantities. However, these libraries rarely integrate uncertainty handling and propagation <span class="citation">(Flater <a href="#ref-Flatter:2018">2018</a>)</span>.</p>
+<p>Within the R environment, the <code>units</code> package <span class="citation">(Pebesma and Mailund <a href="#ref-CRAN:units">2018</a>; Pebesma, Mailund, and Hiebert <a href="#ref-Pebesma:2016:units">2016</a>)</span> defines a class for associating unit metadata to numeric vectors, which enables transparent quantity derivation, simplification and conversion. This approach is a very comfortable way of managing units with the added advantage of eliminating an entire class of potential programming mistakes. Unfortunately, neither <code>units</code> nor any other package address the integration of uncertainties into quantity calculus.</p>
+<p>In the following, we discuss propagation and reporting of uncertainty, and we present a framework for associating uncertainty metadata to R vectors, matrices and arrays, thus providing transparent, lightweight and automated propagation of uncertainty. This implementation also enables ongoing developments for integrating units and uncertainty handling into a complete solution.</p>
+<div id="propagation-of-uncertainty" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Propagation of Uncertainty</h3>
+<p>There are two main methods for propagation of uncertainty: the <em>Taylor series method</em> (TSM) and the <em>Monte Carlo method</em> (MCM). The TSM, also called the <em>delta method</em>, is based on a Taylor expansion of the mathematical expression that produces the output variables. As for the MCM, it is able to deal with generalised input distributions and propagates the error by Monte Carlo simulation.</p>
+<p>The TSM is a flexible method of propagation of uncertainty that can offer different degrees of approximation given different sets of assumptions. The most common and well-known form of TSM is a first-order TSM assuming normality, linearity and independence. In the following, we will provide a short description. A full derivation, discussion and examples can be found in <span class="citation">Arras (<a href="#ref-Arras:1998">1998</a>)</span>.</p>
+<p>Mathematically, an indirect measurement is obtained as a function of <span class="math inline">\(n\)</span> direct or indirect measurements, <span class="math inline">\(Y = f(X_1, ..., X_n)\)</span>, where the distribution of <span class="math inline">\(X_n\)</span> is unknown <em>a priori</em>. Usually, the sources of random variability are many, independent and probably unknown as well. Thus, the central limit theorem establishes that an addition of a sufficiently large number of random variables tends to a normal distribution. As a result, the <em>first assumption</em> states that <span class="math inline">\(X_n\)</span> are normally distributed.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:propagation"></span>
+<img src="03-testbed_files/figure-html/propagation-1.png" alt="Illustration of linearity in an interval \(\pm\) one standard deviation around the mean." width="480" />
+<p class="caption">
+Figure 3.2: Illustration of linearity in an interval <span class="math inline">\(\pm\)</span> one standard deviation around the mean.
+</p>
+</div>
+<p>The <em>second assumption</em> presumes linearity, i.e., that <span class="math inline">\(f\)</span> can be approximated by a first-order Taylor series expansion around <span class="math inline">\(\mu_{X_n}\)</span> (see Figure <a href="ch-03.html#fig:propagation">3.2</a>). Then, given a set of <span class="math inline">\(n\)</span> input variables <span class="math inline">\(X\)</span> and a set of <span class="math inline">\(m\)</span> output variables <span class="math inline">\(Y\)</span>, the first-order <em>error propagation law</em> establishes that</p>
+<span class="math display" id="eq:assumption2">\[\begin{equation}
+  \Sigma_Y = J_X \Sigma_X J_X^T \tag{3.1}
+\end{equation}\]</span>
+<p>where <span class="math inline">\(\Sigma\)</span> is the covariance matrix and <span class="math inline">\(J\)</span> is the Jacobian operator.</p>
+<p>Finally, the <em>third assumption</em> supposes independency among the uncertainty of the input variables. This means that the cross-covariances are considered to be zero, and the equation above can be simplified into the most well-known form of the first-order TSM:</p>
+<span class="math display" id="eq:TSM">\[\begin{equation}
+  \left(\Delta y\right)^2 = \sum_i \left(\frac{\partial f}{\partial x_i}\right)^2\cdot \left(\Delta x_i\right)^2 \tag{3.2}
+\end{equation}\]</span>
+<p>In practice, as recommended in the GUM, this first-order approximation is good even if <span class="math inline">\(f\)</span> is non-linear, provided that the non-linearity is negligible compared to the magnitude of the uncertainty, i.e., <span class="math inline">\(\mathbb{E}[f(X)]\approx f(\mathbb{E}[X])\)</span>. Also, this weaker condition is distribution-free: no assumptions are needed on the probability density functions (PDF) of <span class="math inline">\(X_n\)</span>, although they must be reasonably symmetric.</p>
+</div>
+<div id="reporting-uncertainty" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Reporting Uncertainty</h3>
+<p>The GUM defines four ways of reporting standard uncertainty and combined standard uncertainty. For instance, if the reported quantity is assumed to be a mass <span class="math inline">\(m_S\)</span> of nominal value 100 g:</p>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(m_S = 100.02147\)</span> g with (a combined standard uncertainty) <span class="math inline">\(u_c\)</span> = 0.35 mg.</li>
+<li><span class="math inline">\(m_S = 100.02147(35)\)</span> g, where the number in parentheses is the numerical value of (the combined standard uncertainty) <span class="math inline">\(u_c\)</span> referred to the corresponding last digits of the quoted result.</li>
+<li><span class="math inline">\(m_S = 100.02147(0.00035)\)</span> g, where the number in parentheses is the numerical value of (the combined standard uncertainty) <span class="math inline">\(u_c\)</span> expressed in the unit of the quoted result.</li>
+<li><span class="math inline">\(m_S = (100.02147 \pm 0.00035)\)</span> g, where the number following the symbol <span class="math inline">\(\pm\)</span> is the numerical value of (the combined standard uncertainty) <span class="math inline">\(u_c\)</span> and not a confidence interval.</li>
+</ol>
+</blockquote>
+<p>Schemes (2, 3) and (4) will be referred to as <em>parenthesis</em> notation and <em>plus-minus</em> notation respectively. Although (4) is a very extended notation, the GUM explicitly discourages its use to prevent confusion with confidence intervals. Throughout this document, we will be using (2) unless otherwise specified.</p>
+</div>
+<div id="automated-uncertainty-handling-in-r-the-errors-package" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> Automated Uncertainty Handling in R: The <code>errors</code> Package</h3>
+<p>Following the approach of the <code>units</code> package, this thesis develops a framework for automatic propagation and reporting of uncertainty: the <code>errors</code> package <span class="citation">(Ucar <a href="#ref-R-errors">2018</a>)</span>. This R package aims to provide easy and lightweight handling of measurements with errors, including propagation using the first-order TSM presented in the previous section and a formally sound representation. Errors, given as (combined) standard uncertainties, can be assigned to numeric vectors, matrices and arrays, and then all the mathematical and arithmetic operations are transparently applied to both the values and the associated errors. The following example sets a simple vector with a 5% of error:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(errors)
+
+x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span>
+<span class="kw">errors</span>(x) &lt;-<span class="st"> </span>x <span class="op">*</span><span class="st"> </span><span class="fl">0.05</span>
+x</code></pre></div>
+<pre><code>## Errors: 0.05 0.10 0.15 0.20 0.25
+## [1] 1 2 3 4 5</code></pre>
+<p>The <code>errors()</code> function assigns or retrieves a vector of errors, which is stored as an attribute of the class <code>errors</code>. Internally, the package provides S3 methods<a href="#fn18" class="footnoteRef" id="fnref18"><sup>18</sup></a> for the generics belonging to the groups <code>Math</code>, <code>Ops</code> and <code>Summary</code>, plus additional operations such as subsetting (<code>[</code>, <code>[&lt;-</code>, <code>[[</code>, <code>[[&lt;-</code>), concatenation (<code>c()</code>), differentiation (<code>diff</code>), row and column binding (<code>rbind</code>, <code>cbind</code>), or coercion to data frame and matrix.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data.frame</span>(x, <span class="dv">3</span><span class="op">*</span>x, x<span class="op">^</span><span class="dv">2</span>, <span class="kw">sin</span>(x), <span class="kw">cumsum</span>(x))</code></pre></div>
+<pre><code>##         x  X3...x    x.2   sin.x. cumsum.x.
+## 1 1.00(5)  3.0(2) 1.0(1)  0.84(3)   1.00(5)
+## 2  2.0(1)  6.0(3) 4.0(4)  0.91(4)    3.0(1)
+## 3  3.0(2)  9.0(5) 9.0(9)   0.1(1)    6.0(2)
+## 4  4.0(2) 12.0(6)  16(2)  -0.8(1)   10.0(3)
+## 5  5.0(2) 15.0(8)  25(2) -0.96(7)   15.0(4)</code></pre>
+<p>It is worth noting that both values and errors are stored with all the digits. However, when a single measurement or a column of measurements in a data frame are printed, the output is properly formatted to show a single significant digit for the error. This is achieved by providing S3 methods for <code>format()</code> and <code>print()</code>. The <em>parenthesis</em> notation is used by default, but this can be overridden through the appropriate option in order to use the <em>plus-minus</em> notation instead.</p>
+</div>
+</div>
+<div id="whole-device-measurements" class="section level2">
+<h2><span class="header-section-number">3.3</span> Whole-Device Measurements</h2>
+<p>Figure <a href="ch-03.html#fig:testbed">3.3</a> shows the proposed testbed for whole-device measurements. It comprises two laptop computers —the DUT and an access point (AP)— and a controller. The controller is a workstation with the DAQ card installed and it performs the energy measurements. At the same time, it sends commands to the DUT and AP through a wired connection and monitors the wireless connection between DUT and AP through a probe.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:testbed"></span>
+<img src="img/03/testbed.png" alt="Testbed for whole-device energy measurements. The custom circuit is the one sketched in Figure 3.1." width="478" />
+<p class="caption">
+Figure 3.3: Testbed for whole-device energy measurements. The <em>custom circuit</em> is the one sketched in Figure <a href="ch-03.html#fig:circuit">3.1</a>.
+</p>
+</div>
+<p><span class="newthought">The experimental methodology</span> to characterise the DUT’s energy parameters is as follows. Given a collection of network parameter values (modulation coding scheme or MCS, transmission power, packet size, framerate), we run steady experiments for several seconds in order to gather averaged measures. Each experiment comprises the steps shown in Figure <a href="ch-03.html#fig:sequence">3.4</a>.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:sequence"></span>
+<img src="img/03/sequence.png" alt="Measurement methodology. Time sequence of a whole-device experiment." width="50%" />
+<p class="caption">
+Figure 3.4: Measurement methodology. Time sequence of a whole-device experiment.
+</p>
+</div>
+<ol style="list-style-type: decimal">
+<li>AP and DUT are configured. The DUT connects to the wireless network created by the AP and checks the connectivity. Setting up this network in a clear channel is highly advisable to avoid interference. The 5 GHz band, with an 802.11a-capable card, has good candidates.</li>
+<li>The packet counters of the wireless interfaces are saved for later use.</li>
+<li>Receiver and transmitter are started. We use the <code>mgen</code><a href="#fn19" class="footnoteRef" id="fnref19"><sup>19</sup></a> traffic generator and a simple <code>netcat</code> at the receiver.</li>
+<li>The controller monitors the wireless channel and collects an energy trace that will be averaged later.</li>
+<li>Transmitter and Receiver are stopped.</li>
+<li>Because of the unreliability of the wireless medium, the packet counters, together with the monitoring information, are used to ensure that the experiment was successful (i.e., the traffic seen agrees with the configured parameters).</li>
+</ol>
+<div id="validation" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> Validation</h3>
+<p>In order to validate our measurement framework, several experiments were performed with one of the devices studied in <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span> as DUT. We selected the Soekris net4826-48 equipped with an Atheros AR5414-based 802.11a/b/g Mini-PCI card because it is the one with the largest cross-factor. The operating system (OS) was Linux Voyage with kernel 2.6.30 and the MadWifi driver v0.9.4.</p>
+<p>The first task was to perform the energy breakdown given in <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span> in transmission mode:</p>
+<dl>
+<dt>User space</dt>
+<dd>The Soekris generates packets using <code>mgen</code>, but they are discarded before being delivered to the OS, by using the <code>sink</code> device rather than <code>udp</code>.
+</dd>
+<dt>Kernel space</dt>
+<dd>Packets cross the network stack and are discarded in the driver, by commenting the <code>hardstart</code> MadWifi command that performs the actual delivery of the frame to the wireless network interface card (NIC).
+</dd>
+<dt>Wireless NIC</dt>
+<dd>Packets are transmitted, i.e., are delivered to the wireless medium.
+</dd>
+</dl>
+<p>The NoACK functionality from 802.11e was activated in order to avoid ACK receptions. Therefore, Equation <a href="introduction.html#eq:new-energy-model">(1.1)</a> can be simplified as follows to describe complete transmissions:</p>
+<span class="math display" id="eq:validation1">\[\begin{equation*}
+ \overline{P}(\tau, \lambda) = \rho_{id} + \rho_{tx}\tau + \gamma_{xg}\lambda
+ \tag{3.3}
+\end{equation*}\]</span>
+<p>Figure <a href="ch-03.html#fig:validation1">3.5</a> represents the equation above (red lines) and depicts how the energy toll splits across the processing chain with different parameters (blue and green lines). The dashed line depicts the idle consumption as a reference, <span class="math inline">\(\rho_{id}=3.65(1)\)</span> W.</p>
+
+
+<div class="figure" style="text-align: center"><span id="fig:validation1"></span>
+<img src="03-testbed_files/figure-html/validation1-1.png" alt=" " width="480" />
+<p class="caption">
+Figure 3.5: Power consumption breakdown vs. airtime.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:validation2"></span>
+<img src="03-testbed_files/figure-html/validation2-1.png" alt=" " width="480" />
+<p class="caption">
+Figure 3.6: Power consumption offset (<span class="math inline">\(\tau=0\)</span>) vs. framerate.
+</p>
+</div>
+<p>Indeed, these results are quite similar to <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span> and confirm that the cross-factor accounts for the largest part of the energy consumption. Moreover, <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span> reports that the cross-factor is <em>almost</em> independent of the packet size. Interestingly, our results have captured a small dependence that can be especially observed in the 600 fps case.</p>
+<p>Finally, we can derive the cross-factor value and compare it. Taking the offset of the red regression lines of Figure <a href="ch-03.html#fig:validation1">3.5</a>, we can plot Figure <a href="ch-03.html#fig:validation2">3.6</a> and fit these points with <span class="math inline">\(\tau=0\)</span>. This regression yields the values <span class="math inline">\(\rho_{id}=3.72(4)\)</span> W (<span class="math inline">\(3.65(1)\)</span> W measured) and <span class="math inline">\(\gamma_{xg}=1.46(7)\)</span> mJ, quite close to the values reported in <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span>.</p>
+</div>
+</div>
+<div id="per-component-measurements" class="section level2">
+<h2><span class="header-section-number">3.4</span> Per-Component Measurements</h2>
+<p>Figure <a href="ch-03.html#fig:testbed-card">3.7</a> shows the proposed testbed for per-component measurements. The component (a wireless card) is attached to the device through a flexible x1 PCI Express to Mini PCI Express adapter from Amfeltec. This adapter connects the PCI bus’ data channels to the host and provides an ATX port so that the wireless card can be supplied by an external power source.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:testbed-card"></span>
+<img src="img/03/testbed-card.png" alt="Testbed for per-component energy measurements." width="50%" />
+<p class="caption">
+Figure 3.7: Testbed for per-component energy measurements.
+</p>
+</div>
+<p>Here, the same PC holds the DAQ card. In this way, the operations sent to the wireless card and the energy measurements can be correlated using the same timebase, which is required for the next section. For other type of experiments, this requirement can be relaxed, and the DAQ card can be hosted in a separate machine.</p>
+<div id="characterisation-of-a-cots-device" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> Characterisation of a COTS Device</h3>
+<div id="state-consumption-parametrisation" class="section level5 unnumbered">
+<h5>State Consumption Parametrisation</h5>
+<p>In the following, we demonstrate a complete state parametrisation (power consumption in transmission, reception, overhearing, idle and sleep) of a commercial off-the-shelf (COTS) card: an Atheros AR9280-based 802.11a/b/g/n Half Mini-PCI Express card. All measurements (except for the sleep state) were taken with the wireless card associated to the AP in 11a mode to avoid any interfering traffic, and it was placed very close to the node to obtain the best possible signal quality. The reception of beacons is accounted in the baseline consumption (idle).</p>
+<p>The card under test performed transmissions/receptions to/from the AP at a constant rate and with fixed packet length. In order to avoid artifacts from the reception/transission of ACKs, UDP was used and the NoACK policy was enabled. Packet overhearing was tested by generating traffic of the same characteristics from a secondary STA placed in the same close range (<span class="math inline">\(\sim\)</span>cm). Under these conditions, several values of airtime percentage were swept. For each experiment, current and voltage signals were sampled at 100 kHz and the average power consumption was measured with a basic precision of 1 mW over intervals of 3 s.</p>
+<p>Regarding the sleep state, the card’s <code>ath9k</code> driver internally defines three states of operation: <em>awake</em>, <em>network sleep</em> and <em>full sleep</em>. A closer analysis reveals that the card is <em>awake</em>, or in <em>active state</em>, when it is operational (i.e., transmitting, receiving or in idle state, whether as part of an SSID or in monitor mode), and it is in <em>full sleep</em> state when it is not operational at all (i.e., interface down or up but not connected to any SSID). The <em>network sleep</em> state is used by the 802.11 Power Save (PS) mechanism, but essentially works in the same way as <em>full sleep</em>, that is, it turns off the main reference clock and switches to a secondary 32 kHz one. Therefore, we saw that <em>full sleep</em> and <em>network sleep</em> are the same state in terms of energy: they consume exactly the same power. The only difference is that <em>network sleep</em> sets up a tasklet to wake the interface periodically (to receive the traffic indication map), as required by the PS mode.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:power"></span>
+<img src="03-testbed_files/figure-html/power-1.png" alt="Atheros AR9280 power consumption in 11a mode." width="480" />
+<p class="caption">
+Figure 3.8: Atheros AR9280 power consumption in 11a mode.
+</p>
+</div>
+<p>Figure <a href="ch-03.html#fig:power">3.8</a> shows our results for transmission, reception and overhearing. Idle and sleep consumptions were measured independently, are depicted with gray horizontal lines for reference. As expected, power consumptions in transmission/reception/overhearing state are proportional to airtime, thus the power consumption of such operations can be easily estimated by extrapolating the regression line to the 100% of airtime (gray vertical line).</p>
+<p>These average values are shown in Table <a href="ch-03.html#tab:powert">3.1</a>. First of all, reception and overhearing consumptions are the same within the error, and they are close to idle consumption. Transmission power is more than two times larger than reception. Finally, the sleep state saves almost the 70% of the energy compared to idle/reception.</p>
+<table>
+<caption>
+<span id="tab:powert">Table 3.1: </span>Atheros AR9280 power consumption.
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+State
+</th>
+<th style="text-align:center;">
+Mode
+</th>
+<th style="text-align:center;">
+Channel
+</th>
+<th style="text-align:center;">
+MHz
+</th>
+<th style="text-align:left;">
+Power [W]
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+Transmission
+</td>
+<td style="text-align:center;vertical-align: middle !important;" rowspan="4">
+11a
+</td>
+<td style="text-align:center;vertical-align: middle !important;" rowspan="4">
+44
+</td>
+<td style="text-align:center;vertical-align: middle !important;" rowspan="4">
+20
+</td>
+<td style="text-align:left;">
+3.10(2)
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Reception
+</td>
+<td style="text-align:left;">
+1.373(1)
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Overhearing
+</td>
+<td style="text-align:left;">
+1.371(1)
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Idle
+</td>
+<td style="text-align:left;">
+1.292(2)
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Sleep
+</td>
+<td style="text-align:center;">
+<ul>
+<li></td>
+<td style="text-align:center;">
+<ul>
+<li></td>
+<td style="text-align:center;">
+<ul>
+<li></td>
+<td style="text-align:left;">
+0.424(2)
+</td>
+</tr>
+<tr>
+<td style="text-align:right;vertical-align: middle !important;" rowspan="2">
+Idle
+</td>
+<td style="text-align:center;vertical-align: middle !important;" rowspan="2">
+11n
+</td>
+<td style="text-align:center;vertical-align: middle !important;" rowspan="2">
+11
+</td>
+<td style="text-align:center;">
+20
+</td>
+<td style="text-align:left;">
+1.137(4)
+</td>
+</tr>
+<tr></li>
+</ul></li>
+</ul></li>
+</ul>
+<td style="text-align:center;">
+40
+</td>
+<td style="text-align:left;">
+1.360(4)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="downclocking-consumption-characterisation" class="section level5 unnumbered">
+<h5>Downclocking Consumption Characterisation</h5>
+<p>As the AR9280’s documentation states, its reference clock runs at 44 MHz for 20 MHz channels and at 88 MHz for 40 MHz channels in the 2.4 GHz band, and at 40 MHz for 20 MHz channels and at 80 MHz for 40 MHz channels in the 5 GHz band. Thus, as Table <a href="ch-03.html#tab:powert">3.1</a> shows, we measured two more results to gain additional insight into the behaviour of the main reference clock, which is known to be linear <span class="citation">(Zhang and Shin <a href="#ref-Zhang2012">2012</a>)</span>.</p>
+<p>Using an 11n-capable AP, we measured the idle power in the 2.4 GHz band with two channel widths, 20 and 40 MHz. Note that the idle power in 11a mode (5 GHz band), with a 40 MHz clock, is higher than the idle power with a 44 MHz clock. This is because both bands are not directly comparable, as the 5 GHz one requires more amplification (the effect of the RF amplifier is out of the scope of this work).</p>
+<p>With these two points, we can assume a higher error (of about 10 mW) and try to estimate a maximum and a minimum slope for the power consumed by the main clock as a function of the frequency <span class="math inline">\(f\)</span>. The resulting averaged regression formula is the following:</p>
+<span class="math display" id="eq:Pf">\[\begin{equation}
+ P(f) = 0.91(3) + 0.0051(5)f \tag{3.4}
+\end{equation}\]</span>
+<p>This result, although coarse, enables us to estimate how a downclocking approach should perform in COTS devices. It shows that the main consumption of the clock goes to the baseline power (the power needed to simply turn it on), and that the increment per MHz is low: 5.1(5) mW/MHz. As a consequence, power-saving mechanisms based on idle downclocking, such as the one developed by <span class="citation">Zhang and Shin (<a href="#ref-Zhang2012">2012</a>)</span>, will not save too much energy compared to the sleep state of COTS devices. For instance, the x16 downclocking achieved by this mechanism applied to this Atheros card throws an idle power consumption of 1.10(2) W in 11a mode, i.e., about a 15% of saving according to Table <a href="ch-03.html#tab:powert">3.1</a>, which is low compared to the 70% of its sleep state. This questions the effectiveness of complex schemes based on downclocking compared to simpler ones based on the already existing sleep state.</p>
+</div>
+</div>
+</div>
+<div id="summary" class="section level2">
+<h2><span class="header-section-number">3.5</span> Summary</h2>
+<p>We have built and validated a comprehensive, high-accuracy and high-precision energy measurement framework, which is capable of measuring a wide range of wireless devices, as well as multiple heterogeneous devices synchronously. Rigorous experimental methodologies have been introduced to characterise the energy parameters of devices and wireless components. Based on these, the framework has been validated against previous results from <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span>, and a COTS wireless card, which will be used in further experiments throughout this thesis, has been studied and parametrised.</p>
+<p>At the same time, measurement handling has been systematised into <code>errors</code> <span class="citation">(Ucar, Pebesma, and Azcorra <a href="#ref-contrib-03">2018</a>)</span>, a lightweight R package for managing numeric data with associated standard uncertainties. The new class <code>errors</code> provides numeric operations with automated propagation of uncertainty through a first-order TSM, and a formally sound representation of measurements with errors. Using this package makes the process of computing indirect measurements easier and less error-prone.</p>
+<p>Future work includes importing and exporting data with uncertainties, and providing the user with an interface for plugging uncertainty propagation methods from other packages. Finally, <code>errors</code> enables ongoing developments<a href="#fn20" class="footnoteRef" id="fnref20"><sup>20</sup></a> for integrating <code>units</code> and uncertainty handling into a complete solution for quantity calculus. Having a unified workflow for managing measurements with units and errors would be an interesting addition to the R ecosystem with very few precedents in other programming languages.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Pathak2011">
+<p>Pathak, Abhinav, Y. Charlie Hu, and Ming Zhang. 2011. “Bootstrapping energy debugging on smartphones.” In <em>Proceedings of the 10th Acm Workshop on Hot Topics in Networks - Hotnets ’11</em>, 1–6. New York, New York, USA: ACM Press. doi:<a href="https://doi.org/10.1145/2070562.2070567">10.1145/2070562.2070567</a>.</p>
+</div>
+<div id="ref-R-base">
+<p>R Core Team. 2017. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
+</div>
+<div id="ref-ni2014">
+<p>National Instruments. 2014. “Using a Unity Gain Buffer (Voltage Follower) with a DAQ Device.” White paper. <a href="http://www.ni.com/white-paper/4494/en/" class="uri">http://www.ni.com/white-paper/4494/en/</a>.</p>
+</div>
+<div id="ref-VIM:2012">
+<p>BIPM, IEC, IFCC, ILAC, IUPAC, IUPAP, ISO, and OIML. 2012. “The International Vocabulary of Metrology – Basic and General Concepts and Associated Terms (VIM), 3rd edn. JCGM 200:2012.” <em>Joint Committee for Guides in Metrology</em>. <a href="http://www.bipm.org/vim" class="uri">http://www.bipm.org/vim</a>.</p>
+</div>
+<div id="ref-GUM:2008">
+<p>BIPM, IEC, IFCC, ILAC, IUPAC, IUPAP, ISO, and OIML. 2008. “Evaluation of Measurement Data – Guide to the Expression of Uncertainty in Measurement, 1st edn. JCGM 100:2008.” <em>Joint Committee for Guides in Metrology</em>. <a href="https://www.bipm.org/en/publications/guides/gum.html" class="uri">https://www.bipm.org/en/publications/guides/gum.html</a>.</p>
+</div>
+<div id="ref-Flatter:2018">
+<p>Flater, David. 2018. “Architecture for software-assisted quantity calculus.” <em>Computer Standards &amp; Interfaces</em> 56: 144–47. doi:<a href="https://doi.org/10.1016/j.csi.2017.10.002">10.1016/j.csi.2017.10.002</a>.</p>
+</div>
+<div id="ref-CRAN:units">
+<p>Pebesma, Edzer, and Thomas Mailund. 2018. <em>Units: Measurement Units for R Vectors</em>. <a href="https://CRAN.R-project.org/package=units" class="uri">https://CRAN.R-project.org/package=units</a>.</p>
+</div>
+<div id="ref-Pebesma:2016:units">
+<p>Pebesma, Edzer, Thomas Mailund, and James Hiebert. 2016. “Measurement Units in R.” <em>The R Journal</em> 8 (2): 486–94. <a href="https://journal.r-project.org/archive/2016/RJ-2016-061/index.html" class="uri">https://journal.r-project.org/archive/2016/RJ-2016-061/index.html</a>.</p>
+</div>
+<div id="ref-Arras:1998">
+<p>Arras, K.O. 1998. “An Introduction to Error Propagation: Derivation, Meaning and Examples of Cy = Fx Cx Fx’,” September.</p>
+</div>
+<div id="ref-R-errors">
+<p>Ucar, Iñaki. 2018. <em>Errors: Uncertainty Propagation for R Vectors</em>. <a href="https://CRAN.R-project.org/package=errors" class="uri">https://CRAN.R-project.org/package=errors</a>.</p>
+</div>
+<div id="ref-Serrano2014">
+<p>Serrano, P., A. Garcia-Saavedra, G. Bianchi, A. Banchs, and A. Azcorra. 2015. “Per-Frame Energy Consumption in 802.11 Devices and Its Implication on Modeling and Design.” <em>IEEE/ACM Transactions on Networking</em> 23 (4): 1243–56. doi:<a href="https://doi.org/10.1109/TNET.2014.2322262">10.1109/TNET.2014.2322262</a>.</p>
+</div>
+<div id="ref-Zhang2012">
+<p>Zhang, Xinyu, and Kang G. Shin. 2012. “E-MiLi: Energy-Minimizing Idle Listening in Wireless Networks.” <em>IEEE Transactions on Mobile Computing</em> 11 (9): 1441–54. doi:<a href="https://doi.org/10.1109/TMC.2012.112">10.1109/TMC.2012.112</a>.</p>
+</div>
+<div id="ref-contrib-03">
+<p>Ucar, Iñaki, Edzer Pebesma, and Arturo Azcorra. 2018. “Measurement Errors in R.” <em>R Journal</em> (submitted). <a href="https://arxiv.org/abs/1804.08552" class="uri">https://arxiv.org/abs/1804.08552</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="13">
+<li id="fn13"><p>For instance, typical Dell computers bring 65 or 90 W AC adapters with maximum voltages of 19.5 V.<a href="ch-03.html#fnref13">↩</a></p></li>
+<li id="fn14"><p>Up to 100 W, 20 V, 5 A.<a href="ch-03.html#fnref14">↩</a></p></li>
+<li id="fn15"><p>Available at <a href="https://github.com/Enchufa2/daq-acquire" class="uri">https://github.com/Enchufa2/daq-acquire</a><a href="ch-03.html#fnref15">↩</a></p></li>
+<li id="fn16"><p><a href="http://comedi.org" class="uri">http://comedi.org</a><a href="ch-03.html#fnref16">↩</a></p></li>
+<li id="fn17"><p><a href="(https://sourceware.org/systemtap)">https://sourceware.org/systemtap</a><a href="ch-03.html#fnref17">↩</a></p></li>
+<li id="fn18"><p>See “Writing R Extensions” for further details: <a href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html" class="uri">https://cran.r-project.org/doc/manuals/r-release/R-exts.html</a><a href="ch-03.html#fnref18">↩</a></p></li>
+<li id="fn19"><p><a href="http://cs.itd.nrl.navy.mil/work/mgen" class="uri">http://cs.itd.nrl.navy.mil/work/mgen</a><a href="ch-03.html#fnref19">↩</a></p></li>
+<li id="fn20"><p><em>Quantities for R</em>, a project funded by the R Consortium (see <a href="https://www.r-consortium.org/projects/awarded-projects" class="uri">https://www.r-consortium.org/projects/awarded-projects</a>)<a href="ch-03.html#fnref20">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch-02.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-04.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["thesis.pdf"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

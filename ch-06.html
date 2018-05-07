@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Energy Efficiency in Wireless Communications for Mobile User Devices</title>
+  <meta name="description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  
+  <meta name="twitter:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  
+
+<meta name="author" content="Iñaki Úcar">
+
+
+<meta name="date" content="2018-05-07">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="ch-05.html">
+<link rel="next" href="ch-07.html">
+<style type="text/css">
+p.abstract{
+  text-align: center;
+  font-weight: bold;
+}
+div.abstract{
+  margin: auto;
+  width: 90%;
+}
+</style>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Contents</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#cross-factor-towards-a-new-energy-model"><i class="fa fa-check"></i><b>1.1</b> Cross-Factor: Towards a New Energy Model</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#micro-sleep-opportunities-in-802.11"><i class="fa fa-check"></i><b>1.2</b> Micro-Sleep Opportunities in 802.11</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#rate-adaptation-and-power-control-in-802.11"><i class="fa fa-check"></i><b>1.3</b> Rate Adaptation and Power Control in 802.11</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#applied-simulation-modelling-for-energy-efficiency"><i class="fa fa-check"></i><b>1.4</b> Applied Simulation Modelling for Energy Efficiency</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#thesis-overview"><i class="fa fa-check"></i><b>1.5</b> Thesis Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-02.html"><a href="ch-02.html"><i class="fa fa-check"></i><b>2</b> Related Work</a><ul>
+<li class="chapter" data-level="2.1" data-path="ch-02.html"><a href="ch-02.html#energy-profiling-for-wireless-communications"><i class="fa fa-check"></i><b>2.1</b> Energy Profiling for Wireless Communications</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-02.html"><a href="ch-02.html#energy-consumption-of-network-stacks"><i class="fa fa-check"></i><b>2.2</b> Energy Consumption of Network Stacks</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-02.html"><a href="ch-02.html#micro-sleep-opportunities-in-802.11-1"><i class="fa fa-check"></i><b>2.3</b> Micro-Sleep Opportunities in 802.11</a></li>
+<li class="chapter" data-level="2.4" data-path="ch-02.html"><a href="ch-02.html#rate-adaptation-and-power-control-in-802.11-1"><i class="fa fa-check"></i><b>2.4</b> Rate Adaptation and Power Control in 802.11</a></li>
+<li class="chapter" data-level="2.5" data-path="ch-02.html"><a href="ch-02.html#discrete-event-simulation-of-network-systems"><i class="fa fa-check"></i><b>2.5</b> Discrete-Event Simulation of Network Systems</a></li>
+</ul></li>
+<li class="part"><span><b>I Experimentation</b></span></li>
+<li class="chapter" data-level="3" data-path="ch-03.html"><a href="ch-03.html"><i class="fa fa-check"></i><b>3</b> A Comprehensive Energy Measurement Framework</a><ul>
+<li class="chapter" data-level="3.1" data-path="ch-03.html"><a href="ch-03.html#instrumentation"><i class="fa fa-check"></i><b>3.1</b> Instrumentation</a></li>
+<li class="chapter" data-level="3.2" data-path="ch-03.html"><a href="ch-03.html#measurement-and-uncertainty-analysis"><i class="fa fa-check"></i><b>3.2</b> Measurement and Uncertainty Analysis</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="ch-03.html"><a href="ch-03.html#propagation-of-uncertainty"><i class="fa fa-check"></i><b>3.2.1</b> Propagation of Uncertainty</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ch-03.html"><a href="ch-03.html#reporting-uncertainty"><i class="fa fa-check"></i><b>3.2.2</b> Reporting Uncertainty</a></li>
+<li class="chapter" data-level="3.2.3" data-path="ch-03.html"><a href="ch-03.html#automated-uncertainty-handling-in-r-the-errors-package"><i class="fa fa-check"></i><b>3.2.3</b> Automated Uncertainty Handling in R: The <code>errors</code> Package</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ch-03.html"><a href="ch-03.html#whole-device-measurements"><i class="fa fa-check"></i><b>3.3</b> Whole-Device Measurements</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="ch-03.html"><a href="ch-03.html#validation"><i class="fa fa-check"></i><b>3.3.1</b> Validation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="ch-03.html"><a href="ch-03.html#per-component-measurements"><i class="fa fa-check"></i><b>3.4</b> Per-Component Measurements</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="ch-03.html"><a href="ch-03.html#characterisation-of-a-cots-device"><i class="fa fa-check"></i><b>3.4.1</b> Characterisation of a COTS Device</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="ch-03.html"><a href="ch-03.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch-04.html"><a href="ch-04.html"><i class="fa fa-check"></i><b>4</b> Deseeding Energy Consumption of Network Stacks</a><ul>
+<li class="chapter" data-level="4.1" data-path="ch-04.html"><a href="ch-04.html#anatomy-of-a-laptop-computer"><i class="fa fa-check"></i><b>4.1</b> Anatomy of a Laptop Computer</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-04.html"><a href="ch-04.html#cross-factor-separating-the-wheat-from-the-chaff"><i class="fa fa-check"></i><b>4.2</b> Cross-Factor: Separating the Wheat from the Chaff</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-04.html"><a href="ch-04.html#power-consumption-in-unattended-idle-mode"><i class="fa fa-check"></i><b>4.3</b> Power Consumption in Unattended Idle Mode</a></li>
+<li class="chapter" data-level="4.4" data-path="ch-04.html"><a href="ch-04.html#power-consumption-with-full-cpuidle-subsystem"><i class="fa fa-check"></i><b>4.4</b> Power Consumption with Full <code>cpuidle</code> Subsystem</a></li>
+<li class="chapter" data-level="4.5" data-path="ch-04.html"><a href="ch-04.html#exploring-the-cpuidle-subsystem"><i class="fa fa-check"></i><b>4.5</b> Exploring the <code>cpuidle</code> Subsystem</a></li>
+<li class="chapter" data-level="4.6" data-path="ch-04.html"><a href="ch-04.html#summary-1"><i class="fa fa-check"></i><b>4.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ch-05.html"><a href="ch-05.html"><i class="fa fa-check"></i><b>5</b> Leveraging Micro-Sleep Opportunities in 802.11</a><ul>
+<li class="chapter" data-level="5.1" data-path="ch-05.html"><a href="ch-05.html#state-transition-times"><i class="fa fa-check"></i><b>5.1</b> State Transition Times in 802.11 Cards</a></li>
+<li class="chapter" data-level="5.2" data-path="ch-05.html"><a href="ch-05.html#protocol-analysis-and-practical-issues"><i class="fa fa-check"></i><b>5.2</b> Protocol Analysis and Practical Issues</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="ch-05.html"><a href="ch-05.html#identifying-potential-micro-sleep-opportunities"><i class="fa fa-check"></i><b>5.2.1</b> Identifying Potential Micro-Sleep Opportunities</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ch-05.html"><a href="ch-05.html#impact-of-capture-effect"><i class="fa fa-check"></i><b>5.2.2</b> Impact of Capture Effect</a></li>
+<li class="chapter" data-level="5.2.3" data-path="ch-05.html"><a href="ch-05.html#impact-of-errors-in-the-mac-header"><i class="fa fa-check"></i><b>5.2.3</b> Impact of Errors in the MAC Header</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="ch-05.html"><a href="ch-05.html#munap-algorithm"><i class="fa fa-check"></i><b>5.3</b> <span class="math inline">\(\mu\)</span>Nap Algorithm</a></li>
+<li class="chapter" data-level="5.4" data-path="ch-05.html"><a href="ch-05.html#performance-evaluation"><i class="fa fa-check"></i><b>5.4</b> Performance Evaluation</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="ch-05.html"><a href="ch-05.html#evaluation-with-real-traces"><i class="fa fa-check"></i><b>5.4.1</b> Evaluation with Real Traces</a></li>
+<li class="chapter" data-level="5.4.2" data-path="ch-05.html"><a href="ch-05.html#impact-of-timing-constraints"><i class="fa fa-check"></i><b>5.4.2</b> Impact of Timing Constraints</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="ch-05.html"><a href="ch-05.html#summary-2"><i class="fa fa-check"></i><b>5.5</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>II Mathematical Modelling</b></span></li>
+<li class="chapter" data-level="6" data-path="ch-06.html"><a href="ch-06.html"><i class="fa fa-check"></i><b>6</b> Rate Adaptation and Power Control in 802.11</a><ul>
+<li class="chapter" data-level="6.1" data-path="ch-06.html"><a href="ch-06.html#joint-goodput-energy-model"><i class="fa fa-check"></i><b>6.1</b> Joint Goodput-Energy Model</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-06.html"><a href="ch-06.html#numerical-results"><i class="fa fa-check"></i><b>6.2</b> Numerical Results</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="ch-06.html"><a href="ch-06.html#optimal-goodput"><i class="fa fa-check"></i><b>6.2.1</b> Optimal Goodput</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ch-06.html"><a href="ch-06.html#extension-of-the-energy-parametrisation"><i class="fa fa-check"></i><b>6.2.2</b> Extension of the Energy Parametrisation</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ch-06.html"><a href="ch-06.html#energy-consumption"><i class="fa fa-check"></i><b>6.2.3</b> Energy Consumption</a></li>
+<li class="chapter" data-level="6.2.4" data-path="ch-06.html"><a href="ch-06.html#energy-efficiency-vs.optimal-goodput"><i class="fa fa-check"></i><b>6.2.4</b> Energy Efficiency vs. Optimal Goodput</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ch-06.html"><a href="ch-06.html#discussion"><i class="fa fa-check"></i><b>6.3</b> Discussion</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="ch-06.html"><a href="ch-06.html#sensitivity-to-energy-parameter-scaling"><i class="fa fa-check"></i><b>6.3.1</b> Sensitivity to Energy Parameter Scaling</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ch-06.html"><a href="ch-06.html#heuristics-for-ra-tpc-algorithms"><i class="fa fa-check"></i><b>6.3.2</b> Heuristics for RA-TPC Algorithms</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="ch-06.html"><a href="ch-06.html#summary-3"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>III Simulation</b></span></li>
+<li class="chapter" data-level="7" data-path="ch-07.html"><a href="ch-07.html"><i class="fa fa-check"></i><b>7</b> Performance of RA-TPC Algorithms in 802.11</a><ul>
+<li class="chapter" data-level="7.1" data-path="ch-07.html"><a href="ch-07.html#algorithms-considered"><i class="fa fa-check"></i><b>7.1</b> Algorithms Considered</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-07.html"><a href="ch-07.html#simulation-scenario"><i class="fa fa-check"></i><b>7.2</b> Simulation Scenario</a></li>
+<li class="chapter" data-level="7.3" data-path="ch-07.html"><a href="ch-07.html#results-and-discussion"><i class="fa fa-check"></i><b>7.3</b> Results and Discussion</a></li>
+<li class="chapter" data-level="7.4" data-path="ch-07.html"><a href="ch-07.html#conservativeness-at-mode-transitions"><i class="fa fa-check"></i><b>7.4</b> Conservativeness at Mode Transitions</a></li>
+<li class="chapter" data-level="7.5" data-path="ch-07.html"><a href="ch-07.html#summary-4"><i class="fa fa-check"></i><b>7.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ch-08.html"><a href="ch-08.html"><i class="fa fa-check"></i><b>8</b> A Novel Discrete-Event Simulation Framework</a><ul>
+<li class="chapter" data-level="8.1" data-path="ch-08.html"><a href="ch-08.html#the-simulation-core-design"><i class="fa fa-check"></i><b>8.1</b> The Simulation Core Design</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="ch-08.html"><a href="ch-08.html#terminology"><i class="fa fa-check"></i><b>8.1.1</b> Terminology</a></li>
+<li class="chapter" data-level="8.1.2" data-path="ch-08.html"><a href="ch-08.html#architecture"><i class="fa fa-check"></i><b>8.1.2</b> Architecture</a></li>
+<li class="chapter" data-level="8.1.3" data-path="ch-08.html"><a href="ch-08.html#the-event-queue"><i class="fa fa-check"></i><b>8.1.3</b> The Event Queue</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="ch-08.html"><a href="ch-08.html#a-brief-introduction-to-simmer"><i class="fa fa-check"></i><b>8.2</b> A Brief Introduction to <code>simmer</code></a></li>
+<li class="chapter" data-level="8.3" data-path="ch-08.html"><a href="ch-08.html#use-case-energy-efficiency-for-massive-iot"><i class="fa fa-check"></i><b>8.3</b> Use case: Energy Efficiency for Massive IoT</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-08.html"><a href="ch-08.html#summary-5"><i class="fa fa-check"></i><b>8.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ch-09.html"><a href="ch-09.html"><i class="fa fa-check"></i><b>9</b> Conclusions and Future Work</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="measurement-circuitry-schematics.html"><a href="measurement-circuitry-schematics.html"><i class="fa fa-check"></i><b>A</b> Measurement Circuitry Schematics</a></li>
+<li class="chapter" data-level="B" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html"><i class="fa fa-check"></i><b>B</b> Experimental Validation of RA-TPC Inefficiencies</a><ul>
+<li class="chapter" data-level="B.1" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html#experimental-setup"><i class="fa fa-check"></i><b>B.1</b> Experimental Setup</a></li>
+<li class="chapter" data-level="B.2" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html#methodology-and-results"><i class="fa fa-check"></i><b>B.2</b> Methodology and Results</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html"><i class="fa fa-check"></i><b>C</b> Performance Evaluation of <code>simmer</code></a><ul>
+<li class="chapter" data-level="C.1" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html#comparison-with-similar-frameworks"><i class="fa fa-check"></i><b>C.1</b> Comparison with Similar Frameworks</a></li>
+<li class="chapter" data-level="C.2" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html#the-cost-of-calling-r-from-c"><i class="fa fa-check"></i><b>C.2</b> The Cost of Calling R from C++</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">
+Licensed under <img alt="Creative Commons License" style="border-width:0;vertical-align:bottom" 
+src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Energy Efficiency in Wireless Communications for Mobile User Devices</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch:06" class="section level1">
+<h1><span class="header-section-number">6</span> Rate Adaptation and Power Control in 802.11</h1>
+<p><span class="newthought">Rate adaptation</span> is a fundamental technique in 802.11 networks by which wireless transmistters adapt their transmission data rate to the prevailing channel conditions. As we have learnt from previous chapters, the energy consumption of wireless interfaces depends on the chosen modulation and coding scheme, which defines the data rate. On the other hand, <em>transmission power control</em>, which has gained increase attention due to network densification, tries to minimise the amount of radiated power (and, indirectly, the energy consumption) given a set of radio conditions.</p>
+<p>These two competing techniques are typically assessed in terms of throughput achieved, while it is assumed that optimality in terms of this performance figure implies optimality in terms of energy efficiency. This chapter tackles the latter question from a formal standpoint. For this purpose, and we first present a joint goodput (i.e., the throughtput delivered on top of 802.11) and energy consumption model. Building on this model, we numerically study the relationship between energy consumption and throughput performance in 802.11.</p>
+<div id="joint-goodput-energy-model" class="section level2">
+<h2><span class="header-section-number">6.1</span> Joint Goodput-Energy Model</h2>
+<p>With the aim of isolating the variables of interest, namely, modulation and coding scheme (MCS) and transmission power (TXP), in the following we develop a joint goodput-energy model for a single 802.11 spatial stream in the absence of interfering traffic. This model will let us delve into the fundamental relationship between goodput and energy consumption optimality without confounding effects such as collisions or MIMO.</p>
+<p>Beyond this primary intent, it is worth noting that these assumptions conform with real-world scenarios in the scope of recent trends in the IEEE 802.11 standard development (e.g., amendments 11ac and 11ad), where device-to-device communications (mainly through beamforming and MU-MIMO) are of paramount importance.</p>
+<p>We base our study on the work by <span class="citation">Qiao, Choi, and Shin (<a href="#ref-Qiao2002">2002</a>)</span>, which develops a robust goodput model that meets the established requirements. This model analyses the IEEE 802.11a Distributed Coordination Function (DCF) over the assumption of additive white Gaussian noise (AWGN) channel without interfering traffic.</p>
+<p><span class="newthought">Let us briefly introduce</span> the reader to the main concepts, essential to our analysis, of the goodput model by <span class="citation">Qiao, Choi, and Shin (<a href="#ref-Qiao2002">2002</a>)</span>. Given a packet of length <span class="math inline">\(l\)</span> ready to be sent, a frame retry limit <span class="math inline">\(n_\mathrm{max}\)</span> and a set of channel conditions <span class="math inline">\(\hat{s}=\{s_1, \ldots, s_{n_\mathrm{max}}\}\)</span> and modulations <span class="math inline">\(\hat{m}=\{m_1, \ldots, m_{n_\mathrm{max}}\}\)</span> used during the potential transmission attempts, the <em>expected effective goodput</em> <span class="math inline">\(\mathcal{G}\)</span> is modelled as the ratio between the expected delivered data payload and the expected transmission time as follows:</p>
+<span class="math display" id="eq:goodput">\[\begin{equation}
+ \mathcal{G}(l, \hat{s}, \hat{m}) = \frac{{\mathbb E}\left[ \mathrm{data} \right]}{{\mathbb E}\left[ \mathcal{D}_\mathrm{data} \right]} = \frac{\Pr[\mathrm{succ} \mid l, \hat{s}, \hat{m}]\cdot l}{{\mathbb E}\left[ \mathcal{D}_\mathrm{data} \right]}
+ \tag{6.1}
+\end{equation}\]</span>
+<p>where <span class="math inline">\(\Pr[\mathrm{succ} \mid l, \hat{s}, \hat{m}]\)</span> is the probability of successful transmission conditioned to <span class="math inline">\(l, \hat{s}, \hat{m}\)</span>, given in <span class="citation">Qiao, Choi, and Shin (<a href="#ref-Qiao2002">2002</a> Equation (5))</span>. This model is valid as long as the coherence time is equal or greater than a single retry, i.e., the channel condition <span class="math inline">\(s_i\)</span> is constant.</p>
+<p>The expected transmission time is defined as follows:</p>
+<span class="math display" id="eq:Ddata">\[\begin{equation}
+\begin{split}
+ {\mathbb E}\left[ \mathcal{D}_\mathrm{data} \right] = \left(1 - \Pr[\mathrm{succ} \mid l, \hat{s}, \hat{m}]\right) \cdot \mathcal{D}_{\mathrm{fail} \mid l, \hat{s}, \hat{m}} \\
+ + \Pr[\mathrm{succ} \mid l, \hat{s}, \hat{m}] \cdot \mathcal{D}_{\mathrm{succ} \mid l, \hat{s}, \hat{m}}
+\end{split}
+\tag{6.2}
+\end{equation}\]</span>
+<p>where</p>
+<span class="math display" id="eq:Dsucc">\[\begin{equation}
+\begin{split}
+ \mathcal{D}_{\mathrm{succ} \mid l, \hat{s}, \hat{m}} = &amp;\sum_{n=1}^{n_\mathrm{max}} \Pr[n \mathrm{~succ} \mid l, \hat{s}, \hat{m}] \cdot \biggl\lbrace \overline{T}_\mathrm{bkoff}(1) \biggr. \\
+ &amp;+ \sum_{i=2}^{n_\mathrm{max}} \left[\overline{T}_\mathrm{bkoff}(i)\right.+ \left.T_\mathrm{data}(l, m_i) + \overline{\mathcal{D}}_\mathrm{wait}(i)\right] \\
+ &amp;+ T_\mathrm{data}(l, m_1) + T_\mathrm{SIFS} + \biggl.T_\mathrm{ACK}(m&#39;_n) + T_\mathrm{DIFS} \biggr\rbrace
+\end{split}
+\tag{6.3}
+\end{equation}\]</span>
+<p>is the average duration of a successful transmission and</p>
+<span class="math display" id="eq:Dfail">\[\begin{equation}
+ \mathcal{D}_{\mathrm{fail} \mid l, \hat{s}, \hat{m}} = \sum_{i=1}^{n_\mathrm{max}} \left[\overline{T}_\mathrm{bkoff}(i) + T_\mathrm{data}(l, m_i) + \overline{\mathcal{D}}_\mathrm{wait}(i+1)\right] 
+\tag{6.4}
+\end{equation}\]</span>
+<p>is the average time wasted during the <span class="math inline">\(n_\mathrm{max}\)</span> attempts when the transmission fails.</p>
+<p><span class="math inline">\(\Pr[n \mathrm{~succ} \mid l, \hat{s}, \hat{m}]\)</span> is the probability of successful transmission at the <span class="math inline">\(n\)</span>-th attempt conditioned to <span class="math inline">\(l, \hat{s}, \hat{m}\)</span>, and <span class="math inline">\(\overline{\mathcal{D}}_\mathrm{wait}(i)\)</span> is the average waiting time before the <span class="math inline">\(i\)</span>-th attempt. Their expressions are given in <span class="citation">Qiao, Choi, and Shin (<a href="#ref-Qiao2002">2002</a> Equations (7)–(8))</span>. The transmission time (<span class="math inline">\(T_\mathrm{data}\)</span>), ACK time (<span class="math inline">\(T_\mathrm{ACK}\)</span>) and average backoff time (<span class="math inline">\(\overline{T}_\mathrm{bkoff}\)</span>) are given in <span class="citation">Qiao, Choi, and Shin (<a href="#ref-Qiao2002">2002</a> Equations (1)–(3))</span>. Finally, <span class="math inline">\(T_\mathrm{SIFS}\)</span> and <span class="math inline">\(T_\mathrm{DIFS}\)</span> are 802.11a parameters, and they can be found also in <span class="citation">Qiao, Choi, and Shin (<a href="#ref-Qiao2002">2002</a> Table 2)</span>.</p>
+<p><span class="newthought">The selected energy model</span> is again the work by <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span>, which stands as the most accurate energy model for 802.11 devices published so far. While classical models focused on the wireless interface solely, this one demonstrates empirically that the energy consumed by the device itself cannot be neglected as a device-dependent constant contribution. Conversely, devices incur an energy cost derived from the frame processing, which may impact the relationship that we want to evaluate in this paper.</p>
+<p><span class="newthought">Putting together both models</span>, we are now in a position to build a joint goodput-energy model for 802.11a DCF. Let us consider the average durations <a href="ch-06.html#eq:Dsucc">(6.3)</a> and <a href="ch-06.html#eq:Dfail">(6.4)</a>. Based on their expressions, we multiply the idle time (<span class="math inline">\(\overline{\mathcal{D}}_\mathrm{wait}\)</span>, <span class="math inline">\(\overline{T}_\mathrm{bkoff}\)</span>, <span class="math inline">\(T_\mathrm{SIFS}\)</span>, <span class="math inline">\(T_\mathrm{DIFS}\)</span>) by <span class="math inline">\(\rho_\mathrm{id}\)</span>, the transmission time (<span class="math inline">\(T_\mathrm{data}\)</span>) by <span class="math inline">\(\rho_\mathrm{tx}\)</span>, and the reception time (<span class="math inline">\(T_\mathrm{ACK}\)</span>) by <span class="math inline">\(\rho_\mathrm{rx}\)</span>. The resulting expressions are the average energy consumed in a successful transmission <span class="math inline">\(\mathcal{E}_{\mathrm{succ} \mid l, \hat{s}, \hat{m}}\)</span> and the average energy wasted when a transmission fails <span class="math inline">\(\mathcal{E}_{\mathrm{fail} \mid l, \hat{s}, \hat{m}}\)</span>:</p>
+<span class="math display" id="eq:Esucc">\[\begin{equation}
+\begin{split}
+ \mathcal{E}_{\mathrm{succ} \mid l, \hat{s}, \hat{m}} = &amp;\sum_{n=1}^{n_\mathrm{max}} \Pr[n \mathrm{~succ} \mid l, \hat{s}, \hat{m}] \cdot \biggl\lbrace \rho_\mathrm{id}\overline{T}_\mathrm{bkoff}(1) \biggr. \\
+ &amp;+ \sum_{i=2}^{n_\mathrm{max}} \left[\rho_\mathrm{id}\overline{T}_\mathrm{bkoff}(i)\right.+ \left.\rho_\mathrm{tx}T_\mathrm{data}(l, m_i) + \rho_\mathrm{id}\overline{\mathcal{D}}_\mathrm{wait}(i)\right] \\
+ &amp;+ \rho_\mathrm{tx}T_\mathrm{data}(l, m_1) + \rho_\mathrm{id}T_\mathrm{SIFS} + \biggl.\rho_\mathrm{rx}T_\mathrm{ACK}(m&#39;_n) + \rho_\mathrm{id}T_\mathrm{DIFS} \biggr\rbrace
+\end{split}
+\tag{6.5}
+\end{equation}\]</span>
+<span class="math display" id="eq:Efail">\[\begin{equation}
+ \mathcal{E}_{\mathrm{fail} \mid l, \hat{s}, \hat{m}} = \sum_{i=1}^{n_\mathrm{max}} \left[\rho_\mathrm{id}\overline{T}_\mathrm{bkoff}(i) + \rho_\mathrm{tx}T_\mathrm{data}(l, m_i) + \rho_\mathrm{id}\overline{\mathcal{D}}_\mathrm{wait}(i+1)\right]
+\tag{6.6}
+\end{equation}\]</span>
+<p>Then, by analogy with <a href="ch-06.html#eq:Ddata">(6.2)</a>, the <em>expected energy consumed per frame transmitted</em>, <span class="math inline">\({\mathbb E}\left[ \mathcal{E}_\mathrm{data} \right]\)</span>, can be written as follows:</p>
+<span class="math display" id="eq:energyperframe">\[\begin{equation}
+\begin{split}
+ {\mathbb E}\left[ \mathcal{E}_\mathrm{data} \right] = \gamma_\mathrm{xg} + \left(1 - \Pr[\mathrm{succ} \mid l, \hat{s}, \hat{m}]\right) \cdot \mathcal{E}_{\mathrm{fail} \mid l, \hat{s}, \hat{m}} \\
+ + \Pr[\mathrm{succ} \mid l, \hat{s}, \hat{m}] \cdot \mathcal{E}_{\mathrm{succ} \mid l, \hat{s}, \hat{m}}
+\end{split}
+\tag{6.7}
+\end{equation}\]</span>
+<p>It is noteworthy that the receiving cross-factor does not appear in this expression because ACKs (acknowledgements) are processed in the network card exclusively, and thus its processing toll is negligible.</p>
+<p>Finally, we define the <em>expected effective energy efficiency</em> <span class="math inline">\(\mu\)</span> as the ratio between the expected delivered data payload and the expected energy consumed per frame, which can be expressed in <em>bits per Joule</em> (bpJ):</p>
+<span class="math display" id="eq:efficiency">\[\begin{equation}
+ \mu(l, \hat{s}, \hat{m}) = \frac{{\mathbb E}\left[ \mathrm{data} \right]}{{\mathbb E}\left[ \mathcal{E}_\mathrm{data} \right]}
+ \tag{6.8}
+\end{equation}\]</span>
+</div>
+<div id="numerical-results" class="section level2">
+<h2><span class="header-section-number">6.2</span> Numerical Results</h2>
+<p>Building on the joint model presented in the previous section, here we explore the relationship between optimal goodput and energy efficiency in 802.11a. More specifically, our objective is to understand the behaviour of the energy efficiency of a single spatial stream as the MCS and TXP change following our model to meet the optimal goodput.</p>
+<div id="optimal-goodput" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Optimal Goodput</h3>
+<p>We note that the main goal of RA, generally, is to maximise the effective goodput that a station can achieve by varying the parameters of the interface. In terms of the model discussed in the previous section, a rate adaptation algorithm would aspire to fit the following curve:</p>
+<span class="math display" id="eq:maxgoodput">\[\begin{equation}
+ \max{\mathcal{G}(l, \hat{s}, \hat{m})} \tag{6.9}
+\end{equation}\]</span>
+<p>We provide the numerical results for this goodput maximisation problem in Figure <a href="ch-06.html#fig:maxgoodput">6.1</a>, which are in good agreement with those obtained in <span class="citation">Qiao, Choi, and Shin (<a href="#ref-Qiao2002">2002</a>)</span>. For the sake of simplicity but without loss of generality we fix <span class="math inline">\(l=1500\)</span> octets and <span class="math inline">\(n_\mathrm{max}=7\)</span> retries, and assume that the channel conditions and the transmission strategy are constant across retries (<span class="math inline">\(\hat{s}=\{s_1, \ldots, s_1\}\)</span> and <span class="math inline">\(\hat{m}=\{m_1, \ldots, m_1\}\)</span>).</p>
+<p>Figure <a href="ch-06.html#fig:maxgoodput">6.1</a> illustrates which mode (see Table <a href="ch-06.html#tab:modes">6.1</a>) is optimal in terms of goodput, given an SNR level. We next address the question of whether this optimisation is aligned with energy efficiency maximisation.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:maxgoodput"></span>
+<img src="06-ra-tpc_files/figure-html/maxgoodput-1.png" alt="Optimal goodput (bold envelope) as a function of SNR." width="480" />
+<p class="caption">
+Figure 6.1: Optimal goodput (bold envelope) as a function of SNR.
+</p>
+</div>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:modes">Table 6.1: </span>IEEE 802.11a PHY.
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+</th>
+<th style="text-align:right;">
+Mode Index
+</th>
+<th style="text-align:right;">
+MCS [Mbps]
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+18
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+24
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+36
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+48
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+54
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="extension-of-the-energy-parametrisation" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> Extension of the Energy Parametrisation</h3>
+<p>The next step is to delve into the energy consumption of wireless devices. <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span> provides real measurements for five devices: three AP-like platforms (Linksys WRT54G, Raspberry Pi and Soekris net4826-48) and two hand-held devices (HTC Legend and Samsung Galaxy Note 10.1). Two of the four parameters needed are constant (<span class="math inline">\(\rho_\mathrm{id}, \gamma_\mathrm{xg}\)</span>), and the other two (<span class="math inline">\(\rho_\mathrm{tx}, \rho_\mathrm{rx}\)</span>) depend on the MCS and the TXP used. However, the characterisation done by <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span> is performed for a subset of the MCS and TXP available, so we next detail how we extend the model to account for a larger set of operation parameters.</p>
+<p>A detailed analysis of the numerical figures presented in <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span> suggests that <span class="math inline">\(\rho_\mathrm{rx}\)</span> depends linearly on the MCS, and that <span class="math inline">\(\rho_\mathrm{tx}\)</span> depends linearly on the MCS and the TXP (in mW). Based on these observations, we define the following linear models:</p>
+<span class="math display" id="eq:linearmodels">\[\begin{equation}
+\begin{split}
+ \rho_\mathrm{tx} &amp;= \alpha_0 + \alpha_1\cdot\mathrm{MCS} + \alpha_2\cdot\mathrm{TXP} \\
+ \rho_\mathrm{rx} &amp;= \beta_0 + \beta_1\cdot\mathrm{MCS}
+\end{split}
+\tag{6.10}
+\end{equation}\]</span>
+<p>The models are fed with the data reported in <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span>, and the resulting fitting is illustrated in Figure <a href="ch-06.html#fig:rho-tx-rx">6.2</a>, while Table <a href="ch-06.html#tab:regressions-tx">6.2</a> collects the model estimates for each device (with errors between parentheses), as well as the adjusted r-squared. Since these linear models show a very good fit, they support the generation of synthetic data for the different MCS and TXP required.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:rho-tx-rx"></span>
+<img src="06-ra-tpc_files/figure-html/rho-tx-rx-1.png" alt="Linear regressions. \(\rho_\mathrm{tx}\) fit as a function of MCS and TXP (top) and \(\rho_\mathrm{rx}\) fit as a function of MCS (bottom)." width="1152" /><img src="06-ra-tpc_files/figure-html/rho-tx-rx-2.png" alt="Linear regressions. \(\rho_\mathrm{tx}\) fit as a function of MCS and TXP (top) and \(\rho_\mathrm{rx}\) fit as a function of MCS (bottom)." width="1152" />
+<p class="caption">
+Figure 6.2: Linear regressions. <span class="math inline">\(\rho_\mathrm{tx}\)</span> fit as a function of MCS and TXP (top) and <span class="math inline">\(\rho_\mathrm{rx}\)</span> fit as a function of MCS (bottom).
+</p>
+</div>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:regressions-tx">Table 6.2: </span>Linear regressions.
+</caption>
+<thead>
+<tr>
+<th style="border-bottom:hidden" colspan="1">
+</th>
+<th style="text-align:center; border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;" colspan="4">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+<span class="math inline">\(\rho_\mathrm{tx}\)</span> model estimates
+</div>
+</th>
+<th style="text-align:center; border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;" colspan="3">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+<span class="math inline">\(\rho_\mathrm{rx}\)</span> model estimates
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:right;">
+Device
+</th>
+<th style="text-align:left;">
+<span class="math inline">\(\alpha_0\)</span> [W]
+</th>
+<th style="text-align:left;">
+<span class="math inline">\(\alpha_1\)</span> [W/Mbps]
+</th>
+<th style="text-align:left;">
+<span class="math inline">\(\alpha_2\)</span> [W/mW]
+</th>
+<th style="text-align:center;">
+adj. <span class="math inline">\(r^2\)</span>
+</th>
+<th style="text-align:left;">
+<span class="math inline">\(\beta_0\)</span> [W]
+</th>
+<th style="text-align:left;">
+<span class="math inline">\(\beta_1\)</span> [W/Mbps]
+</th>
+<th style="text-align:center;">
+adj. <span class="math inline">\(r^2\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+HTC Legend
+</td>
+<td style="text-align:left;">
+0.35(1)
+</td>
+<td style="text-align:left;">
+0.0052(3)
+</td>
+<td style="text-align:left;">
+0.021(3)
+</td>
+<td style="text-align:center;">
+0.966
+</td>
+<td style="text-align:left;">
+0.013(3)
+</td>
+<td style="text-align:left;">
+0.0064(1)
+</td>
+<td style="text-align:center;">
+0.995
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Linksys
+</td>
+<td style="text-align:left;">
+0.54(1)
+</td>
+<td style="text-align:left;">
+0.0028(2)
+</td>
+<td style="text-align:left;">
+0.075(3)
+</td>
+<td style="text-align:center;">
+0.982
+</td>
+<td style="text-align:left;">
+0.14(2)
+</td>
+<td style="text-align:left;">
+0.0130(7)
+</td>
+<td style="text-align:center;">
+0.957
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Raspberry Pi
+</td>
+<td style="text-align:left;">
+0.48(2)
+</td>
+<td style="text-align:left;">
+0.0008(4)
+</td>
+<td style="text-align:left;">
+0.044(5)
+</td>
+<td style="text-align:center;">
+0.866
+</td>
+<td style="text-align:left;">
+-0.006(1)
+</td>
+<td style="text-align:left;">
+0.00146(5)
+</td>
+<td style="text-align:center;">
+0.982
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Samsung Galaxy Note
+</td>
+<td style="text-align:left;">
+0.572(4)
+</td>
+<td style="text-align:left;">
+0.00166(8)
+</td>
+<td style="text-align:left;">
+0.0105(9)
+</td>
+<td style="text-align:center;">
+0.975
+</td>
+<td style="text-align:left;">
+0.041(1)
+</td>
+<td style="text-align:left;">
+0.00173(4)
+</td>
+<td style="text-align:center;">
+0.993
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+Soekris
+</td>
+<td style="text-align:left;">
+0.17(3)
+</td>
+<td style="text-align:left;">
+0.0170(6)
+</td>
+<td style="text-align:left;">
+0.101(7)
+</td>
+<td style="text-align:center;">
+0.986
+</td>
+<td style="text-align:left;">
+0.010(8)
+</td>
+<td style="text-align:left;">
+0.0237(3)
+</td>
+<td style="text-align:center;">
+0.998
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="energy-consumption" class="section level3">
+<h3><span class="header-section-number">6.2.3</span> Energy Consumption</h3>
+<p>To compute the energy consumption using the above parametrisation, first we have to define the assumptions for the considered scenario. We assume for simplicity a device-to-device communication, with fixed and reciprocal channel conditions during a sufficient period of time (i.e., low or no mobility). As we have discussed before, our primary goal is to isolate MCS and TXP as variables of interest, but we must not forget that these are also reasonable assumptions in scenarios targeted by recent 802.11 standard developments (11ac, 11ad).</p>
+<p>For instance, given channel state information from a receiver, the transmitter may decide to increase the TXP in order to increase the receiver’s SNR (and thus the expected goodput), or to decrease it if the channel quality is high enough. Although the actual relationship between TXP and SNR depends on the specific channel model (e.g., distance, obstacles, noise), without loss of generality, we choose a noise floor of <span class="math inline">\(N=-85\)</span> dBm in an office scenario with a link distance of <span class="math inline">\(d=18\)</span> m in order to explore numerically the whole range of SNR while using reasonable values of TXP. The ITU model for indoor attenuation <span class="citation">(ITU-R <a href="#ref-iturp1238-2015">2015</a>)</span> gives a path loss of <span class="math inline">\(L\approx 85\)</span> dBm. Then, we can use <a href="ch-06.html#eq:energyperframe">(6.7)</a> to obtain the expected energy consumed per frame and MCS mode, with TXP being directly related to the SNR level.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:consumption"></span>
+<img src="06-ra-tpc_files/figure-html/consumption-1.png" alt="Expected energy consumption per frame in millijoules per frame (mJpf) under fixed channel conditions." width="1152" />
+<p class="caption">
+Figure 6.3: Expected energy consumption per frame in <em>millijoules per frame</em> (mJpf) under fixed channel conditions.
+</p>
+</div>
+<p>The results are reported in Figure <a href="ch-06.html#fig:consumption">6.3</a>. As the figure illustrates, consumption first falls abruptly as the TXP increases for all modes, which is caused when the SNR reaches a sharp threshold level such that the number of retransmissions changes from 6 to 0 (i.e., no frame is discarded). From this threshold on, the consumption increases with TXP because, although the number of retransmissions is 0, the wireless interface consumes more power. We note that the actual value of the TXP when the consumption drops depends on the specifics of the scenario considered, but the qualitative conclusions hold for a variety of scenarios.</p>
+</div>
+<div id="energy-efficiency-vs.optimal-goodput" class="section level3">
+<h3><span class="header-section-number">6.2.4</span> Energy Efficiency vs. Optimal Goodput</h3>
+<p>We can finally merge previous numerical analyses and confront energy efficiency, given by <a href="ch-06.html#eq:efficiency">(6.8)</a>, and optimal goodput, given by <a href="ch-06.html#eq:maxgoodput">(6.9)</a>, for all devices and under the aforementioned assumptions. To this aim, we plot in the same figure the energy efficiency for the configuration that maximises goodput given an SNR value vs. the obtained goodput, with the results being depicted in Figure <a href="ch-06.html#fig:efficiency-goodput">6.4</a>. We next discuss the main findings from the figure.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:efficiency-goodput"></span>
+<img src="06-ra-tpc_files/figure-html/efficiency-goodput-1.png" alt=" " width="787.2" />
+<p class="caption">
+Figure 6.4: Energy efficiency vs. optimal goodput under fixed channel conditions.
+</p>
+</div>
+<p>First of all, we can see that the energy efficiency grows sub-linearly with the optimal goodput (the optimal goodput for each SNR value) in all cases. We may distinguish three different cases in terms of energy efficiency: high (Samsung Galaxy Note and HTC Legend), medium (Raspberry Pi) and low energy efficiency (Linksys and Soekris). Furthermore, for the case of the Soekris, we note that the “central modes” (namely, 4 and 5) are more efficient in their optimal region than the subsequent ones.</p>
+<p>Another finding (more relevant perhaps) is that it becomes evident that increasing the goodput does not always improve the energy efficiency: there are more or less drastic leaps, depending on the device, between mode transitions. From the transmitter point of view, in the described scenario, this can be read as follows: we may increase the TXP to increase the SNR, but if the optimal goodput entails a mode transition, the energy efficiency may be affected.</p>
+<p>As a conclusion, we have demonstrated that optimal goodput and energy efficiency do not go hand in hand, even in a single spatial stream, in 802.11<a href="#fn44" class="footnoteRef" id="fnref44"><sup>44</sup></a>. There is a trade-off in some circumstances that current rate adaptation algorithms cannot take into account, as they are oblivious to the energy consumption characteristic of the device.</p>
+</div>
+</div>
+<div id="discussion" class="section level2">
+<h2><span class="header-section-number">6.3</span> Discussion</h2>
+<div id="sensitivity-to-energy-parameter-scaling" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> Sensitivity to Energy Parameter Scaling</h3>
+<p>We next explore how the different energy parameters affect the energy efficiency vs. optimal goodput relationship. For this purpose, we selected the Raspberry Pi curve from Figure <a href="ch-06.html#fig:efficiency-goodput">6.4</a> (results are analogous with the other devices) and we scale up and down, one at a time, the four energy parameters <span class="math inline">\(\rho_\mathrm{id}\)</span>, <span class="math inline">\(\rho_\mathrm{tx}\)</span>, <span class="math inline">\(\rho_\mathrm{rx}\)</span>, and <span class="math inline">\(\gamma_\mathrm{xg}\)</span>. The scaling up and down is done by multiplying and dividing by 3, respectively, the numerical value of the considered parameter. One of the first results is that the impact of <span class="math inline">\(\rho_\mathrm{rx}\)</span> is negligible, a result somehow expected as the cost of receiving the ACK is practically zero. From this point on, we do not further consider this parameter.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:param-scaling1"></span>
+<img src="06-ra-tpc_files/figure-html/param-scaling1-1.png" alt="Impact of energy parameter scaling on the energy efficiency. Overall effect." width="787.2" />
+<p class="caption">
+Figure 6.5: Impact of energy parameter scaling on the energy efficiency. Overall effect.
+</p>
+</div>
+<p>We show in Figure <a href="ch-06.html#fig:param-scaling1">6.5</a> the overall effect of this parameter scaling. The solid line represents the base case with no scaling (same curve as in Figure <a href="ch-06.html#fig:efficiency-goodput">6.4</a>), and in dashed and dotted lines the corresponding parameter was multiplied or divided by a factor of 3, respectively. As expected, larger parameters contribute to lower the overall energy efficiency. However, the impact on the energy efficiency drops between mode transitions is far from being obvious, as in some cases transitions are more subtle while in others they become more abrupt.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:param-scaling2"></span>
+<img src="06-ra-tpc_files/figure-html/param-scaling2-1.png" alt="Impact of energy parameter scaling on the energy efficiency. Impact on mode transitions." width="787.2" />
+<p class="caption">
+Figure 6.6: Impact of energy parameter scaling on the energy efficiency. Impact on mode transitions.
+</p>
+</div>
+<p>To delve into these transitions, we illustrate in Figure <a href="ch-06.html#fig:param-scaling2">6.6</a> the “drop” in energy efficiency when changing between modes. As it can be seen, the cross-factor <span class="math inline">\(\gamma_\mathrm{xg}\)</span> is the less sensitive parameter of the three, because its overall effect is limited and, more importantly, it scales all the leaps between mode transitions homogeneously. This means that a higher or lower cross-factor, which resides almost entirely in the device and not in the wireless card, does not alter the energy efficiency vs. optimal goodput relationship<a href="#fn45" class="footnoteRef" id="fnref45"><sup>45</sup></a>. Thus, the cross-factor is not relevant from the RA-TPC point of view, and energy-aware RA-TPC algorithms can be implemented by leveraging energy parameters local to the wireless card.</p>
+<p>On the other hand, <span class="math inline">\(\rho_\mathrm{id}\)</span> and <span class="math inline">\(\rho_\mathrm{tx}\)</span> have a larger overall effect, plus an inhomogeneous and, in general, opposite impact on mode transitions. While a larger <span class="math inline">\(\rho_\mathrm{id}\)</span> contributes to larger leaps, for the case of <span class="math inline">\(\rho_\mathrm{tx}\)</span>, the larger energy efficiency drops occur with smaller values of that parameter. Still, the reason behind this behaviour is the same for both cases: the wireless card spends more time in idle (and less time transmitting) when a transition to the next mode occurs, which has a higher data rate.</p>
+<p>This effect is also evident if we compare the Samsung Galaxy Note and the HTC Legend curves in Figure <a href="ch-06.html#fig:efficiency-goodput">6.4</a>. Both devices have <span class="math inline">\(\rho_\mathrm{id}\)</span> and <span class="math inline">\(\rho_\mathrm{tx}\)</span> in the same order of magnitude, but the HTC Legend has a larger <span class="math inline">\(\rho_\mathrm{id}\)</span> and a smaller <span class="math inline">\(\rho_\mathrm{tx}\)</span>. The combined outcome is a more dramatic sub-linear behaviour and an increased energy efficiency drop between mode transitions.</p>
+</div>
+<div id="heuristics-for-ra-tpc-algorithms" class="section level3">
+<h3><span class="header-section-number">6.3.2</span> Heuristics for RA-TPC Algorithms</h3>
+<p>We have seen that the energy efficiency vs. optimal goodput relationship shows a signature “sawtooth” pattern when RA and TPC are considered for a single 802.11 spatial stream. This sawtooth shape presents a growing trend in the central part of each mode, but there are energy efficiency drops between mode transitions, which conceal a trade-off.</p>
+<p>Parameter scaling has diverse effects on the final consumption signature, but overall, the qualitative behaviour (i.e., the shape) remains the same. The cross-factor produces an homogeneous scaling of the sawtooth. Thus, a first conclusion is that the trade-off depends on the energy parameters local to the wireless card, which means that a properly designed energy-aware RA-TPC algorithm can be device-agnostic.</p>
+<p>Moreover, an energy-aware RA-TCP algorithm may also be card-agnostic. This is because the inefficiencies are always constrained at mode transitions, which are exactly the points at which RA-TPC algorithms take decisions. Therefore, there is no need of knowing the exact energy parametrisation, nor the instantaneous power consumption of the wireless card, in order to take energy-efficient decisions.</p>
+<p>An RA-TPC algorithm moves along the sawtooth shapes of Figure <a href="ch-06.html#fig:efficiency-goodput">6.4</a> in two directions, namely, “up” (towards higher throughput) and “down” (towards lower throughput). In this way, an algorithm requires different policies to make a decision:</p>
+<ol style="list-style-type: lower-roman">
+<li>In the <em>upwards</em> direction, in which mode transitions take place by increasing MCS and TXP (to achieve more goodput), a sensitive policy would be to remain in the left side of the leaps, to prevent falling into the efficiency gaps, until the link is good enough to move to a higher MCS with at least the same efficiency. An heuristic for the <em>upwards</em> policy may be the following: whenever an algorithm chooses a higher MCS, it may hold the decision for some time and, if it persists, then trigger the MCS change<a href="#fn46" class="footnoteRef" id="fnref46"><sup>46</sup></a>.</li>
+<li>In the <em>downwards</em> direction, in which mode transitions take place by decreasing MCS and TXP, a sensitive policy would be to try to reach the left side of the leaps as soon as possible. However, it should be noted that this <em>downwards</em> policy is much more challenging, as it implies predicting quality drops to trigger early MCS/TXP changes.</li>
+</ol>
+<p>In summary, our results suggest that one of the key points of an energy-aware RA-TPC algorithm is the management of mode transitions. A good algorithm should be <em>conservative</em> at mode transitions, in the sense that it should prefer a lower MCS and TXP until a higher MCS can be guaranteed.</p>
+</div>
+</div>
+<div id="summary-3" class="section level2">
+<h2><span class="header-section-number">6.4</span> Summary</h2>
+<p>We have revisited 802.11 rate adaptation and transmission power control by taking energy consumption into account. While some previous studies pointed out that MIMO rate adaptation is not energy efficient, we have demonstrated through numerical analysis that, even for single spatial streams without interfering traffic, energy consumption and throughput performance are different optimisation objectives.</p>
+<p>Our findings <span class="citation">(Ucar et al. <a href="#ref-contrib-06">2016</a>)</span> show that this trade-off emerges at certain “mode transitions” when maximising the goodput, suggesting that small goodput degradations may lead to energy efficiency gains. For instance, a station at the edge of a mode transition may decide to reduce the transmission power a little in order to downgrade the modulation coding scheme. Or an opportunity to achieve a better goodput by increasing the transmission power and modulation coding scheme could be delayed if the expected gain is small.</p>
+
+
+</div>
+</div>
+
+
+
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Qiao2002">
+<p>Qiao, Daji, Sunghyun Choi, and K.G. Shin. 2002. “Goodput analysis and link adaptation for IEEE 802.11a wireless LANs.” <em>Mobile Computing, IEEE Transactions on</em> 1 (4): 278–92. doi:<a href="https://doi.org/10.1109/TMC.2002.1175541">10.1109/TMC.2002.1175541</a>.</p>
+</div>
+<div id="ref-Serrano2014">
+<p>Serrano, P., A. Garcia-Saavedra, G. Bianchi, A. Banchs, and A. Azcorra. 2015. “Per-Frame Energy Consumption in 802.11 Devices and Its Implication on Modeling and Design.” <em>IEEE/ACM Transactions on Networking</em> 23 (4): 1243–56. doi:<a href="https://doi.org/10.1109/TNET.2014.2322262">10.1109/TNET.2014.2322262</a>.</p>
+</div>
+<div id="ref-iturp1238-2015">
+<p>ITU-R. 2015. “P.1238: Propagation data and prediction methods for the planning of indoor radiocommunication systems and radio local area networks in the frequency range 300 MHz to 100 GHz.” Recommendation P.1238. jul: International Telecommunication Union.</p>
+</div>
+<div id="ref-contrib-06">
+<p>Ucar, Iñaki, Carlos Donato, Pablo Serrano, Andres Garcia-Saavedra, Arturo Azcorra, and Albert Banchs. 2016. “Revisiting 802.11 Rate Adaptation from Energy Consumption’s Perspective.” In <em>Proceedings of the 19th Acm International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems</em>, 27–34. MSWiM ’16. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/2988287.2989149">10.1145/2988287.2989149</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="44">
+<li id="fn44"><p>These findings have been further confirmed with an experimental validation, which is covered in Appendix <a href="experimental-validation-of-ra-tpc-inefficiencies.html#experimental-validation-of-ra-tpc-inefficiencies">B</a>.<a href="ch-06.html#fnref44">↩</a></p></li>
+<li id="fn45"><p>Note that this parameter results in a constant term in Equation <a href="ch-06.html#eq:energyperframe">(6.7)</a>.<a href="ch-06.html#fnref45">↩</a></p></li>
+<li id="fn46"><p>However, if this delay is too long, the algorithm will incur in inefficiencies, too.<a href="ch-06.html#fnref46">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch-05.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-07.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["thesis.pdf"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

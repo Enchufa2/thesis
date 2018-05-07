@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Energy Efficiency in Wireless Communications for Mobile User Devices</title>
+  <meta name="description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  
+  <meta name="twitter:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  
+
+<meta name="author" content="Iñaki Úcar">
+
+
+<meta name="date" content="2018-05-07">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="ch-02.html">
+<style type="text/css">
+p.abstract{
+  text-align: center;
+  font-weight: bold;
+}
+div.abstract{
+  margin: auto;
+  width: 90%;
+}
+</style>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Contents</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#cross-factor-towards-a-new-energy-model"><i class="fa fa-check"></i><b>1.1</b> Cross-Factor: Towards a New Energy Model</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#micro-sleep-opportunities-in-802.11"><i class="fa fa-check"></i><b>1.2</b> Micro-Sleep Opportunities in 802.11</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#rate-adaptation-and-power-control-in-802.11"><i class="fa fa-check"></i><b>1.3</b> Rate Adaptation and Power Control in 802.11</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#applied-simulation-modelling-for-energy-efficiency"><i class="fa fa-check"></i><b>1.4</b> Applied Simulation Modelling for Energy Efficiency</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#thesis-overview"><i class="fa fa-check"></i><b>1.5</b> Thesis Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-02.html"><a href="ch-02.html"><i class="fa fa-check"></i><b>2</b> Related Work</a><ul>
+<li class="chapter" data-level="2.1" data-path="ch-02.html"><a href="ch-02.html#energy-profiling-for-wireless-communications"><i class="fa fa-check"></i><b>2.1</b> Energy Profiling for Wireless Communications</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-02.html"><a href="ch-02.html#energy-consumption-of-network-stacks"><i class="fa fa-check"></i><b>2.2</b> Energy Consumption of Network Stacks</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-02.html"><a href="ch-02.html#micro-sleep-opportunities-in-802.11-1"><i class="fa fa-check"></i><b>2.3</b> Micro-Sleep Opportunities in 802.11</a></li>
+<li class="chapter" data-level="2.4" data-path="ch-02.html"><a href="ch-02.html#rate-adaptation-and-power-control-in-802.11-1"><i class="fa fa-check"></i><b>2.4</b> Rate Adaptation and Power Control in 802.11</a></li>
+<li class="chapter" data-level="2.5" data-path="ch-02.html"><a href="ch-02.html#discrete-event-simulation-of-network-systems"><i class="fa fa-check"></i><b>2.5</b> Discrete-Event Simulation of Network Systems</a></li>
+</ul></li>
+<li class="part"><span><b>I Experimentation</b></span></li>
+<li class="chapter" data-level="3" data-path="ch-03.html"><a href="ch-03.html"><i class="fa fa-check"></i><b>3</b> A Comprehensive Energy Measurement Framework</a><ul>
+<li class="chapter" data-level="3.1" data-path="ch-03.html"><a href="ch-03.html#instrumentation"><i class="fa fa-check"></i><b>3.1</b> Instrumentation</a></li>
+<li class="chapter" data-level="3.2" data-path="ch-03.html"><a href="ch-03.html#measurement-and-uncertainty-analysis"><i class="fa fa-check"></i><b>3.2</b> Measurement and Uncertainty Analysis</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="ch-03.html"><a href="ch-03.html#propagation-of-uncertainty"><i class="fa fa-check"></i><b>3.2.1</b> Propagation of Uncertainty</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ch-03.html"><a href="ch-03.html#reporting-uncertainty"><i class="fa fa-check"></i><b>3.2.2</b> Reporting Uncertainty</a></li>
+<li class="chapter" data-level="3.2.3" data-path="ch-03.html"><a href="ch-03.html#automated-uncertainty-handling-in-r-the-errors-package"><i class="fa fa-check"></i><b>3.2.3</b> Automated Uncertainty Handling in R: The <code>errors</code> Package</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ch-03.html"><a href="ch-03.html#whole-device-measurements"><i class="fa fa-check"></i><b>3.3</b> Whole-Device Measurements</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="ch-03.html"><a href="ch-03.html#validation"><i class="fa fa-check"></i><b>3.3.1</b> Validation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="ch-03.html"><a href="ch-03.html#per-component-measurements"><i class="fa fa-check"></i><b>3.4</b> Per-Component Measurements</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="ch-03.html"><a href="ch-03.html#characterisation-of-a-cots-device"><i class="fa fa-check"></i><b>3.4.1</b> Characterisation of a COTS Device</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="ch-03.html"><a href="ch-03.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch-04.html"><a href="ch-04.html"><i class="fa fa-check"></i><b>4</b> Deseeding Energy Consumption of Network Stacks</a><ul>
+<li class="chapter" data-level="4.1" data-path="ch-04.html"><a href="ch-04.html#anatomy-of-a-laptop-computer"><i class="fa fa-check"></i><b>4.1</b> Anatomy of a Laptop Computer</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-04.html"><a href="ch-04.html#cross-factor-separating-the-wheat-from-the-chaff"><i class="fa fa-check"></i><b>4.2</b> Cross-Factor: Separating the Wheat from the Chaff</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-04.html"><a href="ch-04.html#power-consumption-in-unattended-idle-mode"><i class="fa fa-check"></i><b>4.3</b> Power Consumption in Unattended Idle Mode</a></li>
+<li class="chapter" data-level="4.4" data-path="ch-04.html"><a href="ch-04.html#power-consumption-with-full-cpuidle-subsystem"><i class="fa fa-check"></i><b>4.4</b> Power Consumption with Full <code>cpuidle</code> Subsystem</a></li>
+<li class="chapter" data-level="4.5" data-path="ch-04.html"><a href="ch-04.html#exploring-the-cpuidle-subsystem"><i class="fa fa-check"></i><b>4.5</b> Exploring the <code>cpuidle</code> Subsystem</a></li>
+<li class="chapter" data-level="4.6" data-path="ch-04.html"><a href="ch-04.html#summary-1"><i class="fa fa-check"></i><b>4.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ch-05.html"><a href="ch-05.html"><i class="fa fa-check"></i><b>5</b> Leveraging Micro-Sleep Opportunities in 802.11</a><ul>
+<li class="chapter" data-level="5.1" data-path="ch-05.html"><a href="ch-05.html#state-transition-times"><i class="fa fa-check"></i><b>5.1</b> State Transition Times in 802.11 Cards</a></li>
+<li class="chapter" data-level="5.2" data-path="ch-05.html"><a href="ch-05.html#protocol-analysis-and-practical-issues"><i class="fa fa-check"></i><b>5.2</b> Protocol Analysis and Practical Issues</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="ch-05.html"><a href="ch-05.html#identifying-potential-micro-sleep-opportunities"><i class="fa fa-check"></i><b>5.2.1</b> Identifying Potential Micro-Sleep Opportunities</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ch-05.html"><a href="ch-05.html#impact-of-capture-effect"><i class="fa fa-check"></i><b>5.2.2</b> Impact of Capture Effect</a></li>
+<li class="chapter" data-level="5.2.3" data-path="ch-05.html"><a href="ch-05.html#impact-of-errors-in-the-mac-header"><i class="fa fa-check"></i><b>5.2.3</b> Impact of Errors in the MAC Header</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="ch-05.html"><a href="ch-05.html#munap-algorithm"><i class="fa fa-check"></i><b>5.3</b> <span class="math inline">\(\mu\)</span>Nap Algorithm</a></li>
+<li class="chapter" data-level="5.4" data-path="ch-05.html"><a href="ch-05.html#performance-evaluation"><i class="fa fa-check"></i><b>5.4</b> Performance Evaluation</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="ch-05.html"><a href="ch-05.html#evaluation-with-real-traces"><i class="fa fa-check"></i><b>5.4.1</b> Evaluation with Real Traces</a></li>
+<li class="chapter" data-level="5.4.2" data-path="ch-05.html"><a href="ch-05.html#impact-of-timing-constraints"><i class="fa fa-check"></i><b>5.4.2</b> Impact of Timing Constraints</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="ch-05.html"><a href="ch-05.html#summary-2"><i class="fa fa-check"></i><b>5.5</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>II Mathematical Modelling</b></span></li>
+<li class="chapter" data-level="6" data-path="ch-06.html"><a href="ch-06.html"><i class="fa fa-check"></i><b>6</b> Rate Adaptation and Power Control in 802.11</a><ul>
+<li class="chapter" data-level="6.1" data-path="ch-06.html"><a href="ch-06.html#joint-goodput-energy-model"><i class="fa fa-check"></i><b>6.1</b> Joint Goodput-Energy Model</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-06.html"><a href="ch-06.html#numerical-results"><i class="fa fa-check"></i><b>6.2</b> Numerical Results</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="ch-06.html"><a href="ch-06.html#optimal-goodput"><i class="fa fa-check"></i><b>6.2.1</b> Optimal Goodput</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ch-06.html"><a href="ch-06.html#extension-of-the-energy-parametrisation"><i class="fa fa-check"></i><b>6.2.2</b> Extension of the Energy Parametrisation</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ch-06.html"><a href="ch-06.html#energy-consumption"><i class="fa fa-check"></i><b>6.2.3</b> Energy Consumption</a></li>
+<li class="chapter" data-level="6.2.4" data-path="ch-06.html"><a href="ch-06.html#energy-efficiency-vs.optimal-goodput"><i class="fa fa-check"></i><b>6.2.4</b> Energy Efficiency vs. Optimal Goodput</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ch-06.html"><a href="ch-06.html#discussion"><i class="fa fa-check"></i><b>6.3</b> Discussion</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="ch-06.html"><a href="ch-06.html#sensitivity-to-energy-parameter-scaling"><i class="fa fa-check"></i><b>6.3.1</b> Sensitivity to Energy Parameter Scaling</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ch-06.html"><a href="ch-06.html#heuristics-for-ra-tpc-algorithms"><i class="fa fa-check"></i><b>6.3.2</b> Heuristics for RA-TPC Algorithms</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="ch-06.html"><a href="ch-06.html#summary-3"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>III Simulation</b></span></li>
+<li class="chapter" data-level="7" data-path="ch-07.html"><a href="ch-07.html"><i class="fa fa-check"></i><b>7</b> Performance of RA-TPC Algorithms in 802.11</a><ul>
+<li class="chapter" data-level="7.1" data-path="ch-07.html"><a href="ch-07.html#algorithms-considered"><i class="fa fa-check"></i><b>7.1</b> Algorithms Considered</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-07.html"><a href="ch-07.html#simulation-scenario"><i class="fa fa-check"></i><b>7.2</b> Simulation Scenario</a></li>
+<li class="chapter" data-level="7.3" data-path="ch-07.html"><a href="ch-07.html#results-and-discussion"><i class="fa fa-check"></i><b>7.3</b> Results and Discussion</a></li>
+<li class="chapter" data-level="7.4" data-path="ch-07.html"><a href="ch-07.html#conservativeness-at-mode-transitions"><i class="fa fa-check"></i><b>7.4</b> Conservativeness at Mode Transitions</a></li>
+<li class="chapter" data-level="7.5" data-path="ch-07.html"><a href="ch-07.html#summary-4"><i class="fa fa-check"></i><b>7.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ch-08.html"><a href="ch-08.html"><i class="fa fa-check"></i><b>8</b> A Novel Discrete-Event Simulation Framework</a><ul>
+<li class="chapter" data-level="8.1" data-path="ch-08.html"><a href="ch-08.html#the-simulation-core-design"><i class="fa fa-check"></i><b>8.1</b> The Simulation Core Design</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="ch-08.html"><a href="ch-08.html#terminology"><i class="fa fa-check"></i><b>8.1.1</b> Terminology</a></li>
+<li class="chapter" data-level="8.1.2" data-path="ch-08.html"><a href="ch-08.html#architecture"><i class="fa fa-check"></i><b>8.1.2</b> Architecture</a></li>
+<li class="chapter" data-level="8.1.3" data-path="ch-08.html"><a href="ch-08.html#the-event-queue"><i class="fa fa-check"></i><b>8.1.3</b> The Event Queue</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="ch-08.html"><a href="ch-08.html#a-brief-introduction-to-simmer"><i class="fa fa-check"></i><b>8.2</b> A Brief Introduction to <code>simmer</code></a></li>
+<li class="chapter" data-level="8.3" data-path="ch-08.html"><a href="ch-08.html#use-case-energy-efficiency-for-massive-iot"><i class="fa fa-check"></i><b>8.3</b> Use case: Energy Efficiency for Massive IoT</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-08.html"><a href="ch-08.html#summary-5"><i class="fa fa-check"></i><b>8.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ch-09.html"><a href="ch-09.html"><i class="fa fa-check"></i><b>9</b> Conclusions and Future Work</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="measurement-circuitry-schematics.html"><a href="measurement-circuitry-schematics.html"><i class="fa fa-check"></i><b>A</b> Measurement Circuitry Schematics</a></li>
+<li class="chapter" data-level="B" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html"><i class="fa fa-check"></i><b>B</b> Experimental Validation of RA-TPC Inefficiencies</a><ul>
+<li class="chapter" data-level="B.1" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html#experimental-setup"><i class="fa fa-check"></i><b>B.1</b> Experimental Setup</a></li>
+<li class="chapter" data-level="B.2" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html#methodology-and-results"><i class="fa fa-check"></i><b>B.2</b> Methodology and Results</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html"><i class="fa fa-check"></i><b>C</b> Performance Evaluation of <code>simmer</code></a><ul>
+<li class="chapter" data-level="C.1" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html#comparison-with-similar-frameworks"><i class="fa fa-check"></i><b>C.1</b> Comparison with Similar Frameworks</a></li>
+<li class="chapter" data-level="C.2" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html#the-cost-of-calling-r-from-c"><i class="fa fa-check"></i><b>C.2</b> The Cost of Calling R from C++</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">
+Licensed under <img alt="Creative Commons License" style="border-width:0;vertical-align:bottom" 
+src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Energy Efficiency in Wireless Communications for Mobile User Devices</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<p><span class="newthought">Energy efficiency</span> is the ability to do more with less. When we talk about <em>green communications</em>, this means more connectivity, more capacity and more responsiveness at a lower energy cost. Unfortunately, these are competing goals, and all we can do in this tale is to fight against thermodynamics to seek for the elusive <em>optimality</em>.</p>
+<p>It is straightforward to compute the minimum energy required to move a mass on a surface from point A to point B, as it depends on the friction coefficient. Drawing a parallelism, we are interested in the <em>friction</em> <span class="citation">(Grover <a href="#ref-grover2015">2015</a>)</span> of communicating a <em>bit</em> from point A to point B. As in the Newtonian example, our problem depends on the <em>substrate</em>, the specific technology and implementation. But when we deal with such complex systems as today’s telecommunications networks, this estimation remains unfeasible.</p>
+<p>We walk blindly towards an unknown lower bound. Fortunately, the set of possible strategies are limited and well-known <span class="citation">(Samdanis et al. <a href="#ref-samdanis2015green">2015</a>)</span>, and pursue a common objective, namely, that the energy consumption should be proportional to the transmitted information. These can be divided in three basic principles subject of active research, and their intent can be summarised as follows:</p>
+<dl>
+<dt>Speed scaling,</dt>
+<dd>which tries to adapt the processing speed of network devices to the traffic load.
+</dd>
+<dt>Powering down,</dt>
+<dd>which aims to turn network devices off during inactivity periods. This is commonly implemented as the so-called <em>sleep states</em>, and their <em>depth</em> introduces an inherent trade-off with the time required to become active again.
+</dd>
+<dt>Rate adaptation,</dt>
+<dd>which tries to adapt the transmission rate of wireless cards according to the channel conditions<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>.
+</dd>
+</dl>
+<p>The aim of this thesis is to explore the above three strategies in the scope of wireless communications for mobile user devices at multiple layers, as will be introduced in the following sections: from the operating system to the low-level operation of the wireless card.</p>
+<div id="cross-factor-towards-a-new-energy-model" class="section level2">
+<h2><span class="header-section-number">1.1</span> Cross-Factor: Towards a New Energy Model</h2>
+<p>We are living in an era in which consumer electronics are becoming <em>wireless consumer electronics</em>. That is, just about any known gadget is capable of connecting to cellular, wireless Local Area Networks (WLAN) or wireless Personal Area Networks (WPAN) nowadays. The Internet of Things (IoT) is growing fast and wireless communications become its main driver. Due to the densification of wireless networks and the ubiquity of battery-powered devices, energy efficiency stands as a major research issue.</p>
+<p>More and more devices around us are becoming <em>smart</em>, incorporating more processing power in order to do more things, and some of them are already comparable to a small laptop computer. As a consequence, not only do they share hardware components, but also software: in particular, the Linux kernel is spreading into billions of devices all over the world, whether inside of the popular Android operating system or other embedded systems.</p>
+<p>Whereas a lot of research were and is devoted to obtain more energy-efficient hardware components (e.g., wireless cards, processors, screens), too little attention has been paid, in terms of energy, to a core software component that enables all these devices: the operating system and, inside it, the network stack.</p>
+<p><span class="newthought">The seminal paper</span> by <span class="citation">Feeney and Nilsson (<a href="#ref-Feeney2001">2001</a>)</span> gives the very first insight on energy consumption of wireless interfaces. This work was done on a per-frame basis by accounting for the energy drained by an 802.11 wireless card. Subsequent experimental work followed the same approach, showing that the energy consumption of wireless transmissions/receptions can be characterised using a simple linear model. This fact arises from the three typical states of operation of a wireless card: idle, transmitting and receiving.</p>
+<p>The model, commonly expressed in terms of power, has a fixed part <span class="math inline">\(\rho_{id}\)</span>, device-dependent, attributable to the idle state, and it grows linearly with the airtime percentage <span class="math inline">\(\tau\)</span> (i.e., the fraction of time in which the card is transmitting or receiving).</p>
+<p>However, more recently, the novel work by <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span> performed extensive per-frame measurements for seven devices of different types (smartphones, tablets, embedded devices and wireless routers), and unveiled that actually there is a non-negligible per-frame processing toll ascribed to the frame crossing the network stack. This component emerges as a new offset proportional to the frame generation rate, and it is not explained by the <em>classical</em> model.</p>
+<p>The currently accepted energy model is a multilinear model articulated into three main parts:</p>
+<span class="math display" id="eq:new-energy-model">\[\begin{equation}
+ \overline{P}(\tau_i, \lambda_i) = \underbrace{\rho_\mathrm{id} + \sum_{i\in\mathrm{\{tx,rx\}}} \rho_i \tau_i}_{\text{classical model}} + \sum_{i\in\mathrm{\{g,r\}}} \gamma_{\mathrm{x}i} \lambda_i
+ \tag{1.1}
+\end{equation}\]</span>
+<p>where the first two addends correspond to the classical model and the third is the contribution described in <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span>. This model can be subdivided into five components:</p>
+<ul>
+<li>A platform-specific baseline power consumption that accounts for the energy consumed just by the fact of being powered on, but with no network activity. This component is commonly referred to as <em>idle consumption</em>, <span class="math inline">\(\rho_\mathrm{id}\)</span>.</li>
+<li>A component that accounts for the energy consumed in transmission, which grows linearly with the airtime percentage <span class="math inline">\(\tau_\mathrm{tx}\)</span>. The slope <span class="math inline">\(\rho_\mathrm{tx}\)</span> depends linearly on the radio transmission parameters MCS and TXP.</li>
+<li>A component that accounts for the energy consumed in reception, which grows linearly with the airtime percentage <span class="math inline">\(\tau_\mathrm{rx}\)</span>. The slope <span class="math inline">\(\rho_\mathrm{rx}\)</span> depends linearly on the radio transmission parameter MCS.</li>
+<li>A new component, called <em>generation cross-factor</em> or <span class="math inline">\(\gamma_{\mathrm{xg}}\)</span>, that accounts for a per-frame energy processing toll in transmission, which grows linearly with the traffic rate <span class="math inline">\(\lambda_\mathrm{g}\)</span> generated. The slope <span class="math inline">\(\gamma_\mathrm{xg}\)</span> depends on the computing characteristics of the device.</li>
+<li>A new component, called <em>reception cross-factor</em> or <span class="math inline">\(\gamma_{\mathrm{xr}}\)</span>, that accounts for a per-frame energy processing toll in reception, which grows linearly with the traffic rate <span class="math inline">\(\lambda_\mathrm{r}\)</span> received. Likewise, the slope <span class="math inline">\(\gamma_\mathrm{xr}\)</span> depends on the computing characteristics of the device.</li>
+</ul>
+<p>Therefore, the average power consumed <span class="math inline">\(\overline{P}\)</span> is a function of five device-dependent parameters (<span class="math inline">\(\rho_i, \gamma_{\mathrm{x}i}\)</span>) and four traffic-dependent ones (<span class="math inline">\(\tau_i, \lambda_i\)</span>).</p>
+<p>The results obtained with this new multilinear model showed that the so-called cross-factor accounts for 50% to 97% of the per-frame energy consumption. Additional findings showed that it is independent of the CPU load on some devices and <em>almost</em> independent of the frame size.</p>
+<p>Therefore, this inspired us to deepen into the roots of the cross-factor, to deseed its components and analyse its causes. To this aim, it is of paramount importance the conception of a comprehensive, high-accuracy and high-precision measurement framework that enables us to measure the consumption of a wide range of mobile devices.</p>
+</div>
+<div id="micro-sleep-opportunities-in-802.11" class="section level2">
+<h2><span class="header-section-number">1.2</span> Micro-Sleep Opportunities in 802.11</h2>
+<p>IEEE 802.11 is an extremely common technology for broadband Internet access. Energy efficiency stands as a major issue due to the intrinsic CSMA mechanism, which forces the network card to stay active performing <em>idle listening</em>, while most of the 802.11-capable terminals run on batteries.</p>
+<p>The 802.11 standard developers are fully aware of the energy issues that WiFi poses on battery-powered devices and have designed mechanisms to reduce energy consumption. One of such mechanisms is the Power Save (PS) mode, which is widely deployed among commercial wireless cards, although unevenly supported in software drivers. With this mechanism, a station (STA) may enter a doze state during long periods of time, subject to prior notification, if it has nothing to transmit. Meanwhile, packets addressed to this dozing STA are buffered and signalled in the Traffic Indication Map (TIM) attached to each beacon frame.</p>
+<p>The PS mechanism dramatically reduces the power consumption of a wireless card. However, the counterpart is that, since the card is put to sleep for hundreds of milliseconds, the user experiences a serious performance degradation because of the delays incurred. The automatic power save delivery (APSD) introduced by the 11e amendment (<span class="citation">Perez-Costa and Camps-Mur (<a href="#ref-Perez-Costa2010">2010</a>)</span> give a nice overview) is based on this mechanism, and aims to improve the downlink delivery by taking advantage of QoS mechanisms, but has not been widely adopted.</p>
+<p>More recently, the 11ac amendment improves the PS capabilities with the VHT TXOP (Very High Throughput, Transmission Opportunity) PS mechanism. Basically, an 11ac STA can doze during other STAs’ TXOPs. This capability is announced within the new VHT framing format, so that the AP knows that it cannot send traffic to those STAs until the TXOP’s natural end, even if it is interrupted earlier. Still, the potential dozing is in the range of milliseconds and may lead to channel underuse if these TXOPs are not fully exploited.</p>
+<p>Considering shorter timescales, packet overhearing (i.e., listening to the wireless while there is an ongoing transmission addressed to other station) has been identified as a potential source of energy waste <span class="citation">(Basu and Redi <a href="#ref-basu2004">2004</a>)</span>. Despite this, our measurements found no trace of mechanisms in commercial wireless card to lessen its impact.</p>
+<p>Taking advantage on the energy measurement framework built for this thesis, we further investigate the timing capabilities for transitioning between operational states of a commercial off-the-shelf (COTS) wireless card. Based on this, we propose <span class="math inline">\(\mu\)</span>Nap, a practical algorithm to leverage micro-sleep opportunities in 802.11 WLANs.</p>
+</div>
+<div id="rate-adaptation-and-power-control-in-802.11" class="section level2">
+<h2><span class="header-section-number">1.3</span> Rate Adaptation and Power Control in 802.11</h2>
+<p>At the beginning of this introduction, we have identified rate adaptation as one of the three basic strategies that can be applied to achieve proportionality between energy consumption and traffic load. Nevertheless, energy efficiency has not been the main driver for research in the fields of rate adaptation and power control in 802.11.</p>
+<p>Rate adaptation (RA) algorithms are responsible for selecting the most appropriate modulation and coding scheme (MCS) to use given an estimation of the link conditions, being the frame losses one of the main indicators of such conditions. In general, the challenge lies in distinguishing between those losses due to collisions and those due to poor radio conditions, because they should trigger different reactions. In addition, the performance figure to optimise is commonly the throughput or a related one such as, e.g., the time required to deliver a frame.</p>
+<p>On the other hand, network densification is becoming a common tool to provide better coverage and capacity. However, densification brings new problems, especially for 802.11, given the limited amount of orthogonal channels available, which leads to performance and reliability issues due to radio frequency interference. In consequence, some RA schemes also incorporate transmission power control (TPC), which tries to minimise the transmission power (TXP) with the purpose of reducing interference between nearby networks. As in the case of “vanilla” RA, the main performance figure to optimise is also the throughput.</p>
+<p>It is generally assumed that optimality in terms of throughput also implies optimality in terms of energy efficiency. However, some previous work <span class="citation">(Li et al. <a href="#ref-Li2012">2012</a>; Khan et al. <a href="#ref-khan2013">2013</a>)</span> has shown that throughput maximisation does not result in energy efficiency maximisation, at least for 802.11n. However, we still lack a proper understanding of the causes behind this “non-duality”, as it may be caused by the specific design of the algorithms studied, an extra consumption caused by the complexity of MIMO techniques, or any other reason.</p>
+<p>This thesis revisits RA-TPC in 802.11 within the context of energy efficiency. We first conduct an analytical study, and then we evaluate the performance, in terms of energy, of several state-of-the-art RA-TPC algorithms by simulation. Our results unveil that the trade-off shown by previous studies is in turn inherent to 802.11 operation. Particularly, we show that the link quality conditions which trigger mode transitions (changes of MCS/TXP) may be source of inefficiencies. Nonetheless, our analyses provide some heuristics that can be used along the energy parameters of the wireless card to mitigate such inefficiencies.</p>
+</div>
+<div id="applied-simulation-modelling-for-energy-efficiency" class="section level2">
+<h2><span class="header-section-number">1.4</span> Applied Simulation Modelling for Energy Efficiency</h2>
+<p>Simulation frameworks are undoubtedly one of the most important tools for the analysis and design of communication networks and protocols. Their applications are numerous, including the performance evaluation of existing or novel proposals, dimensioning of resources and capacity planning, or the validation of theoretical analyses.</p>
+<p>Simulation frameworks make a number of simplifying assumptions to reduce complexity so the development of the scenario is easier and numerical figures are obtained faster. This “complexity” axis goes from very specialised, large simulation tools such as NS-3, OMNeT++, OPNET, to <em>ad-hoc</em> simulation tools, consisting on hundreds of lines of code, typically used to validate a very specific part of the network or a given mathematical analysis. The latter are often developed over general-purpose languages such as C/C++ or Python, over numerical frameworks such as Matlab, or over some framework for discrete-event simulation (DES).</p>
+<p>On the one hand, the complexity of specialised tools (as their cost, if applicable) preclude their use for short-to-medium research projects, as the learning curve is typically steep plus they are difficult to extend, which is mandatory to test a novel functionality. On the other hand, the development of ad-hoc tools also require some investment of time and resources, lack a proper validation of their functionality, and, furthermore, there is no code maintenance once the project is finished, for the few cases in which the code is made publicly available.</p>
+<p>Last but not least, the monitoring of variables of interest typically stands out as a first-order problem. Most simulators require a specific effort in this regard, so that the modeller has to ponder which parameters must be monitored, and where and how this should be done. Therefore, the design of the scenario is intrinsically linked to data collection.</p>
+<p>The research experience gained over the course of this thesis have made us aware of the need for new simulation tools committed to the middle-way approach: less specificity and complexity in exchange for faster prototyping, while supporting efficient simulation at a low implementation cost. As a result, we developed <code>simmer</code>, a process-oriented and trajectory-based DES package for R, which is designed to be an easy-to-use yet powerful framework. Its most noteworthy characteristic is the automatic monitoring capability, which allows the user to focus on the system model. The use of this simulator in networking is demonstrated through the energy modelling of a 5G-inspired scenario.</p>
+</div>
+<div id="thesis-overview" class="section level2">
+<h2><span class="header-section-number">1.5</span> Thesis Overview</h2>
+<p>The remainder of this thesis is organised as follows. Chapter <a href="ch-02.html#ch:02">2</a> presents the relevant literature related to the topics introduced in this chapter. Then, the dissertation is divided into three thematic parts: <em>experimentation</em>, <em>mathematical modelling</em> and <em>simulation</em>. Chapter <a href="ch-03.html#ch:03">3</a> presents a comprehensive energy measurement framework, which has been a fundamental pillar of this thesis. Building on this, Chapter <a href="ch-04.html#ch:04">4</a> delves into the roots of the cross-factor by exploring the energy consumption of the Linux network stack. Chapter <a href="ch-05.html#ch:05">5</a> completes the experimental part with a study of the timing constraints of a COTS wireless card, which is developed into a standard-compliant algorithm to leverage micro-sleep opportunities in 802.11 WLANs. Chapter <a href="ch-06.html#ch:06">6</a> presents a joint goodput-energy model that unveils an inherent trade-off between througput and energy efficiency maximisation in 802.11 when RA-TPC techniques are applied. Chapter <a href="ch-07.html#ch:07">7</a> further extends the latter work by simulating and comparing the performance of several representative RA-TPC algorithms. Closing the simulation part, Chapter <a href="ch-08.html#ch:08">8</a> presents our novel DES framework, and showcases its versatility by analising the energy consumption of an Internet-of-Things scenario with thousands of metering devices. Finally, Chapter <a href="ch-09.html#ch:09">9</a> contains the thesis conclusions and future lines of work.</p>
+<p>This thesis covers the following contributions: <span class="citation">Ucar, Pebesma, and Azcorra (<a href="#ref-contrib-03">2018</a>)</span>, <span class="citation">Ucar, Azcorra, and Banchs (<a href="#ref-contrib-04a">2014</a>)</span>, <span class="citation">Ucar and Azcorra (<a href="#ref-contrib-04b">2015</a>)</span>, <span class="citation">Azcorra et al. (<a href="#ref-contrib-05a">2017</a>)</span>, <span class="citation">Azcorra et al. (<a href="#ref-contrib-05b">2018</a>)</span>, <span class="citation">Ucar et al. (<a href="#ref-contrib-06">2016</a>)</span>, <span class="citation">Iñaki Ucar, Donato, et al. (<a href="#ref-contrib-07">2018</a>)</span>, <span class="citation">Ucar, Smeets, and Azcorra (<a href="#ref-contrib-08a">2018</a>)</span>, <span class="citation">Iñaki Ucar, Hernández, et al. (<a href="#ref-contrib-08b">2018</a>)</span>.</p>
+<p>Therefore, there is an overlap between this dissertation and the publications listed above. Additionally, the following contributions are not part of this thesis: <span class="citation">Bartzoudis et al. (<a href="#ref-flex5gware">2017</a>)</span>, <span class="citation">Mannweiler et al. (<a href="#ref-5gnorma">2017</a>)</span>, <span class="citation">Gringoli et al. (<a href="#ref-11aa">2017</a>)</span>.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-grover2015">
+<p>Grover, Pulkit. 2015. “Information Friction and Its Implications on Minimum Energy Required for Communication.” <em>IEEE Transactions on Information Theory</em> 61 (2): 895–907. doi:<a href="https://doi.org/10.1109/TIT.2014.2365777">10.1109/TIT.2014.2365777</a>.</p>
+</div>
+<div id="ref-samdanis2015green">
+<p>Samdanis, Konstantinos, Peter Rost, Andreas Maeder, Michela Meo, and Christos Verikoukis. 2015. <em>Green Communications: Principles, Concepts and Practice</em>. Wiley &amp; Sons.</p>
+</div>
+<div id="ref-Feeney2001">
+<p>Feeney, L.M., and M. Nilsson. 2001. “Investigating the energy consumption of a wireless network interface in an ad hoc networking environment.” In <em>Proceedings Ieee Infocom 2001. Conference on Computer Communications. Twentieth Annual Joint Conference of the Ieee Computer and Communications Society</em>, 3:1548–57. IEEE. doi:<a href="https://doi.org/10.1109/INFCOM.2001.916651">10.1109/INFCOM.2001.916651</a>.</p>
+</div>
+<div id="ref-Serrano2014">
+<p>Serrano, P., A. Garcia-Saavedra, G. Bianchi, A. Banchs, and A. Azcorra. 2015. “Per-Frame Energy Consumption in 802.11 Devices and Its Implication on Modeling and Design.” <em>IEEE/ACM Transactions on Networking</em> 23 (4): 1243–56. doi:<a href="https://doi.org/10.1109/TNET.2014.2322262">10.1109/TNET.2014.2322262</a>.</p>
+</div>
+<div id="ref-Perez-Costa2010">
+<p>Perez-Costa, X., and D. Camps-Mur. 2010. “IEEE 802.11E QoS and power saving features overview and analysis of combined performance [Accepted from Open Call.” <em>IEEE Wireless Communications</em> 17 (4): 88–96. doi:<a href="https://doi.org/10.1109/MWC.2010.5547926">10.1109/MWC.2010.5547926</a>.</p>
+</div>
+<div id="ref-basu2004">
+<p>Basu, Prithwish, and Jason Redi. 2004. “Effect of Overhearing Transmissions on Energy Efficiency in Dense Sensor Networks.” In <em>Proceedings of the 3rd International Symposium on Information Processing in Sensor Networks</em>, 196–204. IPSN ’04. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/984622.984652">10.1145/984622.984652</a>.</p>
+</div>
+<div id="ref-Li2012">
+<p>Li, Chi-Yu, Chunyi Peng, Songwu Lu, and Xinbing Wang. 2012. “Energy-based Rate Adaptation for 802.11n.” In <em>Proceedings of the 18th Annual International Conference on Mobile Computing and Networking</em>, 341–52. Mobicom ’12. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/2348543.2348585">10.1145/2348543.2348585</a>.</p>
+</div>
+<div id="ref-khan2013">
+<p>Khan, Muhammad Owais, Vacha Dave, Yi-Chao Chen, Oliver Jensen, Lili Qiu, Apurv Bhartia, and Swati Rallapalli. 2013. “Model-Driven Energy-Aware Rate Adaptation.” In <em>Proceedings of the Fourteenth Acm International Symposium on Mobile Ad Hoc Networking and Computing</em>, 217–26. MobiHoc ’13. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/2491288.2491300">10.1145/2491288.2491300</a>.</p>
+</div>
+<div id="ref-contrib-03">
+<p>Ucar, Iñaki, Edzer Pebesma, and Arturo Azcorra. 2018. “Measurement Errors in R.” <em>R Journal</em> (submitted). <a href="https://arxiv.org/abs/1804.08552" class="uri">https://arxiv.org/abs/1804.08552</a>.</p>
+</div>
+<div id="ref-contrib-04a">
+<p>Ucar, Iñaki, Arturo Azcorra, and Albert Banchs. 2014. “Deseeding Energy Consumption of Network Stacks.” In <em>6th Annual International Imdea Networks Workshop</em>.</p>
+</div>
+<div id="ref-contrib-04b">
+<p>Ucar, Iñaki, and Arturo Azcorra. 2015. “Deseeding energy consumption of network stacks.” In <em>IEEE 1st International Forum on Research and Technologies for Society and Industry Leveraging a Better Tomorrow (Rtsi)</em>, 7–16. doi:<a href="https://doi.org/10.1109/RTSI.2015.7325085">10.1109/RTSI.2015.7325085</a>.</p>
+</div>
+<div id="ref-contrib-05a">
+<p>Azcorra, Arturo, Iñaki Ucar, Albert Banchs, Francesco Gringoli, and Pablo Serrano. 2017. “<span class="math inline">\(\mu\)</span>Nap: Practical micro-sleeps for 802.11 WLANs.” <em>Computer Communications</em> 110 (September): 175–86. doi:<a href="https://doi.org/10.1016/j.comcom.2017.06.008">10.1016/j.comcom.2017.06.008</a>.</p>
+</div>
+<div id="ref-contrib-05b">
+<p>Azcorra, Arturo, Iñaki Ucar, Albert Banchs, Francesco Gringoli, and Pablo Serrano. 2018. Energy-saving method based on micro-shutdowns for a wireless device in a telecommunications network, issued January 2018. <a href="http://www.google.com/patents/WO2018015601" class="uri">http://www.google.com/patents/WO2018015601</a>.</p>
+</div>
+<div id="ref-contrib-06">
+<p>Ucar, Iñaki, Carlos Donato, Pablo Serrano, Andres Garcia-Saavedra, Arturo Azcorra, and Albert Banchs. 2016. “Revisiting 802.11 Rate Adaptation from Energy Consumption’s Perspective.” In <em>Proceedings of the 19th Acm International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems</em>, 27–34. MSWiM ’16. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/2988287.2989149">10.1145/2988287.2989149</a>.</p>
+</div>
+<div id="ref-contrib-07">
+<p>Ucar, Iñaki, Carlos Donato, Pablo Serrano, Andres Garcia-Saavedra, Arturo Azcorra, and Albert Banchs. 2018. “On the energy efficiency of rate and transmission power control in 802.11.” <em>Computer Communications</em> 117 (February): 164–74. doi:<a href="https://doi.org/10.1016/j.comcom.2017.07.002">10.1016/j.comcom.2017.07.002</a>.</p>
+</div>
+<div id="ref-contrib-08a">
+<p>Ucar, Iñaki, Bart Smeets, and Arturo Azcorra. 2018. “simmer: Discrete-Event Simulation for R.” <em>Journal of Statistical Software</em> (accepted for publication). <a href="https://arxiv.org/abs/1705.09746" class="uri">https://arxiv.org/abs/1705.09746</a>.</p>
+</div>
+<div id="ref-contrib-08b">
+<p>Ucar, Iñaki, José Alberto Hernández, Pablo Serrano, and Arturo Azcorra. 2018. “Design and Analysis of 5G Scenarios with simmer: An R Package for Fast DES Prototyping.” <em>IEEE Communications Magazine</em>. doi:<a href="https://doi.org/10.1109/MCOM.2018.1700960">10.1109/MCOM.2018.1700960</a>.</p>
+</div>
+<div id="ref-flex5gware">
+<p>Bartzoudis, N., O. Font-Bach, M. Miozzo, C. Donato, P. Harbanau, M. Requena, D. López, et al. 2017. “Energy footprint reduction in 5G reconfigurable hotspots via function partitioning and bandwidth adaptation.” In <em>2017 Fifth International Workshop on Cloud Technologies and Energy Efficiency in Mobile Communication Networks (Cleen)</em>, 1–6. doi:<a href="https://doi.org/10.23919/CLEEN.2017.8045934">10.23919/CLEEN.2017.8045934</a>.</p>
+</div>
+<div id="ref-5gnorma">
+<p>Mannweiler, C., M. Breitbach, H. Droste, I. L. Pavón, I. Ucar, P. Schneider, M. Doll, and J. R. Sanchez. 2017. “5G NORMA: System architecture for programmable multi-tenant 5G mobile networks.” In <em>2017 European Conference on Networks and Communications (Eucnc)</em>, 1–6. doi:<a href="https://doi.org/10.1109/EuCNC.2017.7980662">10.1109/EuCNC.2017.7980662</a>.</p>
+</div>
+<div id="ref-11aa">
+<p>Gringoli, Francesco, Pablo Serrano, Iñaki Ucar, Nicolò Facchi, and Arturo Azcorra. 2017. “Experimental QoE evaluation of multicast video delivery over IEEE 802.11aa WLANs.” <em>IEEE Transactions on Mobile Computing</em> (under review).</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p>This, as well as the <em>speed scaling</em> principle, is based on a direct relationship between consumption and transmission rate, which is not always the case.<a href="introduction.html#fnref3">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-02.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["thesis.pdf"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

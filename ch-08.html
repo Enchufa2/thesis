@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Energy Efficiency in Wireless Communications for Mobile User Devices</title>
+  <meta name="description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  
+  <meta name="twitter:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  
+
+<meta name="author" content="Iñaki Úcar">
+
+
+<meta name="date" content="2018-05-07">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="ch-07.html">
+<link rel="next" href="ch-09.html">
+<style type="text/css">
+p.abstract{
+  text-align: center;
+  font-weight: bold;
+}
+div.abstract{
+  margin: auto;
+  width: 90%;
+}
+</style>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Contents</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#cross-factor-towards-a-new-energy-model"><i class="fa fa-check"></i><b>1.1</b> Cross-Factor: Towards a New Energy Model</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#micro-sleep-opportunities-in-802.11"><i class="fa fa-check"></i><b>1.2</b> Micro-Sleep Opportunities in 802.11</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#rate-adaptation-and-power-control-in-802.11"><i class="fa fa-check"></i><b>1.3</b> Rate Adaptation and Power Control in 802.11</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#applied-simulation-modelling-for-energy-efficiency"><i class="fa fa-check"></i><b>1.4</b> Applied Simulation Modelling for Energy Efficiency</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#thesis-overview"><i class="fa fa-check"></i><b>1.5</b> Thesis Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-02.html"><a href="ch-02.html"><i class="fa fa-check"></i><b>2</b> Related Work</a><ul>
+<li class="chapter" data-level="2.1" data-path="ch-02.html"><a href="ch-02.html#energy-profiling-for-wireless-communications"><i class="fa fa-check"></i><b>2.1</b> Energy Profiling for Wireless Communications</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-02.html"><a href="ch-02.html#energy-consumption-of-network-stacks"><i class="fa fa-check"></i><b>2.2</b> Energy Consumption of Network Stacks</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-02.html"><a href="ch-02.html#micro-sleep-opportunities-in-802.11-1"><i class="fa fa-check"></i><b>2.3</b> Micro-Sleep Opportunities in 802.11</a></li>
+<li class="chapter" data-level="2.4" data-path="ch-02.html"><a href="ch-02.html#rate-adaptation-and-power-control-in-802.11-1"><i class="fa fa-check"></i><b>2.4</b> Rate Adaptation and Power Control in 802.11</a></li>
+<li class="chapter" data-level="2.5" data-path="ch-02.html"><a href="ch-02.html#discrete-event-simulation-of-network-systems"><i class="fa fa-check"></i><b>2.5</b> Discrete-Event Simulation of Network Systems</a></li>
+</ul></li>
+<li class="part"><span><b>I Experimentation</b></span></li>
+<li class="chapter" data-level="3" data-path="ch-03.html"><a href="ch-03.html"><i class="fa fa-check"></i><b>3</b> A Comprehensive Energy Measurement Framework</a><ul>
+<li class="chapter" data-level="3.1" data-path="ch-03.html"><a href="ch-03.html#instrumentation"><i class="fa fa-check"></i><b>3.1</b> Instrumentation</a></li>
+<li class="chapter" data-level="3.2" data-path="ch-03.html"><a href="ch-03.html#measurement-and-uncertainty-analysis"><i class="fa fa-check"></i><b>3.2</b> Measurement and Uncertainty Analysis</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="ch-03.html"><a href="ch-03.html#propagation-of-uncertainty"><i class="fa fa-check"></i><b>3.2.1</b> Propagation of Uncertainty</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ch-03.html"><a href="ch-03.html#reporting-uncertainty"><i class="fa fa-check"></i><b>3.2.2</b> Reporting Uncertainty</a></li>
+<li class="chapter" data-level="3.2.3" data-path="ch-03.html"><a href="ch-03.html#automated-uncertainty-handling-in-r-the-errors-package"><i class="fa fa-check"></i><b>3.2.3</b> Automated Uncertainty Handling in R: The <code>errors</code> Package</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ch-03.html"><a href="ch-03.html#whole-device-measurements"><i class="fa fa-check"></i><b>3.3</b> Whole-Device Measurements</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="ch-03.html"><a href="ch-03.html#validation"><i class="fa fa-check"></i><b>3.3.1</b> Validation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="ch-03.html"><a href="ch-03.html#per-component-measurements"><i class="fa fa-check"></i><b>3.4</b> Per-Component Measurements</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="ch-03.html"><a href="ch-03.html#characterisation-of-a-cots-device"><i class="fa fa-check"></i><b>3.4.1</b> Characterisation of a COTS Device</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="ch-03.html"><a href="ch-03.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch-04.html"><a href="ch-04.html"><i class="fa fa-check"></i><b>4</b> Deseeding Energy Consumption of Network Stacks</a><ul>
+<li class="chapter" data-level="4.1" data-path="ch-04.html"><a href="ch-04.html#anatomy-of-a-laptop-computer"><i class="fa fa-check"></i><b>4.1</b> Anatomy of a Laptop Computer</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-04.html"><a href="ch-04.html#cross-factor-separating-the-wheat-from-the-chaff"><i class="fa fa-check"></i><b>4.2</b> Cross-Factor: Separating the Wheat from the Chaff</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-04.html"><a href="ch-04.html#power-consumption-in-unattended-idle-mode"><i class="fa fa-check"></i><b>4.3</b> Power Consumption in Unattended Idle Mode</a></li>
+<li class="chapter" data-level="4.4" data-path="ch-04.html"><a href="ch-04.html#power-consumption-with-full-cpuidle-subsystem"><i class="fa fa-check"></i><b>4.4</b> Power Consumption with Full <code>cpuidle</code> Subsystem</a></li>
+<li class="chapter" data-level="4.5" data-path="ch-04.html"><a href="ch-04.html#exploring-the-cpuidle-subsystem"><i class="fa fa-check"></i><b>4.5</b> Exploring the <code>cpuidle</code> Subsystem</a></li>
+<li class="chapter" data-level="4.6" data-path="ch-04.html"><a href="ch-04.html#summary-1"><i class="fa fa-check"></i><b>4.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ch-05.html"><a href="ch-05.html"><i class="fa fa-check"></i><b>5</b> Leveraging Micro-Sleep Opportunities in 802.11</a><ul>
+<li class="chapter" data-level="5.1" data-path="ch-05.html"><a href="ch-05.html#state-transition-times"><i class="fa fa-check"></i><b>5.1</b> State Transition Times in 802.11 Cards</a></li>
+<li class="chapter" data-level="5.2" data-path="ch-05.html"><a href="ch-05.html#protocol-analysis-and-practical-issues"><i class="fa fa-check"></i><b>5.2</b> Protocol Analysis and Practical Issues</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="ch-05.html"><a href="ch-05.html#identifying-potential-micro-sleep-opportunities"><i class="fa fa-check"></i><b>5.2.1</b> Identifying Potential Micro-Sleep Opportunities</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ch-05.html"><a href="ch-05.html#impact-of-capture-effect"><i class="fa fa-check"></i><b>5.2.2</b> Impact of Capture Effect</a></li>
+<li class="chapter" data-level="5.2.3" data-path="ch-05.html"><a href="ch-05.html#impact-of-errors-in-the-mac-header"><i class="fa fa-check"></i><b>5.2.3</b> Impact of Errors in the MAC Header</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="ch-05.html"><a href="ch-05.html#munap-algorithm"><i class="fa fa-check"></i><b>5.3</b> <span class="math inline">\(\mu\)</span>Nap Algorithm</a></li>
+<li class="chapter" data-level="5.4" data-path="ch-05.html"><a href="ch-05.html#performance-evaluation"><i class="fa fa-check"></i><b>5.4</b> Performance Evaluation</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="ch-05.html"><a href="ch-05.html#evaluation-with-real-traces"><i class="fa fa-check"></i><b>5.4.1</b> Evaluation with Real Traces</a></li>
+<li class="chapter" data-level="5.4.2" data-path="ch-05.html"><a href="ch-05.html#impact-of-timing-constraints"><i class="fa fa-check"></i><b>5.4.2</b> Impact of Timing Constraints</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="ch-05.html"><a href="ch-05.html#summary-2"><i class="fa fa-check"></i><b>5.5</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>II Mathematical Modelling</b></span></li>
+<li class="chapter" data-level="6" data-path="ch-06.html"><a href="ch-06.html"><i class="fa fa-check"></i><b>6</b> Rate Adaptation and Power Control in 802.11</a><ul>
+<li class="chapter" data-level="6.1" data-path="ch-06.html"><a href="ch-06.html#joint-goodput-energy-model"><i class="fa fa-check"></i><b>6.1</b> Joint Goodput-Energy Model</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-06.html"><a href="ch-06.html#numerical-results"><i class="fa fa-check"></i><b>6.2</b> Numerical Results</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="ch-06.html"><a href="ch-06.html#optimal-goodput"><i class="fa fa-check"></i><b>6.2.1</b> Optimal Goodput</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ch-06.html"><a href="ch-06.html#extension-of-the-energy-parametrisation"><i class="fa fa-check"></i><b>6.2.2</b> Extension of the Energy Parametrisation</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ch-06.html"><a href="ch-06.html#energy-consumption"><i class="fa fa-check"></i><b>6.2.3</b> Energy Consumption</a></li>
+<li class="chapter" data-level="6.2.4" data-path="ch-06.html"><a href="ch-06.html#energy-efficiency-vs.optimal-goodput"><i class="fa fa-check"></i><b>6.2.4</b> Energy Efficiency vs. Optimal Goodput</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ch-06.html"><a href="ch-06.html#discussion"><i class="fa fa-check"></i><b>6.3</b> Discussion</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="ch-06.html"><a href="ch-06.html#sensitivity-to-energy-parameter-scaling"><i class="fa fa-check"></i><b>6.3.1</b> Sensitivity to Energy Parameter Scaling</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ch-06.html"><a href="ch-06.html#heuristics-for-ra-tpc-algorithms"><i class="fa fa-check"></i><b>6.3.2</b> Heuristics for RA-TPC Algorithms</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="ch-06.html"><a href="ch-06.html#summary-3"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>III Simulation</b></span></li>
+<li class="chapter" data-level="7" data-path="ch-07.html"><a href="ch-07.html"><i class="fa fa-check"></i><b>7</b> Performance of RA-TPC Algorithms in 802.11</a><ul>
+<li class="chapter" data-level="7.1" data-path="ch-07.html"><a href="ch-07.html#algorithms-considered"><i class="fa fa-check"></i><b>7.1</b> Algorithms Considered</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-07.html"><a href="ch-07.html#simulation-scenario"><i class="fa fa-check"></i><b>7.2</b> Simulation Scenario</a></li>
+<li class="chapter" data-level="7.3" data-path="ch-07.html"><a href="ch-07.html#results-and-discussion"><i class="fa fa-check"></i><b>7.3</b> Results and Discussion</a></li>
+<li class="chapter" data-level="7.4" data-path="ch-07.html"><a href="ch-07.html#conservativeness-at-mode-transitions"><i class="fa fa-check"></i><b>7.4</b> Conservativeness at Mode Transitions</a></li>
+<li class="chapter" data-level="7.5" data-path="ch-07.html"><a href="ch-07.html#summary-4"><i class="fa fa-check"></i><b>7.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ch-08.html"><a href="ch-08.html"><i class="fa fa-check"></i><b>8</b> A Novel Discrete-Event Simulation Framework</a><ul>
+<li class="chapter" data-level="8.1" data-path="ch-08.html"><a href="ch-08.html#the-simulation-core-design"><i class="fa fa-check"></i><b>8.1</b> The Simulation Core Design</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="ch-08.html"><a href="ch-08.html#terminology"><i class="fa fa-check"></i><b>8.1.1</b> Terminology</a></li>
+<li class="chapter" data-level="8.1.2" data-path="ch-08.html"><a href="ch-08.html#architecture"><i class="fa fa-check"></i><b>8.1.2</b> Architecture</a></li>
+<li class="chapter" data-level="8.1.3" data-path="ch-08.html"><a href="ch-08.html#the-event-queue"><i class="fa fa-check"></i><b>8.1.3</b> The Event Queue</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="ch-08.html"><a href="ch-08.html#a-brief-introduction-to-simmer"><i class="fa fa-check"></i><b>8.2</b> A Brief Introduction to <code>simmer</code></a></li>
+<li class="chapter" data-level="8.3" data-path="ch-08.html"><a href="ch-08.html#use-case-energy-efficiency-for-massive-iot"><i class="fa fa-check"></i><b>8.3</b> Use case: Energy Efficiency for Massive IoT</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-08.html"><a href="ch-08.html#summary-5"><i class="fa fa-check"></i><b>8.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ch-09.html"><a href="ch-09.html"><i class="fa fa-check"></i><b>9</b> Conclusions and Future Work</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="measurement-circuitry-schematics.html"><a href="measurement-circuitry-schematics.html"><i class="fa fa-check"></i><b>A</b> Measurement Circuitry Schematics</a></li>
+<li class="chapter" data-level="B" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html"><i class="fa fa-check"></i><b>B</b> Experimental Validation of RA-TPC Inefficiencies</a><ul>
+<li class="chapter" data-level="B.1" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html#experimental-setup"><i class="fa fa-check"></i><b>B.1</b> Experimental Setup</a></li>
+<li class="chapter" data-level="B.2" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html#methodology-and-results"><i class="fa fa-check"></i><b>B.2</b> Methodology and Results</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html"><i class="fa fa-check"></i><b>C</b> Performance Evaluation of <code>simmer</code></a><ul>
+<li class="chapter" data-level="C.1" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html#comparison-with-similar-frameworks"><i class="fa fa-check"></i><b>C.1</b> Comparison with Similar Frameworks</a></li>
+<li class="chapter" data-level="C.2" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html#the-cost-of-calling-r-from-c"><i class="fa fa-check"></i><b>C.2</b> The Cost of Calling R from C++</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">
+Licensed under <img alt="Creative Commons License" style="border-width:0;vertical-align:bottom" 
+src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Energy Efficiency in Wireless Communications for Mobile User Devices</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch:08" class="section level1">
+<h1><span class="header-section-number">8</span> A Novel Discrete-Event Simulation Framework</h1>
+<p><span class="newthought">Simulation frameworks</span> are important tools for the analysis and design of communication networks and protocols, but they can result extremely costly and/or complex (for the case of very specialised tools), or too naive and lacking proper features and support (for the case of ad-hoc tools). Our own research experience in the previous chapter has pointed us towards the need for new tools sitting between these two paradigms, supporting the efficient simulation of relatively complex scenarios at a low implementation cost.</p>
+<p>In this chapter, we introduce a recent event-driven simulation package, <code>simmer</code>, and show its applicability in fast prototyping. <code>simmer</code> sits between the above two complexity extremes, and combines a number of features that supports, among others, versatility and repeatability. More specifically, some of the key advantages of <code>simmer</code> are as follows:</p>
+<ul>
+<li>It is based on the very popular R programming language <span class="citation">(R Core Team <a href="#ref-R-base">2017</a>)</span>, which benefits from a large community of users and contributors, but also natively supports the analysis of results via the many R statistical and visualization packages.</li>
+<li>The code has been peer-reviewed, and it is an official package <span class="citation">(Ucar and Smeets <a href="#ref-R-simmer">2018</a>)</span>, with numerous examples readily available, potentially supported by a notable user population.</li>
+<li>In addition to its ease of use and versatility, its code is partially optimised for speed, and therefore it can simulate relatively complex scenarios under reasonable times.</li>
+</ul>
+<p>In the following, we first describe the simulation core design and its architecture. Then we provide a quick overview of <code>simmer</code> and its key features. Finally, we showcase the versatility of <code>simmer</code> to easily model a Massive Internet-of-Things (IoT) scenario where thousands of metering devices share the same channel. Here, we analyse the impact of access parameters on performance, with a particular interest in the energy required to deliver the information, which will ultimately impact the lifetime of devices running on batteries.</p>
+<div id="the-simulation-core-design" class="section level2">
+<h2><span class="header-section-number">8.1</span> The Simulation Core Design</h2>
+<p>The core of any modern discrete-event simulator comprises two main components: an event list, ordered by time of occurrence, and an event loop that extracts and executes events. In contrast to other interpreted languages such as Python, which is compiled by default to an intermediate byte-code, R code is purely parsed and evaluated at runtime<a href="#fn54" class="footnoteRef" id="fnref54"><sup>54</sup></a>. This fact makes it a particularly slow language for Discrete-Event Simulation (DES), which consists of executing complex routines (pieces of code associated to the events) inside a loop while constantly allocating and deallocating objects (in the event queue).</p>
+<p>In fact, first attempts were made in pure R by these authors, and a minimal process-based implementation with <code>R6</code> classes <span class="citation">(Chang <a href="#ref-CRAN:R6">2017</a>)</span> proved to be unfeasible in terms of performance compared to similar approaches in pure Python. For this reason, it was decided to provide a robust and fast simulation core written in C++. The R API interfaces with this C++ core by leveraging the <code>Rcpp</code> package <span class="citation">(Eddelbuettel and François <a href="#ref-Eddelbuettel:2011:Rcpp">2011</a>; Eddelbuettel <a href="#ref-Eddelbuettel:2013:Rcpp">2013</a>)</span>, which has become one of the most popular ways of extending R packages with C or C++ code.</p>
+<p>The following sections are devoted to describe the simulation core architecture. First, we establish the DES terminology used in the rest of the paper. Then, the architectural choices made are discussed, as well as the event queue and the <em>simultaneity problem</em>, an important topic that every DES framework has to deal with.</p>
+<div id="terminology" class="section level3">
+<h3><span class="header-section-number">8.1.1</span> Terminology</h3>
+<p>This document uses some DES-specific terminology, e.g., <em>event</em>, <em>state</em>, <em>entity</em>, <em>process</em> or <em>attribute</em>. Such standard terms can be easily found in any textbook about DES (refer to <span class="citation">Banks (<a href="#ref-Banks:2005:Discrete">2005</a>)</span>, for instance). There are, however, some <code>simmer</code>-specific terms, and some elements that require further explanation to understand the package architecture.</p>
+<dl>
+<dt>Resource</dt>
+<dd><p>A passive entity, as it is commonly understood in standard DES terminology. However, <code>simmer</code> resources are conceived with queuing systems in mind, and therefore they comprise two internal self-managed parts:</p>
+<dl>
+<dt>Server</dt>
+<dd>which, conceptually, represents the resource itself. It has a specified capacity and can be seized and released.
+</dd>
+<dt>Queue</dt>
+<dd>A priority queue of a certain size.
+</dd>
+</dl>
+</dd>
+<dt>Manager</dt>
+<dd>An active entity, i.e., a process, that has the ability to adjust properties of a resource (capacity and queue size) at run-time.
+</dd>
+<dt>Source</dt>
+<dd>A process responsible for creating new <em>arrivals</em> with a given interarrival time pattern and inserting them into the simulation model.
+</dd>
+<dt>Arrival</dt>
+<dd>A process capable of interacting with resources or other entities of the simulation model. It may have some attributes and prioritisation values associated and, in general, a limited lifetime. Upon creation, every arrival is attached to a given <em>trajectory</em>.
+</dd>
+<dt>Trajectory</dt>
+<dd>An interlinkage of <em>activities</em> constituting a recipe for arrivals attached to it, i.e., an ordered set of actions that must be executed. The simulation model is ultimately represented by a set of trajectories.
+</dd>
+<dt>Activity</dt>
+<dd>The individual unit of action that allows arrivals to interact with resources and other entities, perform custom routines while spending time in the system, move back and forth through the trajectory dynamically, and much more.
+</dd>
+</dl>
+</div>
+<div id="architecture" class="section level3">
+<h3><span class="header-section-number">8.1.2</span> Architecture</h3>
+<p>Extending an R package (or any other piece of software written in any interpreted language) with compiled code poses an important trade-off between performance and flexibility: placing too much functionality into the compiled part produces gains in performance, but degrades modelling capabilities, and vice versa. The following lines are devoted to discuss how this trade-off is resolved in <code>simmer</code>.</p>
+<p>Figure <a href="ch-08.html#fig:architecture">8.1</a> sketches a UML (Unified Modelling Language) description of the architecture, which constitutes a process-based design, as in many modern DES frameworks. We draw the attention now to the C++ classes (depicted in white).</p>
+
+<div class="figure" style="text-align: center"><span id="fig:architecture"></span>
+<img src="img/08/jss-simmer-design.png" alt="UML diagram of the simulation core architecture. Blue classes represent how R encapsulates the C++ core. Blue circles represent how C++ interfaces with R." width="962" />
+<p class="caption">
+Figure 8.1: UML diagram of the simulation core architecture. Blue classes represent how R encapsulates the C++ core. Blue circles represent how C++ interfaces with R.
+</p>
+</div>
+<p>The first main component is the <code>Simulator</code> class. It comprises the event loop and the event queue, which will be addressed in the next section. The <code>Simulator</code> provides methods for scheduling and unscheduling events. Moreover, it is responsible for managing simulation-wide entities (e.g., resources and arrival sources) and facilities (e.g., signaling between processes and batches) through diverse C++ unordered maps:</p>
+<ul>
+<li>Maps of resources and processes (sources, arrivals and managers) by name.</li>
+<li>A map of pending events, which allows to unschedule a given process.</li>
+<li>Maps of signals subscribed by arrivals and handlers defined for different signals.</li>
+<li>Maps for forming batches of arrivals, named and unnamed.</li>
+</ul>
+<p>This class also holds global attributes and monitoring information. Thus, monitoring counters, which are derived from the <code>Monitor</code> class, are centralised, and they register every change of state produced during the simulation time. There are five types of built-in changes of state that are recorded by calling <code>Monitor</code>’s <code>record_*()</code> methods:</p>
+<ul>
+<li>An arrival is accepted into a resource (served or enqueued). The resource notifies about the new status of its internal counters.</li>
+<li>An arrival leaves a resource. The resource notifies the new status of its internal counters, and the arrival notifies start, end and activity times in that particular resource.</li>
+<li>A resource is modified during runtime (i.e., a change in the capacity or queue size). The resource notifies the new status of its internal counters.</li>
+<li>An arrival modifies an attribute, one of its own or a global one. The arrival notifies the new value.</li>
+<li>An arrival leaves its trajectory by exhausting the activities associated (considered as <em>finished</em>) or because of another reason (<em>non-finished</em>, e.g., it is rejected from a resource). The arrival notifies global start, end and activity times.</li>
+</ul>
+<p>As mentioned in the previous section, there are two types of entities: passive ones (<code>Resource</code>) and active ones (processes <code>Source</code>, <code>Arrival</code> and <code>Manager</code>). Sources create new arrivals, and the latter are the main actors of the simulation model. Managers can be used for dynamically changing the properties of a resource (capacity and queue size). All processes share a <code>run()</code> method that is invoked by the event loop each time a new event is extracted from the event list.</p>
+<p>There is a fourth kind of process not shown in Figure <a href="ch-08.html#fig:architecture">8.1</a>, called <code>Task</code>. It is a generic process that executes a given function once, and it is used by arrivals, resources, activities and the simulator itself to trigger dynamic actions or split up events. A <code>Task</code> is for instance used under the hood to trigger reneging or to broadcast signals after some delay.</p>
+<p>The last main component, completely isolated from the <code>Simulator</code>, is the <code>Activity</code> class. This abstract class represents a clonable object, chainable in a double-linked list to form trajectories. Most of the activities provided by <code>simmer</code> derive from it. <code>Fork</code> is another abstract class (not depicted in Figure <a href="ch-08.html#fig:architecture">8.1</a>) which is derived from <code>Activity</code>. Any activity supporting the definition of sub-trajectories must derive from this one instead, such as <code>Seize</code>, <code>Branch</code> or <code>Clone</code>. All the activities must implement the virtual methods <code>print()</code> and <code>run()</code>.</p>
+<p>Finally, it is worth mentioning the couple of blue circles depicted in Figure <a href="ch-08.html#fig:architecture">8.1</a>. They represent the <em>points of presence</em> of R in the C++ core, i.e., where the core interfaces back with R to execute custom user-defined code.</p>
+<p>In summary, the C++ core is responsible for all the heavy tasks, i.e., managing the event loop, the event list, generic resources and processes, collecting all the statistics, and so on. And still, it provides enough flexibility to the user for modelling the interarrival times from R and execute any custom user-defined code through the activities.</p>
+</div>
+<div id="the-event-queue" class="section level3">
+<h3><span class="header-section-number">8.1.3</span> The Event Queue</h3>
+<p>The event queue is the most fundamental part of any DES software. It is responsible for maintaining a list of events to be executed by the event loop in an ordered fashion by time of occurrence. This last requirement establishes the need for a data structure with a low access, search, insertion and deletion complexity. A binary tree is a well-known data structure that satisfies these properties, and it is commonly used for this purpose. Unfortunately, binary trees, or equivalent structures, cannot be efficiently implemented without pointers, and this is the main reason why pure R is very inefficient for DES.</p>
+<p>In <code>simmer</code>, the event queue is defined as a C++ multiset, a kind of associative container implemented as a balanced tree internally. Apart from the efficiency, it was selected to support event unscheduling through iterators. Each event holds a pointer to a process, which will be retrieved and run in the event loop. Events are inserted in the event queue ordered by 1) time of occurrence and 2) priority. This secondary order criterion is devoted to solve a common issue for DES software called <em>the simultaneity problem</em>.</p>
+<div id="the-simultaneity-problem" class="section level5 unnumbered">
+<h5>The Simultaneity Problem</h5>
+<p>As noted by <span class="citation">Rönngren and Liljenstam (<a href="#ref-Ronngren:1999:EOP:301429.301456">1999</a>)</span> and <span class="citation">Jha and Bagrodia (<a href="#ref-Jha:2000:SEL:361026.361032">2000</a>)</span>, there are many circumstances from which simultaneous events (i.e., events with the same timestamp) may arise. How they are handled by a DES framework has critical implications on reproducibility and simulation correctness.</p>
+<p>As an example of the implications, let us consider an arrival seizing a resource at time <span class="math inline">\(t_{i-1}\)</span>, which has <code>capacity=1</code> and <code>queue_size=0</code>. At time <span class="math inline">\(t_{i}\)</span>, two simultaneous events happen: 1) the resource is released, and 2) another arrival tries to seize the resource. It is indisputable what should happen in this situation: the new arrival seizes the resource while the other continues its path. But note that if 2) is executed <em>before</em> 1), the new arrival is rejected (!). Therefore, it is obvious that release events must always be executed <em>before</em> seize events.</p>
+<p>If we consider a dynamically managed resource (i.e., its capacity changes over time) and, instead of the event 1) in the previous example, the manager increases the capacity of the resource, we are in the very same situation. Again, it is obvious that resource managers must be executed <em>before</em> seize attempts.</p>
+<p>A further analysis reveals that, in order to preserve correctness and prevent a simulation crash, it is necessary to break down resource releases in two parts with different priorities: the release in itself and a post-release event that tries to serve another arrival from the queue. Thus, every resource manager must be executed <em>after</em> releases and <em>before</em> post-releases. This and other issues are solved with a priority system (see Table <a href="ch-08.html#tab:priorities">8.1</a>) embedded in the event list implementation that provides a deterministic and consistent execution of simultaneous events.</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:priorities">Table 8.1: </span>Priority system (in decreasing order) and events associated.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Priority
+</th>
+<th style="text-align:left;">
+Event
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-family: monospace;">
+MAX
+</td>
+<td style="text-align:left;">
+Terminate arrivals
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-family: monospace;">
+RELEASE
+</td>
+<td style="text-align:left;">
+Resource release
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-family: monospace;">
+MANAGER
+</td>
+<td style="text-align:left;">
+Manager action (e.g., resource capacity change)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-family: monospace;">
+RELEASE_POST
+</td>
+<td style="text-align:left;">
+Resource post-release (i.e., serve from the queue)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-family: monospace;">
+…
+</td>
+<td style="text-align:left;">
+General activities
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-family: monospace;">
+MIN
+</td>
+<td style="text-align:left;">
+Other tasks (e.g., new arrivals, timers…)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="a-brief-introduction-to-simmer" class="section level2">
+<h2><span class="header-section-number">8.2</span> A Brief Introduction to <code>simmer</code></h2>
+<p>Note that <code>simmer</code> does not aim at substituting NS-3 or OMNeT++, which are the <em>de facto</em> standards for open-source network simulations. Instead, <code>simmer</code> is designed as a general-purpose DES framework with a human-friendly syntax, and a very gentle learning curve. It can be used to complement other field-specific simulators as a rapid prototyping tool that enable insightful analysis of different designs. As we will illustrate in the next section, with <code>simmer</code> it is simple to simulate relatively complex scenarios, with the added benefit of the availability of many convenient data analysis and representation packages, thanks to the use of R.</p>
+<p>The R application programming interface (API) exposed by <code>simmer</code> revolves around the concept of <em>trajectory</em>, which defines the “path” in the simulation for entities of the same type. A trajectory is a recipe for the arrivals attached to it, an ordered set of actions (or <em>verbs</em>) chained together with the pipe operator <span class="citation">(Bache and Wickham <a href="#ref-CRAN:magrittr">2014</a>)</span> (<code>%&gt;%</code>, whose behaviour is similar to the command-line pipe). The following example illustrates a basic <code>simmer</code> workflow, modeling the classical case of customers being attended by a single clerk with infinite waiting space in a few lines of code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(simmer)
+
+cust &lt;-<span class="st"> </span><span class="kw">trajectory</span>(<span class="st">&quot;customer&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">seize</span>(<span class="st">&quot;clerk&quot;</span>, <span class="dt">amount=</span><span class="dv">1</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">timeout</span>(<span class="cf">function</span>() <span class="kw">rexp</span>(<span class="dv">1</span>, <span class="dv">2</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">release</span>(<span class="st">&quot;clerk&quot;</span>, <span class="dt">amount=</span><span class="dv">1</span>)
+
+env &lt;-<span class="st"> </span><span class="kw">simmer</span>(<span class="st">&quot;bank&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">add_resource</span>(<span class="st">&quot;clerk&quot;</span>, <span class="dt">capacity=</span><span class="dv">1</span>, <span class="dt">queue_size=</span><span class="ot">Inf</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">add_generator</span>(<span class="st">&quot;cust&quot;</span>, cust, <span class="cf">function</span>() <span class="kw">rexp</span>(<span class="dv">1</span>, <span class="dv">1</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">run</span>(<span class="dt">until=</span><span class="dv">1000</span>)
+
+arrivals  &lt;-<span class="st"> </span><span class="kw">get_mon_arrivals</span>(env)
+resources &lt;-<span class="st"> </span><span class="kw">get_mon_resources</span>(env)</code></pre></div>
+<p>Given that both the time at the clerk and between customers are exponential random variables, and the infinite queue length, this example corresponds, in Kendall’s notation, to an M/M/1 queue. It serves to illustrate the two main elements of <code>simmer</code>: the <code>trajectory</code> object and the <code>simmer</code> environment (or <em>simulation environment</em>).</p>
+<p>The <code>customer</code> trajectory defines the behaviour of a generic customer: seize a clerk, spend some time, and release it. The <code>env</code> simulation environment is then defined as one clerk with infinite queue size and a generator of customers, each one following the trajectory defined above. Based on this syntax, the flexibility is provided through a rich set of activities<a href="#fn55" class="footnoteRef" id="fnref55"><sup>55</sup></a> that can be appended to trajectories, which support: changing arrivals’ properties (attributes, priority, batches), different interactions with the resources (select, seize, release, change their properties), and the generators (activate, deactivate, change their properties), and even the definition of branches (simple, depending on a condition, or parallel) and loops. Finally, some support to asynchronous programming is also provided (subscription to signals and registration of handlers).</p>
+<p>Not only <code>simmer</code> provides a powerful yet simple syntax, but it is also <em>fast</em>, for example, faster than equivalent frameworks such as SimPy <span class="citation">(Team SimPy <a href="#ref-SimPy">2017</a>)</span> and SimJulia <span class="citation">(Lauwens <a href="#ref-GitHub:SimJulia">2017</a>)</span> for the Python and Julia languages respectively<a href="#fn56" class="footnoteRef" id="fnref56"><sup>56</sup></a>. Furthermore, and perhaps more importantly, <code>simmer</code> implements automatic monitoring capabilities: every event is accounted for by default, both for arrivals (starting and ending times, activity time, ending condition, resources traversed) and resources (server and queue status), and all this information can be easily retrieved in standard R data frames for further processing of results (last two lines of the <em>clerk</em> example).</p>
+</div>
+<div id="use-case-energy-efficiency-for-massive-iot" class="section level2">
+<h2><span class="header-section-number">8.3</span> Use case: Energy Efficiency for Massive IoT</h2>
+<p>We consider the case of a massive Internet-of-Things (mIoT) scenario, a use case for Long Term Evolution (LTE) and next-generation 5G networks, as defined by the 3GPP <span class="citation">(Hoymann et al. <a href="#ref-miot">2016</a>)</span>. As Figure <a href="ch-08.html#fig:scenario3def">8.2</a> (left) illustrates, we consider a single LTE macrocell in a dense urban area. The buildings in the cell area are populated with <span class="math inline">\(N\)</span> smart meters (for electricity, gas, and water), and each meter operates independently as a Narrowband IoT (NB-IoT) device.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:scenario3def"></span>
+<img src="img/08/scenario.png" alt="Description of the simulation scenario." width="2659" />
+<p class="caption">
+Figure 8.2: Description of the simulation scenario.
+</p>
+</div>
+<p>The devices’ behaviour is modeled following the diagram depicted in Figure <a href="ch-08.html#fig:scenario3def">8.2</a> (right), which is a simplified version of the Markov chain model developed in <span class="citation">Andres-Maldonado et al. (<a href="#ref-iotModel">2017</a> Figure 5)</span>. A device may stay in <code>RRC Idle</code> (‘Off’), and awakes with some periodicity to upload its reading. This communication phase encompasses a contention-based random access (RA) procedure, with a backoff time randomly chosen between <span class="math inline">\((0,W)\)</span> time slots, and up to <span class="math inline">\(m\)</span> retransmissions. If the connection request fails, the reading is dropped, and the device returns to the ‘Off’ state. If the connection is successful, we assume that the device implements the Control Plane Cellular IoT (CP) optimization (see <span class="citation">Andres-Maldonado et al. (<a href="#ref-iotModel">2017</a>)</span>), so that the data is transmitted over the <code>RRC Connection</code> request phase using the Non Access Stratum (NAS) level. Then, the device has to wait (‘Inactive’) until the connection is released, and eventually returns to the ‘Off’ state.</p>
+<p>The goal of this use case is to study the effect of synchronization across IoT devices (for instance, due to a power outage) in the energy consumption. As in <span class="citation">Cheng et al. (<a href="#ref-iotCollision">2012</a>)</span>, we assume that a device provides its readings as often as every hour, and the cases of <span class="math inline">\(N=\{5, 10, 30\} \cdot 10^3\)</span> devices in one cell are considered. In order to study different levels of synchronization, each node implements an additional backoff window prior to the RA procedure. Furthermore, we selected <span class="math inline">\(m=9\)</span> and <span class="math inline">\(W=20\)</span>; the rest of the parameters (power consumption, timings, message sizes…) can be found in <span class="citation">Andres-Maldonado et al. (<a href="#ref-iotModel">2017</a> Table I)</span>.</p>
+<div id="implementation-details" class="section level5 unnumbered">
+<h5>Implementation Details</h5>
+<p>This scenario requires a single <code>meter</code> trajectory implementing the logic of each IoT device in an infinite loop, and <span class="math inline">\(N\)</span> workers are attached to it at <span class="math inline">\(t=0\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># IoT device logic</span>
+meter &lt;-<span class="st"> </span><span class="kw">trajectory</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">trap</span>(<span class="st">&quot;reading&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="co"># sleep</span>
+<span class="st">  </span><span class="kw">set_attribute</span>(<span class="st">&quot;P&quot;</span>, <span class="dv">0</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">wait</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">timeout</span>(<span class="cf">function</span>() <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">1</span>, <span class="dv">0</span>, param[[<span class="st">&quot;backoff&quot;</span>]]), <span class="dv">3</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="co"># ra start</span>
+<span class="st">  </span>simmer<span class="op">::</span><span class="kw">select</span>(preambles, <span class="dt">policy=</span><span class="st">&quot;random&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">seize_selected</span>(
+    <span class="dt">continue=</span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>),
+    <span class="co"># ra &amp; tx</span>
+    <span class="dt">post.seize=</span><span class="kw">trajectory</span>() <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">set_attribute</span>(<span class="st">&quot;P&quot;</span>, Pra) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">timeout</span>(Tra) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">release_selected</span>() <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">set_attribute</span>(<span class="st">&quot;P&quot;</span>, Ptx) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">timeout</span>(Ttx),
+    <span class="co"># ra &amp; backoff &amp; retry</span>
+    <span class="dt">reject=</span><span class="kw">trajectory</span>() <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">set_attribute</span>(<span class="st">&quot;P&quot;</span>, Pra) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">timeout</span>(Tra) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">set_attribute</span>(<span class="st">&quot;P&quot;</span>, Pi) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">timeout</span>(<span class="cf">function</span>() <span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>, <span class="dv">1</span>) <span class="op">*</span><span class="st"> </span><span class="fl">1e-3</span>) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">rollback</span>(<span class="dv">6</span>, <span class="dt">times=</span>m)
+  ) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">rollback</span>(<span class="dv">5</span>, <span class="dt">times=</span><span class="ot">Inf</span>)</code></pre></div>
+<p>Each device registers itself for a given signal (“reading”), and waits in sleep mode until a new reading is requested, which is triggered by a secondary trajectory (<code>trigger</code>).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># trigger a reading for all the meters every tx_period</span>
+trigger &lt;-<span class="st"> </span><span class="kw">trajectory</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">timeout</span>(tx_period) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">send</span>(<span class="st">&quot;reading&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">rollback</span>(<span class="dv">2</span>, <span class="dt">times=</span><span class="ot">Inf</span>)</code></pre></div>
+<p>As soon as a new reading is signalled, the RA procedure starts by randomly selecting one of the 54 preambles available, which are defined as resources. The process of seizing a preamble encompasses two sub-trajectories:</p>
+<ul>
+<li>If there are no collisions, the preamble is successfully seized, and the <code>post.seize</code> sub-trajectory is executed, which transmits a reading.</li>
+<li>If there is collision, rejection occurs, and the <code>reject</code> sub-trajectory is executed, which performs the RA backoff (for a random number of slots), and restarts the RA procedure (for a maximum of <span class="math inline">\(m\)</span> retries).</li>
+</ul>
+<p>Both sub-trajectories set the appropriate power levels <span class="math inline">\(P\)</span> for the appropriate amount of time. In this case, these power levels throughout the simulation time are retrieved with the <code>get_mon_attributes()</code> method. The energy is concisely computed and represented using the packages <code>dplyr</code> <span class="citation">(Wickham and Francois <a href="#ref-CRAN:dplyr">2017</a>)</span> and <code>ggplot</code> <span class="citation">(Wickham and Chang <a href="#ref-CRAN:ggplot2">2016</a>)</span>.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:iot-energy"></span>
+<img src="08-simmer_files/figure-html/iot-energy-1.png" alt="Energy consumption per transmission attempt for different traffic models and number of devices." width="480" />
+<p class="caption">
+Figure 8.3: Energy consumption per transmission attempt for different traffic models and number of devices.
+</p>
+</div>
+<p>Figure <a href="ch-08.html#fig:iot-energy">8.3</a> shows the results for one simulated day. It depicts the energy consumed per reading considering a uniform backoff window between 0 and 5 (<em>highly synchronised</em>), 10, 30, and 60 seconds (<em>non-synchronised</em>). As the number of devices and the level of synchronization grow, the random-access opportunities (RAOs) per second grow as well producing more and more collisions. These collisions cause retries, and a noticeable impact in the energy consumption (up to 12% more energy per reading). Therefore, this use case shows the paramount importance of randomizing node activation in mIoT scenarios in order to avoid RAO peaks and a premature battery drain.</p>
+<table>
+<caption>
+<span id="tab:simulation-overview">Table 8.2: </span>Overview of simulation features.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Features
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Simulation time (s)
+</td>
+<td style="text-align:right;">
+150
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+No. of parallel scenarios
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Max. events, 1 scenario
+</td>
+<td style="text-align:right;">
+28364172
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total no. of events
+</td>
+<td style="text-align:right;">
+98952165
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Implementation lines
+</td>
+<td style="text-align:right;">
+42
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Analysis + plotting lines
+</td>
+<td style="text-align:right;">
+14
+</td>
+</tr>
+</tbody>
+</table>
+<p><span class="newthought">The simulation</span> was run with a machine equipped with an Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz x4 (32 cores), and 64 GB of RAM, Debian GNU/Linux 8, R 3.3.2, and <code>simmer</code> 3.6. Table summarises the main simulation statistics for this scenario. These numbers attest that <code>simmer</code> can be used to simulate relatively complex scenarios with very few lines of code<a href="#fn57" class="footnoteRef" id="fnref57"><sup>57</sup></a>.</p>
+</div>
+</div>
+<div id="summary-5" class="section level2">
+<h2><span class="header-section-number">8.4</span> Summary</h2>
+<p>The <code>simmer</code> package presented in this chapter <span class="citation">(Ucar, Smeets, and Azcorra <a href="#ref-contrib-08a">2018</a>)</span> brings a generic yet powerful process-oriented Discrete-Event Simulation framework to R. <code>simmer</code> combines a robust and fast simulation core written in C++ with a rich and flexible R API. The main modelling component is the <em>activity</em>. Activities are chained together with the pipe operator into <em>trajectories</em>, which are common paths for processes of the same type. <code>simmer</code> provides a broad set of activities, and allows the user to extend their capabilities with custom R functions.</p>
+<p>Monitoring is automatically performed by the underlying simulation core, thereby enabling the user to focus on problem modelling. <code>simmer</code> enables simple replication and parallelisation with standard R tools. Data can be extracted into R data frames from a single simulation environment or a list of environments, each of which is marked as a different replication for further analysis.</p>
+<p>We have demonstrated <span class="citation">(Iñaki Ucar, Hernández, et al. <a href="#ref-contrib-08b">2018</a>)</span> the usability and suitability of <code>simmer</code> for fast prototyping of a 5G-inspired scenario. The code developed highlights some of the characteristics that make <code>simmer</code> attractive for researchers and practitioners in communications research.</p>
+<ul>
+<li>A novel and intuitive trajectory-based approach that simplifies the simulation of large networks of queues, including those with feedback.</li>
+<li>Flexible resources, with dynamic capacity and queue size, priority queueing and preemption.</li>
+<li>Flexible generators of arrivals that can draw interarrival times from any theoretical or empirical distribution via a function call.</li>
+<li>Asynchronous programming features and monitoring capabilities, which helps the researcher focus into the model design.</li>
+</ul>
+<p>It is likewise remarkable the ease with which multiple scenarios, with different parameters, can be simulated concurrently thanks to base R functions. Thus, exploring a large number of combinations of parameter values is not only straightforward, but also as fast as the slowest thread given enough number of CPU cores available.</p>
+
+<p> </p>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-R-base">
+<p>R Core Team. 2017. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
+</div>
+<div id="ref-R-simmer">
+<p>Ucar, Iñaki, and Bart Smeets. 2018. <em>Simmer: Discrete-Event Simulation for R</em>. <a href="https://CRAN.R-project.org/package=simmer" class="uri">https://CRAN.R-project.org/package=simmer</a>.</p>
+</div>
+<div id="ref-CRAN:R6">
+<p>Chang, Winston. 2017. <em>R6: Classes with Reference Semantics</em>. <a href="https://CRAN.R-project.org/package=R6" class="uri">https://CRAN.R-project.org/package=R6</a>.</p>
+</div>
+<div id="ref-Eddelbuettel:2011:Rcpp">
+<p>Eddelbuettel, Dirk, and Romain François. 2011. “Rcpp: Seamless R and C++ Integration.” <em>Journal of Statistical Software</em> 40 (8): 1–18. doi:<a href="https://doi.org/10.18637/jss.v040.i08">10.18637/jss.v040.i08</a>.</p>
+</div>
+<div id="ref-Eddelbuettel:2013:Rcpp">
+<p>Eddelbuettel, Dirk. 2013. <em>Seamless R and C++ Integration with Rcpp</em>. New York, NY, USA: Springer-Verlag.</p>
+</div>
+<div id="ref-Banks:2005:Discrete">
+<p>Banks, J. 2005. <em>Discrete-Event System Simulation</em>. Prentice-Hall International Series in Industrial and Systems Engineering. Pearson Prentice Hall.</p>
+</div>
+<div id="ref-Ronngren:1999:EOP:301429.301456">
+<p>Rönngren, Robert, and Michael Liljenstam. 1999. “On Event Ordering in Parallel Discrete Event Simulation.” In <em>Proceedings of the Thirteenth Workshop on Parallel and Distributed Simulation</em>, 38–45. PADS ’99. Washington, DC, USA: IEEE Computer Society.</p>
+</div>
+<div id="ref-Jha:2000:SEL:361026.361032">
+<p>Jha, Vikas, and Rajive Bagrodia. 2000. “Simultaneous Events and Lookahead in Simulation Protocols.” <em>ACM Trans. Model. Comput. Simul.</em> 10 (3). New York, NY, USA: ACM: 241–67. doi:<a href="https://doi.org/10.1145/361026.361032">10.1145/361026.361032</a>.</p>
+</div>
+<div id="ref-CRAN:magrittr">
+<p>Bache, Stefan Milton, and Hadley Wickham. 2014. <em>Magrittr: A Forward-Pipe Operator for R</em>. <a href="https://CRAN.R-project.org/package=magrittr" class="uri">https://CRAN.R-project.org/package=magrittr</a>.</p>
+</div>
+<div id="ref-SimPy">
+<p>Team SimPy. 2017. <em>SimPy: Discrete-Event Simulation for Python</em>. <a href="https://simpy.readthedocs.io/en/latest/" class="uri">https://simpy.readthedocs.io/en/latest/</a>.</p>
+</div>
+<div id="ref-GitHub:SimJulia">
+<p>Lauwens, Ben. 2017. <em>SimJulia.jl: Combined Continuous-Time / Discrete-Event Process Oriented Simulation Framework Written in Julia</em>. <a href="https://github.com/BenLauwens/SimJulia.jl" class="uri">https://github.com/BenLauwens/SimJulia.jl</a>.</p>
+</div>
+<div id="ref-miot">
+<p>Hoymann, C., D. Astely, M. Stattin, G. Wikstrom, J. F. Cheng, A. Hoglund, M. Frenne, R. Blasco, J. Huschke, and F. Gunnarsson. 2016. “LTE Release 14 Outlook.” <em>IEEE Communications Magazine</em> 54 (6): 44–49. doi:<a href="https://doi.org/10.1109/MCOM.2016.7497765">10.1109/MCOM.2016.7497765</a>.</p>
+</div>
+<div id="ref-iotModel">
+<p>Andres-Maldonado, P., P. Ameigeiras, J. Prados-Garzon, J. J. Ramos-Munoz, and J. M. Lopez-Soler. 2017. “Optimized Lte Data Transmission Procedures for Iot: Device Side Energy Consumption Analysis.” In <em>2017 Ieee International Conference on Communications Workshops (Icc Workshops)</em>, 540–45. doi:<a href="https://doi.org/10.1109/ICCW.2017.7962714">10.1109/ICCW.2017.7962714</a>.</p>
+</div>
+<div id="ref-iotCollision">
+<p>Cheng, R. G., C. H. Wei, S. L. Tsao, and F. C. Ren. 2012. “RACH Collision Probability for Machine-Type Communications.” In <em>2012 Ieee 75th Vehicular Technology Conference (Vtc Spring)</em>, 1–5. doi:<a href="https://doi.org/10.1109/VETECS.2012.6240129">10.1109/VETECS.2012.6240129</a>.</p>
+</div>
+<div id="ref-CRAN:dplyr">
+<p>Wickham, Hadley, and Romain Francois. 2017. <em>Dplyr: A Grammar of Data Manipulation</em>. <a href="https://CRAN.R-project.org/package=dplyr" class="uri">https://CRAN.R-project.org/package=dplyr</a>.</p>
+</div>
+<div id="ref-CRAN:ggplot2">
+<p>Wickham, Hadley, and Winston Chang. 2016. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2" class="uri">https://CRAN.R-project.org/package=ggplot2</a>.</p>
+</div>
+<div id="ref-contrib-08a">
+<p>Ucar, Iñaki, Bart Smeets, and Arturo Azcorra. 2018. “simmer: Discrete-Event Simulation for R.” <em>Journal of Statistical Software</em> (accepted for publication). <a href="https://arxiv.org/abs/1705.09746" class="uri">https://arxiv.org/abs/1705.09746</a>.</p>
+</div>
+<div id="ref-contrib-08b">
+<p>Ucar, Iñaki, José Alberto Hernández, Pablo Serrano, and Arturo Azcorra. 2018. “Design and Analysis of 5G Scenarios with simmer: An R Package for Fast DES Prototyping.” <em>IEEE Communications Magazine</em>. doi:<a href="https://doi.org/10.1109/MCOM.2018.1700960">10.1109/MCOM.2018.1700960</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="54">
+<li id="fn54"><p>Some effort has been made in this line with the <code>compiler</code> package, introduced in R version 2.13.0 <span class="citation">(Luke Tierney <a href="#ref-R:compiler">2016</a>)</span>, furthermore, a JIT-compiler was included in R version 3.4.0.<a href="ch-08.html#fnref54">↩</a></p></li>
+<li id="fn55"><p>See <a href="https://r-simmer.org/reference/" class="uri">https://r-simmer.org/reference/</a>.<a href="ch-08.html#fnref55">↩</a></p></li>
+<li id="fn56"><p>See Appendix <a href="performance-evaluation-of-simmer.html#performance-evaluation-of-simmer">C</a> for a complete performance evaluation.<a href="ch-08.html#fnref56">↩</a></p></li>
+<li id="fn57"><p>The full code is available online at <a href="https://r-simmer.org/articles/simmer-aa-5g#energy-efficiency-for-massive-iot" class="uri">https://r-simmer.org/articles/simmer-aa-5g#energy-efficiency-for-massive-iot</a>.<a href="ch-08.html#fnref57">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch-07.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-09.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["thesis.pdf"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

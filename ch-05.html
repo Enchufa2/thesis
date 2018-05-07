@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Energy Efficiency in Wireless Communications for Mobile User Devices</title>
+  <meta name="description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  
+  <meta name="twitter:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  
+
+<meta name="author" content="Iñaki Úcar">
+
+
+<meta name="date" content="2018-05-07">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="ch-04.html">
+<link rel="next" href="ch-06.html">
+<style type="text/css">
+p.abstract{
+  text-align: center;
+  font-weight: bold;
+}
+div.abstract{
+  margin: auto;
+  width: 90%;
+}
+</style>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Contents</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#cross-factor-towards-a-new-energy-model"><i class="fa fa-check"></i><b>1.1</b> Cross-Factor: Towards a New Energy Model</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#micro-sleep-opportunities-in-802.11"><i class="fa fa-check"></i><b>1.2</b> Micro-Sleep Opportunities in 802.11</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#rate-adaptation-and-power-control-in-802.11"><i class="fa fa-check"></i><b>1.3</b> Rate Adaptation and Power Control in 802.11</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#applied-simulation-modelling-for-energy-efficiency"><i class="fa fa-check"></i><b>1.4</b> Applied Simulation Modelling for Energy Efficiency</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#thesis-overview"><i class="fa fa-check"></i><b>1.5</b> Thesis Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-02.html"><a href="ch-02.html"><i class="fa fa-check"></i><b>2</b> Related Work</a><ul>
+<li class="chapter" data-level="2.1" data-path="ch-02.html"><a href="ch-02.html#energy-profiling-for-wireless-communications"><i class="fa fa-check"></i><b>2.1</b> Energy Profiling for Wireless Communications</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-02.html"><a href="ch-02.html#energy-consumption-of-network-stacks"><i class="fa fa-check"></i><b>2.2</b> Energy Consumption of Network Stacks</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-02.html"><a href="ch-02.html#micro-sleep-opportunities-in-802.11-1"><i class="fa fa-check"></i><b>2.3</b> Micro-Sleep Opportunities in 802.11</a></li>
+<li class="chapter" data-level="2.4" data-path="ch-02.html"><a href="ch-02.html#rate-adaptation-and-power-control-in-802.11-1"><i class="fa fa-check"></i><b>2.4</b> Rate Adaptation and Power Control in 802.11</a></li>
+<li class="chapter" data-level="2.5" data-path="ch-02.html"><a href="ch-02.html#discrete-event-simulation-of-network-systems"><i class="fa fa-check"></i><b>2.5</b> Discrete-Event Simulation of Network Systems</a></li>
+</ul></li>
+<li class="part"><span><b>I Experimentation</b></span></li>
+<li class="chapter" data-level="3" data-path="ch-03.html"><a href="ch-03.html"><i class="fa fa-check"></i><b>3</b> A Comprehensive Energy Measurement Framework</a><ul>
+<li class="chapter" data-level="3.1" data-path="ch-03.html"><a href="ch-03.html#instrumentation"><i class="fa fa-check"></i><b>3.1</b> Instrumentation</a></li>
+<li class="chapter" data-level="3.2" data-path="ch-03.html"><a href="ch-03.html#measurement-and-uncertainty-analysis"><i class="fa fa-check"></i><b>3.2</b> Measurement and Uncertainty Analysis</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="ch-03.html"><a href="ch-03.html#propagation-of-uncertainty"><i class="fa fa-check"></i><b>3.2.1</b> Propagation of Uncertainty</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ch-03.html"><a href="ch-03.html#reporting-uncertainty"><i class="fa fa-check"></i><b>3.2.2</b> Reporting Uncertainty</a></li>
+<li class="chapter" data-level="3.2.3" data-path="ch-03.html"><a href="ch-03.html#automated-uncertainty-handling-in-r-the-errors-package"><i class="fa fa-check"></i><b>3.2.3</b> Automated Uncertainty Handling in R: The <code>errors</code> Package</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ch-03.html"><a href="ch-03.html#whole-device-measurements"><i class="fa fa-check"></i><b>3.3</b> Whole-Device Measurements</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="ch-03.html"><a href="ch-03.html#validation"><i class="fa fa-check"></i><b>3.3.1</b> Validation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="ch-03.html"><a href="ch-03.html#per-component-measurements"><i class="fa fa-check"></i><b>3.4</b> Per-Component Measurements</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="ch-03.html"><a href="ch-03.html#characterisation-of-a-cots-device"><i class="fa fa-check"></i><b>3.4.1</b> Characterisation of a COTS Device</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="ch-03.html"><a href="ch-03.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch-04.html"><a href="ch-04.html"><i class="fa fa-check"></i><b>4</b> Deseeding Energy Consumption of Network Stacks</a><ul>
+<li class="chapter" data-level="4.1" data-path="ch-04.html"><a href="ch-04.html#anatomy-of-a-laptop-computer"><i class="fa fa-check"></i><b>4.1</b> Anatomy of a Laptop Computer</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-04.html"><a href="ch-04.html#cross-factor-separating-the-wheat-from-the-chaff"><i class="fa fa-check"></i><b>4.2</b> Cross-Factor: Separating the Wheat from the Chaff</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-04.html"><a href="ch-04.html#power-consumption-in-unattended-idle-mode"><i class="fa fa-check"></i><b>4.3</b> Power Consumption in Unattended Idle Mode</a></li>
+<li class="chapter" data-level="4.4" data-path="ch-04.html"><a href="ch-04.html#power-consumption-with-full-cpuidle-subsystem"><i class="fa fa-check"></i><b>4.4</b> Power Consumption with Full <code>cpuidle</code> Subsystem</a></li>
+<li class="chapter" data-level="4.5" data-path="ch-04.html"><a href="ch-04.html#exploring-the-cpuidle-subsystem"><i class="fa fa-check"></i><b>4.5</b> Exploring the <code>cpuidle</code> Subsystem</a></li>
+<li class="chapter" data-level="4.6" data-path="ch-04.html"><a href="ch-04.html#summary-1"><i class="fa fa-check"></i><b>4.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ch-05.html"><a href="ch-05.html"><i class="fa fa-check"></i><b>5</b> Leveraging Micro-Sleep Opportunities in 802.11</a><ul>
+<li class="chapter" data-level="5.1" data-path="ch-05.html"><a href="ch-05.html#state-transition-times"><i class="fa fa-check"></i><b>5.1</b> State Transition Times in 802.11 Cards</a></li>
+<li class="chapter" data-level="5.2" data-path="ch-05.html"><a href="ch-05.html#protocol-analysis-and-practical-issues"><i class="fa fa-check"></i><b>5.2</b> Protocol Analysis and Practical Issues</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="ch-05.html"><a href="ch-05.html#identifying-potential-micro-sleep-opportunities"><i class="fa fa-check"></i><b>5.2.1</b> Identifying Potential Micro-Sleep Opportunities</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ch-05.html"><a href="ch-05.html#impact-of-capture-effect"><i class="fa fa-check"></i><b>5.2.2</b> Impact of Capture Effect</a></li>
+<li class="chapter" data-level="5.2.3" data-path="ch-05.html"><a href="ch-05.html#impact-of-errors-in-the-mac-header"><i class="fa fa-check"></i><b>5.2.3</b> Impact of Errors in the MAC Header</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="ch-05.html"><a href="ch-05.html#munap-algorithm"><i class="fa fa-check"></i><b>5.3</b> <span class="math inline">\(\mu\)</span>Nap Algorithm</a></li>
+<li class="chapter" data-level="5.4" data-path="ch-05.html"><a href="ch-05.html#performance-evaluation"><i class="fa fa-check"></i><b>5.4</b> Performance Evaluation</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="ch-05.html"><a href="ch-05.html#evaluation-with-real-traces"><i class="fa fa-check"></i><b>5.4.1</b> Evaluation with Real Traces</a></li>
+<li class="chapter" data-level="5.4.2" data-path="ch-05.html"><a href="ch-05.html#impact-of-timing-constraints"><i class="fa fa-check"></i><b>5.4.2</b> Impact of Timing Constraints</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="ch-05.html"><a href="ch-05.html#summary-2"><i class="fa fa-check"></i><b>5.5</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>II Mathematical Modelling</b></span></li>
+<li class="chapter" data-level="6" data-path="ch-06.html"><a href="ch-06.html"><i class="fa fa-check"></i><b>6</b> Rate Adaptation and Power Control in 802.11</a><ul>
+<li class="chapter" data-level="6.1" data-path="ch-06.html"><a href="ch-06.html#joint-goodput-energy-model"><i class="fa fa-check"></i><b>6.1</b> Joint Goodput-Energy Model</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-06.html"><a href="ch-06.html#numerical-results"><i class="fa fa-check"></i><b>6.2</b> Numerical Results</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="ch-06.html"><a href="ch-06.html#optimal-goodput"><i class="fa fa-check"></i><b>6.2.1</b> Optimal Goodput</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ch-06.html"><a href="ch-06.html#extension-of-the-energy-parametrisation"><i class="fa fa-check"></i><b>6.2.2</b> Extension of the Energy Parametrisation</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ch-06.html"><a href="ch-06.html#energy-consumption"><i class="fa fa-check"></i><b>6.2.3</b> Energy Consumption</a></li>
+<li class="chapter" data-level="6.2.4" data-path="ch-06.html"><a href="ch-06.html#energy-efficiency-vs.optimal-goodput"><i class="fa fa-check"></i><b>6.2.4</b> Energy Efficiency vs. Optimal Goodput</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ch-06.html"><a href="ch-06.html#discussion"><i class="fa fa-check"></i><b>6.3</b> Discussion</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="ch-06.html"><a href="ch-06.html#sensitivity-to-energy-parameter-scaling"><i class="fa fa-check"></i><b>6.3.1</b> Sensitivity to Energy Parameter Scaling</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ch-06.html"><a href="ch-06.html#heuristics-for-ra-tpc-algorithms"><i class="fa fa-check"></i><b>6.3.2</b> Heuristics for RA-TPC Algorithms</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="ch-06.html"><a href="ch-06.html#summary-3"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>III Simulation</b></span></li>
+<li class="chapter" data-level="7" data-path="ch-07.html"><a href="ch-07.html"><i class="fa fa-check"></i><b>7</b> Performance of RA-TPC Algorithms in 802.11</a><ul>
+<li class="chapter" data-level="7.1" data-path="ch-07.html"><a href="ch-07.html#algorithms-considered"><i class="fa fa-check"></i><b>7.1</b> Algorithms Considered</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-07.html"><a href="ch-07.html#simulation-scenario"><i class="fa fa-check"></i><b>7.2</b> Simulation Scenario</a></li>
+<li class="chapter" data-level="7.3" data-path="ch-07.html"><a href="ch-07.html#results-and-discussion"><i class="fa fa-check"></i><b>7.3</b> Results and Discussion</a></li>
+<li class="chapter" data-level="7.4" data-path="ch-07.html"><a href="ch-07.html#conservativeness-at-mode-transitions"><i class="fa fa-check"></i><b>7.4</b> Conservativeness at Mode Transitions</a></li>
+<li class="chapter" data-level="7.5" data-path="ch-07.html"><a href="ch-07.html#summary-4"><i class="fa fa-check"></i><b>7.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ch-08.html"><a href="ch-08.html"><i class="fa fa-check"></i><b>8</b> A Novel Discrete-Event Simulation Framework</a><ul>
+<li class="chapter" data-level="8.1" data-path="ch-08.html"><a href="ch-08.html#the-simulation-core-design"><i class="fa fa-check"></i><b>8.1</b> The Simulation Core Design</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="ch-08.html"><a href="ch-08.html#terminology"><i class="fa fa-check"></i><b>8.1.1</b> Terminology</a></li>
+<li class="chapter" data-level="8.1.2" data-path="ch-08.html"><a href="ch-08.html#architecture"><i class="fa fa-check"></i><b>8.1.2</b> Architecture</a></li>
+<li class="chapter" data-level="8.1.3" data-path="ch-08.html"><a href="ch-08.html#the-event-queue"><i class="fa fa-check"></i><b>8.1.3</b> The Event Queue</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="ch-08.html"><a href="ch-08.html#a-brief-introduction-to-simmer"><i class="fa fa-check"></i><b>8.2</b> A Brief Introduction to <code>simmer</code></a></li>
+<li class="chapter" data-level="8.3" data-path="ch-08.html"><a href="ch-08.html#use-case-energy-efficiency-for-massive-iot"><i class="fa fa-check"></i><b>8.3</b> Use case: Energy Efficiency for Massive IoT</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-08.html"><a href="ch-08.html#summary-5"><i class="fa fa-check"></i><b>8.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ch-09.html"><a href="ch-09.html"><i class="fa fa-check"></i><b>9</b> Conclusions and Future Work</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="measurement-circuitry-schematics.html"><a href="measurement-circuitry-schematics.html"><i class="fa fa-check"></i><b>A</b> Measurement Circuitry Schematics</a></li>
+<li class="chapter" data-level="B" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html"><i class="fa fa-check"></i><b>B</b> Experimental Validation of RA-TPC Inefficiencies</a><ul>
+<li class="chapter" data-level="B.1" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html#experimental-setup"><i class="fa fa-check"></i><b>B.1</b> Experimental Setup</a></li>
+<li class="chapter" data-level="B.2" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html#methodology-and-results"><i class="fa fa-check"></i><b>B.2</b> Methodology and Results</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html"><i class="fa fa-check"></i><b>C</b> Performance Evaluation of <code>simmer</code></a><ul>
+<li class="chapter" data-level="C.1" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html#comparison-with-similar-frameworks"><i class="fa fa-check"></i><b>C.1</b> Comparison with Similar Frameworks</a></li>
+<li class="chapter" data-level="C.2" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html#the-cost-of-calling-r-from-c"><i class="fa fa-check"></i><b>C.2</b> The Cost of Calling R from C++</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">
+Licensed under <img alt="Creative Commons License" style="border-width:0;vertical-align:bottom" 
+src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Energy Efficiency in Wireless Communications for Mobile User Devices</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch:05" class="section level1">
+<h1><span class="header-section-number">5</span> Leveraging Micro-Sleep Opportunities in 802.11</h1>
+<p><span class="newthought">In this chapter</span>, we revisit the idea of packet overhearing as a trigger for sleep opportunities, and we take it one step further to the range of microseconds. To this end, we experimentally explore the timing limitations of 802.11 cards. Then, we analyse 802.11 to identify potential micro-sleep opportunities, taking into account practical CSMA-related issues (e.g., capture effect, hidden nodes) not considered in prior work.</p>
+<p>Building on this knowledge, we design <span class="math inline">\(\mu\)</span>Nap, a local standard-compliant energy-saving mechanism for 802.11 WLANs. With <span class="math inline">\(\mu\)</span>Nap, a station is capable of saving energy during packet overhearing autonomously, with full independence from the 802.11 capabilities supported or other power saving mechanisms in use, which makes it backwards compatible and incrementally deployable.</p>
+<p>Finally, the performance of the algorithm is evaluated based on our measurements and real wireless traces. In a brief discussion of the impact and applicability of our mechanism, we draw attention to the need for standardising hardware capabilities in terms of energy in 802.11.</p>
+<div id="state-transition-times" class="section level2">
+<h2><span class="header-section-number">5.1</span> State Transition Times in 802.11 Cards</h2>
+<p>From the hardware point of view, the standard Power Save (PS) mechanism requires supporting two states of operation: the <em>awake state</em> and the <em>sleep state</em>. The latter is implemented using a secondary low-frequency clock. Indeed, it is well-known that the power consumption of digital devices is proportional to the clock rate <span class="citation">(Zhang and Shin <a href="#ref-Zhang2012">2012</a>)</span>. In fact, other types of devices, such as microcontroller-based devices or modern general-purpose CPUs, implement sleep states in the same way.</p>
+<p>For any microcontroller-based device with at least an idle state and a sleep state, one would expect the following behaviour for an ideal sleep. The device was in idle state, consuming <span class="math inline">\(P_\mathrm{idle}\)</span>, when, at an instant <span class="math inline">\(t_\mathrm{off}\)</span>, the sleep state is triggered and the consumption falls to <span class="math inline">\(P_\mathrm{sleep}\)</span>. A secondary low-power clock decrements a timer of duration <span class="math inline">\(\Delta t_\mathrm{sleep} = t_\mathrm{on} - t_\mathrm{off}\)</span>, and then the expiration of this timer triggers the wake-up at <span class="math inline">\(t_\mathrm{on}\)</span>. The switching between states would be instantaneous and the energy saving would be</p>
+<span class="math display" id="eq:idealsleep">\[\begin{equation}
+ E_\mathrm{save} = (P_\mathrm{idle} - P_\mathrm{sleep}) \cdot \Delta t_\mathrm{sleep}
+ \tag{5.1}
+\end{equation}\]</span>
+<p>This estimate could be considered valid for a time scale in the range of tens of milliseconds at least, but this is no longer true for micro-sleeps. Instead, Figure <a href="ch-05.html#fig:timing">5.1</a> presents a conceptual breakdown of a generic micro-sleep.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:timing"></span>
+<img src="img/05/timing.png" alt="Generic sleep breakdown." width="416" />
+<p class="caption">
+Figure 5.1: Generic sleep breakdown.
+</p>
+</div>
+<p>After the sleep state is triggered at <span class="math inline">\(t_\mathrm{off}\)</span>, it takes <span class="math inline">\(\Delta t_\mathrm{off}\)</span> before the power consumption actually reaches <span class="math inline">\(P_\mathrm{sleep}\)</span>. Similarly, after the wake-up is triggered at <span class="math inline">\(t_\mathrm{on}\)</span>, it takes some time, <span class="math inline">\(\Delta t_\mathrm{on}\)</span>, to reach <span class="math inline">\(P_\mathrm{idle}\)</span>. Finally, the circuitry might need some additional time <span class="math inline">\(\Delta t_\mathrm{ready}\)</span> to stabilise and operate normally. Thus, the most general expression for the energy saved in a micro-sleep is the following:</p>
+<span class="math display" id="eq:realsleep">\[\begin{equation}
+\begin{split}
+ E&#39;_\mathrm{save} =&amp;~ E_\mathrm{save} - E_\mathrm{waste} \\
+ =&amp;~ (P_\mathrm{idle} - P_\mathrm{sleep}) \cdot (\Delta t_\mathrm{sleep} -\Delta t_\mathrm{ready}) \\
+ &amp;- \int_{\Delta t_\mathrm{off} \cup \Delta t_\mathrm{on}} (P - P_\mathrm{sleep}) \cdot dt
+\end{split}
+\tag{5.2}
+\end{equation}\]</span>
+<p>where we have considered a general waveform <span class="math inline">\(P(t)\)</span> for the transients <span class="math inline">\(\Delta t_\mathrm{off}\)</span> and <span class="math inline">\(\Delta t_\mathrm{on}\)</span>. <span class="math inline">\(E_\mathrm{waste}\)</span> represents an energy toll per sleep when compared to the ideal case.</p>
+<p><span class="newthought">Our next objective</span> is to quantify these limiting parameters, which can be defined as follows:</p>
+<dl>
+<dt><span class="math inline">\(\Delta t_\mathrm{off}\)</span></dt>
+<dd>is the time required to switch from idle power and to sleep power consumption.
+</dd>
+<dt><span class="math inline">\(\Delta t_\mathrm{on}\)</span></dt>
+<dd>is the time required to switch from sleep power to idle power consumption.
+</dd>
+<dt><span class="math inline">\(\Delta t_\mathrm{ready}\)</span></dt>
+<dd>is the time required for the electronics to stabilise and become ready to transmit/receive.
+</dd>
+</dl>
+<p>The sum of this set of parameters defines the minimum sleep time, <span class="math inline">\(\Delta t_\mathrm{sleep,min}\)</span>, for a given device:</p>
+<span class="math display" id="eq:sleepmin">\[\begin{equation}
+ \Delta t_\mathrm{sleep,min} = \Delta t_\mathrm{off} + \Delta t_\mathrm{on} + \Delta t_\mathrm{ready}
+ \tag{5.3}
+\end{equation}\]</span>
+<p>Performing this experimental characterisation requires the ability to timely trigger the sleep mode on demand. As stated in Section <a href="ch-04.html#anatomy-of-a-laptop-computer">4.1</a>, most COTS cards are not suitable for this task, because they implement all the low-level operations in an internal proprietary binary firmware. However, those cards based on the open-source driver <code>ath9k</code>, like the one presented in previous chapters<a href="#fn35" class="footnoteRef" id="fnref35"><sup>35</sup></a> are well suited for our needs. The driver has access to very low level functionality (e.g., supporting triggering the sleep mode by just writing into a register).</p>
+<p><span class="newthought">This characterisation</span> follows the setup depicted in Section <a href="ch-03.html#per-component-measurements">3.4</a>, Figure <a href="ch-03.html#fig:testbed-card">3.7</a>. The card under test is associated to an access point (AP) in 11a mode to avoid any interfering traffic from neighbouring networks. This AP is placed very close to the node to obtain the best possible signal quality, as we are simply interested in not losing the connectivity for this experiment. With this setup, the idea is to trigger the sleep state, then bring the interface back to idle and finally trigger the transmission of a buffered packet as fast as possible, in order to find the timing constraints imposed by the hardware in the power signature. From an initial stable power level, with the interface associated and in idle mode, we would expect a falling edge to a lower power level corresponding to the sleep state. Then the power level would raise again to the idle level and, finally, a big power peak would mark the transmission of the packet. By correlating the timestamps of our commands and the timestamps of the measured power signature, we will be able to measure the limiting parameters <span class="math inline">\(\Delta t_\mathrm{off}, \Delta t_\mathrm{on}, \Delta t_\mathrm{ready}\)</span>.</p>
+<p>The methodology to reproduce these steps required hacking the <code>ath9k</code> driver to timely trigger write operations in the proper card registers, and to induce a transmission of a pre-buffered packet directly in the device without going through the entire network stack. A simple hack in the <code>ath9k</code> module<a href="#fn36" class="footnoteRef" id="fnref36"><sup>36</sup></a> allows us to perform the following experiment:</p>
+<ol start="0" style="list-style-type: decimal">
+<li>Initially, the card is in idle state, connected to the AP.</li>
+<li>A RAW socket (Linux <code>AF_PACKET</code> socket) is created and a socket buffer is prepared with a fake packet.</li>
+<li><span class="math inline">\(t_\mathrm{off}\)</span> is triggered by writing a register in the card, which has proved to be almost instantaneous in kernel space.</li>
+<li>A micro-delay of 60 <span class="math inline">\(\mu\)</span>s is introduced in order to give the card time to react.</li>
+<li><span class="math inline">\(t_\mathrm{on}\)</span> is triggered with another register write.</li>
+<li>Another timer sets a programmable delay.</li>
+<li>The fake frame is sent using a low-level interface, i.e., calling the function <code>ndo_start_xmit()</code> from the <code>net_device</code> operations directly. By doing this, we try to spend very little time in kernel.</li>
+</ol>
+<p>The power signature recorded as a result of this experiment is shown in Figure <a href="ch-05.html#fig:sleep-tx">5.2</a> (left).</p>
+
+<div class="figure" style="text-align: center"><span id="fig:sleep-tx"></span>
+<img src="05-unap_files/figure-html/sleep-tx-1.png" alt="Atheros AR9280 timing characterisation." width="49%" /><img src="05-unap_files/figure-html/sleep-tx-2.png" alt="Atheros AR9280 timing characterisation." width="49%" />
+<p class="caption">
+Figure 5.2: Atheros AR9280 timing characterisation.
+</p>
+</div>
+<p>As we can see, the card spends <span class="math inline">\(\Delta t_\mathrm{off} = 50\)</span> <span class="math inline">\(\mu\)</span>s consuming <span class="math inline">\(P_\mathrm{idle}\)</span> and then it switches off to <span class="math inline">\(P_\mathrm{sleep}\)</span> in only 10 <span class="math inline">\(\mu\)</span>s. Then, <span class="math inline">\(t_\mathrm{on}\)</span> is triggered. Similarly, the card spends <span class="math inline">\(\Delta t_\mathrm{on} = 50\)</span> <span class="math inline">\(\mu\)</span>s consuming <span class="math inline">\(P_\mathrm{sleep}\)</span> and it wakes up almost instantaneously. Note that the transmission of the packet is triggered right after the <span class="math inline">\(t_\mathrm{on}\)</span> event and the frame spends very little time at the kernel (the time spent in kernel corresponds to the width of the rectangle labelled as <code>start_xmit</code> in the graph). Nonetheless, the card sends the packet 200 <span class="math inline">\(\mu\)</span>s after returning to idle, even though the frame was ready for transmission much earlier.</p>
+<p>To understand the reasons for the delay in the frame transmission observed above, we performed an experiment in which frame transmissions were triggered at different points in time by introducing different delays between the <span class="math inline">\(t_\mathrm{on}\)</span> and <code>start_xmit</code> events. Figure <a href="ch-05.html#fig:sleep-tx">5.2</a> (right) shows that the card starts transmitting always in the same instant whenever the kernel triggers the transmission within the first 250 <span class="math inline">\(\mu\)</span>s right after the <span class="math inline">\(t_\mathrm{on}\)</span> event (lines 0 and 200). Otherwise, the card starts transmitting almost instantaneously (line 350). This experiments demonstrate that the device needs <span class="math inline">\(\Delta t_\mathrm{ready} = 200\)</span> <span class="math inline">\(\mu\)</span>s to get ready to transmit/receive after returning to idle.</p>
+<p><span class="newthought">Summing up</span>, our experiments show that, if we want to bring this card to sleep during a certain time <span class="math inline">\(\Delta t_\mathrm{sleep}\)</span>, we should take into account that it requires a minimum sleep time <span class="math inline">\(\Delta t_\mathrm{sleep,min}=300\)</span> <span class="math inline">\(\mu\)</span>s. Therefore, <span class="math inline">\(\Delta t_\mathrm{sleep} \geq \Delta t_\mathrm{sleep,min}\)</span> must be satisfied, and we must program the <span class="math inline">\(t_\mathrm{on}\)</span> interrupt to be triggered <span class="math inline">\(\Delta t_\mathrm{on} + \Delta t_\mathrm{ready}=250\)</span> <span class="math inline">\(\mu\)</span>s before the end of the sleep. Note also that the card wastes a fixed time <span class="math inline">\(\Delta t_\mathrm{waste}\)</span> consuming <span class="math inline">\(P_\mathrm{idle}\)</span>:</p>
+<span class="math display" id="eq:twaste">\[\begin{equation}
+ \Delta t_\mathrm{waste} = \Delta t_\mathrm{off} + \Delta t_\mathrm{ready}
+ \tag{5.4}
+\end{equation}\]</span>
+<p>which is equal to 250 <span class="math inline">\(\mu\)</span>s also. Thus, the total time in sleep state is <span class="math inline">\(\Delta t_\mathrm{sleep} - \Delta t_\mathrm{waste}\)</span>, and the energy toll from Equation <a href="ch-05.html#eq:realsleep">(5.2)</a> can be simplified as follows:</p>
+<span class="math display" id="eq:Ewaste">\[\begin{equation}
+ E_\mathrm{waste} \approx (P_\mathrm{idle} - P_\mathrm{sleep})\cdot\Delta t_\mathrm{waste}
+ \tag{5.5}
+\end{equation}\]</span>
+</div>
+<div id="protocol-analysis-and-practical-issues" class="section level2">
+<h2><span class="header-section-number">5.2</span> Protocol Analysis and Practical Issues</h2>
+<p>The key idea of this chapter is to put the interface to sleep during packet overhearing while meeting the constraint <span class="math inline">\(\Delta t_\mathrm{sleep,min}\)</span> identified in the previous section. Additionally, such a mechanism should be local in order to be incrementally deployable, standard-compliant, and should take into account real-world practical issues. For this purpose, we first identify potential micro-sleep opportunities in 802.11, and explore well-known practical issues of WLAN networks that had not been addressed by previous energy-saving schemes.</p>
+<div id="identifying-potential-micro-sleep-opportunities" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Identifying Potential Micro-Sleep Opportunities</h3>
+<p>Due to the CSMA mechanism, an 802.11 station (STA) receives every single frame from its Service Set Identifier (SSID) or from others in the same channel (even some frames from overlapping channels). Upon receiving a frame, a STA checks the Frame Check Sequence (FCS) for errors and then, and only after having received the entire frame, it discards the frame if it is not the recipient. In 802.11 terminology, this is called <em>packet overhearing</em>. Since packet overhearing consumes the power corresponding to a full packet reception that is not intended for the station, it represents a source of inefficiency. Thus, we could avoid this unnecessary power consumption by triggering micro-sleeps that bring the wireless card to a low-energy state.</p>
+<p>Indeed, the Physical Layer Convergence Procedure (PLCP) carries the necessary information (rate and length) to know the duration of the PLCP Service Data Unit (PSDU), which consists of a MAC frame or an aggregate of frames. And the first 10 bytes of a MAC frame indicate the intended receiver, so a frame could be discarded very early, and the station could be brought to sleep if the hardware allows for such a short sleeping time. Therefore, the most naive micro-sleep mechanism could determine, given the constraint <span class="math inline">\(\Delta t_\mathrm{sleep,min}\)</span>, whether the interface could be switched off in a frame-by-frame basis. And additionally, this behaviour can be further improved by leveraging the 802.11 virtual carrier-sensing mechanism.</p>
+<p>Virtual carrier-sensing allows STAs not only to seize the channel for a single transmission, but also to signal a longer exchange with another STA. For instance, this exchange can include the acknowledgement sent by the receiver, or multiple frames from a station in a single transmission opportunity (TXOP). MAC frames carry a duration value that updates the Network Allocation Vector (NAV), which is a counter indicating how much time the channel will be busy due to the exchange of frames triggered by the current frame. This duration field is, for our benefit, enclosed in the first 10 bytes of the MAC header too. Therefore, the NAV could be exploited to obtain substantial gains in terms of energy.</p>
+<p><span class="newthought">In order to unveil</span> potential sleeping opportunities within the different states of operation in 802.11, first of all we review the setting of the NAV. 802.11 comprises two families of channel access methods. Within the legacy methods, the Distributed Coordination Function (DCF) is the basic mechanism with which all STAs contend employing CMSA/CA with binary exponential backoff. In this scheme, the duration value provides single protection: the setting of the NAV value is such that protects up to the end of one frame (data, management) plus any additional overhead (control frames)<a href="#fn37" class="footnoteRef" id="fnref37"><sup>37</sup></a>.</p>
+<p>When the Point Coordination Function (PCF) is used, time between beacons is rigidly divided into contention and contention-free periods (CP and CFP, respectively). The AP starts the CFP by setting the duration value in the beacon to its maximum value<a href="#fn38" class="footnoteRef" id="fnref38"><sup>38</sup></a>. Then, it coordinates the communication by sending CF-Poll frames to each STA. As a consequence, a STA cannot use the NAV to sleep during the CFP, because it must remain CF-pollable, but it still can doze during each individual packet transmission. In the CP, DCF is used.</p>
+<p>802.11e introduces traffic categories (TC), the concept of TXOP, and a new family of access methods called Hybrid Coordination Function (HCF), which includes the Enhanced Distributed Channel Access (EDCA) and the HCF Controlled Channel Access (HCCA). These two methods are the QoS-aware versions of DCF and PCF respectively.</p>
+<p>Under EDCA, there are two classes of duration values: single protection, as in DCF, and multiple protection, where the NAV protects up to the end of a sequence of frames within the same TXOP. By setting the appropriate TC, any STA may start a TXOP, which is zero for background and best-effort traffic, and of several milliseconds for video and audio traffic as defined in the standard<a href="#fn39" class="footnoteRef" id="fnref39"><sup>39</sup></a>. A non-zero TXOP may be used for dozing, as 11ac does, but these are long sleeps and the AP needs to support this feature, because a TXOP may be truncated at any moment with a CF-End frame, and it must keep buffering any frame directed to any 11ac dozing STA until the NAV set at the start of the TXOP has expired.</p>
+<p>HCCA works similarly to PCF, but under HCCA, the CFP can be started at almost any time. In the CFP, when the AP sends a CF-poll to a STA, it sets the NAV of other STAs for an amount equal to the TXOP. Nevertheless, the AP may reclaim the TXOP if it ends too early (e.g., the STA has nothing to transmit) by resetting the NAV of other STAs with another CF-Poll. Again, the NAV cannot be locally exploited to perform energy saving during a CFP.</p>
+<p>Finally, there is another special case in which the NAV cannot be exploited either. 802.11g was designed to bring the advantages of 11a to the 2.4 GHz band. In order to interoperate with older 11b deployments, it introduces CTS-to-self frames (also used by more recent amendments such as 11n and 11ac). These are standard CTS frames, transmitted at a legacy rate and not preceded by an RTS, that are sent by a certain STA to itself to seize the channel before sending a data frame. In this case, the other STAs cannot know which will be the destination of the next frame. Therefore, they should not use the duration field of a CTS for dozing.</p>
+</div>
+<div id="impact-of-capture-effect" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Impact of Capture Effect</h3>
+<p>It is well-known that a high-power transmission can totally blind another one with a lower SNR. Theoretically, two STAs seizing the channel at the same time yields a collision. However, in practice, if the power ratio is sufficiently high, a wireless card is able to decode the high-power frame without error, thus ignoring the other transmission. This is called <em>capture effect</em>, and although not described by the standard, it must be taken into account as it is present in real deployments.</p>
+<p>According to <span class="citation">Lee et al. (<a href="#ref-Lee2007">2007</a>)</span>, there are two types of capture effect depending on the order of the frames: if the high-power frame comes first, it is called <em>first</em> capture effect; otherwise, it is called <em>second</em> capture effect. The first one is equivalent to receiving a frame and some noise after it, and then it has no impact in our analysis. In the second capture effect, the receiving STA stops decoding the PLCP of the low-power frame and switches to another with higher power. If the latter arrives <em>before</em> a power-saving mechanism makes the decision to go to sleep, the mechanism introduces no misbehaviour.</p>
+<p>However, <span class="citation">Lee et al. (<a href="#ref-Lee2007">2007</a>)</span> suggests that a high-power transmission could blind a low-power one <em>at any time</em>, even when the actual data transmission has begun. This is called <em>Message in Message</em> (MIM) in the literature <span class="citation">(Santhapuri et al. <a href="#ref-mim1">2008</a>; Wang, Leong, and Leong <a href="#ref-mim2">2014</a>)</span>, and it could negatively impact the performance of an interface implementing an energy-efficiency mechanism based on packet overhearing. In the following, we will provide new experimental evidence supporting that this issue still holds in modern wireless cards.</p>
+<p><span class="newthought">We evaluated</span> the properties of the MIM effect with an experimental setup consisting of a card under test, a brand new 802.11ac three-stream Qualcomm Atheros QCA988x card, and three additional helper nodes. These are equipped with Broadcom KBFG4318 802.11g cards, whose behaviour can be changed with the open-source firmware OpenFWWF <span class="citation">(Gringoli and Nava <a href="#ref-openfwwfweb">2015</a>)</span>. We disable the carrier sensing and back-off mechanisms so that we can decide the departure time of every transmitted frame with 1 <span class="math inline">\(\mu\)</span>s granularity with respect to the internal 1MHz clock.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:secondcapture"></span>
+<img src="img/05/testbed-francesco.png" alt="Measurement setup for the MIM effect." width="50%" />
+<p class="caption">
+Figure 5.3: Measurement setup for the MIM effect.
+</p>
+</div>
+<p>Figure <a href="ch-05.html#fig:secondcapture">5.3</a> depicts the measurement setup, which consists of a node equipped with our Atheros card under test (<em>ath</em>), a synchronization (Sync) node, a <em>high energy</em> (HE) node and a <em>low energy</em> (LE) node. These two HE and LE nodes were manually carried around at different distances with respect to the <em>ath</em> node until we reached the desired power levels.</p>
+<p>The Sync node transmits 80-byte long beacon-like frames periodically at 48 Mbps, one beacon every 8192 <span class="math inline">\(\mu\)</span>s: the time among consecutive beacons is divided in 8 schedules of 1024 <span class="math inline">\(\mu\)</span>s. Inside each schedule, time is additionally divided into 64 micro-slots of 16 <span class="math inline">\(\mu\)</span>s. We then program the firmware of the HE and LE nodes to use the beacon-like frames for keeping their clocks synchronised and to transmit a single frame (138-<span class="math inline">\(\mu\)</span>s long) per schedule starting at a specific micro-slot. This allows us to always start the transmission of the <em>low energy</em> frame from the LE node before the <em>high energy</em> frame from the HE node, and to configure the exact delay <span class="math inline">\(\Delta t\)</span> as a multiple of the micro-slot duration.</p>
+<p>For instance, we set up a <span class="math inline">\(\Delta t = 32\)</span> <span class="math inline">\(\mu\)</span>s by configuring LE node to transmit at slot 15, HE node at slot 17. By moving LE node away from the <em>ath</em> node while the HE node is always close, we are able to control the relative power difference <span class="math inline">\(\Delta P\)</span> received by the <em>ath</em> node between frames coming from the LE and HE nodes. With the configured timings, we are able to replicate the reception experiment at the <em>ath</em> node approximately 976 times per second, thus collecting meaningful statistics in seconds.</p>
+<table>
+<caption>
+<span id="tab:secondcapturet">Table 5.1: </span>Message-in-message effect.
+</caption>
+<thead>
+<tr>
+<th style="border-bottom:hidden" colspan="2">
+</th>
+<th style="text-align:center; border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;" colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+LE frames
+</div>
+</th>
+<th style="text-align:center; border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;" colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+HE frames
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:center;">
+<span class="math inline">\(\Delta P\)</span> [dB]
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\Delta t\)</span> [<span class="math inline">\(\mu\)</span>s]
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\%\)</span> rx
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\%\)</span> err
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\%\)</span> rx
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\%\)</span> err
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;vertical-align: middle !important;" rowspan="5">
+<span class="math inline">\(\leq\)</span> 5
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.04
+</td>
+<td style="text-align:right;">
+50.00
+</td>
+<td style="text-align:right;">
+92.00
+</td>
+<td style="text-align:right;">
+17.67
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+2.15
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+99.32
+</td>
+<td style="text-align:right;">
+99.96
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<span class="math inline">\(\geq\)</span> 48
+</td>
+<td style="text-align:right;">
+99.10
+</td>
+<td style="text-align:right;">
+99.75
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<span class="math inline">\(\geq\)</span> 144
+</td>
+<td style="text-align:right;">
+98.94
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+97.32
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;vertical-align: middle !important;" rowspan="7">
+<span class="math inline">\(\geq\)</span> 35
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0.18
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+99.37
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+<td style="text-align:right;">
+1.11
+</td>
+<td style="text-align:right;">
+91.87
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+0.39
+</td>
+<td style="text-align:right;">
+78.95
+</td>
+<td style="text-align:right;">
+89.89
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+1.54
+</td>
+<td style="text-align:right;">
+68.00
+</td>
+<td style="text-align:right;">
+95.58
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+64
+</td>
+<td style="text-align:right;">
+3.22
+</td>
+<td style="text-align:right;">
+98.73
+</td>
+<td style="text-align:right;">
+89.83
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+128
+</td>
+<td style="text-align:right;">
+60.35
+</td>
+<td style="text-align:right;">
+99.96
+</td>
+<td style="text-align:right;">
+39.24
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<span class="math inline">\(\geq\)</span> 144
+</td>
+<td style="text-align:right;">
+95.33
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+99.64
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+</tbody>
+</table>
+<p><span class="newthought">We obtained</span> the results shown in Table <a href="ch-05.html#tab:secondcapturet">5.1</a>. When the energy gap is small (<span class="math inline">\(\le\)</span> 5 dB), the MIM effect never enters into play as we can see from the first part of Table <a href="ch-05.html#tab:secondcapturet">5.1</a>. If the two frames are transmitted at the same time, then the QCA card receives the majority of the HE frames (92%) despite some of them are broken (17%); almost no LE frames are received. By increasing the delay to 16 <span class="math inline">\(\mu\)</span>s, the QCA card stops working: the short delay means that the HE frame collide with the LE one at the PLCP level. The energy gap does not allow the QCA correlator to restart decoding a new PLCP and, in fact, only a few frames are sporadically received. Further increasing the delay allows the QCA card to correctly receive the PLCP preamble of the LE frame, but then the PDU decoding is affected by errors (e.g., delay set to 48 <span class="math inline">\(\mu\)</span>s) because of collision. Finally, if the delay is high enough so that both frames fit into a schedule, the QCA card receives everything correctly (<span class="math inline">\(\ge\)</span> 144 <span class="math inline">\(\mu\)</span>s).</p>
+<p>When the energy gap exceeds a threshold (i.e., more than 35 dB), then the behaviour of the QCA card changes radically as we can see from the second part of Table <a href="ch-05.html#tab:secondcapturet">5.1</a>: first, with no delay, all high energy frames are received (expected given that they overkill the others); second, when both frame types fit in the schedule, all of them are received, which confirms that the link between LE node and the QCA is still very good. But, unlike the previous case, HE frames are received regardless of the delay, which means that the correlator restarts decoding the PLCP of the second frame because of the higher energy, enough for distinguishing it from the first frame that simply turns into a negligible noise.</p>
+<p>Thus, our experiments confirm that the MIM effect actually affects modern wireless cards, and therefore it should be taken into account in any micro-sleep strategy. Let us consider, for instance, a common infrastructure-based scenario in which certain STA receives low-power frames from a distant network in the same channel. If the AP does not see them, we are facing the hidden node problem. It is clear that none of these frames will be addressed to our STA, but, if it goes to sleep during these transmissions, it may lose potential high-power frames from its BSSID. Therefore, if we perform micro-sleeps under hidden node conditions, in some cases we may lose frames that we would receive otherwise thanks to the capture effect. The same situation may happen within the local BSSID (the low-power frames belong to the same network), but this is far more rare, as such a hidden node will become disconnected sooner or later.</p>
+<p><span class="newthought">In order to circumvent</span> these issues, a STA should only exploit micro-sleep opportunities arising from its own network. To discard packets originating from other networks, the algorithm looks at the BSSID in the receiver address within frames addressed to an AP. If the frame was sent by an AP, it only needs to read 6 additional bytes (in the worst case), which are included in the transmitter address. Even so, these additional bytes do not necessarily involve consuming more time, depending on the modulation. For instance, for OFDM 11ag rates, this leads to a time increase of 8 <span class="math inline">\(\mu\)</span>s at 6 and 9 Mbps, 4 <span class="math inline">\(\mu\)</span>s at 12, 18 and 36 Mbps, and no time increase at 24, 48 and 54 Mbps.</p>
+</div>
+<div id="impact-of-errors-in-the-mac-header" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> Impact of Errors in the MAC Header</h3>
+<p>Taking decisions without checking the FCS (placed at the end of the frame) for errors or adding any protection mechanism may lead to performance degradation due to frame loss. This problem was firstly identified by <span class="citation">Balaji, Tamma, and Manoj (<a href="#ref-Balaji2010">2010</a>)</span> and <span class="citation">Prasad et al. (<a href="#ref-Prasad2014">2014</a>)</span> which, based on purely qualitative criteria, reached opposite conclusions. The first work advocates for the need for a new CRC to protect the header bits while the latter dismisses this need. This section is devoted to analyse quantitatively the impact of errors.</p>
+<p><span class="newthought">At a first stage</span>, we need to identify, field by field, which cases are capable of harming the performance of our algorithm due to frame loss. The duration/ID field (2 bytes) and the MAC addresses (6 bytes each) are an integral part of our algorithm. According to its encoding, the duration/ID field will be interpreted as an actual duration <em>if and only if the bit 15 is equal to 0</em>. Given that the bit 15 is the most significant one, this condition is equivalent to the value being smaller than 32 768. Therefore, we can distinguish the following cases in terms of the possible errors:</p>
+<ul>
+<li><em>An error changes the bit 15 from 0 to 1</em>. The field will not be interpreted as a duration and hence we will not go to sleep. We will be missing an opportunity to save energy, but there will be no frame loss and, therefore, the network performance will not be affected.</li>
+<li><em>An error changes the bit 15 from 1 to 0</em>. The field will be wrongly interpreted as a duration. The resulting <em>sleep</em> will be up to 33 ms longer than required, with the potential frame loss associated.</li>
+<li><em>With the bit 15 equal to 0, an error affects the previous bits</em>. The resulting <em>sleep</em> will be shorter or longer that the real one. In the first case, we will be missing an opportunity to save energy; in the second case, there is again a potential frame loss.</li>
+</ul>
+<p>Regarding the receiver address field, there exist the following potential issues:</p>
+<ul>
+<li><em>A multicast address changes but remains multicast</em>. The frame will be received and discarded, i.e., the behaviour will be the same as with no error. Hence, it does not affect.</li>
+<li><em>A unicast address changes to multicast</em>. The frame will be received and discarded after detecting the error. If the unicast frame was addressed to this host, it does not affect. If it was addressed to another host, we will be missing an opportunity to save energy.</li>
+<li><em>A multicast address changes to unicast</em>. If the unicast frame is addressed to this host, it does not affect. If it is addressed to another host, we will save energy with a frame which would be otherwise received and discarded.</li>
+<li><em>Another host’s unicast address changes to your own</em>. This case is very unlikely. The frame will be received and discarded, so we will be missing an opportunity to save energy.</li>
+<li><em>Your own unicast address changes to another’s</em>. We will save energy with a frame otherwise received and discarded.</li>
+</ul>
+<p>As for the transmission address field, this is checked as an additional protection against the undesirable effects of the already discussed intra-frame capture effect. If the local BSSID in a packet changes to another BSSID, we will be missing an opportunity to save energy. It is extremely unlikely that an error in this field could lead to frame loss: a frame from a foreign node (belonging to another BSSID and hidden to our AP) should contain an error that matches the local BSSID in the precise moment in which our AP tries to send us a frame<a href="#fn40" class="footnoteRef" id="fnref40"><sup>40</sup></a>.</p>
+<p>Henceforth, we draw the following conclusions:</p>
+<ul>
+<li>Errors at the MAC addresses <em>do not produce frame loss</em>, because under no circumstances they imply frame loss. The only impact is that there will be several new opportunities to save energy and several others will be wasted.</li>
+<li>Errors at the duration/ID field, however, <em>may produce frame loss</em> due to frame loss in periods of time up to 33 ms. Also several energy-saving opportunities may be missed without yielding any frame loss.</li>
+<li>An error burst affecting both the duration/ID field and the receiver address may potentially change the latter in a way that the frame would be received (multicast bit set to 1) and discarded, and thus preventing the frame loss.</li>
+</ul>
+<p><span class="newthought">From the above</span>, we have that the only case that may yield performance degradation in terms of frame loss is when we have errors in the duration/ID field. In the following, we are going to analytically study and quantify the probability of frame loss in this case. For our analysis, we first consider statistically independent single-bit errors. Each bit is considered the outcome of a Bernoulli trial with a success probability equal to the bit error probability <span class="math inline">\(p_{b}\)</span>. Thus, the number of bit errors, <span class="math inline">\(X\)</span>, in certain field is given by a Binomial distribution <span class="math inline">\(X\sim \operatorname{B}(N, p_b)\)</span>, where <span class="math inline">\(N\)</span> is the length of that field.</p>
+<p>With these assumptions, we can compute the probability of having more than one erroneous bit, <span class="math inline">\(\Pr(X \geq 2)\)</span>, which is three-four orders of magnitude smaller than <span class="math inline">\(p_b\)</span> with realistic <span class="math inline">\(p_b\)</span> values. Therefore, we assume that we never have more than one bit error in the frame header, so the probability of receiving an erroneous duration value with a single-bit error, <span class="math inline">\(p_{e,b}\)</span>, is the following:</p>
+<span class="math display" id="eq:peb">\[\begin{equation}
+ p_{e,b} \approx 1 - (1 - p_b)^{15} \tag{5.6}
+\end{equation}\]</span>
+<p>However, not all the errors imply a duration value greater than the original one, but only those which convert a zero into a one. Let us call <span class="math inline">\(\operatorname{Hw}(i)\)</span> the Hamming weight, i.e., the number of ones in the binary representation of the integer <span class="math inline">\(i\)</span>. The probability of an erroneous duration value greater than the original, <span class="math inline">\(p_{eg,b}\)</span>, is the following:</p>
+<span class="math display" id="eq:pegb">\[\begin{equation}
+ p_{eg,b}(i) = p_{e,b}\cdot \frac{15 -\operatorname{Hw}(i)}{15}
+ \tag{5.7}
+\end{equation}\]</span>
+<p>which represents a fraction of the probability <span class="math inline">\(p_{e,b}\)</span> and depends on the original duration <span class="math inline">\(i\)</span> (before the error).</p>
+<p>In order to understand the implications of the above analysis in real networks, we have analysed the SIGCOMM’08 data set <span class="citation">(Schulman, Levin, and Spring <a href="#ref-umd-sigcomm2008-2009-03-02">2009</a>)</span> and gathered which duration values are the most common. In the light of the results depicted in Table <a href="ch-05.html#tab:duration">5.2</a>, it seems reasonable to approximate <span class="math inline">\(p_{eg,b}/p_{e,b} \approx 1\)</span>, because it is very likely that the resulting duration will be greater than the original.</p>
+<table>
+<caption>
+<span id="tab:duration">Table 5.2: </span>Most frequent duration values.
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Duration
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\%\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(p_{eg,b}/p_b\)</span>
+</th>
+<th style="text-align:left;">
+Cause
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+44
+</td>
+<td style="text-align:right;">
+62.17
+</td>
+<td style="text-align:right;">
+0.88
+</td>
+<td style="text-align:left;">
+SIFS + ACK at 24 Mbps
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+25.23
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:left;">
+Broadcast, multicast frames
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+60
+</td>
+<td style="text-align:right;">
+6.54
+</td>
+<td style="text-align:right;">
+0.73
+</td>
+<td style="text-align:left;">
+SIFS + ACK at 6 Mbps
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:right;">
+5.82
+</td>
+<td style="text-align:right;">
+0.87
+</td>
+<td style="text-align:left;">
+SIFS + ACK at 12 Mbps
+</td>
+</tr>
+</tbody>
+</table>
+<p>Finally, we can approximate <span class="math inline">\(p_b\)</span> by the BER and, based on the above data and considerations, the frame loss probability, <span class="math inline">\(p_{\mathrm{loss}}\)</span>, due to an excessive sleep interval using a single-bit error model is the following:</p>
+<span class="math display" id="eq:plossbit">\[\begin{equation}
+ p_{\mathrm{loss}} = p_{eg,b} \approx p_{e,b} \approx 1 - (1 - \mathrm{BER})^{15}
+ \tag{5.8}
+\end{equation}\]</span>
+<p>This analysis assumes</span> independent errors. However, it is well known that errors typically occur in bursts. In order to understand the impact of error bursts in our scheme, we analyse a scenario with independent error bursts of length <span class="math inline">\(X\)</span> bits, where <span class="math inline">\(X\)</span> is a random variable. To this end, we use the Neyman-A contagious model <span class="citation">(Neyman <a href="#ref-neyman1939new">1939</a>)</span>, which has been successfully applied in telecommunications to describe burst error distributions<a href="#fn41" class="footnoteRef" id="fnref41"><sup>41</sup></a>. This model assumes that both the bursts and the burst length are Poisson-distributed. Although assuming independency between errors in the same burst may not be accurate, it has been shown that the Neyman-A model performs well for short intervals <span class="citation">(Cornaglia and Spini <a href="#ref-cornaglia1996letter">1996</a>)</span>, which is our case.</p>
+<p>The probability of having <span class="math inline">\(k\)</span> errors in an interval of <span class="math inline">\(N\)</span> bits, given the Neyman-A model, is the following:</p>
+<span class="math display" id="eq:pNk">\[\begin{equation}
+ p_N(k) = \frac{\lambda_b^k}{k!}e^{-\lambda_B}\sum_{i=0}^\infty\frac{i^k}{i!}\lambda_B^i e^{-i\lambda_b}
+ \tag{5.9}
+\end{equation}\]</span>
+<p>where</p>
+<dl>
+<dt><span class="math inline">\(\lambda_b\)</span></dt>
+<dd>is the average number of bits in a burst.
+</dd>
+<dt><span class="math inline">\(\lambda_B\)</span></dt>
+<dd><span class="math inline">\(= Np_b/\lambda_b\)</span> is the average number of bursts.
+</dd>
+</dl>
+<p>This can be transformed into a recursive formula with finite sums:</p>
+<span class="math display" id="eq:pN0">\[\begin{equation}
+\begin{split}
+ p_N(k) &amp;= \frac{\lambda_B\lambda_b e^{-\lambda_b}}{k}\sum_{j=0}^{k-1} \frac{\lambda_b^j}{j!}p_N(k-1-j) \\
+ p_N(0) &amp;= e^{-\lambda_B\left(1-e^{-\lambda_b}\right)} 
+\end{split}
+\tag{5.10}
+\end{equation}\]</span>
+<p>Following the same reasoning as for the single-bit case, we can assume one burst at a time which will convert the duration value into a higher one. Then, the frame loss probability is the following:</p>
+<span class="math display" id="eq:plossburst">\[\begin{equation}
+ p_{\mathrm{loss}} = \sum_{k=1}^{15} p_{15}(k)
+ \tag{5.11}
+\end{equation}\]</span>
+<p>with parameters <span class="math inline">\(\lambda_b\)</span> and <span class="math inline">\(p_b \approx \mathrm{BER}\)</span>.</p>
+<p>Figure <a href="ch-05.html#fig:ploss">5.4</a> evaluates both error models as a function of BER. As expected, the single-bit error model is an upper bound for the error burst model and represents a worst-case scenario. At most, the frame loss probability is one order of magnitude higher than BER. Therefore, we conclude that the frame loss is negligible for reasonable BERs and, consequently, the limited benefit of an additional CRC does not compensate the issues.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:ploss"></span>
+<img src="05-unap_files/figure-html/ploss-1.png" alt="Frame loss probability given a BER level." width="480" />
+<p class="caption">
+Figure 5.4: Frame loss probability given a BER level.
+</p>
+</div>
+</div>
+</div>
+<div id="munap-algorithm" class="section level2">
+<h2><span class="header-section-number">5.3</span> <span class="math inline">\(\mu\)</span>Nap Algorithm</h2>
+<p>In the following, we present <span class="math inline">\(\mu\)</span>Nap, which builds upon the insights provided in previous sections and tries to save energy during the channel transmissions in which the STA is not involved. However, not all transmissions addressed to other stations are eligible for dozing, as the practical issues derived from the capture effect may incur in performance degradation. Therefore, the algorithm must check both the receiver as well as the transmitter address in the MAC header in order to determine whether the incoming frame is addressed to another station <em>and</em> it comes from within the same network.</p>
+<p>If these conditions are met, a basic micro-sleep will last the duration of the rest of the incoming frame plus an inter-frame space (SIFS). Unfortunately, the long times required to bring an interface back and forth from sleep, as discovered in Section <a href="ch-05.html#state-transition-times">5.1</a>, shows that this basic micro-sleep may not be long enough to be exploitable. Thus, the algorithm should take advantage of the NAV field whenever possible. Our previous analysis shows that this duration information stored in the NAV is not exploitable in every circumstance: the interface can leverage this additional time during CPs and it must avoid any NAV set by a CTS packet.</p>
+<p>Finally, after a micro-sleep, two possible situations arise:</p>
+<ul>
+<li>The card wakes up at the end of a frame exchange. For instance, after a data + ACK exchange. In this case, all STAs should wait for a DIFS interval before contending again.</li>
+<li>The card wakes up in the middle of a frame exchange. For instance, see Figure <a href="ch-05.html#fig:fragments">5.5</a>, where an RTS/CTS-based fragmented transmission is depicted.</li>
+</ul>
+
+<div class="figure" style="text-align: center"><span id="fig:fragments"></span>
+<img src="img/05/fragments.png" alt=" " width="606" />
+<p class="caption">
+Figure 5.5: RTS/CTS-based fragmented transmission example and <span class="math inline">\(\mu\)</span>Nap’s behaviour.
+</p>
+</div>
+<p>In the latter example, an RTS sets the NAV to the end of a fragment, and our algorithm triggers the sleep. This first fragment sets the NAV to the end of the second fragment, but it is not seen by the dozing STA. When the latter wakes up, it sees a SIFS period of silence and then the second fragment, which sets its NAV again and may trigger another sleep. This implies that the STA can doze for an additional SIFS, as Figure <a href="ch-05.html#fig:fragments">5.5</a> shows, and wait in idle state until a DIFS is completed before trying to contend again.</p>
+<p><span class="newthought">Based on the above</span>, Algorithm <a href="ch-05.html#fig:unap">5.6</a> describes the main loop of a wireless card’s microcontroller that would implement our mechanism. When the first 16 bytes of the incoming frame are received, all the information needed to take the decision is available: the duration value (<span class="math inline">\(\Delta t_\mathrm{NAV}\)</span>), the receiver address (<span class="math inline">\(R_A\)</span>) and the transmitter address (<span class="math inline">\(T_A\)</span>). The ability to stop a frame’s reception at any point has been demonstrated to be feasible <span class="citation">(Berger et al. <a href="#ref-berger2014">2014</a>)</span>. Note that MAC addresses can be efficiently compared in a streamed way, so that the first differing byte (if the first byte of the <span class="math inline">\(R_A\)</span> has the multicast bit set to zero, i.e., <span class="math inline">\(R_A\)</span> is unicast) triggers our sleep procedure (<code>Set_Sleep</code> in Algorithm <a href="ch-05.html#fig:unap">5.6</a>). In addition, the main loop should keep up to date a global variable (<span class="math inline">\(C\)</span>) indicating whether the contention is currently allowed (CP) or not (CFP). This is straightforward, as every CFP starts and finishes with a beacon frame.</p>
+<div class="figure" style="text-align: center"><span id="fig:unap"></span>
+<img src="img/05/algorithm.svg" alt="$\mu$Nap implementation. Main loop modification to leverage micro-sleeps."  />
+<p class="caption">
+Figure 5.6: <span class="math inline">\(\mu\)</span>Nap implementation. Main loop modification to leverage micro-sleeps.
+</p>
+</div>
+<p>The <code>Set_Sleep</code> procedure takes as input the remaining time until the end of the incoming frame (<span class="math inline">\(\Delta t_\mathrm{DATA}\)</span>) and the duration value (<span class="math inline">\(\Delta t_\mathrm{NAV}\)</span>). The latter is used only if it is a valid duration value and a CP is active. Then, the card may doze during <span class="math inline">\(\Delta t_\mathrm{sleep}\)</span> (if this period is greater than <span class="math inline">\(\Delta t_\mathrm{sleep,min}\)</span>), wait for a DIFS to complete and return to the main loop.</p>
+<p>Finally, it is worth noting that this algorithm is deterministic, as it is based on a set of conditions to trigger the sleep procedure. It works locally with the information already available in the protocol headers, without incurring in any additional control overhead and without impacting the normal operation of 802.11. Specifically, our analytical study of the impact of errors in the first 16 bytes of the MAC header shows that the probability of performance degradation is comparable to the BER under normal channel conditions. Therefore, the overall performance in terms of throughput and delay is completely equivalent to normal 802.11.</p>
+
+
+</div>
+<div id="performance-evaluation" class="section level2">
+<h2><span class="header-section-number">5.4</span> Performance Evaluation</h2>
+<p>This section is devoted to evaluate the performance of <span class="math inline">\(\mu\)</span>Nap. First, through trace-driven simulation, we show that <span class="math inline">\(\mu\)</span>Nap significantly reduces the overhearing time and the energy consumption in a real network. Secondly, we analyse the impact of the timing constraints imposed by the hardware, which are specially bad in the case of the AR9280, and we discuss the applicability of <span class="math inline">\(\mu\)</span>Nap in terms of those parameters and the evolution trends in the 802.11 standard.</p>
+<div id="evaluation-with-real-traces" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Evaluation with Real Traces</h3>
+<p>In the following, we conduct an evaluation to assess how much energy might be saved in a real network if all STAs implement <span class="math inline">\(\mu\)</span>Nap using the AR9280. The reasons for this are twofold. On the one hand, the timing properties of this interface are particularly bad if we think of typical frame durations in 802.11, which means that many micro-sleep opportunities will be lost due to hardware constraints. On the other hand, it does not support newer standards that could potentially lead to longer micro-sleep opportunities through mechanisms such as frame aggregation. Therefore, an evaluation based on an 11a/g network and the AR9280 chip represents a worst case scenario for our algorithm.</p>
+<p>For this purpose, we used 802.11a wireless traces with about 44 million packets, divided in 43 files, from the SIGCOMM’08 data set <span class="citation">(Schulman, Levin, and Spring <a href="#ref-umd-sigcomm2008-2009-03-02">2009</a>)</span>. The methodology followed to parse each trace file is as follows. Firstly, we discover all the STAs and APs present. Each STA is mapped into its BSSID and a bit array is developed in order to hold the status at each point in time (online or offline). It is hard to say when a certain STA is offline from a capture, because they almost always disappear without sending a disassociation frame. Thus, we use the default rule in <code>hostapd</code>, the daemon that implements the AP functionality in Linux: a STA is considered online if it transmitted a frame within the last 5 min.</p>
+<p>Secondly, we measure the amount of time that each STA spends (without our algorithm) in the following states: transmission, reception, overhearing and idle. We consider that online STAs are always awake; i.e., even if a STA announces that it is going into PS mode, we ignore this announcement. We measure also the amount of time that each STA would spend (with our algorithm) in transmission, reception, overhearing, sleep and idle. Transmission and reception times match the previous case, as expected. As part of idle time, we account separately the wasted time in each micro-sleep as a consequence of hardware limitations (the fixed toll <span class="math inline">\(\Delta t_\mathrm{waste}\)</span>). After this processing, there are a lot of duplicate unique identifiers (MAC addresses), i.e., STAs appearing in more than one trace file. Those entries are summarised by aggregating the time within each state.</p>
+<p><span class="newthought">At this point</span>, let us define the <em>activity</em> time as the sum of transmission, reception, overhearing, sleep and wasted time. We do not take into account the idle time since our goal is to understand how much power we can save in the periods of activity, which are the only ones that consume power in wireless transmissions (the scope of our mechanism). Using the definition above, we found that the majority of STAs reveals very little activity (they are connected for a few seconds and disappear). Therefore, we took the upper decile in terms of activity, thus obtaining the 42 more active STAs.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:eval-agg"></span>
+<img src="05-unap_files/figure-html/eval-agg-1.png" alt="Normalised activity aggregation (left) and energy consumption aggregation (right) of all STAs." width="49%" /><img src="05-unap_files/figure-html/eval-agg-2.png" alt="Normalised activity aggregation (left) and energy consumption aggregation (right) of all STAs." width="49%" />
+<p class="caption">
+Figure 5.7: Normalised activity aggregation (left) and energy consumption aggregation (right) of all STAs.
+</p>
+</div>
+<p>The activity aggregation of all STAs is normalised and represented in Figure <a href="ch-05.html#fig:eval-agg">5.7</a> (left). Transmission (tx) and reception (rx) times are labelled as <em>common</em>, because STAs spend the same time transmitting and receiving both with and without our algorithm. It is clear that our mechanism effectively reduces the total overhearing (ov) time from a median of 70% to a 30% approximately (a 57% reduction). The card spends consistently less time in overhearing because this overhearing time difference, along with some idle (id) time from inter-frame spaces, turns into micro-sleeps, that is, sleep (sl) and wasted (wa) time.</p>
+<p>This activity aggregation enables us to calculate the total energy consumption using the power values from the thorough characterisation presented in Section <a href="ch-03.html#characterisation-of-a-cots-device">3.4.1</a>. Figure <a href="ch-05.html#fig:eval-agg">5.7</a> (right) depicts the energy consumption in units of mAh (assuming a typical 3.7-V battery). The energy savings overcome 1200 mAh even with the timing limitations of the AR9280 card, which (i) prevents the card from going to sleep when the overhearing time is not sufficiently long, and (ii) wastes a long fixed time in idle during each successful micro-sleep. This reduction amounts to a 21.4% of the energy spent in overhearing and a 15.8% of the total energy during the activity time, when the transmission and reception contributions are also considered.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:eval-sta"></span>
+<img src="05-unap_files/figure-html/eval-sta-1.png" alt="Normalised activity (left) and energy consumption (right) per STA." width="49%" /><img src="05-unap_files/figure-html/eval-sta-2.png" alt="Normalised activity (left) and energy consumption (right) per STA." width="49%" />
+<p class="caption">
+Figure 5.8: Normalised activity (left) and energy consumption (right) per STA.
+</p>
+</div>
+<p>Figure <a href="ch-05.html#fig:eval-sta">5.8</a> provides a breakdown of the data by STA. The lower graph shows the activity breakdown per STA for our algorithm (transmission bars, in white, are very small). Overhearing time is reduced to a more or less constant fraction for all STAs (i.e., with the algorithm, the overhearing bars represent more or less a 30% of the total activity for all STAs), while less participative STAs (left part of the graph) spend more time sleeping. The upper graph shows the energy consumption per STA with our algorithm along with the energy-saving in dark gray, which is in the order of tens of mAh per STA.</p>
+</div>
+<div id="impact-of-timing-constraints" class="section level3">
+<h3><span class="header-section-number">5.4.2</span> Impact of Timing Constraints</h3>
+<p>The performance gains of <span class="math inline">\(\mu\)</span>Nap depend on the behaviour of the circuitry. Its capabilities, in terms of timing, determine the maximum savings that can be achieved. Particularly, each micro-sleep has an efficiency (in comparison to an ideal scheme in which the card stays in sleep state over the entire duration of the micro-sleep) given by</p>
+<span class="math display" id="eq:fracsave">\[\begin{equation}
+ \frac{E&#39;_\mathrm{save}}{E_\mathrm{save}} = \frac{E_\mathrm{save} - E_\mathrm{waste}}{E_\mathrm{save}} \approx 1 - \frac{\Delta t_\mathrm{waste}}{\Delta t_\mathrm{sleep}}
+ \tag{5.12}
+\end{equation}\]</span>
+<p>which results from the combination of Equations <a href="ch-05.html#eq:idealsleep">(5.1)</a>, <a href="ch-05.html#eq:realsleep">(5.2)</a> and <a href="ch-05.html#eq:Ewaste">(5.5)</a>.</p>
+<p>Figure <a href="ch-05.html#fig:savings">5.9</a> represents this sleep efficiency for the AR9280 card (<span class="math inline">\(\Delta t_\mathrm{waste}=250\)</span>) along with other values. It is clear that an improvement of <span class="math inline">\(\Delta t_\mathrm{waste}\)</span> is fundamental to boost performance in short sleeps.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:savings"></span>
+<img src="05-unap_files/figure-html/savings-1.png" alt="Sleep efficiency \(E&#39;_\mathrm{save}/E_\mathrm{save}\) as \(\Delta t_\mathrm{waste}\) decreases." width="480" />
+<p class="caption">
+Figure 5.9: Sleep efficiency <span class="math inline">\(E&#39;_\mathrm{save}/E_\mathrm{save}\)</span> as <span class="math inline">\(\Delta t_\mathrm{waste}\)</span> decreases.
+</p>
+</div>
+<p>Similarly, the constraint <span class="math inline">\(\Delta t_\mathrm{sleep,min}\)</span> limits the applicability of <span class="math inline">\(\mu\)</span>Nap, especially in those cases where the NAV cannot be used to extend the micro-sleep. For instance, let us consider the more common case in 11a/b/g networks: the transmission of a frame (up to 1500 bytes long) plus the corresponding ACK. Then,</p>
+<span class="math display" id="eq:tsleepmin">\[\begin{equation}
+ \Delta t_\mathrm{sleep,min} \le \Delta t_\mathrm{DATA} + \Delta t_\mathrm{SIFS} + \Delta t_\mathrm{ACK} + \Delta t_\mathrm{SIFS} \tag{5.13}
+\end{equation}\]</span>
+<p>and expanding the right side of the inequality,</p>
+<span class="math display">\[\begin{equation*}
+ \Delta t_\mathrm{sleep,min} \le \frac{8(14+l_\mathrm{min}+4)}{\lambda_\mathrm{DATA}} + \Delta t_\mathrm{PLCP} + \frac{8(14+2)}{\lambda_\mathrm{ACK}} + 2\Delta t_\mathrm{SIFS}
+\end{equation*}\]</span>
+<p>Here, we can find <span class="math inline">\(l_\mathrm{min}\)</span>, which is the minimum amount of data (in bytes, and apart from the MAC header and the FCS) that a frame must contain in order to last <span class="math inline">\(\Delta t_\mathrm{sleep,min}\)</span>. Based on this <span class="math inline">\(l_\mathrm{min}\)</span>, Figure <a href="ch-05.html#fig:applicability">5.10</a> defines the applicability in 802.11a DCF in terms of frame sizes (<span class="math inline">\(\le 1500\)</span> bytes) that last <span class="math inline">\(\Delta t_\mathrm{sleep,min}\)</span> at least. Again, an improvement in <span class="math inline">\(\Delta t_\mathrm{waste}\)</span> would boost not only the energy saved per sleep, but also the general applicability defined in this way.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:applicability"></span>
+<img src="05-unap_files/figure-html/applicability-1.png" alt="Algorithm applicability for common transmissions (\(\le 1500\) bytes \(+\) ACK) in 802.11a DCF mode." width="787.2" />
+<p class="caption">
+Figure 5.10: Algorithm applicability for common transmissions (<span class="math inline">\(\le 1500\)</span> bytes <span class="math inline">\(+\)</span> ACK) in 802.11a DCF mode.
+</p>
+</div>
+<p>The applicability of <span class="math inline">\(\mu\)</span>Nap may also be affected by the evolution of the standard. Particularly, 802.11n introduced, and 802.11ac followed, a series of changes enabling high and very high throughput respectively, up to Gigabit in the latter case. This improvement is largely based on MIMO and channel binding: multiple spatial and frequency streams. Nevertheless, a single 20-MHz spatial stream is more or less equivalent to 11ag. Some enhancements (shorter guard interval and coding enhancements) may boost the throughput of a single stream from 54 to 72 Mbps under optimum conditions. Yet it is also the case that the PLCP is much longer to accommodate the complexity of the new modulation coding schemes (MCSs). This overhead not only extends each transmission, but also encourages the use of frame aggregation. Thus, the increasing bandwidth, in current amendments or future ones, does not necessarily imply a shorter airtime in practice, and our algorithm is still valid.</p>
+<p><span class="newthought">Reducing</span> PHY’s timing requirements is essential to boost energy savings, but its feasibility should be further investigated. Nonetheless, there are some clues that suggest that there is plenty of room for improvement. In the first place, <span class="math inline">\(\Delta t_\mathrm{off}\)</span> and <span class="math inline">\(\Delta t_\mathrm{on}\)</span> should depend on the internal firmware implementation (i.e., the complexity of saving/restoring the state). Secondly, Figure <a href="ch-05.html#fig:sleep-tx">5.2</a> (left) indicates that a transmission is far more aggressive, in terms of a sudden power rise, than a return from sleep. From this standpoint, <span class="math inline">\(\Delta t_\mathrm{ready} = 200\)</span> <span class="math inline">\(\mu\)</span>s would be a pessimistic estimate of the time required by the circuitry to stabilise. Last, but not least, the 802.3 standard goes beyond 802.11 and, albeit to a limited extent, it defines some timing parameters<a href="#fn42" class="footnoteRef" id="fnref42"><sup>42</sup></a> of the PHYs, which are in the range of tens of <span class="math inline">\(\mu\)</span>s in the worst case<a href="#fn43" class="footnoteRef" id="fnref43"><sup>43</sup></a>.</p>
+<p>Due to these reasons, WiFi card manufacturers should push for a better power consumption behaviour, which is necessary to boost performance with the power-saving mechanism presented in this paper. Furthermore, it is necessary for the standardisation committees and the manufacturers to collaborate to agree on power consumption behaviour guidelines for the hardware (similarly to what has been done with 802.3). Indeed, strict timing parameters would allow researchers and developers to design more advanced power-saving schemes.</p>
+</div>
+</div>
+<div id="summary-2" class="section level2">
+<h2><span class="header-section-number">5.5</span> Summary</h2>
+<p>Based on a thorough characterisation of the timing constraints and energy consumption of 802.11 interfaces, we have exhaustively analysed the micro-sleep opportunities that are available in current WLANs. We have unveiled the practical challenges of these opportunities, previously unnoticed in the literature, and, building on this knowledge, we have proposed <span class="math inline">\(\mu\)</span>Nap <span class="citation">(Azcorra et al. <a href="#ref-contrib-05a">2017</a>; Azcorra et al. <a href="#ref-contrib-05b">2018</a>)</span> an energy-saving scheme that is orthogonal to the existing standard PS mechanisms. Unlike previous attempts, our scheme takes into account the non-zero time and energy required to move back and forth between the active and sleep states, and decides when to put the interface to sleep in order to make the most of these opportunities while avoiding frame losses.</p>
+<p>We have demonstrated the feasibility of our approach using a robust methodology and high-precision instrumentation, showing that, despite the limitations of COTS hardware, the use of our scheme would result in a 57% reduction in the time spent in overhearing, thus leading to an energy saving of 15.8% of the activity time according to our trace-based simulation. Finally, based on these results, we have made the case for the strict specification of energy-related parameters of 802.11 hardware, which would enable the design of platform-agnostic energy-saving strategies.</p>
+
+
+</div>
+</div>
+
+
+
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Zhang2012">
+<p>Zhang, Xinyu, and Kang G. Shin. 2012. “E-MiLi: Energy-Minimizing Idle Listening in Wireless Networks.” <em>IEEE Transactions on Mobile Computing</em> 11 (9): 1441–54. doi:<a href="https://doi.org/10.1109/TMC.2012.112">10.1109/TMC.2012.112</a>.</p>
+</div>
+<div id="ref-Lee2007">
+<p>Lee, Jeongkeun, Wonho Kim, Sung-Ju Lee, Daehyung Jo, Jiho Ryu, Taekyoung Kwon, and Yanghee Choi. 2007. “An experimental study on the capture effect in 802.11a networks.” In <em>Proceedings of the the Second Acm International Workshop on Wireless Network Testbeds, Experimental Evaluation and Characterization - Wintech ’07</em>, 19. New York, New York, USA: ACM Press. doi:<a href="https://doi.org/10.1145/1287767.1287772">10.1145/1287767.1287772</a>.</p>
+</div>
+<div id="ref-mim1">
+<p>Santhapuri, Naveen, Romit Roy Choudhury, Justin Manweiler, Srihari Nelakuduti, Souvik Sen, and Kamesh Munagala. 2008. “Message in Message Mim: A Case for Reordering Transmissions in Wireless Networks.” In <em>In Hotnets</em>.</p>
+</div>
+<div id="ref-mim2">
+<p>Wang, Wei, Wai Kay Leong, and Ben Leong. 2014. “Potential Pitfalls of the Message in Message Mechanism in Modern 802.11 Networks.” In <em>Proceedings of the 9th Acm International Workshop on Wireless Network Testbeds, Experimental Evaluation and Characterization</em>, 41–48. WiNTECH ’14. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/2643230.2643231">10.1145/2643230.2643231</a>.</p>
+</div>
+<div id="ref-openfwwfweb">
+<p>Gringoli, Francesco, and Lorenzo Nava. 2015. “OpenFWWF - Open FirmWare for WiFi networks.”</p>
+</div>
+<div id="ref-Balaji2010">
+<p>Balaji, Bharathan, Bheemarjuna Reddy Tamma, and B. S. Manoj. 2010. “A Novel Power Saving Strategy for Greening IEEE 802.11 Based Wireless Networks.” In <em>2010 Ieee Global Telecommunications Conference Globecom 2010</em>, 1–5. IEEE. doi:<a href="https://doi.org/10.1109/GLOCOM.2010.5684071">10.1109/GLOCOM.2010.5684071</a>.</p>
+</div>
+<div id="ref-Prasad2014">
+<p>Prasad, Rajan, Abhishek Kumar, Rahul Bhatia, and Bheemarjuna Reddy Tamma. 2014. “Ubersleep: An innovative mechanism to save energy in IEEE 802.11 based WLANs.” In <em>2014 Ieee International Conference on Electronics, Computing and Communication Technologies (Conecct)</em>, 1–6. IEEE. doi:<a href="https://doi.org/10.1109/CONECCT.2014.6740349">10.1109/CONECCT.2014.6740349</a>.</p>
+</div>
+<div id="ref-umd-sigcomm2008-2009-03-02">
+<p>Schulman, Aaron, Dave Levin, and Neil Spring. 2009. “CRAWDAD Data Set Umd/Sigcomm2008 (V. 2009-03-02).” <a href="http://crawdad.org/umd/sigcomm2008/" class="uri">http://crawdad.org/umd/sigcomm2008/</a>.</p>
+</div>
+<div id="ref-neyman1939new">
+<p>Neyman, Jerzy. 1939. “On a New Class of ’Contagious’ Distributions, Applicable in Entomology and Bacteriology.” <em>The Annals of Mathematical Statistics</em> 10 (1). JSTOR: 35–57.</p>
+</div>
+<div id="ref-cornaglia1996letter">
+<p>Cornaglia, Bruno, and Marco Spini. 1996. “Letter: New Statistical Model for Burst Error Distribution.” <em>European Transactions on Telecommunications</em> 7 (3). Wiley Online Library: 267–72.</p>
+</div>
+<div id="ref-berger2014">
+<p>Berger, Daniel S., Francesco Gringoli, Nicolò Facchi, Ivan Martinovic, and Jens Schmitt. 2014. “Gaining Insight on Friendly Jamming in a Real-World Ieee 802.11 Network.” In <em>Proceedings of the 2014 Acm Conference on Security and Privacy in Wireless &amp;#38; Mobile Networks</em>, 105–16. WiSec ’14. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/2627393.2627403">10.1145/2627393.2627403</a>.</p>
+</div>
+<div id="ref-contrib-05a">
+<p>Azcorra, Arturo, Iñaki Ucar, Albert Banchs, Francesco Gringoli, and Pablo Serrano. 2017. “<span class="math inline">\(\mu\)</span>Nap: Practical micro-sleeps for 802.11 WLANs.” <em>Computer Communications</em> 110 (September): 175–86. doi:<a href="https://doi.org/10.1016/j.comcom.2017.06.008">10.1016/j.comcom.2017.06.008</a>.</p>
+</div>
+<div id="ref-contrib-05b">
+<p>Azcorra, Arturo, Iñaki Ucar, Albert Banchs, Francesco Gringoli, and Pablo Serrano. 2018. Energy-saving method based on micro-shutdowns for a wireless device in a telecommunications network, issued January 2018. <a href="http://www.google.com/patents/WO2018015601" class="uri">http://www.google.com/patents/WO2018015601</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="35">
+<li id="fn35"><p>Atheros AR9280.<a href="ch-05.html#fnref35">↩</a></p></li>
+<li id="fn36"><p>Available at <a href="https://github.com/Enchufa2/crap/tree/master/ath9k/downup" class="uri">https://github.com/Enchufa2/crap/tree/master/ath9k/downup</a>.<a href="ch-05.html#fnref36">↩</a></p></li>
+<li id="fn37"><p>For instance, this could be the ACK following a data frame or the CTS + data + ACK following an RTS.<a href="ch-05.html#fnref37">↩</a></p></li>
+<li id="fn38"><p>Which is 32 768; see <span class="citation">IEEE (<a href="#ref-80211">2012</a><a href="#ref-80211">b</a> Table 8-3)</span> for further details about the duration/ID field encoding<a href="ch-05.html#fnref38">↩</a></p></li>
+<li id="fn39"><p>See <span class="citation">IEEE (<a href="#ref-80211">2012</a><a href="#ref-80211">b</a> Table 8-105)</span>.<a href="ch-05.html#fnref39">↩</a></p></li>
+<li id="fn40"><p>Note that this frame might be received because of the MIM effect explained previously.<a href="ch-05.html#fnref40">↩</a></p></li>
+<li id="fn41"><p>E.g., by <span class="citation">ITU-R (<a href="#ref-s614">2005</a>)</span>, <span class="citation">Becam et al. (<a href="#ref-becam1985validite">1985</a>)</span> and <span class="citation">Irvin (<a href="#ref-irvin1991monitoring">1991</a>)</span>.<a href="ch-05.html#fnref41">↩</a></p></li>
+<li id="fn42"><p>E.g., <span class="math inline">\(\Delta t_\mathrm{w_{phy}}\)</span> would be equivalent to our <span class="math inline">\(\Delta t_\mathrm{on}+\Delta t_\mathrm{ready}\)</span>.<a href="ch-05.html#fnref42">↩</a></p></li>
+<li id="fn43"><p>See <span class="citation">IEEE (<a href="#ref-8023">2012</a><a href="#ref-8023">a</a> Table 78-4)</span><a href="ch-05.html#fnref43">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch-04.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-06.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["thesis.pdf"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

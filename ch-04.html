@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Energy Efficiency in Wireless Communications for Mobile User Devices</title>
+  <meta name="description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  
+  <meta name="twitter:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  
+
+<meta name="author" content="Iñaki Úcar">
+
+
+<meta name="date" content="2018-05-07">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="ch-03.html">
+<link rel="next" href="ch-05.html">
+<style type="text/css">
+p.abstract{
+  text-align: center;
+  font-weight: bold;
+}
+div.abstract{
+  margin: auto;
+  width: 90%;
+}
+</style>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Contents</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#cross-factor-towards-a-new-energy-model"><i class="fa fa-check"></i><b>1.1</b> Cross-Factor: Towards a New Energy Model</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#micro-sleep-opportunities-in-802.11"><i class="fa fa-check"></i><b>1.2</b> Micro-Sleep Opportunities in 802.11</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#rate-adaptation-and-power-control-in-802.11"><i class="fa fa-check"></i><b>1.3</b> Rate Adaptation and Power Control in 802.11</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#applied-simulation-modelling-for-energy-efficiency"><i class="fa fa-check"></i><b>1.4</b> Applied Simulation Modelling for Energy Efficiency</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#thesis-overview"><i class="fa fa-check"></i><b>1.5</b> Thesis Overview</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-02.html"><a href="ch-02.html"><i class="fa fa-check"></i><b>2</b> Related Work</a><ul>
+<li class="chapter" data-level="2.1" data-path="ch-02.html"><a href="ch-02.html#energy-profiling-for-wireless-communications"><i class="fa fa-check"></i><b>2.1</b> Energy Profiling for Wireless Communications</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-02.html"><a href="ch-02.html#energy-consumption-of-network-stacks"><i class="fa fa-check"></i><b>2.2</b> Energy Consumption of Network Stacks</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-02.html"><a href="ch-02.html#micro-sleep-opportunities-in-802.11-1"><i class="fa fa-check"></i><b>2.3</b> Micro-Sleep Opportunities in 802.11</a></li>
+<li class="chapter" data-level="2.4" data-path="ch-02.html"><a href="ch-02.html#rate-adaptation-and-power-control-in-802.11-1"><i class="fa fa-check"></i><b>2.4</b> Rate Adaptation and Power Control in 802.11</a></li>
+<li class="chapter" data-level="2.5" data-path="ch-02.html"><a href="ch-02.html#discrete-event-simulation-of-network-systems"><i class="fa fa-check"></i><b>2.5</b> Discrete-Event Simulation of Network Systems</a></li>
+</ul></li>
+<li class="part"><span><b>I Experimentation</b></span></li>
+<li class="chapter" data-level="3" data-path="ch-03.html"><a href="ch-03.html"><i class="fa fa-check"></i><b>3</b> A Comprehensive Energy Measurement Framework</a><ul>
+<li class="chapter" data-level="3.1" data-path="ch-03.html"><a href="ch-03.html#instrumentation"><i class="fa fa-check"></i><b>3.1</b> Instrumentation</a></li>
+<li class="chapter" data-level="3.2" data-path="ch-03.html"><a href="ch-03.html#measurement-and-uncertainty-analysis"><i class="fa fa-check"></i><b>3.2</b> Measurement and Uncertainty Analysis</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="ch-03.html"><a href="ch-03.html#propagation-of-uncertainty"><i class="fa fa-check"></i><b>3.2.1</b> Propagation of Uncertainty</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ch-03.html"><a href="ch-03.html#reporting-uncertainty"><i class="fa fa-check"></i><b>3.2.2</b> Reporting Uncertainty</a></li>
+<li class="chapter" data-level="3.2.3" data-path="ch-03.html"><a href="ch-03.html#automated-uncertainty-handling-in-r-the-errors-package"><i class="fa fa-check"></i><b>3.2.3</b> Automated Uncertainty Handling in R: The <code>errors</code> Package</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ch-03.html"><a href="ch-03.html#whole-device-measurements"><i class="fa fa-check"></i><b>3.3</b> Whole-Device Measurements</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="ch-03.html"><a href="ch-03.html#validation"><i class="fa fa-check"></i><b>3.3.1</b> Validation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="ch-03.html"><a href="ch-03.html#per-component-measurements"><i class="fa fa-check"></i><b>3.4</b> Per-Component Measurements</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="ch-03.html"><a href="ch-03.html#characterisation-of-a-cots-device"><i class="fa fa-check"></i><b>3.4.1</b> Characterisation of a COTS Device</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="ch-03.html"><a href="ch-03.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch-04.html"><a href="ch-04.html"><i class="fa fa-check"></i><b>4</b> Deseeding Energy Consumption of Network Stacks</a><ul>
+<li class="chapter" data-level="4.1" data-path="ch-04.html"><a href="ch-04.html#anatomy-of-a-laptop-computer"><i class="fa fa-check"></i><b>4.1</b> Anatomy of a Laptop Computer</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-04.html"><a href="ch-04.html#cross-factor-separating-the-wheat-from-the-chaff"><i class="fa fa-check"></i><b>4.2</b> Cross-Factor: Separating the Wheat from the Chaff</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-04.html"><a href="ch-04.html#power-consumption-in-unattended-idle-mode"><i class="fa fa-check"></i><b>4.3</b> Power Consumption in Unattended Idle Mode</a></li>
+<li class="chapter" data-level="4.4" data-path="ch-04.html"><a href="ch-04.html#power-consumption-with-full-cpuidle-subsystem"><i class="fa fa-check"></i><b>4.4</b> Power Consumption with Full <code>cpuidle</code> Subsystem</a></li>
+<li class="chapter" data-level="4.5" data-path="ch-04.html"><a href="ch-04.html#exploring-the-cpuidle-subsystem"><i class="fa fa-check"></i><b>4.5</b> Exploring the <code>cpuidle</code> Subsystem</a></li>
+<li class="chapter" data-level="4.6" data-path="ch-04.html"><a href="ch-04.html#summary-1"><i class="fa fa-check"></i><b>4.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ch-05.html"><a href="ch-05.html"><i class="fa fa-check"></i><b>5</b> Leveraging Micro-Sleep Opportunities in 802.11</a><ul>
+<li class="chapter" data-level="5.1" data-path="ch-05.html"><a href="ch-05.html#state-transition-times"><i class="fa fa-check"></i><b>5.1</b> State Transition Times in 802.11 Cards</a></li>
+<li class="chapter" data-level="5.2" data-path="ch-05.html"><a href="ch-05.html#protocol-analysis-and-practical-issues"><i class="fa fa-check"></i><b>5.2</b> Protocol Analysis and Practical Issues</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="ch-05.html"><a href="ch-05.html#identifying-potential-micro-sleep-opportunities"><i class="fa fa-check"></i><b>5.2.1</b> Identifying Potential Micro-Sleep Opportunities</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ch-05.html"><a href="ch-05.html#impact-of-capture-effect"><i class="fa fa-check"></i><b>5.2.2</b> Impact of Capture Effect</a></li>
+<li class="chapter" data-level="5.2.3" data-path="ch-05.html"><a href="ch-05.html#impact-of-errors-in-the-mac-header"><i class="fa fa-check"></i><b>5.2.3</b> Impact of Errors in the MAC Header</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="ch-05.html"><a href="ch-05.html#munap-algorithm"><i class="fa fa-check"></i><b>5.3</b> <span class="math inline">\(\mu\)</span>Nap Algorithm</a></li>
+<li class="chapter" data-level="5.4" data-path="ch-05.html"><a href="ch-05.html#performance-evaluation"><i class="fa fa-check"></i><b>5.4</b> Performance Evaluation</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="ch-05.html"><a href="ch-05.html#evaluation-with-real-traces"><i class="fa fa-check"></i><b>5.4.1</b> Evaluation with Real Traces</a></li>
+<li class="chapter" data-level="5.4.2" data-path="ch-05.html"><a href="ch-05.html#impact-of-timing-constraints"><i class="fa fa-check"></i><b>5.4.2</b> Impact of Timing Constraints</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="ch-05.html"><a href="ch-05.html#summary-2"><i class="fa fa-check"></i><b>5.5</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>II Mathematical Modelling</b></span></li>
+<li class="chapter" data-level="6" data-path="ch-06.html"><a href="ch-06.html"><i class="fa fa-check"></i><b>6</b> Rate Adaptation and Power Control in 802.11</a><ul>
+<li class="chapter" data-level="6.1" data-path="ch-06.html"><a href="ch-06.html#joint-goodput-energy-model"><i class="fa fa-check"></i><b>6.1</b> Joint Goodput-Energy Model</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-06.html"><a href="ch-06.html#numerical-results"><i class="fa fa-check"></i><b>6.2</b> Numerical Results</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="ch-06.html"><a href="ch-06.html#optimal-goodput"><i class="fa fa-check"></i><b>6.2.1</b> Optimal Goodput</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ch-06.html"><a href="ch-06.html#extension-of-the-energy-parametrisation"><i class="fa fa-check"></i><b>6.2.2</b> Extension of the Energy Parametrisation</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ch-06.html"><a href="ch-06.html#energy-consumption"><i class="fa fa-check"></i><b>6.2.3</b> Energy Consumption</a></li>
+<li class="chapter" data-level="6.2.4" data-path="ch-06.html"><a href="ch-06.html#energy-efficiency-vs.optimal-goodput"><i class="fa fa-check"></i><b>6.2.4</b> Energy Efficiency vs. Optimal Goodput</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ch-06.html"><a href="ch-06.html#discussion"><i class="fa fa-check"></i><b>6.3</b> Discussion</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="ch-06.html"><a href="ch-06.html#sensitivity-to-energy-parameter-scaling"><i class="fa fa-check"></i><b>6.3.1</b> Sensitivity to Energy Parameter Scaling</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ch-06.html"><a href="ch-06.html#heuristics-for-ra-tpc-algorithms"><i class="fa fa-check"></i><b>6.3.2</b> Heuristics for RA-TPC Algorithms</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="ch-06.html"><a href="ch-06.html#summary-3"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>III Simulation</b></span></li>
+<li class="chapter" data-level="7" data-path="ch-07.html"><a href="ch-07.html"><i class="fa fa-check"></i><b>7</b> Performance of RA-TPC Algorithms in 802.11</a><ul>
+<li class="chapter" data-level="7.1" data-path="ch-07.html"><a href="ch-07.html#algorithms-considered"><i class="fa fa-check"></i><b>7.1</b> Algorithms Considered</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-07.html"><a href="ch-07.html#simulation-scenario"><i class="fa fa-check"></i><b>7.2</b> Simulation Scenario</a></li>
+<li class="chapter" data-level="7.3" data-path="ch-07.html"><a href="ch-07.html#results-and-discussion"><i class="fa fa-check"></i><b>7.3</b> Results and Discussion</a></li>
+<li class="chapter" data-level="7.4" data-path="ch-07.html"><a href="ch-07.html#conservativeness-at-mode-transitions"><i class="fa fa-check"></i><b>7.4</b> Conservativeness at Mode Transitions</a></li>
+<li class="chapter" data-level="7.5" data-path="ch-07.html"><a href="ch-07.html#summary-4"><i class="fa fa-check"></i><b>7.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="ch-08.html"><a href="ch-08.html"><i class="fa fa-check"></i><b>8</b> A Novel Discrete-Event Simulation Framework</a><ul>
+<li class="chapter" data-level="8.1" data-path="ch-08.html"><a href="ch-08.html#the-simulation-core-design"><i class="fa fa-check"></i><b>8.1</b> The Simulation Core Design</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="ch-08.html"><a href="ch-08.html#terminology"><i class="fa fa-check"></i><b>8.1.1</b> Terminology</a></li>
+<li class="chapter" data-level="8.1.2" data-path="ch-08.html"><a href="ch-08.html#architecture"><i class="fa fa-check"></i><b>8.1.2</b> Architecture</a></li>
+<li class="chapter" data-level="8.1.3" data-path="ch-08.html"><a href="ch-08.html#the-event-queue"><i class="fa fa-check"></i><b>8.1.3</b> The Event Queue</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="ch-08.html"><a href="ch-08.html#a-brief-introduction-to-simmer"><i class="fa fa-check"></i><b>8.2</b> A Brief Introduction to <code>simmer</code></a></li>
+<li class="chapter" data-level="8.3" data-path="ch-08.html"><a href="ch-08.html#use-case-energy-efficiency-for-massive-iot"><i class="fa fa-check"></i><b>8.3</b> Use case: Energy Efficiency for Massive IoT</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-08.html"><a href="ch-08.html#summary-5"><i class="fa fa-check"></i><b>8.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ch-09.html"><a href="ch-09.html"><i class="fa fa-check"></i><b>9</b> Conclusions and Future Work</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="measurement-circuitry-schematics.html"><a href="measurement-circuitry-schematics.html"><i class="fa fa-check"></i><b>A</b> Measurement Circuitry Schematics</a></li>
+<li class="chapter" data-level="B" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html"><i class="fa fa-check"></i><b>B</b> Experimental Validation of RA-TPC Inefficiencies</a><ul>
+<li class="chapter" data-level="B.1" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html#experimental-setup"><i class="fa fa-check"></i><b>B.1</b> Experimental Setup</a></li>
+<li class="chapter" data-level="B.2" data-path="experimental-validation-of-ra-tpc-inefficiencies.html"><a href="experimental-validation-of-ra-tpc-inefficiencies.html#methodology-and-results"><i class="fa fa-check"></i><b>B.2</b> Methodology and Results</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html"><i class="fa fa-check"></i><b>C</b> Performance Evaluation of <code>simmer</code></a><ul>
+<li class="chapter" data-level="C.1" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html#comparison-with-similar-frameworks"><i class="fa fa-check"></i><b>C.1</b> Comparison with Similar Frameworks</a></li>
+<li class="chapter" data-level="C.2" data-path="performance-evaluation-of-simmer.html"><a href="performance-evaluation-of-simmer.html#the-cost-of-calling-r-from-c"><i class="fa fa-check"></i><b>C.2</b> The Cost of Calling R from C++</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">
+Licensed under <img alt="Creative Commons License" style="border-width:0;vertical-align:bottom" 
+src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Energy Efficiency in Wireless Communications for Mobile User Devices</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch:04" class="section level1">
+<h1><span class="header-section-number">4</span> Deseeding Energy Consumption of Network Stacks</h1>
+<p><span class="newthought">The cross-factor</span> is a per-frame energy toll that can be ascribed to the fact that every frame received or transmitted through a wireles interface requires some processing in the device’s network stack. The aim of this chapter is to break down the cross-factor into its constituent parts in order to comprehend the underlying causes, all within the scope of providing an accurate mathematical description of the cross-factor which would give the energy model an unprecedented specificity. This may enable us to evaluate old energy efficiency strategies and to propose and test new schemes, both at a device and at a network level.</p>
+<p>Our proposal, with respect to the work by <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span>, is to switch to a more generic target platform, which will provide us an easy access to powerful kernel instrumentation, as described in the previous chapter, present in most general-purpose Linux-based distributions.</p>
+<p>To be able to conduct fine-grained energy debugging of the network stack, we must somehow isolate the network activity from the consumption of the rest of the system. To this aim, the next section is devoted to dissect and discuss the components of a laptop computer in order to understand their implications in the global power consumption, and how to minimise their impact. Then, subsequent sections explore the roots of the cross-factor.</p>
+<div id="anatomy-of-a-laptop-computer" class="section level2">
+<h2><span class="header-section-number">4.1</span> Anatomy of a Laptop Computer</h2>
+<p>A laptop computer is a complex and power-hungry piece of hardware. It comprises a number of components, both hardware (battery, screen, hard disk drive, fan, wireless card, RAM memory, CPU) and software (services, kernel, drivers), that require a thorough discussion. Some of them are not present in other devices (e.g., the fan), and some others are essentially different in terms of performance and power requirements.</p>
+<div id="battery" class="section level5 unnumbered">
+<h5>Battery</h5>
+<p>The battery is a serious obstacle for energy measurements. Although using it as power source is actually possible, it is totally impractical because it prevents long term experiments, and the constant need for recharging is a waste of time. Then, the use of an external power source is highly advisable, but in this case the battery must be removed to avoid noise coming from battery charging and discharging.</p>
+<p>Nevertheless, usually supplying DC power through the power jack socket is not enough. Most manufacturers are interested in forcing the user to acquire and use original parts. As a consequence, most laptops are capable of detecting the AC adapter and take unexpected<a href="#fn21" class="footnoteRef" id="fnref21"><sup>21</sup></a> decisions. This is generally done through a third connection in the power jack. For example, in the case of Dell computers, this third wire goes to a transistor-shaped component placed in the AC transformer. Actually, this component is a small memory that can be read using a 1-wire protocol. It stores a serial number that identifies the AC adapter.</p>
+<p>Summing up, if the laptop does not detect this memory, the BIOS can do improper<a href="#fn22" class="footnoteRef" id="fnref22"><sup>22</sup></a> things. For instance, we detected that Dell computers’ BIOS do not allow the OS to control CPU frequency scaling. Fortunately, it is very straightforward to <em>borrow</em> such a component from an official AC adapter and attach it permanently to the third connection of the power jack socket. In this way, any power source looks as an original part to the BIOS, and the OS kernel can freely manage all the system’s capabilities.</p>
+</div>
+<div id="screen" class="section level5 unnumbered">
+<h5>Screen</h5>
+<p>Same as for smartphones <span class="citation">(Carroll and Heiser <a href="#ref-Carroll2010">2010</a>)</span>, the screen is the most energy-hungry component in a laptop computer. It typically accounts for more than a half of the total energy consumed when the computer is just powered on and idling. Thus, the screen constitutes a very high and variable (as it depends on the GPU activity) baseline consumption that must be avoided in wireless experiments. In Linux, this can be done by finding the backlight device entry in the <code>/sys/class</code> subsystem and simply resetting it, so that the screen is permanently powered off.</p>
+</div>
+<div id="hard-disk-drive" class="section level5 unnumbered">
+<h5>Hard Disk Drive</h5>
+<p>Regarding the system’s non-volatile memory, we cannot get rid of it because it is needed for the OS storage. Commonly, laptops are equipped with hard disk drives (HDD), which are mechanical devices powered with voltages ranging from 5 to 12 V. HDDs are proven to be energy-hungry devices <span class="citation">(Hylick et al. <a href="#ref-Hylick2008">2008</a>)</span> with a consumption variability in ascending order of tens of Watts. As a consequence, every read/write during an experiment generates an intractable noise.</p>
+<p>On the other hand, all the devices studied in <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span> use flash memories. This kind of non-volatile memory is the best option, because its consumption variability is three orders of magnitude below HDD’s <span class="citation">(Grupp et al. <a href="#ref-Grupp2009">2009</a>)</span>. In our experiments, we replaced the original HDD by a solid-state disk (SSD). Given that an SSD is composed of NAND flash units, its consumption is much smaller and far more stable.</p>
+</div>
+<div id="fan" class="section level5 unnumbered">
+<h5>Fan</h5>
+<p>The thermal characteristics of a laptop computer require a cooling subsystem: heat sinks (CPU and GPU), air ducts and typically one fan (at least). The fan is regulated dynamically with a pulse-width modulation (PWM) technique. This component becomes an unpredictable source of electrical noise, as its operation point depends on the computer’s thermal state.</p>
+<p>Suppressing the fan is not an option because, at some point, the CPU will heat and the computer will turn off. Our solution was to set it at fixed medium speed with the help of the <code>i8k</code> kernel module and the <code>i8kfan</code> user-space application.</p>
+</div>
+<div id="wireless-card" class="section level5 unnumbered">
+<h5>Wireless Card</h5>
+<p>This is the last part of the wireless transmission chain and the first of the reception one. In principle, the energy models in the literature assure us that a linear behaviour is expected, independently of the manufacturer or model. However, there are a couple of factors that may lead us to select a particular card.</p>
+<dl>
+<dt>Supported capabilities</dt>
+<dd>Nowadays, it is very difficult to perform interference-free wireless experiments over ISM bands without an anechoic chamber<a href="#fn23" class="footnoteRef" id="fnref23"><sup>23</sup></a>. The 2.4 GHz band is typically overcrowded, while in the 5 GHz band we have better chances to find a clear channel. Thus, an 802.11a-capable card is advisable.
+</dd>
+<dt>Manufacturer</dt>
+<dd>Distinct manufacturers (and models) have better or worse driver support in the Linux kernel. For instance, Intel PRO/Wireless cards are known for requiring a binary firmware to operate. On the other hand, Atheros released some source from their binary HAL to help the open-source community add support for their chips. As a result, there are completely free and open-source <em>FullMAC</em><a href="#fn24" class="footnoteRef" id="fnref24"><sup>24</sup></a> drivers available for all Atheros chipsets.
+</dd>
+</dl>
+<p>All our experiments were conducted using the Atheros AR9280-based 802.11a/b/g/n Half Mini-PCI Express card that was characterised in Section <a href="ch-03.html#characterisation-of-a-cots-device">3.4.1</a>.</p>
+</div>
+<div id="ram-memory" class="section level5 unnumbered">
+<h5>RAM Memory</h5>
+<p>The random-access memory is a fundamental peripheral device in a computer system: it holds the instructions of the running programs —the OS kernel included— and the data associated. Therefore, our first guess was that the RAM memory could play a meaningful role in the energy consumption of a wireless communication.</p>
+</div>
+<div id="cpu" class="section level5 unnumbered">
+<h5>CPU</h5>
+<p>The CPU is another power-hungry component. For many years, the first CPUs were like bulbs: they were consuming the same power whether they were doing something useful or not. In fact, they executed <em>junk code</em> (i.e., a loop of NOPs) during idle time. Later, CPU architects realised that more intelligent things can be done in such periods of time (for instance, enabling some kind of energy-saving mechanism).</p>
+
+<div class="figure" style="text-align: center"><span id="fig:states"></span>
+<img src="img/04/states.png" alt="CPU P- and C-states." width="50%" />
+<p class="caption">
+Figure 4.1: CPU P- and C-states.
+</p>
+</div>
+<p>Nowadays, CPUs are becoming more and more complex. Without seeking to be exhaustive, a modern CPU has arithmetic control units (ALUs), pipelines, a control unit, registers, several levels of cache, some clocks, etcetera. But more interestingly, modern CPUs implement several power management mechanisms (see Figure <a href="ch-04.html#fig:states">4.1</a>), which are covered by the Advanced Configuration and Power Interface (ACPI).</p>
+<dl>
+<dt>P-states</dt>
+<dd>Also known as <em>frequency scaling</em>. When the CPU is running (i.e., executing instructions), one of these states apply. P0 means maximum power and frequency. As Px increases, the voltage is lower and, thus, the frequency of the clock, and thus the energy consumed, is scaled down.
+</dd>
+<dt>C-states</dt>
+<dd>When the CPU is idle, it enters a Cx state. C0 means maximum power, because junk code is being executed. This can be a little bit confusing because, as Figure <a href="ch-04.html#fig:states">4.1</a> shows, the CPU is also in C0 when it is running. In general, C0 means <em>the CPU is busy doing something</em>, whether executing actual programs (running) or something not useful (idle). In C1, the CPU is halted, and can return to an executing state almost instantaneously. In C2, the main clock is stopped and, as Cx increases, more and more functional units are shut off. As a consequence, returning from a deep C-state is very expensive in terms of latency.
+</dd>
+</dl>
+<p>For example, Intel Haswell processors support up to eight C-states: C1, C1E, C3, C6, C7s, C8, C9, C10. However, the BIOS just reports two C-states to the ACPI driver, which are called C1 and C2. We have verified, by comparing idle consumptions for each C-state, that the correspondence is as follows:</p>
+<ul>
+<li>ACPI C1 corresponds to Intel C1: the CPU is halted and stops executing instructions when it enters into idle mode.</li>
+<li>ACPI C2 corresponds to Intel C6: this is a new sleep state introduced in the Haswell architecture.</li>
+</ul>
+<p>Finally, multicore systems introduce additional complexity, because the OS decides how many cores become active at any time, and each core has its own power management subsystem (i.e., P- and C-states). Therefore, our experiments are always carried out in single-core mode to simplify the analysis.</p>
+</div>
+<div id="services" class="section level5 unnumbered">
+<h5>Services</h5>
+<p>There may be a lot of active user-space services (also called <em>daemons</em>) in a Linux system by default. They can add noise to our measurements in two ways: by consuming CPU time and writing logs to disk. Hence, identifying and disabling not essential services is desirable.</p>
+</div>
+<div id="kernel" class="section level5 unnumbered">
+<h5>Kernel</h5>
+<p>There exist two power management subsystems for each CPU in the Linux kernel: <code>cpufreq</code><a href="#fn25" class="footnoteRef" id="fnref25"><sup>25</sup></a> controls P-states and <code>cpuidle</code><a href="#fn26" class="footnoteRef" id="fnref26"><sup>26</sup></a> controls C-states. Both subsystems have a similar architecture, separating mechanism (driver<a href="#fn27" class="footnoteRef" id="fnref27"><sup>27</sup></a>) from policy (governor<a href="#fn28" class="footnoteRef" id="fnref28"><sup>28</sup></a>).</p>
+<dl>
+<dt>The <code>cpufreq</code> governor</dt>
+<dd>has several policies that focus on certain P-states or frequencies to the detriment of others, e.g., <code>performance</code> (high frequencies) or <code>powersave</code> (low frequencies). It is also possible to manually fix certain frequency or range of frequencies.
+</dd>
+<dt>The <code>cpuidle</code> governor</dt>
+<dd>takes in the next timer event as main input. Each C-state has a certain energy cost and exit latency. Thus, intuitively there are two decision factors that the governor must consider: the energy break-even point and the performance impact. The next timer event is a good predictor in many cases, but not perfect since there are other sources of wake-ups (e.g., interrupts). Therefore, it computes a correction factor using an array of 12 independent factors through a running average. Moreover, it is possible to manually disable the C-states (excepting C0).
+</dd>
+</dl>
+</div>
+<div id="drivers" class="section level5 unnumbered">
+<h5>Drivers</h5>
+<p>All Linux drivers are compiled as separate modules. In particular, wireless drivers<a href="#fn29" class="footnoteRef" id="fnref29"><sup>29</sup></a>, along with the entire 802.11 subsystem, can be compiled out-of-tree within the <em>backports</em> project<a href="#fn30" class="footnoteRef" id="fnref30"><sup>30</sup></a>. This is very useful in order to use the latest drivers on older kernels.</p>
+<p>The wireless driver module interacts directly with the network interface controller (NIC). In our case, the selected card uses the <code>ath9k</code> driver. The function <code>ath9k_tx()</code> is the entry point for the transmission path. The driver fills the transmission descriptors, copies the buffer into the NIC memory and sets up several registers that trigger the transmission.</p>
+<p><span class="newthought">In order to conduct</span> energy breakdowns like the one depicted in Figure <a href="ch-03.html#fig:validation1">3.5</a>, <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span> claim that their methodology discards packets <em>right after the driver</em>. This statement becomes uncertain when a closer look at any wireless driver is taken. According to our experiments, discarding a frame <em>before</em> the buffer is copied into the NIC implies that <em>only</em> half of the driver is actually taken into account for the cross-factor value. On the other hand, if we try to discard it in the very last instruction of the driver (i.e., avoiding setting the register that triggers the hardware transmission), then the module crashes if the NIC’s memory is not cleaned up, a non-trivial task that anyway would consume more energy. Due to this, and combined to the fact that drivers differ greatly from one to another, we do not include the driver into the definition of cross-factor, given the difficulty of isolating driver and NIC consumptions.</p>
+<p>As with the variety of drivers mentioned above, a similar argument can be wield against the user-space consumption. Therefore and from here on, we define <em>kernel cross-factor</em> as the energy consumed from the system call that delivers the message until the driver is reached. <em>Cross-factor</em>, as is, maintains the original definition given by <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span> to avoid confusion.</p>
+<p>We would also like to highlight that our way of interrupting the transmission path by discarding a frame in the driver is a bit different from <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span>. They conducted this breakdown by commenting a driver function. This method implies the need for recompiling the driver, which is time-consuming and not very portable<a href="#fn31" class="footnoteRef" id="fnref31"><sup>31</sup></a>.</p>
+<p>For our part, we generate packets with a short string at the beginning of packet payloads. The presence of this <em>magic string</em> triggers the packet drop. Our method, despite introducing a very small overhead, is agile and portable (for instance, it can be implemented on the fly using SystemTap).</p>
+<p><span class="newthought">The laptop computer</span> selected for our experiments is a Dell Latitude E5540 with Intel Core i5-4300U CPU at 1.9 GHz and 8 GB of SODIMM DDR3 RAM at 1.6 GHz, equipped with an Atheros AR9280-based 802.11a/b/g/n Half Mini-PCI Express card. In our measurements, we use Fedora-default pre-compiled kernels. We arranged two separate partitions: one with Fedora 12 and kernel version 2.6.32 and the other with Fedora 20 and kernel 3.14. Only the latter supports Intel-specific drivers, thus we use ACPI drivers only in order to operate under similar conditions.</p>
+</div>
+</div>
+<div id="cross-factor-separating-the-wheat-from-the-chaff" class="section level2">
+<h2><span class="header-section-number">4.2</span> Cross-Factor: Separating the Wheat from the Chaff</h2>
+<p>We have identified the two main components suspected of being responsible of the cross-factor: CPU and RAM memory. Our first priority is to isolate and quantify the impact of the RAM. It is not possible to regulate its activity, but this can be done for the CPU. For this purpose, the CPU was fixed at P0-C0 states, i.e., always running at maximum frequency, maximum energy consumption. We performed an energy breakdown using this configuration in kernel 3.14 and the results are shown in Figure <a href="ch-04.html#fig:c0">4.2</a>.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:c0"></span>
+<img src="04-netstacks_files/figure-html/c0-1.png" alt="Energy breakdown with the CPU fixed at P0-C0 states." width="787.2" />
+<p class="caption">
+Figure 4.2: Energy breakdown with the CPU fixed at P0-C0 states.
+</p>
+</div>
+<p>The lines appear superimposed: the laptop is consuming the same power among different parameters, different packet rates. Hence, one important conclusion to be drawn is that the RAM memory has no significant impact in the overall energy consumption of wireless transmissions. The noise can be ascribed to the fact that not all the instructions consume exactly the same energy <span class="citation">(Tiwari et al. <a href="#ref-Tiwari1996">1996</a>)</span>. Other possible sources of noise are cache and pipeline flushes.</p>
+<p>With this simple experiment, we have demonstrated that the CPU is the leading cause of cross-factor in laptops, and it is clear that the <code>cpuidle</code> subsystem has a central role, because a CPU spends most of the time in idle mode <span class="citation">(Barroso and Hölzle <a href="#ref-Barroso2007">2007</a>)</span>. From now on, and in order to take a deeper look at C-states, we remove a variable by keeping the P-state fixed at P0 (maximum frequency).</p>
+</div>
+<div id="power-consumption-in-unattended-idle-mode" class="section level2">
+<h2><span class="header-section-number">4.3</span> Power Consumption in Unattended Idle Mode</h2>
+<p>The Soekris net4826-48 used in Section <a href="ch-03.html#validation">3.3.1</a> is equipped with an AMD Geode SC1100 CPU that supports ACPI C1, C2 and C3 states<a href="#fn32" class="footnoteRef" id="fnref32"><sup>32</sup></a>. Unfortunately, it seems that Linux distributions for embed devices, such as Voyage Linux, disable <code>cpuidle</code> in their kernels, which means that the OS has no control over the idle mode. In such conditions, we know now that the CPU cannot be in C0 all the time, because the device does not consume the same power with different parameters. What is happening then?</p>
+<p><span class="newthought">Back to our laptop</span>, it is possible to disable <code>cpuidle</code> through the kernel command-line. The idle power consumption in this situation, which we call <em>unattended idle mode</em>, reveals that the laptop is entering C1. This fact can be extrapolated to the Soekris case, which makes sense, since there is no governor to resolve which C-state is the more suitable at any given time. Thus, the processor simply halts when there is no work to do.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:c1"></span>
+<img src="04-netstacks_files/figure-html/c1-1.png" alt=" " width="787.2" />
+<p class="caption">
+Figure 4.3: Power consumption breakdown vs. airtime with fixed C1 state for kernels 2.6.32 and 3.14.
+</p>
+</div>
+<p>Figure <a href="ch-04.html#fig:c1">4.3</a> shows the energy breakdown for both kernels, 2.6.32 and 3.14, when only the C1 state is enabled. As can be seen, the obtained kernel cross-factor is almost negligible, which suggests that Intel Haswell’s C1 state saves a very small amount of power, unlike the Soekris’ C1 state as shown in Figure <a href="ch-03.html#fig:validation1">3.5</a>.</p>
+<p>There is also a baseline power difference between kernels. This offset can be ascribed to several factors. For instance, a lot of code has changed —and probably improved— between those kernel versions. In particular, the scheduler and the <code>cpuidle</code> algorithms have evolved. Moreover, the compiler used has changed also.</p>
+<p>At this respect, we can calculate the complete cross-factor (including the user-space, as done in Section <a href="ch-03.html#validation">3.3.1</a>) by extracting the slopes of the regressions of Figure <a href="ch-04.html#fig:c1-cfactor">4.4</a>. These values are comparable to the Linksys case reported by <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span>: <span class="math inline">\(0.51(2)\)</span> mJ (kernel 2.6.32) and <span class="math inline">\(0.38(2)\)</span> mJ (kernel 3.14).</p>
+
+<div class="figure" style="text-align: center"><span id="fig:c1-cfactor"></span>
+<img src="04-netstacks_files/figure-html/c1-cfactor-1.png" alt=" " width="480" />
+<p class="caption">
+Figure 4.4: Power consumption offset (<span class="math inline">\(\tau=0\)</span>) vs. framerate with fixed C1 state for kernels 2.6.32 and 3.14.
+</p>
+</div>
+<p>It is also important to note that, unlike the results from Figure <a href="ch-03.html#fig:validation1">3.5</a>, there is absolutely no dependence on the frame size in this case. Our guess is that RAM memory consumption would be proportional to the frame size and may have a small but still perceptible impact in low-power devices, but it is negligible compared to the consumption of a laptop’s CPU. As a consequence, the frame size can be removed as a parameter from the cross-factor analysis in laptops.</p>
+</div>
+<div id="power-consumption-with-full-cpuidle-subsystem" class="section level2">
+<h2><span class="header-section-number">4.4</span> Power Consumption with Full <code>cpuidle</code> Subsystem</h2>
+<p>With the knowledge acquired so far, we can move onto a more realistic scenario by enabling the whole <code>cpuidle</code> subsystem, i.e., keeping both ACPI C-states enabled and letting the governor decide.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:c12"></span>
+<img src="04-netstacks_files/figure-html/c12-1.png" alt=" " width="787.2" />
+<p class="caption">
+Figure 4.5: Power consumption breakdown vs. airtime with two <code>cpuidle</code> configurations for kernel 3.14.
+</p>
+</div>
+<p>Figure <a href="ch-04.html#fig:c12">4.5</a> depicts the energy breakdown for kernel 3.14 with full <code>cpuidle</code> subsystem (C1+C2 enabled) and compares it to the previous case (C1 only). By enabling C2, the consumption appears to be always lower up to driver level (blue and green lines). Nevertheless, the consumption of complete transmissions (red lines) is lower in the 300 fps case (not shown here), but it is the same in the 2400 fps case.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:c12-cfactor"></span>
+<img src="04-netstacks_files/figure-html/c12-cfactor-1.png" alt=" " width="480" />
+<p class="caption">
+Figure 4.6: Power consumption offset (<span class="math inline">\(\tau=0\)</span>) vs. framerate with two <code>cpuidle</code> configurations for kernel 3.14.
+</p>
+</div>
+<p>Figure <a href="ch-04.html#fig:c12-cfactor">4.6</a> compares the offsets of complete transmissions in Figure <a href="ch-04.html#fig:c12">4.5</a> for both cases: C1+C2 and C1 only. The red line corresponds to C1: as expected, its behaviour is linear as seen in Figure <a href="ch-04.html#fig:c1-cfactor">4.4</a>. On the other hand, the C1+C2 case (blue points) is not linear globally. It comprises three clearly distinct parts: when the framerate is low, there is an approximately linear behaviour because the CPU only uses C2; when the framerate is high, C2 is no longer used, and the slope matches the red line; between them, the behaviour becomes unpredictable because of the mix of C1 and C2. Therefore, the cross-factor as defined by <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span> makes no sense anymore. When all the C-states are active, there is no linear behaviour anymore: we cannot talk neither about a slope nor a fixed energy toll per frame.</p>
+<p>Furthermore, we had assumed, as <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span>, that we can simply drop the packets at certain points, measure the mean power up to those points and represent all this as an energy breakdown. But obviously this is not true either. For instance, Figure <a href="ch-04.html#fig:c12">4.5</a> shows that the CPU is not entering C2 when complete transmissions are performed, and the consumption is the same as in the C1-only case. On the other hand, the CPU is clearly spending some time in C2 when the frames are dropped earlier. Even it seems that the network stack is consuming more power because the energy gap (between green and blue lines) is larger. Evidently, it should be the opposite: the stack would be consuming less power as soon as it enters a lower C-state.</p>
+</div>
+<div id="exploring-the-cpuidle-subsystem" class="section level2">
+<h2><span class="header-section-number">4.5</span> Exploring the <code>cpuidle</code> Subsystem</h2>
+<p>As stated in previous sections, the <code>cpuidle</code> subsystem is a very complex component. Kernel timer events are the main input for the governor algorithm as they often indicate the next wake-up of the CPU, but the running average used to scale the latter makes it unpredictable, since it depends on the recent state of the whole machine. The purpose of this section is to shed some light on the linkage between the residence time of C-states, the number of wake-ups per second, the CPU load and the transmission of wireless frames.</p>
+<p>We implemented a very simple application<a href="#fn33" class="footnoteRef" id="fnref33"><sup>33</sup></a> with two modes of operation: it is capable of setting a kernel timer at a given constant rate and, when this timer is triggered, it (i) does nothing or (ii) sends a UDP packet. At the same time, it calculates the mean residence time of each C-state over the whole execution.</p>
+<p>Figures <a href="ch-04.html#fig:residency-wakeups">4.7</a> have been compiled using this tool. The additional CPU load was added on top of the latter using a modified version of <code>lookbusy</code><a href="#fn34" class="footnoteRef" id="fnref34"><sup>34</sup></a>. Figure <a href="ch-04.html#fig:power-wakeups">4.8</a> compares the two previous figures in terms of power consumption.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:residency-wakeups"></span>
+<img src="04-netstacks_files/figure-html/residency-wakeups-1.png" alt=" " width="49%" /><img src="04-netstacks_files/figure-html/residency-wakeups-2.png" alt=" " width="49%" />
+<p class="caption">
+Figure 4.7: Residence time of each C-state vs. wake-ups/s for kernel 3.14. Each wake-up does nothing (left) or performs a UDP transmission (right).
+</p>
+</div>
+
+<div class="figure" style="text-align: center"><span id="fig:power-wakeups"></span>
+<img src="04-netstacks_files/figure-html/power-wakeups-1.png" alt=" " width="480" />
+<p class="caption">
+Figure 4.8: Power consumption offset vs. wake-ups/s for kernel 3.14.
+</p>
+</div>
+<p>In Figure <a href="ch-04.html#fig:residency-wakeups">4.7</a> (left), the only source of wake-ups is the kernel timer that our tool sets. Each C-state is represented by a different colour, and shapes and line types distinguish between CPU loads. The first observation is that the addition of a substantial source of CPU load has no impact on the distribution of residence times. Another important observation is that, up to 2000 and from 3500 wake-ups/s onwards, there is only one active idle state (C2 or C1 respectively), and the behaviour is linear. This fact can be verified by checking the power consumption (Figure <a href="ch-04.html#fig:power-wakeups">4.8</a>, red lines). From 2000 to 3500 wake-ups/s, the transition between C-states occurs in a non-linear way.</p>
+<p>In Figure <a href="ch-04.html#fig:residency-wakeups">4.7</a> (right), on other hand, there is another source of wake-ups: hardware interrupts caused by the wireless card each time a packet is sent. The transition between states occurs earlier because there is actually twice the number of wake-ups. And, again, the CPU load shows no impact on the distribution of residence times.</p>
+<p><span class="newthought">These are partial results</span> and are limited to constant rate wake-ups, but these findings are in line with the non-linearities previously discovered in the cross-factor and they confirms the enormous complexity we face.</p>
+</div>
+<div id="summary-1" class="section level2">
+<h2><span class="header-section-number">4.6</span> Summary</h2>
+<p>This chapter follows the path set out by <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span> with the discovery of the cross-factor, an energy toll not accounted by classical energy models and associated to the very fact that frames are processed along the network stack. We have introduced the laptop as a more suitable device to perform whole-device energy measurements in order to deseed the root causes of the cross-factor by taking advantage of the wide range of debugging tools that such platform enables.</p>
+<p>Our results <span class="citation">(Ucar, Azcorra, and Banchs <a href="#ref-contrib-04a">2014</a>; Ucar and Azcorra <a href="#ref-contrib-04b">2015</a>)</span>, albeit preliminary, provide several fundamental insights on this matter:</p>
+<ul>
+<li>We have identified the CPU as the leading cause of the cross-factor in laptops. Thus, the cross-factor shows absolutely no dependence on the frame size, because the RAM memory has no significant impact in the overall energy consumption of wireless transmissions. On the other hand, low-powered devices, like the Soekris, show a very small but perceptible dependency that can be ascribed to the RAM memory.</li>
+<li>The CPU’s C-state management plays a central role in the energy consumption, because a CPU spends most of the time in idle mode.</li>
+<li>When the C-state management subsystem is not present in the OS, the device enters C1 in idle mode (halted) and cannot benefit from lower idle states.</li>
+<li>In contrast to low-powered devices, the C1 state of a laptop’s CPU saves a very small amount of power.</li>
+<li>With a fully functional C-state management subsystem, the linear behaviour disappears. In consequence, we cannot talk about cross-factor as a fixed energy toll per frame.</li>
+<li>A non-linear behaviour implies that we cannot perform energy breakdowns by dropping packets inside the transmission chain. Therefore, new methodologies and techniques are required to enable energy debugging.</li>
+<li>C-state residence times depend primarily on the number of wake-ups per second produced by software and hardware interrupts. However, they show no dependence on the CPU load.</li>
+</ul>
+<p>Further research is needed in order to fully understand the key role of the C-state subsystem in the energy consumption of wireless communications, as well as to investigate other processor capabilities not accounted for in this work, such as P-states and multicore support.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Serrano2014">
+<p>Serrano, P., A. Garcia-Saavedra, G. Bianchi, A. Banchs, and A. Azcorra. 2015. “Per-Frame Energy Consumption in 802.11 Devices and Its Implication on Modeling and Design.” <em>IEEE/ACM Transactions on Networking</em> 23 (4): 1243–56. doi:<a href="https://doi.org/10.1109/TNET.2014.2322262">10.1109/TNET.2014.2322262</a>.</p>
+</div>
+<div id="ref-Carroll2010">
+<p>Carroll, Aaron, and Gernot Heiser. 2010. “An Analysis of Power Consumption in a Smartphone.” In <em>USENIX Annual Technical Conference</em>, 14:21–21. Boston, MA.</p>
+</div>
+<div id="ref-Hylick2008">
+<p>Hylick, Anthony, Ripduman Sohan, Andrew Rice, and Brian Jones. 2008. “An Analysis of Hard Drive Energy Consumption.” In <em>2008 Ieee International Symposium on Modeling, Analysis and Simulation of Computers and Telecommunication Systems</em>, 1–10. IEEE. doi:<a href="https://doi.org/10.1109/MASCOT.2008.4770567">10.1109/MASCOT.2008.4770567</a>.</p>
+</div>
+<div id="ref-Grupp2009">
+<p>Grupp, L.M., AM. Caulfield, J. Coburn, S. Swanson, E. Yaakobi, P.H. Siegel, and J.K. Wolf. 2009. “Characterizing flash memory: Anomalies, observations, and applications.”</p>
+</div>
+<div id="ref-Tiwari1996">
+<p>Tiwari, Vivek, Sharad Malik, Andrew Wolfe, and Mike Tien-Chien Lee. 1996. “Instruction level power analysis and optimization of software.” <em>Journal of VLSI Signal Processing Systems for Signal, Image, and Video Technology</em> 13 (2-3). Kluwer Academic Publishers: 223–38. doi:<a href="https://doi.org/10.1007/BF01130407">10.1007/BF01130407</a>.</p>
+</div>
+<div id="ref-Barroso2007">
+<p>Barroso, Luiz André, and Urs Hölzle. 2007. “The Case for Energy-Proportional Computing.” <em>Computer</em> 40 (12): 33–37. doi:<a href="https://doi.org/10.1109/MC.2007.443">10.1109/MC.2007.443</a>.</p>
+</div>
+<div id="ref-contrib-04a">
+<p>Ucar, Iñaki, Arturo Azcorra, and Albert Banchs. 2014. “Deseeding Energy Consumption of Network Stacks.” In <em>6th Annual International Imdea Networks Workshop</em>.</p>
+</div>
+<div id="ref-contrib-04b">
+<p>Ucar, Iñaki, and Arturo Azcorra. 2015. “Deseeding energy consumption of network stacks.” In <em>IEEE 1st International Forum on Research and Technologies for Society and Industry Leveraging a Better Tomorrow (Rtsi)</em>, 7–16. doi:<a href="https://doi.org/10.1109/RTSI.2015.7325085">10.1109/RTSI.2015.7325085</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="21">
+<li id="fn21"><p>That is, unexpected… for the user.<a href="ch-04.html#fnref21">↩</a></p></li>
+<li id="fn22"><p>Again, improper… from the user’s standpoint.<a href="ch-04.html#fnref22">↩</a></p></li>
+<li id="fn23"><p>Especially when all your fellows work in similar research topics.<a href="ch-04.html#fnref23">↩</a></p></li>
+<li id="fn24"><p>See <a href="https://wireless.wiki.kernel.org/en/developers/documentation/glossary" class="uri">https://wireless.wiki.kernel.org/en/developers/documentation/glossary</a> for the definition of <em>FullMAC</em> and <em>SoftMAC</em> drivers.<a href="ch-04.html#fnref24">↩</a></p></li>
+<li id="fn25"><p><a href="https://www.kernel.org/doc/Documentation/cpu-freq" class="uri">https://www.kernel.org/doc/Documentation/cpu-freq</a><a href="ch-04.html#fnref25">↩</a></p></li>
+<li id="fn26"><p><a href="https://www.kernel.org/doc/Documentation/cpuidle" class="uri">https://www.kernel.org/doc/Documentation/cpuidle</a><a href="ch-04.html#fnref26">↩</a></p></li>
+<li id="fn27"><p>It provides the platform-dependent state detection capability and the mechanisms to support entry/exit into/from different states. By default, there exists an ACPI driver that implements standard APIs. Usually, CPU-specific drivers are capable of detecting more states than ACPI-compliant ones.<a href="ch-04.html#fnref27">↩</a></p></li>
+<li id="fn28"><p>It is an algorithm that takes in several system parameters as input and decides the state to activate.<a href="ch-04.html#fnref28">↩</a></p></li>
+<li id="fn29"><p><a href="http://wireless.kernel.org" class="uri">http://wireless.kernel.org</a><a href="ch-04.html#fnref29">↩</a></p></li>
+<li id="fn30"><p><a href="https://backports.wiki.kernel.org" class="uri">https://backports.wiki.kernel.org</a><a href="ch-04.html#fnref30">↩</a></p></li>
+<li id="fn31"><p>Think, for instance, about a similar task for a function contained in the kernel core.<a href="ch-04.html#fnref31">↩</a></p></li>
+<li id="fn32"><p><a href="http://datasheets.chipdb.org/upload/National/SC1100.pdf" class="uri">http://datasheets.chipdb.org/upload/National/SC1100.pdf</a><a href="ch-04.html#fnref32">↩</a></p></li>
+<li id="fn33"><p>Available at <a href="https://github.com/Enchufa2/udperf" class="uri">https://github.com/Enchufa2/udperf</a><a href="ch-04.html#fnref33">↩</a></p></li>
+<li id="fn34"><p><a href="http://www.devin.com/lookbusy" class="uri">http://www.devin.com/lookbusy</a><a href="ch-04.html#fnref34">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch-03.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-05.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["thesis.pdf"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
