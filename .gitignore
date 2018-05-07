@@ -3,7 +3,6 @@
 .RData
 *.rds
 *.ptc
-_book
 _bookdown_files
 *eps-converted-to.pdf
 showframe

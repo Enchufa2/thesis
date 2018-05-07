@@ -1,0 +1,4 @@
+[submodule "_book"]
+	path = _book
+	url = git@github.com:Enchufa2/thesis.git
+	branch = gh-pages

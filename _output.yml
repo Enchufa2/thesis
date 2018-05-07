@@ -20,6 +20,6 @@ bookdown::gitbook:
         Licensed under <img alt="Creative Commons License" style="border-width:0;vertical-align:bottom" 
         src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    download: ["pdf", "epub"]
+    download: ["pdf"]
 
 #bookdown::epub_book: default
