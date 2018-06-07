@@ -5,6 +5,7 @@
 \usepackage{algorithm,algpseudocode}
 \usepackage{multirow,tabu,rotating}
 \usepackage{parcolumns}
+\usepackage{pdfpages}
 %\usepackage{makeidx}
 %\makeindex
 
@@ -112,10 +113,11 @@
 
 \makeatletter
 \renewcommand{\maketitlepage}{%
+  \includepdf{img/cover-front.pdf}
   \frontmatter\pagenumbering{roman}
   \begin{fullwidth}\flushright
   \thispagestyle{empty}\setlength{\parindent}{0pt}
-  {\includegraphics[width=\textwidth]{uc3m.eps}\par}
+  {\includegraphics[width=\textwidth]{img/uc3m.eps}\par}
   
   \begingroup\color{uc3m}
     \vspace{2in}{\fontsize{14}{20}\selectfont\textsf{\smallcaps{Tesis doctoral}}\par}
@@ -152,7 +154,7 @@
   
   \begin{fullwidth}\flushright
   \thispagestyle{empty}\setlength{\parindent}{0pt}
-  {\includegraphics[width=\textwidth]{uc3m.eps}\par}
+  {\includegraphics[width=\textwidth]{img/uc3m.eps}\par}
   
   \begingroup\color{uc3m}
     \vspace{2in}{\fontsize{14}{20}\selectfont\textsf{\smallcaps{Tesis doctoral}}\par}
