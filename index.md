@@ -1,8 +1,9 @@
 --- 
 title: "Energy Efficiency in Wireless Communications for Mobile User Devices"
 author: "Iñaki Úcar"
-date: "2018-05-07"
+date: "2018-06-07"
 site: bookdown::bookdown_site
+cover-image: img/cover-front.png
 documentclass: book
 classoption: twoside,nohyper
 bibliography: [thesis.bib, packages.bib]
@@ -77,6 +78,8 @@ abstract: |
 \listoffigures
 
 # Preface {-}
+
+<img src="img/cover-front.png" style="display: block; margin: auto;" />
 
 <span class="newthought">Perhaps the reader</span> reaches these words expecting a long diatribe about climate change and greenhouse emissions, about how we are wrecking our ecosystems. But I am *not* doing that. I am bored of it. I do not do it in the same way as a dissertation on astrophysics does not see fit to mention the fact that the Earth orbits the Sun: it should be obvious for everybody at this point. Instead, I will be appealing to a more selfish reason.
 

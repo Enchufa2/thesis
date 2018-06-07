@@ -203,8 +203,8 @@ The models are fed with the data reported in @Serrano2014, and the resulting fit
  <thead>
 <tr>
 <th style="border-bottom:hidden" colspan="1"></th>
-<th style="text-align:center; border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;" colspan="4"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">$\rho_\mathrm{tx}$ model estimates</div></th>
-<th style="text-align:center; border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;" colspan="3"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">$\rho_\mathrm{rx}$ model estimates</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="4"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">$\rho_\mathrm{tx}$ model estimates</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">$\rho_\mathrm{rx}$ model estimates</div></th>
 </tr>
   <tr>
    <th style="text-align:right;"> Device </th>

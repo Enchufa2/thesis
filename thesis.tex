@@ -105,7 +105,7 @@
 % title / author / date
 \title{Energy Efficiency in Wireless Communications for Mobile User Devices}
 \author{Iñaki Úcar Marqués}
-\date{2018-05-07}
+\date{2018-06-07}
 
 \usepackage[hyperpageref]{backref}
 \usepackage[nottoc]{tocbibind}
@@ -114,6 +114,7 @@
 \usepackage{algorithm,algpseudocode}
 \usepackage{multirow,tabu,rotating}
 \usepackage{parcolumns}
+\usepackage{pdfpages}
 %\usepackage{makeidx}
 %\makeindex
 
@@ -221,10 +222,11 @@
 
 \makeatletter
 \renewcommand{\maketitlepage}{%
+  \includepdf{img/cover-front.pdf}
   \frontmatter\pagenumbering{roman}
   \begin{fullwidth}\flushright
   \thispagestyle{empty}\setlength{\parindent}{0pt}
-  {\includegraphics[width=\textwidth]{uc3m.eps}\par}
+  {\includegraphics[width=\textwidth]{img/uc3m.eps}\par}
   
   \begingroup\color{uc3m}
     \vspace{2in}{\fontsize{14}{20}\selectfont\textsf{\smallcaps{Tesis doctoral}}\par}
@@ -261,7 +263,7 @@
   
   \begin{fullwidth}\flushright
   \thispagestyle{empty}\setlength{\parindent}{0pt}
-  {\includegraphics[width=\textwidth]{uc3m.eps}\par}
+  {\includegraphics[width=\textwidth]{img/uc3m.eps}\par}
   
   \begingroup\color{uc3m}
     \vspace{2in}{\fontsize{14}{20}\selectfont\textsf{\smallcaps{Tesis doctoral}}\par}
@@ -4040,10 +4042,11 @@ energy efficiency maximisation.
 \caption[Optimal goodput (bold envelope) as a function of SNR.]{Optimal goodput (bold envelope) as a function of SNR.}\label{fig:maxgoodput}
 \end{figure}
 
-\begin{margintable}[-2.68in]
+\begin{margintable}
 
 \begin{center}
-\resizebox{\linewidth}{!}{\begin{tabular}{rrr}
+\resizebox{\linewidth}{!}{
+\begin{tabular}[-2.68in]{rrr}
 \toprule
   & Mode Index & MCS [Mbps]\\
 \midrule
@@ -4118,7 +4121,8 @@ of MCS (bottom).}\label{fig:rho-tx-rx}
 \begin{table*}
 
 \begin{center}
-\resizebox{\linewidth}{!}{\begin{tabular}{rlllcllc}
+\resizebox{\linewidth}{!}{
+\begin{tabular}{rlllcllc}
 \toprule
 \multicolumn{1}{c}{ } & \multicolumn{4}{c}{$\rho_\mathrm{tx}$ model estimates} & \multicolumn{3}{c}{$\rho_\mathrm{rx}$ model estimates} \\
 \cmidrule(l{2pt}r{2pt}){2-5} \cmidrule(l{2pt}r{2pt}){6-8}
@@ -5071,7 +5075,8 @@ consistent execution of simultaneous events.
 \begin{table}
 
 \begin{center}
-\resizebox{\linewidth}{!}{\begin{tabular}{>{\ttfamily}ll}
+\resizebox{\linewidth}{!}{
+\begin{tabular}{>{\ttfamily}ll}
 \toprule
 Priority & Event\\
 \midrule
@@ -5327,10 +5332,10 @@ case shows the paramount importance of randomizing node activation in
 mIoT scenarios in order to avoid RAO peaks and a premature battery
 drain.
 
-\begin{margintable}[-20mm]
+\begin{margintable}
 
 \begin{center}
-\begin{tabular}{lr}
+\begin{tabular}[-20mm]{lr}
 \toprule
   & Features\\
 \midrule
@@ -6059,7 +6064,8 @@ Table \ref{tab:test-simmer-output-table}).
 \begin{table}
 
 \begin{center}
-\resizebox{\linewidth}{!}{\begin{tabular}{rrrrrr}
+\resizebox{\linewidth}{!}{
+\begin{tabular}{rrrrrr}
 \toprule
 Name & Start time & End time & Activity time & Finished & Replication\\
 \midrule
@@ -6143,7 +6149,8 @@ timings.
 \begin{table}
 
 \begin{center}
-\resizebox{\linewidth}{!}{\begin{tabular}{>{\ttfamily}rrrrr}
+\resizebox{\linewidth}{!}{
+\begin{tabular}{>{\ttfamily}rrrrr}
 \toprule
 Expr & Min & Mean & Median & Max\\
 \midrule
@@ -6178,5 +6185,7 @@ instead of function calls whenever possible.
 %\fancyhead[RO]{\smallcaps{\newlinetospace{Index}}\quad\thepage}
 %\phantomsection
 %\printindex
+\newpage\thispagestyle{empty}\mbox{}
+\includepdf{img/cover-back.pdf}
 
 \end{document}
