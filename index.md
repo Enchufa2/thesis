@@ -1,7 +1,7 @@
 --- 
 title: "Energy Efficiency in Wireless Communications for Mobile User Devices"
 author: "Iñaki Úcar"
-date: "2018-06-07"
+date: "2018-06-08"
 site: bookdown::bookdown_site
 cover-image: img/cover-front.png
 documentclass: book

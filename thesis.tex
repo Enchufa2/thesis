@@ -105,7 +105,7 @@
 % title / author / date
 \title{Energy Efficiency in Wireless Communications for Mobile User Devices}
 \author{Iñaki Úcar Marqués}
-\date{2018-06-07}
+\date{2018-06-08}
 
 \usepackage[hyperpageref]{backref}
 \usepackage[nottoc]{tocbibind}
@@ -1184,12 +1184,12 @@ a card stays in sleep state, the less power it consumes.
 Since its conception, 802.11 has attempted to minimise idle listening
 with the introduction of the PS mode, and some previous work followed
 this path. For instance, \citet{Liu2008} proposed \(\mu\)PM to exploit
-short idle intervals (\$\textless{}\$100 ms) without buffering or
-cooperation. \(\mu\)PM predicts the arrival time of the next frame and
-puts the interface in PS mode while no arrivals are expected. This
-mechanism demonstrated poor granularity (tens of ms) on existing
-hardware and leads to performance degradation due to frame loss.
-Therefore, it is only suitable for low-traffic scenarios.
+short idle intervals (\(<\) 100 ms) without buffering or cooperation.
+\(\mu\)PM predicts the arrival time of the next frame and puts the
+interface in PS mode while no arrivals are expected. This mechanism
+demonstrated poor granularity (tens of ms) on existing hardware and
+leads to performance degradation due to frame loss. Therefore, it is
+only suitable for low-traffic scenarios.
 
 Others propose a PS-like operation. \citet{Jang2011} described Snooze,
 an access point (AP)-directed micro-sleep scheduling and antenna
@@ -4042,11 +4042,11 @@ energy efficiency maximisation.
 \caption[Optimal goodput (bold envelope) as a function of SNR.]{Optimal goodput (bold envelope) as a function of SNR.}\label{fig:maxgoodput}
 \end{figure}
 
-\begin{margintable}
+\begin{margintable}[-2.68in]
 
 \begin{center}
 \resizebox{\linewidth}{!}{
-\begin{tabular}[-2.68in]{rrr}
+\begin{tabular}{rrr}
 \toprule
   & Mode Index & MCS [Mbps]\\
 \midrule
@@ -5332,10 +5332,10 @@ case shows the paramount importance of randomizing node activation in
 mIoT scenarios in order to avoid RAO peaks and a premature battery
 drain.
 
-\begin{margintable}
+\begin{margintable}[-20mm]
 
 \begin{center}
-\begin{tabular}[-20mm]{lr}
+\begin{tabular}{lr}
 \toprule
   & Features\\
 \midrule
