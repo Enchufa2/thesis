@@ -497,7 +497,7 @@ ggplot(data, aes(state, t/activity)) + geom_boxplot() + theme(axis.title.x=eleme
 
 data$state <- factor(data$state, levels=rev(c("tx", "rx", "ov", "id", "sl", "wa")))
 
-ggplot2:::ggplot.data.frame(data, aes(grp, t*P/(3.600*3.7))) + geom_col(aes(fill=state)) + 
+ggplot2:::ggplot.default(data, aes(grp, t*P/(3.600*3.7))) + geom_col(aes(fill=state)) + 
   ylab("Consumption [mAh]") + scale_fill_brewer(palette=6, direction=-1) + 
   annotate("text", x="algorithm", y=3500, label="waste (idle)", hjust=0.5, vjust=0.5, color="white") +
   annotate("text", x="algorithm", y=2500, label="sleep", hjust=0.5, vjust=0.5, color="white") +
@@ -516,7 +516,7 @@ This activity aggregation enables us to calculate the total energy consumption u
 (ref:eval-sta) Normalised activity (left) and energy consumption (right) per STA.
 
 ```{r eval-sta, fig.show='hold', out.width='49%', fig.fullwidth=TRUE, fig.cap='(ref:eval-sta)', warning=FALSE, message=FALSE}
-ggplot2:::ggplot.data.frame(subset(data, grp!="w/o algorithm"), aes(STA, t/activity, fill=state)) + 
+ggplot2:::ggplot.default(subset(data, grp!="w/o algorithm"), aes(STA, t/activity, fill=state)) + 
   geom_bar(stat="identity", width=1) + ylab("Fraction of Activity") +
   scale_fill_brewer(type="seq", palette=6, direction=-1) + guides(fill=FALSE) +
   annotate("text", x=21, y=0.9, label="waste (idle)", hjust=0.5, vjust=0.5, color="white") +
@@ -525,7 +525,7 @@ ggplot2:::ggplot.data.frame(subset(data, grp!="w/o algorithm"), aes(STA, t/activ
   annotate("text", x=21, y=0.15, label="reception", hjust=0.5, vjust=0.5, color="black") +
   annotate("text", x=21, y=0, label="transmission", hjust=0.5, vjust=0.5, color="black")
 
-ggplot2:::ggplot.data.frame(datae, aes(STA, consumption, fill=forcats::fct_rev(decomposition))) + geom_col(width=1) +
+ggplot2:::ggplot.default(datae, aes(STA, consumption, fill=forcats::fct_rev(decomposition))) + geom_col(width=1) +
   ylab("Consumption [mAh]") + scale_fill_grey() + guides(fill=FALSE) +
   annotate("text", x=21, y=40, label="algorithm", hjust=0.5, vjust=0.5, color="black") +
   annotate("text", x=10, y=350, label="saving", hjust=0.5, vjust=0, color="black") +
@@ -589,7 +589,7 @@ data <- do.call(rbind,
                            tsleep = tsleep)
                 }))
 
-(ggplot2:::ggplot.data.frame(data, aes(rate, app, fill=factor(tsleep), color=factor(tsleep))) + 
+(ggplot2:::ggplot.default(data, aes(rate, app, fill=factor(tsleep), color=factor(tsleep))) + 
   geom_col(position="dodge") +
   ylab("Applicability [% of frame sizes]") + xlab(expression(paste("802.11a rate [Mbps]"))) +
   stat_smooth(method="lm", formula=y~x, linetype="dashed", se=F) +  

@@ -290,8 +290,8 @@ data$airtime <- data$FPS*data$airtime/10000
   annotate("segment", x=55, xend=55, y=7.68, yend=7.83, arrow=arrow(length=unit(0.1, "in"))) +
   annotate("segment", x=52, xend=52, y=8.52, yend=8.37, arrow=arrow(length=unit(0.1, "in"))) +
   annotate("segment", x=52, xend=52, y=8.17, yend=8.32, arrow=arrow(length=unit(0.1, "in"))) +
-  annotate("text", x=54, y=7.93, label="C1 + C2 cross-factor", hjust=1) +
-  annotate("text", x=51, y=8.47, label="C1 cross-factor", hjust=1)) %>%
+  annotate("text", x=54, y=7.93, label="C1 + C2 kernel cross-factor", hjust=1) +
+  annotate("text", x=51, y=8.47, label="C1 kernel cross-factor", hjust=1)) %>%
   theme_adj_r_margin(0)
 ```
 

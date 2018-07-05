@@ -99,8 +99,8 @@ theme_set(
 update_geom_defaults("text", list(family="Palatino"))
 update_geom_defaults("label", list(family="Palatino"))
 
-ggplot.data.frame <- function(data=NULL, mapping=aes(), ...) {
-  p <- ggplot2:::ggplot.data.frame(data, mapping, ...) + ggthemes::geom_rangeframe(color = "black")
+ggplot.default <- function(data=NULL, mapping=aes(), ...) {
+  p <- ggplot2:::ggplot.default(data, mapping, ...) + ggthemes::geom_rangeframe(color = "black")
   if (file.exists("showframe"))
     p <- p + theme(panel.border = element_rect(fill = NA, colour = "black", size = rel(1)))
   p

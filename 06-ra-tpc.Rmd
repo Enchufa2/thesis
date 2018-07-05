@@ -320,7 +320,7 @@ We show in Figure \@ref(fig:param-scaling1) the overall effect of this parameter
 (ref:param-scaling2) Impact of energy parameter scaling on the energy efficiency. Impact on mode transitions.
 
 ```{r param-scaling2, fig.height=2.8, fig.width=fullwidth, fig.fullwidth=TRUE, fig.cap='(ref:param-scaling2)'}
-ggplot2:::ggplot.data.frame(diffs_final, aes(op, lag, group=mode, color=mode, linetype=mode)) + 
+ggplot2:::ggplot.default(diffs_final, aes(op, lag, group=mode, color=mode, linetype=mode)) + 
   geom_line() + geom_point(color="white", size=6) + geom_point() +
   facet_grid(~factor(param, labels=c("rho[id]", "rho[tx]", "gamma[xg]")), labeller=label_parsed) + 
   ylab("Energy Efficiency Drop [MbpJ]") + guides(colour = guide_legend(override.aes = list(shape = NA))) +
