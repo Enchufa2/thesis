@@ -6,26 +6,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Energy Efficiency in Wireless Communications for Mobile User Devices</title>
-  <meta name="description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>">
+  <meta name="description" content="Tesis doctoral. Universidad Carlos III de Madrid.
+Departamento de Ingeniería Telemática.">
   <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
   <meta property="og:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="img/cover-front.png" />
-  <meta property="og:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  <meta property="og:description" content="Tesis doctoral. Universidad Carlos III de Madrid.
+Departamento de Ingeniería Telemática." />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
   
-  <meta name="twitter:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  <meta name="twitter:description" content="Tesis doctoral. Universidad Carlos III de Madrid.
+Departamento de Ingeniería Telemática." />
   <meta name="twitter:image" content="img/cover-front.png" />
 
 <meta name="author" content="Iñaki Úcar">
 
 
-<meta name="date" content="2018-07-05">
+<meta name="date" content="2018-11-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -61,41 +64,67 @@ div.abstract{
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -241,7 +270,7 @@ src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
 <h1><span class="header-section-number">9</span> Conclusions and Future Work</h1>
 <p><span class="newthought">This thesis</span> has been devoted to the study of the energy efficiency of mobile user devices at multiple layers by means of experimentation, mathematical modelling and simulation. Although the latter two methods are important tools for science in general, and for this field in particular, we must emphasise the complexity and paramount importance of experimentation.</p>
 <p><span class="newthought">In a preeminent experimental part</span> that has served as a basis for the rest of the thesis, we have assembled a comprehensive energy measurement framework, and a robust methodology, which is capable of measuring a wide range of wireless devices, as well as individual components, with high accuracy and precision. A whole-device parametrisation has been presented and validated against previous results from <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span>. Similarly, a precise characterisation of a commercial off-the-shelf wireless card has been used to produce several contributions and insights throughout this thesis.</p>
-<p>In connection with the aforementioned methodology, measurement handling has been systematised into <code>errors</code> <span class="citation">(Ucar, Pebesma, and Azcorra <a href="#ref-contrib-03">2018</a>)</span>, a lightweight R package that associates standard uncertainty metadata to numeric vectors, matrices and arrays. The resulting data type automatically handles propagation of uncertainty through a first-order Taylor series method, and provides a formally sound representation of measurements. Using this package makes the process of computing indirect measurements easier and less error-prone.</p>
+<p>In connection with the aforementioned methodology, measurement handling has been systematised into <code>errors</code> <span class="citation">(Iñaki Ucar, Pebesma, and Azcorra <a href="#ref-contrib-03">2018</a>)</span>, a lightweight R package that associates standard uncertainty metadata to numeric vectors, matrices and arrays. The resulting data type automatically handles propagation of uncertainty through a first-order Taylor series method, and provides a formally sound representation of measurements. Using this package makes the process of computing indirect measurements easier and less error-prone.</p>
 <p><span class="newthought">Building on this</span> measurement platform, we have delved into the energy consumption of the kernel cross-factor, an energy toll produced by frame processing within the devices’ network stack. Our whole-device measurements on a laptop computer have provided several fundamental insights <span class="citation">(Ucar, Azcorra, and Banchs <a href="#ref-contrib-04a">2014</a>; Ucar and Azcorra <a href="#ref-contrib-04b">2015</a>)</span> on this matter. Firstly, we have identified the CPU as the leading cause of the energy consumption, discarding the RAM memory as a significant component for this kind of device. Secondly, we have demonstrated that the CPU’s C-state management system plays a central role in such consumption behaviour. In fact, the characterisation of the cross-factor is much more complex that the previous work showed. Specifically, the consumption depends on the C-state residence times, which in turn depend on the wake-up rate produced by software and hardware interrupts.</p>
 <p>As a consequence, the cross-factor’s linear behaviour disappears for CPUs with more than a single C-state, which is the case for many devices (laptop computers, smartphones, tablets…). Therefore, the energy model by <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span> cannot be applied to such devices. The energy consumption cannot be explained as increments on top of a baseline power, but as savings from a maximum consumption in a saturated state. This fact poses doubts on the applicability of such energy model on devices with sophisticated CPUs, since the savings achieved and the level of non-linearity strongly depend on the device’s general state (i.e., on how the CPU is stressed: number of applications running and type of load). Nevertheless, some practices and recommendations related to packet batching still hold, because longer loads with fewer interruptions lead to longer inactivity periods that can be leveraged by deeper sleep states.</p>
 <p>Moreover, the methodology to perform energy breakdowns by dropping packets inside the transmission chain is no longer valid for such CPUs, because this method generates a varying rate of interrupts. Therefore, further research is needed to produce novel measurement methodologies to fully understand the key role of the C-state subsystem in the energy consumption of protocol stacks.</p>
@@ -252,7 +281,7 @@ src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
 <p><span class="newthought">At a higher level</span> of the communication stack, we have revisited 802.11 rate adaptation (RA) and transmission power control (TPC) from the energy standpoint. Previous studies pointed out that MIMO rate adaptation under 802.11n poses a trade-off between throughput and energy efficiency maximisation. We have in turn demonstrated with an analytical model that, even for single spatial streams without interfering traffic, these are competing objectives.</p>
 <p>Our findings <span class="citation">(Ucar et al. <a href="#ref-contrib-06">2016</a>)</span> show that RA-TPC techniques may incur inefficiencies at mode transitions, which suggests that small goodput degradations may lead to energy efficiency gains. Several heuristics have been provided and discussed to manage those transitions in an energy-efficient manner. We have shown that transitions leading to a lower rate and transmission power are particularly challenging, as they imply predicting channel quality drops to trigger early transitions.</p>
 <p>We have extended <span class="citation">(Iñaki Ucar, Donato, et al. <a href="#ref-contrib-07">2018</a>)</span> these results by simulating several state-of-the-art RA-TPC algorithms and assessing their performance at mode transitions. The metric developed for such comparison confirms that certain <em>conservativeness</em> can resolve the trade-off between throughput and energy efficiency optimality, thus making a difference for properly designed energy-aware algorithms. Future work may delve into the proper heuristics to leverage these findings to develop novel energy-aware RA-TPC algorithms.</p>
-<p><span class="newthought">Finally</span>, our research experience on simulations with highly complex network simulators pointed us towards the need for new less-specialised tools enabling easier and faster prototyping. As a result, we have developed <code>simmer</code> <span class="citation">(Ucar, Smeets, and Azcorra <a href="#ref-contrib-08a">2018</a>)</span>, an easy-to-use yet powerful process-oriented and trajectory-based discrete-event simulation framework for R. This package combines a flexible API and a robust and fast simulation core written in C++ with automatic monitoring capabilities, which enables the user to focus on the system model.</p>
+<p><span class="newthought">Finally</span>, our research experience on simulations with highly complex network simulators pointed us towards the need for new less-specialised tools enabling easier and faster prototyping. As a result, we have developed <code>simmer</code> <span class="citation">(Iñaki Ucar, Smeets, and Azcorra <a href="#ref-contrib-08a">2018</a>)</span>, an easy-to-use yet powerful process-oriented and trajectory-based discrete-event simulation framework for R. This package combines a flexible API and a robust and fast simulation core written in C++ with automatic monitoring capabilities, which enables the user to focus on the system model.</p>
 
 <p>We have demonstrated <span class="citation">(Iñaki Ucar, Hernández, et al. <a href="#ref-contrib-08b">2018</a>)</span> the usability and suitability of <code>simmer</code> for fast prototyping of a 5G-inspired scenario, which consists of the energy modelling of thousands of IoT metering devices connected to an LTE macrocell. The model developed highlights in just a few lines of code the main characteristics that make <code>simmer</code> attractive for researchers and practitioners in communications research.</p>
 <p><span class="newthought">Future work</span> may include the application of the methodologies developed and lessons learned in this thesis to a wider range of battery-powered devices. Particularly, the Internet-of-Things has been receiving an increased attention, and the market of wearable devices as well as sensor networks for smart cities and smart homes is growing fast. All these devices are aimed at very specific tasks, and thus they share simplicity in terms of hardware and software architecture. As a result, the linear model can be applied to describe the energy behaviour of such devices, and the measurement methodologies developed in this work are well-suited for a complete characterisation.</p>
@@ -268,34 +297,34 @@ src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-Serrano2014">
-<p>Serrano, P., A. Garcia-Saavedra, G. Bianchi, A. Banchs, and A. Azcorra. 2015. “Per-Frame Energy Consumption in 802.11 Devices and Its Implication on Modeling and Design.” <em>IEEE/ACM Transactions on Networking</em> 23 (4): 1243–56. doi:<a href="https://doi.org/10.1109/TNET.2014.2322262">10.1109/TNET.2014.2322262</a>.</p>
+<p>Serrano, P., A. Garcia-Saavedra, G. Bianchi, A. Banchs, and A. Azcorra. 2015. “Per-Frame Energy Consumption in 802.11 Devices and Its Implication on Modeling and Design.” <em>IEEE/ACM Transactions on Networking</em> 23 (4): 1243–56. <a href="https://doi.org/10.1109/TNET.2014.2322262">https://doi.org/10.1109/TNET.2014.2322262</a>.</p>
 </div>
 <div id="ref-contrib-03">
-<p>Ucar, Iñaki, Edzer Pebesma, and Arturo Azcorra. 2018. “Measurement Errors in R.” <em>R Journal</em> (submitted). <a href="https://arxiv.org/abs/1804.08552" class="uri">https://arxiv.org/abs/1804.08552</a>.</p>
+<p>Ucar, Iñaki, Edzer Pebesma, and Arturo Azcorra. 2018. “Measurement Errors in R.” <em>R Journal</em> (submitted). <a href="https://arxiv.org/abs/1804.08552">https://arxiv.org/abs/1804.08552</a>.</p>
 </div>
 <div id="ref-contrib-04a">
 <p>Ucar, Iñaki, Arturo Azcorra, and Albert Banchs. 2014. “Deseeding Energy Consumption of Network Stacks.” In <em>6th Annual International Imdea Networks Workshop</em>.</p>
 </div>
 <div id="ref-contrib-04b">
-<p>Ucar, Iñaki, and Arturo Azcorra. 2015. “Deseeding energy consumption of network stacks.” In <em>IEEE 1st International Forum on Research and Technologies for Society and Industry Leveraging a Better Tomorrow (Rtsi)</em>, 7–16. doi:<a href="https://doi.org/10.1109/RTSI.2015.7325085">10.1109/RTSI.2015.7325085</a>.</p>
+<p>Ucar, Iñaki, and Arturo Azcorra. 2015. “Deseeding energy consumption of network stacks.” In <em>IEEE 1st International Forum on Research and Technologies for Society and Industry Leveraging a Better Tomorrow (Rtsi)</em>, 7–16. <a href="https://doi.org/10.1109/RTSI.2015.7325085">https://doi.org/10.1109/RTSI.2015.7325085</a>.</p>
 </div>
 <div id="ref-contrib-05a">
-<p>Azcorra, Arturo, Iñaki Ucar, Albert Banchs, Francesco Gringoli, and Pablo Serrano. 2017. “<span class="math inline">\(\mu\)</span>Nap: Practical micro-sleeps for 802.11 WLANs.” <em>Computer Communications</em> 110 (September): 175–86. doi:<a href="https://doi.org/10.1016/j.comcom.2017.06.008">10.1016/j.comcom.2017.06.008</a>.</p>
+<p>Azcorra, Arturo, Iñaki Ucar, Albert Banchs, Francesco Gringoli, and Pablo Serrano. 2017. “<span class="math inline">\(\mu\)</span>Nap: Practical micro-sleeps for 802.11 WLANs.” <em>Computer Communications</em> 110 (September): 175–86. <a href="https://doi.org/10.1016/j.comcom.2017.06.008">https://doi.org/10.1016/j.comcom.2017.06.008</a>.</p>
 </div>
 <div id="ref-contrib-05b">
-<p>Azcorra, Arturo, Iñaki Ucar, Albert Banchs, Francesco Gringoli, and Pablo Serrano. 2018. Energy-saving method based on micro-shutdowns for a wireless device in a telecommunications network, issued January 2018. <a href="http://www.google.com/patents/WO2018015601" class="uri">http://www.google.com/patents/WO2018015601</a>.</p>
+<p>Azcorra, Arturo, Iñaki Ucar, Albert Banchs, Francesco Gringoli, and Pablo Serrano. 2018. Energy-saving method based on micro-shutdowns for a wireless device in a telecommunications network, issued January 2018. <a href="http://www.google.com/patents/WO2018015601">http://www.google.com/patents/WO2018015601</a>.</p>
 </div>
 <div id="ref-contrib-06">
-<p>Ucar, Iñaki, Carlos Donato, Pablo Serrano, Andres Garcia-Saavedra, Arturo Azcorra, and Albert Banchs. 2016. “Revisiting 802.11 Rate Adaptation from Energy Consumption’s Perspective.” In <em>Proceedings of the 19th Acm International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems</em>, 27–34. MSWiM ’16. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/2988287.2989149">10.1145/2988287.2989149</a>.</p>
+<p>Ucar, Iñaki, Carlos Donato, Pablo Serrano, Andres Garcia-Saavedra, Arturo Azcorra, and Albert Banchs. 2016. “Revisiting 802.11 Rate Adaptation from Energy Consumption’s Perspective.” In <em>Proceedings of the 19th Acm International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems</em>, 27–34. MSWiM ’16. New York, NY, USA: ACM. <a href="https://doi.org/10.1145/2988287.2989149">https://doi.org/10.1145/2988287.2989149</a>.</p>
 </div>
 <div id="ref-contrib-07">
-<p>Ucar, Iñaki, Carlos Donato, Pablo Serrano, Andres Garcia-Saavedra, Arturo Azcorra, and Albert Banchs. 2018. “On the energy efficiency of rate and transmission power control in 802.11.” <em>Computer Communications</em> 117 (February): 164–74. doi:<a href="https://doi.org/10.1016/j.comcom.2017.07.002">10.1016/j.comcom.2017.07.002</a>.</p>
+<p>Ucar, Iñaki, Carlos Donato, Pablo Serrano, Andres Garcia-Saavedra, Arturo Azcorra, and Albert Banchs. 2018. “On the energy efficiency of rate and transmission power control in 802.11.” <em>Computer Communications</em> 117 (February): 164–74. <a href="https://doi.org/10.1016/j.comcom.2017.07.002">https://doi.org/10.1016/j.comcom.2017.07.002</a>.</p>
 </div>
 <div id="ref-contrib-08a">
-<p>Ucar, Iñaki, Bart Smeets, and Arturo Azcorra. 2018. “simmer: Discrete-Event Simulation for R.” <em>Journal of Statistical Software</em> (accepted for publication). <a href="https://arxiv.org/abs/1705.09746" class="uri">https://arxiv.org/abs/1705.09746</a>.</p>
+<p>Ucar, Iñaki, Bart Smeets, and Arturo Azcorra. 2018. “simmer: Discrete-Event Simulation for R.” <em>Journal of Statistical Software</em> (accepted for publication). <a href="https://arxiv.org/abs/1705.09746">https://arxiv.org/abs/1705.09746</a>.</p>
 </div>
 <div id="ref-contrib-08b">
-<p>Ucar, Iñaki, José Alberto Hernández, Pablo Serrano, and Arturo Azcorra. 2018. “Design and Analysis of 5G Scenarios with simmer: An R Package for Fast DES Prototyping.” <em>IEEE Communications Magazine</em>. doi:<a href="https://doi.org/10.1109/MCOM.2018.1700960">10.1109/MCOM.2018.1700960</a>.</p>
+<p>Ucar, Iñaki, José Alberto Hernández, Pablo Serrano, and Arturo Azcorra. 2018. “Design and Analysis of 5G Scenarios with simmer: An R Package for Fast DES Prototyping.” <em>IEEE Communications Magazine</em> 56 (11): 145–51. <a href="https://doi.org/10.1109/MCOM.2018.1700960">https://doi.org/10.1109/MCOM.2018.1700960</a>.</p>
 </div>
 </div>
             </section>
@@ -350,7 +379,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

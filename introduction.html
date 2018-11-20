@@ -6,26 +6,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Energy Efficiency in Wireless Communications for Mobile User Devices</title>
-  <meta name="description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>">
+  <meta name="description" content="Tesis doctoral. Universidad Carlos III de Madrid.
+Departamento de Ingeniería Telemática.">
   <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
   <meta property="og:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="img/cover-front.png" />
-  <meta property="og:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  <meta property="og:description" content="Tesis doctoral. Universidad Carlos III de Madrid.
+Departamento de Ingeniería Telemática." />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
   
-  <meta name="twitter:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  <meta name="twitter:description" content="Tesis doctoral. Universidad Carlos III de Madrid.
+Departamento de Ingeniería Telemática." />
   <meta name="twitter:image" content="img/cover-front.png" />
 
 <meta name="author" content="Iñaki Úcar">
 
 
-<meta name="date" content="2018-07-05">
+<meta name="date" content="2018-11-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -61,41 +64,67 @@ div.abstract{
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -250,7 +279,7 @@ src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
 <dd>which aims to turn network devices off during inactivity periods. This is commonly implemented as the so-called <em>sleep states</em>, and their <em>depth</em> introduces an inherent trade-off with the time required to become active again.
 </dd>
 <dt>Rate adaptation,</dt>
-<dd>which tries to adapt the transmission rate of wireless cards according to the channel conditions<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>.
+<dd>which tries to adapt the transmission rate of wireless cards according to the channel conditions<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.
 </dd>
 </dl>
 <p>The aim of this thesis is to explore the above three strategies in the scope of wireless communications for mobile user devices at multiple layers, as will be introduced in the following sections: from the operating system to the low-level operation of the wireless card.</p>
@@ -262,11 +291,12 @@ src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
 <p><span class="newthought">The seminal paper</span> by <span class="citation">Feeney and Nilsson (<a href="#ref-Feeney2001">2001</a>)</span> gives the very first insight on energy consumption of wireless interfaces. This work was done on a per-frame basis by accounting for the energy drained by an 802.11 wireless card. Subsequent experimental work followed the same approach, showing that the energy consumption of wireless transmissions/receptions can be characterised using a simple linear model. This fact arises from the three typical states of operation of a wireless card: idle, transmitting and receiving.</p>
 <p>The model, commonly expressed in terms of power, has a fixed part <span class="math inline">\(\rho_{id}\)</span>, device-dependent, attributable to the idle state, and it grows linearly with the airtime percentage <span class="math inline">\(\tau\)</span> (i.e., the fraction of time in which the card is transmitting or receiving).</p>
 <p>However, more recently, the novel work by <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span> performed extensive per-frame measurements for seven devices of different types (smartphones, tablets, embedded devices and wireless routers), and unveiled that actually there is a non-negligible per-frame processing toll ascribed to the frame crossing the network stack. This component emerges as a new offset proportional to the frame generation rate, and it is not explained by the <em>classical</em> model.</p>
+
 <p>The currently accepted energy model is a multilinear model articulated into three main parts:</p>
-<span class="math display" id="eq:new-energy-model">\[\begin{equation}
+<p><span class="math display" id="eq:new-energy-model">\[\begin{equation}
  \overline{P}(\tau_i, \lambda_i) = \underbrace{\rho_\mathrm{id} + \sum_{i\in\mathrm{\{tx,rx\}}} \rho_i \tau_i}_{\text{classical model}} + \sum_{i\in\mathrm{\{g,r\}}} \gamma_{\mathrm{x}i} \lambda_i
  \tag{1.1}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>where the first two addends correspond to the classical model and the third is the contribution described in <span class="citation">Serrano et al. (<a href="#ref-Serrano2014">2015</a>)</span>. This model can be subdivided into five components:</p>
 <ul>
 <li>A platform-specific baseline power consumption that accounts for the energy consumed just by the fact of being powered on, but with no network activity. This component is commonly referred to as <em>idle consumption</em>, <span class="math inline">\(\rho_\mathrm{id}\)</span>.</li>
@@ -307,78 +337,80 @@ src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
 <div id="thesis-overview" class="section level2">
 <h2><span class="header-section-number">1.5</span> Thesis Overview</h2>
 <p>The remainder of this thesis is organised as follows. Chapter <a href="ch-02.html#ch:02">2</a> presents the relevant literature related to the topics introduced in this chapter. Then, the dissertation is divided into three thematic parts: <em>experimentation</em>, <em>mathematical modelling</em> and <em>simulation</em>. Chapter <a href="ch-03.html#ch:03">3</a> presents a comprehensive energy measurement framework, which has been a fundamental pillar of this thesis. Building on this, Chapter <a href="ch-04.html#ch:04">4</a> delves into the roots of the cross-factor by exploring the energy consumption of the Linux network stack. Chapter <a href="ch-05.html#ch:05">5</a> completes the experimental part with a study of the timing constraints of a COTS wireless card, which is developed into a standard-compliant algorithm to leverage micro-sleep opportunities in 802.11 WLANs. Chapter <a href="ch-06.html#ch:06">6</a> presents a joint goodput-energy model that unveils an inherent trade-off between througput and energy efficiency maximisation in 802.11 when RA-TPC techniques are applied. Chapter <a href="ch-07.html#ch:07">7</a> further extends the latter work by simulating and comparing the performance of several representative RA-TPC algorithms. Closing the simulation part, Chapter <a href="ch-08.html#ch:08">8</a> presents our novel DES framework, and showcases its versatility by analising the energy consumption of an Internet-of-Things scenario with thousands of metering devices. Finally, Chapter <a href="ch-09.html#ch:09">9</a> contains the thesis conclusions and future lines of work.</p>
-<p>This thesis covers the following contributions: <span class="citation">Ucar, Pebesma, and Azcorra (<a href="#ref-contrib-03">2018</a>)</span>, <span class="citation">Ucar, Azcorra, and Banchs (<a href="#ref-contrib-04a">2014</a>)</span>, <span class="citation">Ucar and Azcorra (<a href="#ref-contrib-04b">2015</a>)</span>, <span class="citation">Azcorra et al. (<a href="#ref-contrib-05a">2017</a>)</span>, <span class="citation">Azcorra et al. (<a href="#ref-contrib-05b">2018</a>)</span>, <span class="citation">Ucar et al. (<a href="#ref-contrib-06">2016</a>)</span>, <span class="citation">Iñaki Ucar, Donato, et al. (<a href="#ref-contrib-07">2018</a>)</span>, <span class="citation">Ucar, Smeets, and Azcorra (<a href="#ref-contrib-08a">2018</a>)</span>, <span class="citation">Iñaki Ucar, Hernández, et al. (<a href="#ref-contrib-08b">2018</a>)</span>.</p>
-<p>Therefore, there is an overlap between this dissertation and the publications listed above. Additionally, the following contributions are not part of this thesis: <span class="citation">Bartzoudis et al. (<a href="#ref-flex5gware">2017</a>)</span>, <span class="citation">Mannweiler et al. (<a href="#ref-5gnorma">2017</a>)</span>, <span class="citation">Gringoli et al. (<a href="#ref-11aa">2017</a>)</span>.</p>
+<p>This thesis covers the following contributions:
+<span class="citation">Iñaki Ucar, Pebesma, and Azcorra (<a href="#ref-contrib-03">2018</a>)</span>, <span class="citation">Ucar, Azcorra, and Banchs (<a href="#ref-contrib-04a">2014</a>)</span>, <span class="citation">Ucar and Azcorra (<a href="#ref-contrib-04b">2015</a>)</span>, <span class="citation">Azcorra et al. (<a href="#ref-contrib-05a">2017</a>)</span>, <span class="citation">Azcorra et al. (<a href="#ref-contrib-05b">2018</a>)</span>, <span class="citation">Ucar et al. (<a href="#ref-contrib-06">2016</a>)</span>, <span class="citation">Iñaki Ucar, Donato, et al. (<a href="#ref-contrib-07">2018</a>)</span>, <span class="citation">Iñaki Ucar, Smeets, and Azcorra (<a href="#ref-contrib-08a">2018</a>)</span>, <span class="citation">Iñaki Ucar, Hernández, et al. (<a href="#ref-contrib-08b">2018</a>)</span>.</p>
+<p>Therefore, there is an overlap between this dissertation and the publications listed above. Additionally, the following contributions are not part of this thesis:
+<span class="citation">Bartzoudis et al. (<a href="#ref-flex5gware">2017</a>)</span>, <span class="citation">Mannweiler et al. (<a href="#ref-5gnorma">2017</a>)</span>, <span class="citation">Gringoli et al. (<a href="#ref-11aa">2018</a>)</span>.</p>
 
 </div>
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-grover2015">
-<p>Grover, Pulkit. 2015. “Information Friction and Its Implications on Minimum Energy Required for Communication.” <em>IEEE Transactions on Information Theory</em> 61 (2): 895–907. doi:<a href="https://doi.org/10.1109/TIT.2014.2365777">10.1109/TIT.2014.2365777</a>.</p>
+<p>Grover, Pulkit. 2015. “Information Friction and Its Implications on Minimum Energy Required for Communication.” <em>IEEE Transactions on Information Theory</em> 61 (2): 895–907. <a href="https://doi.org/10.1109/TIT.2014.2365777">https://doi.org/10.1109/TIT.2014.2365777</a>.</p>
 </div>
 <div id="ref-samdanis2015green">
 <p>Samdanis, Konstantinos, Peter Rost, Andreas Maeder, Michela Meo, and Christos Verikoukis. 2015. <em>Green Communications: Principles, Concepts and Practice</em>. Wiley &amp; Sons.</p>
 </div>
 <div id="ref-Feeney2001">
-<p>Feeney, L.M., and M. Nilsson. 2001. “Investigating the energy consumption of a wireless network interface in an ad hoc networking environment.” In <em>Proceedings Ieee Infocom 2001. Conference on Computer Communications. Twentieth Annual Joint Conference of the Ieee Computer and Communications Society</em>, 3:1548–57. IEEE. doi:<a href="https://doi.org/10.1109/INFCOM.2001.916651">10.1109/INFCOM.2001.916651</a>.</p>
+<p>Feeney, L.M., and M. Nilsson. 2001. “Investigating the energy consumption of a wireless network interface in an ad hoc networking environment.” In <em>Proceedings Ieee Infocom 2001. Conference on Computer Communications. Twentieth Annual Joint Conference of the Ieee Computer and Communications Society</em>, 3:1548–57. IEEE. <a href="https://doi.org/10.1109/INFCOM.2001.916651">https://doi.org/10.1109/INFCOM.2001.916651</a>.</p>
 </div>
 <div id="ref-Serrano2014">
-<p>Serrano, P., A. Garcia-Saavedra, G. Bianchi, A. Banchs, and A. Azcorra. 2015. “Per-Frame Energy Consumption in 802.11 Devices and Its Implication on Modeling and Design.” <em>IEEE/ACM Transactions on Networking</em> 23 (4): 1243–56. doi:<a href="https://doi.org/10.1109/TNET.2014.2322262">10.1109/TNET.2014.2322262</a>.</p>
+<p>Serrano, P., A. Garcia-Saavedra, G. Bianchi, A. Banchs, and A. Azcorra. 2015. “Per-Frame Energy Consumption in 802.11 Devices and Its Implication on Modeling and Design.” <em>IEEE/ACM Transactions on Networking</em> 23 (4): 1243–56. <a href="https://doi.org/10.1109/TNET.2014.2322262">https://doi.org/10.1109/TNET.2014.2322262</a>.</p>
 </div>
 <div id="ref-Perez-Costa2010">
-<p>Perez-Costa, X., and D. Camps-Mur. 2010. “IEEE 802.11E QoS and power saving features overview and analysis of combined performance [Accepted from Open Call.” <em>IEEE Wireless Communications</em> 17 (4): 88–96. doi:<a href="https://doi.org/10.1109/MWC.2010.5547926">10.1109/MWC.2010.5547926</a>.</p>
+<p>Perez-Costa, X., and D. Camps-Mur. 2010. “IEEE 802.11E QoS and power saving features overview and analysis of combined performance [Accepted from Open Call.” <em>IEEE Wireless Communications</em> 17 (4): 88–96. <a href="https://doi.org/10.1109/MWC.2010.5547926">https://doi.org/10.1109/MWC.2010.5547926</a>.</p>
 </div>
 <div id="ref-basu2004">
-<p>Basu, Prithwish, and Jason Redi. 2004. “Effect of Overhearing Transmissions on Energy Efficiency in Dense Sensor Networks.” In <em>Proceedings of the 3rd International Symposium on Information Processing in Sensor Networks</em>, 196–204. IPSN ’04. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/984622.984652">10.1145/984622.984652</a>.</p>
+<p>Basu, Prithwish, and Jason Redi. 2004. “Effect of Overhearing Transmissions on Energy Efficiency in Dense Sensor Networks.” In <em>Proceedings of the 3rd International Symposium on Information Processing in Sensor Networks</em>, 196–204. IPSN ’04. New York, NY, USA: ACM. <a href="https://doi.org/10.1145/984622.984652">https://doi.org/10.1145/984622.984652</a>.</p>
 </div>
 <div id="ref-Li2012">
-<p>Li, Chi-Yu, Chunyi Peng, Songwu Lu, and Xinbing Wang. 2012. “Energy-based Rate Adaptation for 802.11n.” In <em>Proceedings of the 18th Annual International Conference on Mobile Computing and Networking</em>, 341–52. Mobicom ’12. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/2348543.2348585">10.1145/2348543.2348585</a>.</p>
+<p>Li, Chi-Yu, Chunyi Peng, Songwu Lu, and Xinbing Wang. 2012. “Energy-based Rate Adaptation for 802.11n.” In <em>Proceedings of the 18th Annual International Conference on Mobile Computing and Networking</em>, 341–52. Mobicom ’12. New York, NY, USA: ACM. <a href="https://doi.org/10.1145/2348543.2348585">https://doi.org/10.1145/2348543.2348585</a>.</p>
 </div>
 <div id="ref-khan2013">
-<p>Khan, Muhammad Owais, Vacha Dave, Yi-Chao Chen, Oliver Jensen, Lili Qiu, Apurv Bhartia, and Swati Rallapalli. 2013. “Model-Driven Energy-Aware Rate Adaptation.” In <em>Proceedings of the Fourteenth Acm International Symposium on Mobile Ad Hoc Networking and Computing</em>, 217–26. MobiHoc ’13. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/2491288.2491300">10.1145/2491288.2491300</a>.</p>
+<p>Khan, Muhammad Owais, Vacha Dave, Yi-Chao Chen, Oliver Jensen, Lili Qiu, Apurv Bhartia, and Swati Rallapalli. 2013. “Model-Driven Energy-Aware Rate Adaptation.” In <em>Proceedings of the Fourteenth Acm International Symposium on Mobile Ad Hoc Networking and Computing</em>, 217–26. MobiHoc ’13. New York, NY, USA: ACM. <a href="https://doi.org/10.1145/2491288.2491300">https://doi.org/10.1145/2491288.2491300</a>.</p>
 </div>
 <div id="ref-contrib-03">
-<p>Ucar, Iñaki, Edzer Pebesma, and Arturo Azcorra. 2018. “Measurement Errors in R.” <em>R Journal</em> (submitted). <a href="https://arxiv.org/abs/1804.08552" class="uri">https://arxiv.org/abs/1804.08552</a>.</p>
+<p>Ucar, Iñaki, Edzer Pebesma, and Arturo Azcorra. 2018. “Measurement Errors in R.” <em>R Journal</em> (submitted). <a href="https://arxiv.org/abs/1804.08552">https://arxiv.org/abs/1804.08552</a>.</p>
 </div>
 <div id="ref-contrib-04a">
 <p>Ucar, Iñaki, Arturo Azcorra, and Albert Banchs. 2014. “Deseeding Energy Consumption of Network Stacks.” In <em>6th Annual International Imdea Networks Workshop</em>.</p>
 </div>
 <div id="ref-contrib-04b">
-<p>Ucar, Iñaki, and Arturo Azcorra. 2015. “Deseeding energy consumption of network stacks.” In <em>IEEE 1st International Forum on Research and Technologies for Society and Industry Leveraging a Better Tomorrow (Rtsi)</em>, 7–16. doi:<a href="https://doi.org/10.1109/RTSI.2015.7325085">10.1109/RTSI.2015.7325085</a>.</p>
+<p>Ucar, Iñaki, and Arturo Azcorra. 2015. “Deseeding energy consumption of network stacks.” In <em>IEEE 1st International Forum on Research and Technologies for Society and Industry Leveraging a Better Tomorrow (Rtsi)</em>, 7–16. <a href="https://doi.org/10.1109/RTSI.2015.7325085">https://doi.org/10.1109/RTSI.2015.7325085</a>.</p>
 </div>
 <div id="ref-contrib-05a">
-<p>Azcorra, Arturo, Iñaki Ucar, Albert Banchs, Francesco Gringoli, and Pablo Serrano. 2017. “<span class="math inline">\(\mu\)</span>Nap: Practical micro-sleeps for 802.11 WLANs.” <em>Computer Communications</em> 110 (September): 175–86. doi:<a href="https://doi.org/10.1016/j.comcom.2017.06.008">10.1016/j.comcom.2017.06.008</a>.</p>
+<p>Azcorra, Arturo, Iñaki Ucar, Albert Banchs, Francesco Gringoli, and Pablo Serrano. 2017. “<span class="math inline">\(\mu\)</span>Nap: Practical micro-sleeps for 802.11 WLANs.” <em>Computer Communications</em> 110 (September): 175–86. <a href="https://doi.org/10.1016/j.comcom.2017.06.008">https://doi.org/10.1016/j.comcom.2017.06.008</a>.</p>
 </div>
 <div id="ref-contrib-05b">
-<p>Azcorra, Arturo, Iñaki Ucar, Albert Banchs, Francesco Gringoli, and Pablo Serrano. 2018. Energy-saving method based on micro-shutdowns for a wireless device in a telecommunications network, issued January 2018. <a href="http://www.google.com/patents/WO2018015601" class="uri">http://www.google.com/patents/WO2018015601</a>.</p>
+<p>Azcorra, Arturo, Iñaki Ucar, Albert Banchs, Francesco Gringoli, and Pablo Serrano. 2018. Energy-saving method based on micro-shutdowns for a wireless device in a telecommunications network, issued January 2018. <a href="http://www.google.com/patents/WO2018015601">http://www.google.com/patents/WO2018015601</a>.</p>
 </div>
 <div id="ref-contrib-06">
-<p>Ucar, Iñaki, Carlos Donato, Pablo Serrano, Andres Garcia-Saavedra, Arturo Azcorra, and Albert Banchs. 2016. “Revisiting 802.11 Rate Adaptation from Energy Consumption’s Perspective.” In <em>Proceedings of the 19th Acm International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems</em>, 27–34. MSWiM ’16. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/2988287.2989149">10.1145/2988287.2989149</a>.</p>
+<p>Ucar, Iñaki, Carlos Donato, Pablo Serrano, Andres Garcia-Saavedra, Arturo Azcorra, and Albert Banchs. 2016. “Revisiting 802.11 Rate Adaptation from Energy Consumption’s Perspective.” In <em>Proceedings of the 19th Acm International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems</em>, 27–34. MSWiM ’16. New York, NY, USA: ACM. <a href="https://doi.org/10.1145/2988287.2989149">https://doi.org/10.1145/2988287.2989149</a>.</p>
 </div>
 <div id="ref-contrib-07">
-<p>Ucar, Iñaki, Carlos Donato, Pablo Serrano, Andres Garcia-Saavedra, Arturo Azcorra, and Albert Banchs. 2018. “On the energy efficiency of rate and transmission power control in 802.11.” <em>Computer Communications</em> 117 (February): 164–74. doi:<a href="https://doi.org/10.1016/j.comcom.2017.07.002">10.1016/j.comcom.2017.07.002</a>.</p>
+<p>Ucar, Iñaki, Carlos Donato, Pablo Serrano, Andres Garcia-Saavedra, Arturo Azcorra, and Albert Banchs. 2018. “On the energy efficiency of rate and transmission power control in 802.11.” <em>Computer Communications</em> 117 (February): 164–74. <a href="https://doi.org/10.1016/j.comcom.2017.07.002">https://doi.org/10.1016/j.comcom.2017.07.002</a>.</p>
 </div>
 <div id="ref-contrib-08a">
-<p>Ucar, Iñaki, Bart Smeets, and Arturo Azcorra. 2018. “simmer: Discrete-Event Simulation for R.” <em>Journal of Statistical Software</em> (accepted for publication). <a href="https://arxiv.org/abs/1705.09746" class="uri">https://arxiv.org/abs/1705.09746</a>.</p>
+<p>Ucar, Iñaki, Bart Smeets, and Arturo Azcorra. 2018. “simmer: Discrete-Event Simulation for R.” <em>Journal of Statistical Software</em> (accepted for publication). <a href="https://arxiv.org/abs/1705.09746">https://arxiv.org/abs/1705.09746</a>.</p>
 </div>
 <div id="ref-contrib-08b">
-<p>Ucar, Iñaki, José Alberto Hernández, Pablo Serrano, and Arturo Azcorra. 2018. “Design and Analysis of 5G Scenarios with simmer: An R Package for Fast DES Prototyping.” <em>IEEE Communications Magazine</em>. doi:<a href="https://doi.org/10.1109/MCOM.2018.1700960">10.1109/MCOM.2018.1700960</a>.</p>
+<p>Ucar, Iñaki, José Alberto Hernández, Pablo Serrano, and Arturo Azcorra. 2018. “Design and Analysis of 5G Scenarios with simmer: An R Package for Fast DES Prototyping.” <em>IEEE Communications Magazine</em> 56 (11): 145–51. <a href="https://doi.org/10.1109/MCOM.2018.1700960">https://doi.org/10.1109/MCOM.2018.1700960</a>.</p>
 </div>
 <div id="ref-flex5gware">
-<p>Bartzoudis, N., O. Font-Bach, M. Miozzo, C. Donato, P. Harbanau, M. Requena, D. López, et al. 2017. “Energy footprint reduction in 5G reconfigurable hotspots via function partitioning and bandwidth adaptation.” In <em>2017 Fifth International Workshop on Cloud Technologies and Energy Efficiency in Mobile Communication Networks (Cleen)</em>, 1–6. doi:<a href="https://doi.org/10.23919/CLEEN.2017.8045934">10.23919/CLEEN.2017.8045934</a>.</p>
+<p>Bartzoudis, N., O. Font-Bach, M. Miozzo, C. Donato, P. Harbanau, M. Requena, D. López, et al. 2017. “Energy footprint reduction in 5G reconfigurable hotspots via function partitioning and bandwidth adaptation.” In <em>2017 Fifth International Workshop on Cloud Technologies and Energy Efficiency in Mobile Communication Networks (Cleen)</em>, 1–6. <a href="https://doi.org/10.23919/CLEEN.2017.8045934">https://doi.org/10.23919/CLEEN.2017.8045934</a>.</p>
 </div>
 <div id="ref-5gnorma">
-<p>Mannweiler, C., M. Breitbach, H. Droste, I. L. Pavón, I. Ucar, P. Schneider, M. Doll, and J. R. Sanchez. 2017. “5G NORMA: System architecture for programmable multi-tenant 5G mobile networks.” In <em>2017 European Conference on Networks and Communications (Eucnc)</em>, 1–6. doi:<a href="https://doi.org/10.1109/EuCNC.2017.7980662">10.1109/EuCNC.2017.7980662</a>.</p>
+<p>Mannweiler, C., M. Breitbach, H. Droste, I. L. Pavón, I. Ucar, P. Schneider, M. Doll, and J. R. Sanchez. 2017. “5G NORMA: System architecture for programmable multi-tenant 5G mobile networks.” In <em>2017 European Conference on Networks and Communications (Eucnc)</em>, 1–6. <a href="https://doi.org/10.1109/EuCNC.2017.7980662">https://doi.org/10.1109/EuCNC.2017.7980662</a>.</p>
 </div>
 <div id="ref-11aa">
-<p>Gringoli, Francesco, Pablo Serrano, Iñaki Ucar, Nicolò Facchi, and Arturo Azcorra. 2017. “Experimental QoE evaluation of multicast video delivery over IEEE 802.11aa WLANs.” <em>IEEE Transactions on Mobile Computing</em> (under review).</p>
+<p>Gringoli, Francesco, Pablo Serrano, Iñaki Ucar, Nicolò Facchi, and Arturo Azcorra. 2018. “Experimental QoE evaluation of multicast video delivery over IEEE 802.11aa WLANs.” <em>IEEE Transactions on Mobile Computing</em> Early Access. <a href="https://doi.org/10.1109/TMC.2018.2876000">https://doi.org/10.1109/TMC.2018.2876000</a>.</p>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="3">
-<li id="fn3"><p>This, as well as the <em>speed scaling</em> principle, is based on a direct relationship between consumption and transmission rate, which is not always the case.<a href="introduction.html#fnref3">↩</a></p></li>
+<li id="fn3"><p>This, as well as the <em>speed scaling</em> principle, is based on a direct relationship between consumption and transmission rate, which is not always the case.<a href="introduction.html#fnref3" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -433,7 +465,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

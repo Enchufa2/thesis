@@ -6,26 +6,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Energy Efficiency in Wireless Communications for Mobile User Devices</title>
-  <meta name="description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>">
+  <meta name="description" content="Tesis doctoral. Universidad Carlos III de Madrid.
+Departamento de Ingeniería Telemática.">
   <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
   <meta property="og:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="img/cover-front.png" />
-  <meta property="og:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  <meta property="og:description" content="Tesis doctoral. Universidad Carlos III de Madrid.
+Departamento de Ingeniería Telemática." />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
   
-  <meta name="twitter:description" content="<p>Tesis doctoral. Universidad Carlos III de Madrid. Departamento de Ingeniería Telemática.</p>" />
+  <meta name="twitter:description" content="Tesis doctoral. Universidad Carlos III de Madrid.
+Departamento de Ingeniería Telemática." />
   <meta name="twitter:image" content="img/cover-front.png" />
 
 <meta name="author" content="Iñaki Úcar">
 
 
-<meta name="date" content="2018-07-05">
+<meta name="date" content="2018-11-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -61,41 +64,67 @@ div.abstract{
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -239,13 +268,13 @@ src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
             <section class="normal" id="section-">
 <div id="ch:07" class="section level1">
 <h1><span class="header-section-number">7</span> Performance of RA-TPC Algorithms in 802.11</h1>
-<p><span class="newthought">So far</span>, we have demonstrated through numerical analysis, and validated experimentally<a href="#fn47" class="footnoteRef" id="fnref47"><sup>47</sup></a>, the existence of a trade-off between two competing performance figures, namely, goodput and energy efficiency. This issue arises even for a single spatial stream in absence of interference. Furthermore, we have discussed in Section <a href="ch-06.html#heuristics-for-ra-tpc-algorithms">6.3.2</a> some ideas about the kind of mechanisms that energy-aware RA-TPC algorithms may incorporate, to leverage the behaviour that we have identified in our analysis in these so-called <em>mode transitions</em>. Summing up, the algorithms should be <em>conservative</em> during these transitions.</p>
+<p><span class="newthought">So far</span>, we have demonstrated through numerical analysis, and validated experimentally<a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a>, the existence of a trade-off between two competing performance figures, namely, goodput and energy efficiency. This issue arises even for a single spatial stream in absence of interference. Furthermore, we have discussed in Section <a href="ch-06.html#heuristics-for-ra-tpc-algorithms">6.3.2</a> some ideas about the kind of mechanisms that energy-aware RA-TPC algorithms may incorporate, to leverage the behaviour that we have identified in our analysis in these so-called <em>mode transitions</em>. Summing up, the algorithms should be <em>conservative</em> during these transitions.</p>
 <p>During that discussion, we neglected the challenge of estimating channel conditions. But in practice, any RA-TPC algorithm has imperfect channel knowledge, and therefore will adapt to changing conditions in a suboptimal way. In this chapter, we will analyse and compare the performance of several representative existing RA algorithms, which also incorporate TPC, to confirm whether the <em>conservativeness</em> in such decisions may have a positive impact on the achieved performance.</p>
 <p>In the following, we first present the algorithms considered and describe a simple simulation scenario to test them. Our results will lead us to a more detailed discussion about <em>conservativeness</em> at mode transitions.</p>
 <div id="algorithms-considered" class="section level2">
 <h2><span class="header-section-number">7.1</span> Algorithms Considered</h2>
-<p>If we take a look at the actual operation of WiFi networks, the Minstrel <span class="citation">(Mcgregor and Smithies <a href="#ref-minstrel">2017</a>)</span> algorithm, which was integrated into the Linux kernel, has become the <em>de facto</em> standard due to its relatively good performance and robustness. However, Minstrel does not consider TPC and, in consequence, there is no TPC in today’s WiFi deployments. Moreover, despite some promising proposals have been presented in the literature, there are very few of them implemented, although there are some ongoing efforts such as the work by the authors of <em>Minstrel-Piano</em> <span class="citation">(Huehn and Sengul <a href="#ref-huehn2012">2012</a>)</span>, who are pushing to release an enhanced version of the latter for the Linux kernel with the goal of promoting it upstream.<a href="#fn48" class="footnoteRef" id="fnref48"><sup>48</sup></a></p>
-<p>As already stated, RA is a very prolific research line in the literature, but the main corpus is dedicated to the MCS adjustment without taking into account the TXP<a href="#fn49" class="footnoteRef" id="fnref49"><sup>49</sup></a>. There is some work considering TPC, but the motivation is typically the performance degradation due to network densification, and the aim is interference mitigation and not energy efficiency. Given that we are interested in assessing RA implementations with TPC support, we consider only open-source algorithms that can be tested using the NS-3 Network Simulator<a href="#fn50" class="footnoteRef" id="fnref50"><sup>50</sup></a>. After a thorough analysis of the literature, we considered the following set of algorithms:</p>
+<p>If we take a look at the actual operation of WiFi networks, the Minstrel <span class="citation">(Mcgregor and Smithies <a href="#ref-minstrel">2017</a>)</span> algorithm, which was integrated into the Linux kernel, has become the <em>de facto</em> standard due to its relatively good performance and robustness. However, Minstrel does not consider TPC and, in consequence, there is no TPC in today’s WiFi deployments. Moreover, despite some promising proposals have been presented in the literature, there are very few of them implemented, although there are some ongoing efforts such as the work by the authors of <em>Minstrel-Piano</em> <span class="citation">(Huehn and Sengul <a href="#ref-huehn2012">2012</a>)</span>, who are pushing to release an enhanced version of the latter for the Linux kernel with the goal of promoting it upstream.<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a></p>
+<p>As already stated, RA is a very prolific research line in the literature, but the main corpus is dedicated to the MCS adjustment without taking into account the TXP<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a>. There is some work considering TPC, but the motivation is typically the performance degradation due to network densification, and the aim is interference mitigation and not energy efficiency. Given that we are interested in assessing RA implementations with TPC support, we consider only open-source algorithms that can be tested using the NS-3 Network Simulator<a href="#fn50" class="footnote-ref" id="fnref50"><sup>50</sup></a>. After a thorough analysis of the literature, we considered the following set of algorithms:</p>
 <dl>
 <dt>Power-controlled Auto Rate Fallback</dt>
 <dd>(PARF), <span class="citation">(Akella et al. <a href="#ref-Akella:2005">2005</a>)</span> which is based on <em>Auto Rate Fallback</em> (ARF) <span class="citation">(Ad Kamerman and Monteban <a href="#ref-kamerman1997wavelan">1997</a>)</span>, one of the earliest RA schemes for 802.11. ARF rate adaptation is based on the frame loss ratio. It tunes the MCS in a very straightforward and intuitive way. The procedure starts with the lowest possible MCS. Then, if either a timer expires or the number of consecutive successful transmissions reach a threshold, the MCS is increased and the timer is reset. The MCS is decreased if either the first transmission at a new rate fails or two consecutive transmissions fail. PARF builds on ARF and tries to reduce the TXP if there is no loss until a minimum threshold is reached or until transmissions start to fail. If transmission fails persist, the TXP is increased.
@@ -261,7 +290,7 @@ src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
 </div>
 <div id="simulation-scenario" class="section level2">
 <h2><span class="header-section-number">7.2</span> Simulation Scenario</h2>
-<p>This evaluation is publicly available,<a href="#fn51" class="footnoteRef" id="fnref51"><sup>51</sup></a> and builds upon the code provided by <span class="citation">Richart, Visca, and Baliosian (<a href="#ref-richart2015">2015</a>)</span><a href="#fn52" class="footnoteRef" id="fnref52"><sup>52</sup></a>. We assessed the proposed algorithms in the toy scenario depicted in Figure <a href="ch-07.html#fig:simulation">7.1</a>. It consists of a single access point (AP) and a single mobile node connected to this AP configured with the 802.11a PHY. The mobile node at the farthest distance at which is able to communicate at the lowest possible rate (6 Mbps) and highest TXP (17 dBm), and then it moves at constant speed towards the AP. The simulation stops when the node is directly in front of the AP and it is able to communicate at the highest possible rate (54 Mbps) and lowest TXP (0 dBm). This way, we sweep through all mode transitions available.</p>
+<p>This evaluation is publicly available,<a href="#fn51" class="footnote-ref" id="fnref51"><sup>51</sup></a> and builds upon the code provided by <span class="citation">Richart, Visca, and Baliosian (<a href="#ref-richart2015">2015</a>)</span><a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a>. We assessed the proposed algorithms in the toy scenario depicted in Figure <a href="ch-07.html#fig:simulation">7.1</a>. It consists of a single access point (AP) and a single mobile node connected to this AP configured with the 802.11a PHY. The mobile node at the farthest distance at which is able to communicate at the lowest possible rate (6 Mbps) and highest TXP (17 dBm), and then it moves at constant speed towards the AP. The simulation stops when the node is directly in front of the AP and it is able to communicate at the highest possible rate (54 Mbps) and lowest TXP (0 dBm). This way, we sweep through all mode transitions available.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:simulation"></span>
 <img src="img/07/simulation.png" alt="Simulation scenario." width="50%" />
@@ -308,22 +337,22 @@ Figure 7.4: MCS (top) and TXP (bottom) evolution per algorithm for a selected ru
 <h2><span class="header-section-number">7.4</span> Conservativeness at Mode Transitions</h2>
 <p>Building on the concept of <em>conservativeness</em> (i.e., the tendency to select a lower MCS/TXP in the transition regions), we explore whether there is any correlation with the energy efficiency achieved by a certain algorithm and this tendency. For that purpose, we first define a proper metric.</p>
 <p>In the first place, we define the <em>normalised average MCS</em> as the area under the curve in Figure <a href="ch-07.html#fig:ns3-evol">7.4</a> (top) normalised by the total simulation time and the maximum MCS:</p>
-<span class="math display" id="eq:MCShat">\[\begin{equation}
+<p><span class="math display" id="eq:MCShat">\[\begin{equation}
  \widehat{\mathrm{MCS}} = \frac{1}{\max(\mathrm{MCS}) \cdot t_\mathrm{sim}}\int_0^{t_\mathrm{sim}} \mathrm{MCS}(t)dt
  \tag{7.1}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>where <span class="math inline">\(t_\mathrm{sim}\)</span> is the simulation time and <span class="math inline">\(\max(\mathrm{MCS})\)</span> is 54 Mbps in our case. The same concept can be applied to the TXP:</p>
-<span class="math display" id="eq:TXPhat">\[\begin{equation}
+<p><span class="math display" id="eq:TXPhat">\[\begin{equation}
  \widehat{\mathrm{TXP}} = \frac{1}{\max(\mathrm{TXP}) \cdot t_\mathrm{sim}}\int_0^{t_\mathrm{sim}} \mathrm{TXP}(t)dt
  \tag{7.2}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>where <span class="math inline">\(\max(\mathrm{TXP})\)</span> is 17 dBm in our case. Both <span class="math inline">\(\widehat{\mathrm{MCS}}\)</span> and <span class="math inline">\(\widehat{\mathrm{TXP}}\)</span> are unitless scores between 0 and 1, and lower values mean a more conservative algorithm. Therefore, we can define a <em>Conservativeness Index</em> (CI) as the inverse of the product of both scores:</p>
-<span class="math display" id="eq:CI">\[\begin{equation}
+<p><span class="math display" id="eq:CI">\[\begin{equation}
  \mathrm{CI} = \frac{1}{\widehat{\mathrm{MCS}} \cdot \widehat{\mathrm{TXP}}}
  \tag{7.3}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>where <span class="math inline">\(\mathrm{CI}&gt;1\)</span>.</p>
-<p>We computed the CI<a href="#fn53" class="footnoteRef" id="fnref53"><sup>53</sup></a> for each device and run, and the final results are depicted in Figure <a href="ch-07.html#fig:ns3-conservativeness">7.5</a> as the average CI across different runs vs. the median energy efficiency in Figure <a href="ch-07.html#fig:ns3-efficiency">7.3</a>.</p>
+<p>We computed the CI<a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a> for each device and run, and the final results are depicted in Figure <a href="ch-07.html#fig:ns3-conservativeness">7.5</a> as the average CI across different runs vs. the median energy efficiency in Figure <a href="ch-07.html#fig:ns3-efficiency">7.3</a>.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:ns3-conservativeness"></span>
 <img src="07-ra-tpc_files/figure-html/ns3-conservativeness-1.png" alt="Relationship between Conservativeness Index (tendency to select lower MCS and TXP) and energy effienciency per simulated device." width="1152" />
@@ -344,37 +373,37 @@ Figure 7.5: Relationship between Conservativeness Index (tendency to select lowe
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-minstrel">
-<p>Mcgregor, A., and D. Smithies. 2017. “Rate adaptation for 802.11 wireless networks: Minstrel.” <a href="http://blog.cerowrt.org/papers/minstrel-sigcomm-final.pdf" class="uri">http://blog.cerowrt.org/papers/minstrel-sigcomm-final.pdf</a>.</p>
+<p>Mcgregor, A., and D. Smithies. 2017. “Rate adaptation for 802.11 wireless networks: Minstrel.” <a href="http://blog.cerowrt.org/papers/minstrel-sigcomm-final.pdf">http://blog.cerowrt.org/papers/minstrel-sigcomm-final.pdf</a>.</p>
 </div>
 <div id="ref-huehn2012">
-<p>Huehn, T., and C. Sengul. 2012. “Practical Power and Rate Control for Wifi.” In <em>2012 21st International Conference on Computer Communications and Networks (Icccn)</em>, 1–7. doi:<a href="https://doi.org/10.1109/ICCCN.2012.6289295">10.1109/ICCCN.2012.6289295</a>.</p>
+<p>Huehn, T., and C. Sengul. 2012. “Practical Power and Rate Control for Wifi.” In <em>2012 21st International Conference on Computer Communications and Networks (Icccn)</em>, 1–7. <a href="https://doi.org/10.1109/ICCCN.2012.6289295">https://doi.org/10.1109/ICCCN.2012.6289295</a>.</p>
 </div>
 <div id="ref-Akella:2005">
-<p>Akella, Aditya, Glenn Judd, Srinivasan Seshan, and Peter Steenkiste. 2005. “Self-Management in Chaotic Wireless Deployments.” In <em>Proceedings of the 11th Annual International Conference on Mobile Computing and Networking</em>, 185–99. MobiCom ’05. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/1080829.1080849">10.1145/1080829.1080849</a>.</p>
+<p>Akella, Aditya, Glenn Judd, Srinivasan Seshan, and Peter Steenkiste. 2005. “Self-Management in Chaotic Wireless Deployments.” In <em>Proceedings of the 11th Annual International Conference on Mobile Computing and Networking</em>, 185–99. MobiCom ’05. New York, NY, USA: ACM. <a href="https://doi.org/10.1145/1080829.1080849">https://doi.org/10.1145/1080829.1080849</a>.</p>
 </div>
 <div id="ref-kamerman1997wavelan">
 <p>Kamerman, Ad, and Leo Monteban. 1997. “WaveLAN-Ii: A High-Performance Wireless Lan for the Unlicensed Band.” <em>Bell Labs Technical Journal</em> 2 (3). Alcatel-Lucent: 118–33.</p>
 </div>
 <div id="ref-richart2015">
-<p>Richart, M., J. Visca, and J. Baliosian. 2015. “Rate, Power and Carrier-Sense Threshold Coordinated Management for High-Density Ieee 802.11 Networks.” In <em>2015 Ifip/Ieee International Symposium on Integrated Network Management (Im)</em>, 139–46. doi:<a href="https://doi.org/10.1109/INM.2015.7140286">10.1109/INM.2015.7140286</a>.</p>
+<p>Richart, M., J. Visca, and J. Baliosian. 2015. “Rate, Power and Carrier-Sense Threshold Coordinated Management for High-Density Ieee 802.11 Networks.” In <em>2015 Ifip/Ieee International Symposium on Integrated Network Management (Im)</em>, 139–46. <a href="https://doi.org/10.1109/INM.2015.7140286">https://doi.org/10.1109/INM.2015.7140286</a>.</p>
 </div>
 <div id="ref-Wong2006">
-<p>Wong, Starsky H. Y., Hao Yang, Songwu Lu, and Vaduvur Bharghavan. 2006. “Robust Rate Adaptation for 802.11 Wireless Networks.” In <em>Proceedings of the 12th Annual International Conference on Mobile Computing and Networking</em>, 146–57. MobiCom ’06. New York, NY, USA: ACM. doi:<a href="https://doi.org/10.1145/1161089.1161107">10.1145/1161089.1161107</a>.</p>
+<p>Wong, Starsky H. Y., Hao Yang, Songwu Lu, and Vaduvur Bharghavan. 2006. “Robust Rate Adaptation for 802.11 Wireless Networks.” In <em>Proceedings of the 12th Annual International Conference on Mobile Computing and Networking</em>, 146–57. MobiCom ’06. New York, NY, USA: ACM. <a href="https://doi.org/10.1145/1161089.1161107">https://doi.org/10.1145/1161089.1161107</a>.</p>
 </div>
 <div id="ref-contrib-07">
-<p>Ucar, Iñaki, Carlos Donato, Pablo Serrano, Andres Garcia-Saavedra, Arturo Azcorra, and Albert Banchs. 2018. “On the energy efficiency of rate and transmission power control in 802.11.” <em>Computer Communications</em> 117 (February): 164–74. doi:<a href="https://doi.org/10.1016/j.comcom.2017.07.002">10.1016/j.comcom.2017.07.002</a>.</p>
+<p>Ucar, Iñaki, Carlos Donato, Pablo Serrano, Andres Garcia-Saavedra, Arturo Azcorra, and Albert Banchs. 2018. “On the energy efficiency of rate and transmission power control in 802.11.” <em>Computer Communications</em> 117 (February): 164–74. <a href="https://doi.org/10.1016/j.comcom.2017.07.002">https://doi.org/10.1016/j.comcom.2017.07.002</a>.</p>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="47">
-<li id="fn47"><p>See Appendix <a href="experimental-validation-of-ra-tpc-inefficiencies.html#experimental-validation-of-ra-tpc-inefficiencies">B</a>.<a href="ch-07.html#fnref47">↩</a></p></li>
-<li id="fn48"><p><a href="https://github.com/thuehn/Minstrel-Blues" class="uri">https://github.com/thuehn/Minstrel-Blues</a><a href="ch-07.html#fnref48">↩</a></p></li>
-<li id="fn49"><p>See <span class="citation">Biaz and Wu (<a href="#ref-biaz2008">2008</a>)</span> for a survey.<a href="ch-07.html#fnref49">↩</a></p></li>
-<li id="fn50"><p><a href="https://www.nsnam.org" class="uri">https://www.nsnam.org</a><a href="ch-07.html#fnref50">↩</a></p></li>
-<li id="fn51"><p><a href="https://github.com/Enchufa2/ns-3-dev-git" class="uri">https://github.com/Enchufa2/ns-3-dev-git</a><a href="ch-07.html#fnref51">↩</a></p></li>
-<li id="fn52"><p><a href="https://github.com/mrichart/ns-3-dev-git" class="uri">https://github.com/mrichart/ns-3-dev-git</a><a href="ch-07.html#fnref52">↩</a></p></li>
-<li id="fn53"><p>It must be taken into account that the CI is not suitable for comparing <em>any</em> algorithm. For instance, in an extreme case, an “algorithm” could select 6 Mbps and 0 dBm always, resulting in a very low CI, but a very bad performance at the same time. The CI should only be used for comparing similarly performant algorithms, as it is the case in our study given the results shown in Figures <a href="ch-07.html#fig:ns3-goodput">7.2</a> and <a href="ch-07.html#fig:ns3-efficiency">7.3</a>.<a href="ch-07.html#fnref53">↩</a></p></li>
+<li id="fn47"><p>See Appendix <a href="experimental-validation-of-ra-tpc-inefficiencies.html#experimental-validation-of-ra-tpc-inefficiencies">B</a>.<a href="ch-07.html#fnref47" class="footnote-back">↩</a></p></li>
+<li id="fn48"><p><a href="https://github.com/thuehn/Minstrel-Blues">https://github.com/thuehn/Minstrel-Blues</a><a href="ch-07.html#fnref48" class="footnote-back">↩</a></p></li>
+<li id="fn49"><p>See <span class="citation">Biaz and Wu (<a href="#ref-biaz2008">2008</a>)</span> for a survey.<a href="ch-07.html#fnref49" class="footnote-back">↩</a></p></li>
+<li id="fn50"><p><a href="https://www.nsnam.org">https://www.nsnam.org</a><a href="ch-07.html#fnref50" class="footnote-back">↩</a></p></li>
+<li id="fn51"><p><a href="https://github.com/Enchufa2/ns-3-dev-git">https://github.com/Enchufa2/ns-3-dev-git</a><a href="ch-07.html#fnref51" class="footnote-back">↩</a></p></li>
+<li id="fn52"><p><a href="https://github.com/mrichart/ns-3-dev-git">https://github.com/mrichart/ns-3-dev-git</a><a href="ch-07.html#fnref52" class="footnote-back">↩</a></p></li>
+<li id="fn53"><p>It must be taken into account that the CI is not suitable for comparing <em>any</em> algorithm. For instance, in an extreme case, an “algorithm” could select 6 Mbps and 0 dBm always, resulting in a very low CI, but a very bad performance at the same time. The CI should only be used for comparing similarly performant algorithms, as it is the case in our study given the results shown in Figures <a href="ch-07.html#fig:ns3-goodput">7.2</a> and <a href="ch-07.html#fig:ns3-efficiency">7.3</a>.<a href="ch-07.html#fnref53" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -429,7 +458,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
