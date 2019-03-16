@@ -146,7 +146,7 @@ data.frame(
 results %>%
   dplyr::mutate(time = time / 1e6, mon = grepl("TRUE", expr)) %>%
   dplyr::group_by(m, mon) %>%
-  dplyr::summarise(mean = mean(time), error = sd(time)/sqrt(n())/1e6) %>%
+  dplyr::summarise(mean = mean(time), error = sd(time)/sqrt(dplyr::n())/1e6) %>%
   ggplot(aes(m, mean, color=forcats::fct_rev(factor(mon)))) + 
   geom_errorbar(aes(ymin=mean-error, ymax=mean+error)) + geom_line() +
   geom_hline(aes(yintercept=mean, color=NULL), data=ref_agg, linetype="dashed") +
