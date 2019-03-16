@@ -8,15 +8,16 @@ Published with [bookdown](https://github.com/rstudio/bookdown).
 
 To cite this thesis in publications use:
 
-> Iñaki Ucar. "Energy Efficiency in Wireless Communications for Mobile User Devices". PhD thesis. Universidad Carlos III de Madrid, July 2018.
+> Iñaki Ucar. "Energy Efficiency in Wireless Communications for Mobile User Devices". PhD thesis. Universidad Carlos III de Madrid, July 2018. URL: http://hdl.handle.net/10016/27448
 
 ```
 @phdthesis{ucar2018energy,
-  author       = {I\~naki Ucar},
-  title        = {Energy Efficiency in Wireless Communications for Mobile User Devices},
-  school       = {Universidad Carlos III de Madrid},
-  year         = {2018},
-  month        = 7
+  author    = {I\~naki Ucar},
+  title     = {Energy Efficiency in Wireless Communications for Mobile User Devices},
+  school    = {Universidad Carlos III de Madrid},
+  year      = {2018},
+  month     = 7,
+  url       = {http://hdl.handle.net/10016/27448}
 }
 ```
 
