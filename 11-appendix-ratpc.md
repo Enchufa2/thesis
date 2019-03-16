@@ -10,7 +10,7 @@ We deployed the testbed illustrated in Figure \@ref(fig:testbedexp), which is a 
 (ref:testbedexp) Experimental setup.
 
 <div class="figure" style="text-align: center">
-<img src="img/06/testbed.png" alt="(ref:testbedexp)" width="932" />
+<img src="img/06/testbed.png" alt="(ref:testbedexp)"  />
 <p class="caption">(\#fig:testbedexp)(ref:testbedexp)</p>
 </div>
 

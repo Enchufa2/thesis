@@ -5,12 +5,12 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Energy Efficiency in Wireless Communications for Mobile User Devices</title>
+  <title>6 Rate Adaptation and Power Control in 802.11 | Energy Efficiency in Wireless Communications for Mobile User Devices</title>
   <meta name="description" content="Tesis doctoral. Universidad Carlos III de Madrid.
 Departamento de Ingeniería Telemática.">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  <meta property="og:title" content="6 Rate Adaptation and Power Control in 802.11 | Energy Efficiency in Wireless Communications for Mobile User Devices" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="img/cover-front.png" />
@@ -19,7 +19,7 @@ Departamento de Ingeniería Telemática." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  <meta name="twitter:title" content="6 Rate Adaptation and Power Control in 802.11 | Energy Efficiency in Wireless Communications for Mobile User Devices" />
   
   <meta name="twitter:description" content="Tesis doctoral. Universidad Carlos III de Madrid.
 Departamento de Ingeniería Telemática." />
@@ -28,7 +28,7 @@ Departamento de Ingeniería Telemática." />
 <meta name="author" content="Iñaki Úcar">
 
 
-<meta name="date" content="2018-11-20">
+<meta name="date" content="2019-03-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -49,6 +49,7 @@ div.abstract{
 </style>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -485,12 +486,12 @@ Figure 6.2: Linear regressions. <span class="math inline">\(\rho_\mathrm{tx}\)</
 <th style="border-bottom:hidden" colspan="1">
 </th>
 <th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="4">
-<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
 <span class="math inline">\(\rho_\mathrm{tx}\)</span> model estimates
 </div>
 </th>
 <th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3">
-<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
 <span class="math inline">\(\rho_\mathrm{rx}\)</span> model estimates
 </div>
 </th>
@@ -781,7 +782,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -791,6 +792,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
@@ -808,7 +813,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

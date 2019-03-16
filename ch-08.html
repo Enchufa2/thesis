@@ -5,12 +5,12 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Energy Efficiency in Wireless Communications for Mobile User Devices</title>
+  <title>8 A Novel Discrete-Event Simulation Framework | Energy Efficiency in Wireless Communications for Mobile User Devices</title>
   <meta name="description" content="Tesis doctoral. Universidad Carlos III de Madrid.
 Departamento de Ingeniería Telemática.">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  <meta property="og:title" content="8 A Novel Discrete-Event Simulation Framework | Energy Efficiency in Wireless Communications for Mobile User Devices" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="img/cover-front.png" />
@@ -19,7 +19,7 @@ Departamento de Ingeniería Telemática." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  <meta name="twitter:title" content="8 A Novel Discrete-Event Simulation Framework | Energy Efficiency in Wireless Communications for Mobile User Devices" />
   
   <meta name="twitter:description" content="Tesis doctoral. Universidad Carlos III de Madrid.
 Departamento de Ingeniería Telemática." />
@@ -28,7 +28,7 @@ Departamento de Ingeniería Telemática." />
 <meta name="author" content="Iñaki Úcar">
 
 
-<meta name="date" content="2018-11-20">
+<meta name="date" content="2019-03-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -49,6 +49,7 @@ div.abstract{
 </style>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -319,7 +320,7 @@ src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
 <p>Figure <a href="ch-08.html#fig:architecture">8.1</a> sketches a UML (Unified Modelling Language) description of the architecture, which constitutes a process-based design, as in many modern DES frameworks. We draw the attention now to the C++ classes (depicted in white).</p>
 
 <div class="figure" style="text-align: center"><span id="fig:architecture"></span>
-<img src="img/08/jss-simmer-design.png" alt="UML diagram of the simulation core architecture. Blue classes represent how R encapsulates the C++ core. Blue circles represent how C++ interfaces with R." width="962" />
+<img src="img/08/jss-simmer-design.png" alt="UML diagram of the simulation core architecture. Blue classes represent how R encapsulates the C++ core. Blue circles represent how C++ interfaces with R."  />
 <p class="caption">
 Figure 8.1: UML diagram of the simulation core architecture. Blue classes represent how R encapsulates the C++ core. Blue circles represent how C++ interfaces with R.
 </p>
@@ -427,20 +428,20 @@ Other tasks (e.g., new arrivals, timers…)
 <h2><span class="header-section-number">8.2</span> A Brief Introduction to <code>simmer</code></h2>
 <p>Note that <code>simmer</code> does not aim at substituting NS-3 or OMNeT++, which are the <em>de facto</em> standards for open-source network simulations. Instead, <code>simmer</code> is designed as a general-purpose DES framework with a human-friendly syntax, and a very gentle learning curve. It can be used to complement other field-specific simulators as a rapid prototyping tool that enable insightful analysis of different designs. As we will illustrate in the next section, with <code>simmer</code> it is simple to simulate relatively complex scenarios, with the added benefit of the availability of many convenient data analysis and representation packages, thanks to the use of R.</p>
 <p>The R application programming interface (API) exposed by <code>simmer</code> revolves around the concept of <em>trajectory</em>, which defines the “path” in the simulation for entities of the same type. A trajectory is a recipe for the arrivals attached to it, an ordered set of actions (or <em>verbs</em>) chained together with the pipe operator <span class="citation">(Bache and Wickham <a href="#ref-CRAN:magrittr">2014</a>)</span> (<code>%&gt;%</code>, whose behaviour is similar to the command-line pipe). The following example illustrates a basic <code>simmer</code> workflow, modeling the classical case of customers being attended by a single clerk with infinite waiting space in a few lines of code:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">library</span>(simmer)</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">cust &lt;-<span class="st"> </span><span class="kw">trajectory</span>(<span class="st">&quot;customer&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="st">  </span><span class="kw">seize</span>(<span class="st">&quot;clerk&quot;</span>, <span class="dt">amount=</span><span class="dv">1</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="st">  </span><span class="kw">timeout</span>(<span class="cf">function</span>() <span class="kw">rexp</span>(<span class="dv">1</span>, <span class="dv">2</span>)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="st">  </span><span class="kw">release</span>(<span class="st">&quot;clerk&quot;</span>, <span class="dt">amount=</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb5-8" data-line-number="8">env &lt;-<span class="st"> </span><span class="kw">simmer</span>(<span class="st">&quot;bank&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="st">  </span><span class="kw">add_resource</span>(<span class="st">&quot;clerk&quot;</span>, <span class="dt">capacity=</span><span class="dv">1</span>, <span class="dt">queue_size=</span><span class="ot">Inf</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="st">  </span><span class="kw">add_generator</span>(<span class="st">&quot;cust&quot;</span>, cust, <span class="cf">function</span>() <span class="kw">rexp</span>(<span class="dv">1</span>, <span class="dv">1</span>)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="st">  </span><span class="kw">run</span>(<span class="dt">until=</span><span class="dv">1000</span>)</a>
-<a class="sourceLine" id="cb5-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb5-13" data-line-number="13">arrivals  &lt;-<span class="st"> </span><span class="kw">get_mon_arrivals</span>(env)</a>
-<a class="sourceLine" id="cb5-14" data-line-number="14">resources &lt;-<span class="st"> </span><span class="kw">get_mon_resources</span>(env)</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(simmer)
+
+cust &lt;-<span class="st"> </span><span class="kw">trajectory</span>(<span class="st">&quot;customer&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">seize</span>(<span class="st">&quot;clerk&quot;</span>, <span class="dt">amount=</span><span class="dv">1</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">timeout</span>(<span class="cf">function</span>() <span class="kw">rexp</span>(<span class="dv">1</span>, <span class="dv">2</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">release</span>(<span class="st">&quot;clerk&quot;</span>, <span class="dt">amount=</span><span class="dv">1</span>)
+
+env &lt;-<span class="st"> </span><span class="kw">simmer</span>(<span class="st">&quot;bank&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">add_resource</span>(<span class="st">&quot;clerk&quot;</span>, <span class="dt">capacity=</span><span class="dv">1</span>, <span class="dt">queue_size=</span><span class="ot">Inf</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">add_generator</span>(<span class="st">&quot;cust&quot;</span>, cust, <span class="cf">function</span>() <span class="kw">rexp</span>(<span class="dv">1</span>, <span class="dv">1</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">run</span>(<span class="dt">until=</span><span class="dv">1000</span>)
+
+arrivals  &lt;-<span class="st"> </span><span class="kw">get_mon_arrivals</span>(env)
+resources &lt;-<span class="st"> </span><span class="kw">get_mon_resources</span>(env)</code></pre>
 <p>Given that both the time at the clerk and between customers are exponential random variables, and the infinite queue length, this example corresponds, in Kendall’s notation, to an M/M/1 queue. It serves to illustrate the two main elements of <code>simmer</code>: the <code>trajectory</code> object and the <code>simmer</code> environment (or <em>simulation environment</em>).</p>
 <p>The <code>customer</code> trajectory defines the behaviour of a generic customer: seize a clerk, spend some time, and release it. The <code>env</code> simulation environment is then defined as one clerk with infinite queue size and a generator of customers, each one following the trajectory defined above. Based on this syntax, the flexibility is provided through a rich set of activities<a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a> that can be appended to trajectories, which support: changing arrivals’ properties (attributes, priority, batches), different interactions with the resources (select, seize, release, change their properties), and the generators (activate, deactivate, change their properties), and even the definition of branches (simple, depending on a condition, or parallel) and loops. Finally, some support to asynchronous programming is also provided (subscription to signals and registration of handlers).</p>
 <p>Not only <code>simmer</code> provides a powerful yet simple syntax, but it is also <em>fast</em>, for example, faster than equivalent frameworks such as SimPy <span class="citation">(Team SimPy <a href="#ref-SimPy">2017</a>)</span> and SimJulia <span class="citation">(Lauwens <a href="#ref-GitHub:SimJulia">2017</a>)</span> for the Python and Julia languages respectively<a href="#fn56" class="footnote-ref" id="fnref56"><sup>56</sup></a>. Furthermore, and perhaps more importantly, <code>simmer</code> implements automatic monitoring capabilities: every event is accounted for by default, both for arrivals (starting and ending times, activity time, ending condition, resources traversed) and resources (server and queue status), and all this information can be easily retrieved in standard R data frames for further processing of results (last two lines of the <em>clerk</em> example).</p>
@@ -450,7 +451,7 @@ Other tasks (e.g., new arrivals, timers…)
 <p>We consider the case of a massive Internet-of-Things (mIoT) scenario, a use case for Long Term Evolution (LTE) and next-generation 5G networks, as defined by the 3GPP <span class="citation">(Hoymann et al. <a href="#ref-miot">2016</a>)</span>. As Figure <a href="ch-08.html#fig:scenario3def">8.2</a> (left) illustrates, we consider a single LTE macrocell in a dense urban area. The buildings in the cell area are populated with <span class="math inline">\(N\)</span> smart meters (for electricity, gas, and water), and each meter operates independently as a Narrowband IoT (NB-IoT) device.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:scenario3def"></span>
-<img src="img/08/scenario.png" alt="Description of the simulation scenario." width="2659" />
+<img src="img/08/scenario.png" alt="Description of the simulation scenario."  />
 <p class="caption">
 Figure 8.2: Description of the simulation scenario.
 </p>
@@ -460,39 +461,39 @@ Figure 8.2: Description of the simulation scenario.
 <div id="implementation-details" class="section level5 unnumbered">
 <h5>Implementation Details</h5>
 <p>This scenario requires a single <code>meter</code> trajectory implementing the logic of each IoT device in an infinite loop, and <span class="math inline">\(N\)</span> workers are attached to it at <span class="math inline">\(t=0\)</span>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># IoT device logic</span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">meter &lt;-<span class="st"> </span><span class="kw">trajectory</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="st">  </span><span class="kw">trap</span>(<span class="st">&quot;reading&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="st">  </span><span class="co"># sleep</span></a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="st">  </span><span class="kw">set_attribute</span>(<span class="st">&quot;P&quot;</span>, <span class="dv">0</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="st">  </span><span class="kw">wait</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="st">  </span><span class="kw">timeout</span>(<span class="cf">function</span>() <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">1</span>, <span class="dv">0</span>, param[[<span class="st">&quot;backoff&quot;</span>]]), <span class="dv">3</span>)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="st">  </span><span class="co"># ra start</span></a>
-<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="st">  </span>simmer<span class="op">::</span><span class="kw">select</span>(preambles, <span class="dt">policy=</span><span class="st">&quot;random&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="st">  </span><span class="kw">seize_selected</span>(</a>
-<a class="sourceLine" id="cb6-11" data-line-number="11">    <span class="dt">continue=</span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>),</a>
-<a class="sourceLine" id="cb6-12" data-line-number="12">    <span class="co"># ra &amp; tx</span></a>
-<a class="sourceLine" id="cb6-13" data-line-number="13">    <span class="dt">post.seize=</span><span class="kw">trajectory</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-14" data-line-number="14"><span class="st">      </span><span class="kw">set_attribute</span>(<span class="st">&quot;P&quot;</span>, Pra) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-15" data-line-number="15"><span class="st">      </span><span class="kw">timeout</span>(Tra) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-16" data-line-number="16"><span class="st">      </span><span class="kw">release_selected</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-17" data-line-number="17"><span class="st">      </span><span class="kw">set_attribute</span>(<span class="st">&quot;P&quot;</span>, Ptx) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-18" data-line-number="18"><span class="st">      </span><span class="kw">timeout</span>(Ttx),</a>
-<a class="sourceLine" id="cb6-19" data-line-number="19">    <span class="co"># ra &amp; backoff &amp; retry</span></a>
-<a class="sourceLine" id="cb6-20" data-line-number="20">    <span class="dt">reject=</span><span class="kw">trajectory</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-21" data-line-number="21"><span class="st">      </span><span class="kw">set_attribute</span>(<span class="st">&quot;P&quot;</span>, Pra) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-22" data-line-number="22"><span class="st">      </span><span class="kw">timeout</span>(Tra) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-23" data-line-number="23"><span class="st">      </span><span class="kw">set_attribute</span>(<span class="st">&quot;P&quot;</span>, Pi) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-24" data-line-number="24"><span class="st">      </span><span class="kw">timeout</span>(<span class="cf">function</span>() <span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>, <span class="dv">1</span>) <span class="op">*</span><span class="st"> </span><span class="fl">1e-3</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-25" data-line-number="25"><span class="st">      </span><span class="kw">rollback</span>(<span class="dv">6</span>, <span class="dt">times=</span>m)</a>
-<a class="sourceLine" id="cb6-26" data-line-number="26">  ) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-27" data-line-number="27"><span class="st">  </span><span class="kw">rollback</span>(<span class="dv">5</span>, <span class="dt">times=</span><span class="ot">Inf</span>)</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># IoT device logic</span>
+meter &lt;-<span class="st"> </span><span class="kw">trajectory</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">trap</span>(<span class="st">&quot;reading&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="co"># sleep</span>
+<span class="st">  </span><span class="kw">set_attribute</span>(<span class="st">&quot;P&quot;</span>, <span class="dv">0</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">wait</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">timeout</span>(<span class="cf">function</span>() <span class="kw">round</span>(<span class="kw">runif</span>(<span class="dv">1</span>, <span class="dv">0</span>, param[[<span class="st">&quot;backoff&quot;</span>]]), <span class="dv">3</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="co"># ra start</span>
+<span class="st">  </span>simmer<span class="op">::</span><span class="kw">select</span>(preambles, <span class="dt">policy=</span><span class="st">&quot;random&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">seize_selected</span>(
+    <span class="dt">continue=</span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>),
+    <span class="co"># ra &amp; tx</span>
+    <span class="dt">post.seize=</span><span class="kw">trajectory</span>() <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">set_attribute</span>(<span class="st">&quot;P&quot;</span>, Pra) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">timeout</span>(Tra) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">release_selected</span>() <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">set_attribute</span>(<span class="st">&quot;P&quot;</span>, Ptx) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">timeout</span>(Ttx),
+    <span class="co"># ra &amp; backoff &amp; retry</span>
+    <span class="dt">reject=</span><span class="kw">trajectory</span>() <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">set_attribute</span>(<span class="st">&quot;P&quot;</span>, Pra) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">timeout</span>(Tra) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">set_attribute</span>(<span class="st">&quot;P&quot;</span>, Pi) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">timeout</span>(<span class="cf">function</span>() <span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>, <span class="dv">1</span>) <span class="op">*</span><span class="st"> </span><span class="fl">1e-3</span>) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">rollback</span>(<span class="dv">6</span>, <span class="dt">times=</span>m)
+  ) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">rollback</span>(<span class="dv">5</span>, <span class="dt">times=</span><span class="ot">Inf</span>)</code></pre>
 <p>Each device registers itself for a given signal (“reading”), and waits in sleep mode until a new reading is requested, which is triggered by a secondary trajectory (<code>trigger</code>).</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># trigger a reading for all the meters every tx_period</span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">trigger &lt;-<span class="st"> </span><span class="kw">trajectory</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="st">  </span><span class="kw">timeout</span>(tx_period) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="st">  </span><span class="kw">send</span>(<span class="st">&quot;reading&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="st">  </span><span class="kw">rollback</span>(<span class="dv">2</span>, <span class="dt">times=</span><span class="ot">Inf</span>)</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># trigger a reading for all the meters every tx_period</span>
+trigger &lt;-<span class="st"> </span><span class="kw">trajectory</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">timeout</span>(tx_period) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">send</span>(<span class="st">&quot;reading&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">rollback</span>(<span class="dv">2</span>, <span class="dt">times=</span><span class="ot">Inf</span>)</code></pre>
 <p>As soon as a new reading is signalled, the RA procedure starts by randomly selecting one of the 54 preambles available, which are defined as resources. The process of seizing a preamble encompasses two sub-trajectories:</p>
 <ul>
 <li>If there are no collisions, the preamble is successfully seized, and the <code>post.seize</code> sub-trajectory is executed, which transmits a reading.</li>
@@ -500,6 +501,8 @@ Figure 8.2: Description of the simulation scenario.
 </ul>
 <p>Both sub-trajectories set the appropriate power levels <span class="math inline">\(P\)</span> for the appropriate amount of time. In this case, these power levels throughout the simulation time are retrieved with the <code>get_mon_attributes()</code> method. The energy is concisely computed and represented using the packages <code>dplyr</code> <span class="citation">(Wickham and Francois <a href="#ref-CRAN:dplyr">2017</a>)</span> and <code>ggplot</code> <span class="citation">(Wickham and Chang <a href="#ref-CRAN:ggplot2">2016</a>)</span>.</p>
 
+<pre><code>## Warning: Detecting old grouped_df format, replacing `vars` attribute by
+## `groups`</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:iot-energy"></span>
 <img src="08-simmer_files/figure-html/iot-energy-1.png" alt="Energy consumption per transmission attempt for different traffic models and number of devices." width="480" />
 <p class="caption">
@@ -682,7 +685,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -692,6 +695,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
@@ -709,7 +716,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

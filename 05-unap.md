@@ -24,7 +24,7 @@ This estimate could be considered valid for a time scale in the range of tens of
 (ref:timing) Generic sleep breakdown.
 
 <div class="figure" style="text-align: center">
-<img src="img/05/timing.png" alt="(ref:timing)" width="416" />
+<img src="img/05/timing.png" alt="(ref:timing)"  />
 <p class="caption">(\#fig:timing)(ref:timing)</p>
 </div>
 
@@ -153,8 +153,8 @@ For instance, we set up a $\Delta t = 32$ $\mu$s by configuring LE node to trans
  <thead>
 <tr>
 <th style="border-bottom:hidden" colspan="2"></th>
-<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">LE frames</div></th>
-<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px;">HE frames</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">LE frames</div></th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">HE frames</div></th>
 </tr>
   <tr>
    <th style="text-align:center;"> $\Delta P$ [dB] </th>
@@ -427,7 +427,7 @@ Finally, after a micro-sleep, two possible situations arise:
 (ref:fragments) RTS/CTS-based fragmented transmission example and $\mu$Nap's behaviour.
 
 <div class="figure" style="text-align: center">
-<img src="img/05/fragments.png" alt="(ref:fragments)" width="606" />
+<img src="img/05/fragments.png" alt="(ref:fragments)"  />
 <p class="caption">(\#fig:fragments)(ref:fragments)</p>
 </div>
  

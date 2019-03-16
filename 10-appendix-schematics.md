@@ -19,14 +19,14 @@ The DUT is powered through `CLEMA 4`, and the DAQ card is attached to `CLEMA 6`,
 (ref:schematicv2) 12.5-20 V and 0-5 A (100 W max.) prototype.
 
 <div class="figure" style="text-align: center">
-<img src="img/03/schematic-v2.png" alt="(ref:schematicv2)" width="859" />
+<img src="img/03/schematic-v2.png" alt="(ref:schematicv2)"  />
 <p class="caption">(\#fig:schematicv2)(ref:schematicv2)</p>
 </div>
 
 (ref:schematicv3) 0-5 V and 0-2 A (10 W max.) prototype.
 
 <div class="figure" style="text-align: center">
-<img src="img/03/schematic-v3.png" alt="(ref:schematicv3)" width="860" />
+<img src="img/03/schematic-v3.png" alt="(ref:schematicv3)"  />
 <p class="caption">(\#fig:schematicv3)(ref:schematicv3)</p>
 </div>
 

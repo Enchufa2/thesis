@@ -5,12 +5,12 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Energy Efficiency in Wireless Communications for Mobile User Devices</title>
+  <title>B Experimental Validation of RA-TPC Inefficiencies | Energy Efficiency in Wireless Communications for Mobile User Devices</title>
   <meta name="description" content="Tesis doctoral. Universidad Carlos III de Madrid.
 Departamento de Ingeniería Telemática.">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  <meta property="og:title" content="B Experimental Validation of RA-TPC Inefficiencies | Energy Efficiency in Wireless Communications for Mobile User Devices" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="img/cover-front.png" />
@@ -19,7 +19,7 @@ Departamento de Ingeniería Telemática." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  <meta name="twitter:title" content="B Experimental Validation of RA-TPC Inefficiencies | Energy Efficiency in Wireless Communications for Mobile User Devices" />
   
   <meta name="twitter:description" content="Tesis doctoral. Universidad Carlos III de Madrid.
 Departamento de Ingeniería Telemática." />
@@ -28,7 +28,7 @@ Departamento de Ingeniería Telemática." />
 <meta name="author" content="Iñaki Úcar">
 
 
-<meta name="date" content="2018-11-20">
+<meta name="date" content="2019-03-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -49,6 +49,7 @@ div.abstract{
 </style>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -274,7 +275,7 @@ src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
 <p>We deployed the testbed illustrated in Figure <a href="experimental-validation-of-ra-tpc-inefficiencies.html#fig:testbedexp">B.1</a>, which is a variation of the one depicted in Section <a href="ch-03.html#per-component-measurements">3.4</a>, Figure <a href="ch-03.html#fig:testbed-card">3.7</a>. It consists of a station (STA) transmitting evenly-spaced maximum-sized UDP packets to an access point (AP), an x86-based Alix6f2 board with a Atheros AR9220 wireless card, running kernel version 3.16.7 and the <code>ath9k</code> driver. The STA is a desktop PC with a Mini PCI Express Qualcomm Atheros QCA9880 wireless network adapter, running Fedora Linux 23 with kernel version 4.2.5 and the <code>ath10k</code> driver<a href="#fn58" class="footnote-ref" id="fnref58"><sup>58</sup></a>. We also installed at the STA a Mini PCI Qualcomm Atheros AR9220 wireless network adapter to monitor the wireless channel.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:testbedexp"></span>
-<img src="img/06/testbed.png" alt="Experimental setup." width="932" />
+<img src="img/06/testbed.png" alt="Experimental setup."  />
 <p class="caption">
 Figure B.1: Experimental setup.
 </p>
@@ -336,7 +337,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -346,6 +347,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
@@ -363,7 +368,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

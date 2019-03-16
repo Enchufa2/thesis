@@ -5,12 +5,12 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Energy Efficiency in Wireless Communications for Mobile User Devices</title>
+  <title>3 A Comprehensive Energy Measurement Framework | Energy Efficiency in Wireless Communications for Mobile User Devices</title>
   <meta name="description" content="Tesis doctoral. Universidad Carlos III de Madrid.
 Departamento de Ingeniería Telemática.">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  <meta property="og:title" content="3 A Comprehensive Energy Measurement Framework | Energy Efficiency in Wireless Communications for Mobile User Devices" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="img/cover-front.png" />
@@ -19,7 +19,7 @@ Departamento de Ingeniería Telemática." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Energy Efficiency in Wireless Communications for Mobile User Devices" />
+  <meta name="twitter:title" content="3 A Comprehensive Energy Measurement Framework | Energy Efficiency in Wireless Communications for Mobile User Devices" />
   
   <meta name="twitter:description" content="Tesis doctoral. Universidad Carlos III de Madrid.
 Departamento de Ingeniería Telemática." />
@@ -28,7 +28,7 @@ Departamento de Ingeniería Telemática." />
 <meta name="author" content="Iñaki Úcar">
 
 
-<meta name="date" content="2018-11-20">
+<meta name="date" content="2019-03-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -49,6 +49,7 @@ div.abstract{
 </style>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -352,15 +353,15 @@ Figure 3.2: Illustration of linearity in an interval <span class="math inline">\
 <div id="automated-uncertainty-handling-in-r-the-errors-package" class="section level3">
 <h3><span class="header-section-number">3.2.3</span> Automated Uncertainty Handling in R: The <code>errors</code> Package</h3>
 <p>Following the approach of the <code>units</code> package, this thesis develops a framework for automatic propagation and reporting of uncertainty: the <code>errors</code> package <span class="citation">(Iñaki Ucar <a href="#ref-R-errors">2018</a>)</span>. This R package aims to provide easy and lightweight handling of measurements with errors, including propagation using the first-order TSM presented in the previous section and a formally sound representation. Errors, given as (combined) standard uncertainties, can be assigned to numeric vectors, matrices and arrays, and then all the mathematical and arithmetic operations are transparently applied to both the values and the associated errors. The following example sets a simple vector with a 5% of error:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(errors)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw">errors</span>(x) &lt;-<span class="st"> </span>x <span class="op">*</span><span class="st"> </span><span class="fl">0.05</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">x</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(errors)
+
+x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span>
+<span class="kw">errors</span>(x) &lt;-<span class="st"> </span>x <span class="op">*</span><span class="st"> </span><span class="fl">0.05</span>
+x</code></pre>
 <pre><code>## Errors: 0.05 0.10 0.15 0.20 0.25
 ## [1] 1 2 3 4 5</code></pre>
 <p>The <code>errors()</code> function assigns or retrieves a vector of errors, which is stored as an attribute of the class <code>errors</code>. Internally, the package provides S3 methods<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a> for the generics belonging to the groups <code>Math</code>, <code>Ops</code> and <code>Summary</code>, plus additional operations such as subsetting (<code>[</code>, <code>[&lt;-</code>, <code>[[</code>, <code>[[&lt;-</code>), concatenation (<code>c()</code>), differentiation (<code>diff</code>), row and column binding (<code>rbind</code>, <code>cbind</code>), or coercion to data frame and matrix.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">data.frame</span>(x, <span class="dv">3</span><span class="op">*</span>x, x<span class="op">^</span><span class="dv">2</span>, <span class="kw">sin</span>(x), <span class="kw">cumsum</span>(x))</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data.frame</span>(x, <span class="dv">3</span><span class="op">*</span>x, x<span class="op">^</span><span class="dv">2</span>, <span class="kw">sin</span>(x), <span class="kw">cumsum</span>(x))</code></pre>
 <pre><code>##         x  X3...x    x.2   sin.x. cumsum.x.
 ## 1 1.00(5)  3.0(2) 1.0(1)  0.84(3)   1.00(5)
 ## 2  2.0(1)  6.0(3) 4.0(4)  0.91(4)    3.0(1)
@@ -375,7 +376,7 @@ Figure 3.2: Illustration of linearity in an interval <span class="math inline">\
 <p>Figure <a href="ch-03.html#fig:testbed">3.3</a> shows the proposed testbed for whole-device measurements. It comprises two laptop computers —the DUT and an access point (AP)— and a controller. The controller is a workstation with the DAQ card installed and it performs the energy measurements. At the same time, it sends commands to the DUT and AP through a wired connection and monitors the wireless connection between DUT and AP through a probe.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:testbed"></span>
-<img src="img/03/testbed.png" alt="Testbed for whole-device energy measurements. The custom circuit is the one sketched in Figure 3.1." width="478" />
+<img src="img/03/testbed.png" alt="Testbed for whole-device energy measurements. The custom circuit is the one sketched in Figure 3.1."  />
 <p class="caption">
 Figure 3.3: Testbed for whole-device energy measurements. The <em>custom circuit</em> is the one sketched in Figure <a href="ch-03.html#fig:circuit">3.1</a>.
 </p>
@@ -637,7 +638,7 @@ Idle
 <p>Zhang, Xinyu, and Kang G. Shin. 2012. “E-MiLi: Energy-Minimizing Idle Listening in Wireless Networks.” <em>IEEE Transactions on Mobile Computing</em> 11 (9): 1441–54. <a href="https://doi.org/10.1109/TMC.2012.112">https://doi.org/10.1109/TMC.2012.112</a>.</p>
 </div>
 <div id="ref-contrib-03">
-<p>Ucar, Iñaki, Edzer Pebesma, and Arturo Azcorra. 2018. “Measurement Errors in R.” <em>R Journal</em> (submitted). <a href="https://arxiv.org/abs/1804.08552">https://arxiv.org/abs/1804.08552</a>.</p>
+<p>Ucar, Iñaki, Edzer Pebesma, and Arturo Azcorra. 2018. “Measurement Errors in R.” <em>The R Journal</em> 10 (2): 549–57. <a href="https://doi.org/10.32614/RJ-2018-075">https://doi.org/10.32614/RJ-2018-075</a>.</p>
 </div>
 </div>
 <div class="footnotes">
@@ -679,7 +680,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -689,6 +690,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
@@ -706,7 +711,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;
