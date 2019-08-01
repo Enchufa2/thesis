@@ -222,7 +222,7 @@ The Sync node transmits 80-byte long beacon-like frames periodically at 48 Mbps,
 
 For instance, we set up a $\Delta t = 32$ $\mu$s by configuring LE node to transmit at slot 15, HE node at slot 17. By moving LE node away from the *ath* node while the HE node is always close, we are able to control the relative power difference $\Delta P$ received by the *ath* node between frames coming from the LE and HE nodes. With the configured timings, we are able to replicate the reception experiment at the *ath* node approximately 976 times per second, thus collecting meaningful statistics in seconds. 
 
-```{r secondcapturet}
+```{r secondcapturet, warning=FALSE, message=FALSE}
 dt <- tibble::tibble(
   a=c(rep("$\\leq$ 5", 5), rep("$\\geq$ 35", 7)),
   b=c("0", "16", "32", "$\\geq$ 48", "$\\geq$ 144", "0", "16", "32", "48", "64", "128", "$\\geq$ 144"),

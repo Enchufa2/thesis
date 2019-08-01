@@ -100,7 +100,7 @@ If we consider a dynamically managed resource (i.e., its capacity changes over t
 
 A further analysis reveals that, in order to preserve correctness and prevent a simulation crash, it is necessary to break down resource releases in two parts with different priorities: the release in itself and a post-release event that tries to serve another arrival from the queue. Thus, every resource manager must be executed *after* releases and *before* post-releases. This and other issues are solved with a priority system (see Table \@ref(tab:priorities)) embedded in the event list implementation that provides a deterministic and consistent execution of simultaneous events.
 
-```{r priorities}
+```{r priorities, warning=FALSE, message=FALSE}
 dt <- tibble::tribble(
   ~Priority,        ~Event,
   "MAX",            "Terminate arrivals",
@@ -227,7 +227,7 @@ bp.vals <- function(x, probs=c(0.05, 0.25, 0.5, 0.75, 0.95)) {
   names(r) <- c("ymin", "lower", "middle", "upper", "ymax")
   r
 }
-ggplot(df, aes(factor(meter_n), dE*tx_period/Tsim, color=factor(backoff))) + 
+ggplot(as.data.frame(df), aes(factor(meter_n), dE*tx_period/Tsim, color=factor(backoff))) +
   stat_summary(fun.data=bp.vals, geom="boxplot", position="dodge") +
   theme(legend.justification=c(0, 1), legend.position=c(0, 1)) +
   ylab("Energy per Tx [mJ]") + xlab("No. of devices") + labs(color="Backoff window [s]")

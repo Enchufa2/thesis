@@ -362,7 +362,7 @@ Figure \@ref(fig:power) shows our results for transmission, reception and overhe
 
 These average values are shown in Table \@ref(tab:powert). First of all, reception and overhearing consumptions are the same within the error, and they are close to idle consumption. Transmission power is more than two times larger than reception. Finally, the sleep state saves almost the 70% of the energy compared to idle/reception.
 
-```{r powert}
+```{r powert, warning=FALSE, message=FALSE}
 dt <- tibble::tibble(
   State = c("Transmission", "Reception", "Overhearing", "Idle", "Sleep", "Idle", "Idle"),
   Mode = c("11a", "11a", "11a", "11a", NA, "11n", "11n"),

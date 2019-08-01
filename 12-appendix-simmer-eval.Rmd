@@ -184,7 +184,7 @@ test_simmer <- function(n, delay) {
 
 (ref:test-simmer-output-table) Output from the `test_simmer()` function.
 
-```{r test-simmer-output-table}
+```{r test-simmer-output-table, warning=FALSE, message=FALSE}
 dt <- tibble::tribble(
 ~Name  , ~`Start time`, ~`End time`, ~`Activity time`,~Finished , ~Replication,
 "test0" ,          1,        2,             1,TRUE     ,           1,

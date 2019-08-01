@@ -129,7 +129,7 @@ ggplot() + geom_line(data=dataG_max, aes(SNR, goodput, group=mode), size=1.1) +
   ggthemes::geom_rangeframe(data=dataG_max, aes(SNR, goodput))
 ```
 
-```{r modes}
+```{r modes, warning=FALSE, message=FALSE}
 dt <- tibble::tibble(
   ` ` = rep("", 8),
   `Mode Index` = 1:8,
