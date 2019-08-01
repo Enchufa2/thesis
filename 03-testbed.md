@@ -148,7 +148,7 @@ Figure \@ref(fig:testbed) shows the proposed testbed for whole-device measuremen
 (ref:testbed) Testbed for whole-device energy measurements. The *custom circuit* is the one sketched in Figure \@ref(fig:circuit).
 
 <div class="figure" style="text-align: center">
-<img src="img/03/testbed.png" alt="(ref:testbed)"  />
+<img src="img/03/testbed.png" alt="(ref:testbed)" width="478" />
 <p class="caption">(\#fig:testbed)(ref:testbed)</p>
 </div>
 

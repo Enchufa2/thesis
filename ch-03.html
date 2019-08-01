@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 A Comprehensive Energy Measurement Framework | Energy Efficiency in Wireless Communications for Mobile User Devices</title>
   <meta name="description" content="Tesis doctoral. Universidad Carlos III de Madrid.
-Departamento de Ingeniería Telemática.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+Departamento de Ingeniería Telemática." />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 A Comprehensive Energy Measurement Framework | Energy Efficiency in Wireless Communications for Mobile User Devices" />
   <meta property="og:type" content="book" />
@@ -25,14 +24,14 @@ Departamento de Ingeniería Telemática." />
 Departamento de Ingeniería Telemática." />
   <meta name="twitter:image" content="img/cover-front.png" />
 
-<meta name="author" content="Iñaki Úcar">
+<meta name="author" content="Iñaki Úcar" />
 
 
-<meta name="date" content="2019-03-16">
+<meta name="date" content="2019-08-01" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="ch-02.html">
@@ -70,7 +69,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -353,15 +351,15 @@ Figure 3.2: Illustration of linearity in an interval <span class="math inline">\
 <div id="automated-uncertainty-handling-in-r-the-errors-package" class="section level3">
 <h3><span class="header-section-number">3.2.3</span> Automated Uncertainty Handling in R: The <code>errors</code> Package</h3>
 <p>Following the approach of the <code>units</code> package, this thesis develops a framework for automatic propagation and reporting of uncertainty: the <code>errors</code> package <span class="citation">(Iñaki Ucar <a href="#ref-R-errors">2018</a>)</span>. This R package aims to provide easy and lightweight handling of measurements with errors, including propagation using the first-order TSM presented in the previous section and a formally sound representation. Errors, given as (combined) standard uncertainties, can be assigned to numeric vectors, matrices and arrays, and then all the mathematical and arithmetic operations are transparently applied to both the values and the associated errors. The following example sets a simple vector with a 5% of error:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(errors)
-
-x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span>
-<span class="kw">errors</span>(x) &lt;-<span class="st"> </span>x <span class="op">*</span><span class="st"> </span><span class="fl">0.05</span>
-x</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(errors)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw">errors</span>(x) &lt;-<span class="st"> </span>x <span class="op">*</span><span class="st"> </span><span class="fl">0.05</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">x</a></code></pre></div>
 <pre><code>## Errors: 0.05 0.10 0.15 0.20 0.25
 ## [1] 1 2 3 4 5</code></pre>
 <p>The <code>errors()</code> function assigns or retrieves a vector of errors, which is stored as an attribute of the class <code>errors</code>. Internally, the package provides S3 methods<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a> for the generics belonging to the groups <code>Math</code>, <code>Ops</code> and <code>Summary</code>, plus additional operations such as subsetting (<code>[</code>, <code>[&lt;-</code>, <code>[[</code>, <code>[[&lt;-</code>), concatenation (<code>c()</code>), differentiation (<code>diff</code>), row and column binding (<code>rbind</code>, <code>cbind</code>), or coercion to data frame and matrix.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data.frame</span>(x, <span class="dv">3</span><span class="op">*</span>x, x<span class="op">^</span><span class="dv">2</span>, <span class="kw">sin</span>(x), <span class="kw">cumsum</span>(x))</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">data.frame</span>(x, <span class="dv">3</span><span class="op">*</span>x, x<span class="op">^</span><span class="dv">2</span>, <span class="kw">sin</span>(x), <span class="kw">cumsum</span>(x))</a></code></pre></div>
 <pre><code>##         x  X3...x    x.2   sin.x. cumsum.x.
 ## 1 1.00(5)  3.0(2) 1.0(1)  0.84(3)   1.00(5)
 ## 2  2.0(1)  6.0(3) 4.0(4)  0.91(4)    3.0(1)
@@ -376,7 +374,7 @@ x</code></pre>
 <p>Figure <a href="ch-03.html#fig:testbed">3.3</a> shows the proposed testbed for whole-device measurements. It comprises two laptop computers —the DUT and an access point (AP)— and a controller. The controller is a workstation with the DAQ card installed and it performs the energy measurements. At the same time, it sends commands to the DUT and AP through a wired connection and monitors the wireless connection between DUT and AP through a probe.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:testbed"></span>
-<img src="img/03/testbed.png" alt="Testbed for whole-device energy measurements. The custom circuit is the one sketched in Figure 3.1."  />
+<img src="img/03/testbed.png" alt="Testbed for whole-device energy measurements. The custom circuit is the one sketched in Figure 3.1." width="478" />
 <p class="caption">
 Figure 3.3: Testbed for whole-device energy measurements. The <em>custom circuit</em> is the one sketched in Figure <a href="ch-03.html#fig:circuit">3.1</a>.
 </p>
@@ -601,23 +599,23 @@ Idle
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-Pathak2011">
-<p>Pathak, Abhinav, Y. Charlie Hu, and Ming Zhang. 2011. “Bootstrapping energy debugging on smartphones.” In <em>Proceedings of the 10th Acm Workshop on Hot Topics in Networks - Hotnets ’11</em>, 1–6. New York, New York, USA: ACM Press. <a href="https://doi.org/10.1145/2070562.2070567">https://doi.org/10.1145/2070562.2070567</a>.</p>
-</div>
-<div id="ref-R-base">
-<p>R Core Team. 2017. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.</p>
-</div>
-<div id="ref-ni2014">
-<p>National Instruments. 2014. “Using a Unity Gain Buffer (Voltage Follower) with a DAQ Device.” White paper. <a href="http://www.ni.com/white-paper/4494/en/">http://www.ni.com/white-paper/4494/en/</a>.</p>
-</div>
-<div id="ref-VIM:2012">
-<p>BIPM, IEC, IFCC, ILAC, IUPAC, IUPAP, ISO, and OIML. 2012. “The International Vocabulary of Metrology – Basic and General Concepts and Associated Terms (VIM), 3rd edn. JCGM 200:2012.” <em>Joint Committee for Guides in Metrology</em>. <a href="http://www.bipm.org/vim">http://www.bipm.org/vim</a>.</p>
+<div id="ref-Arras:1998">
+<p>Arras, K.O. 1998. “An Introduction to Error Propagation: Derivation, Meaning and Examples of Cy = Fx Cx Fx’,” September.</p>
 </div>
 <div id="ref-GUM:2008">
 <p>BIPM, IEC, IFCC, ILAC, IUPAC, IUPAP, ISO, and OIML. 2008. “Evaluation of Measurement Data – Guide to the Expression of Uncertainty in Measurement, 1st edn. JCGM 100:2008.” <em>Joint Committee for Guides in Metrology</em>. <a href="https://www.bipm.org/en/publications/guides/gum.html">https://www.bipm.org/en/publications/guides/gum.html</a>.</p>
 </div>
+<div id="ref-VIM:2012">
+<p>BIPM, IEC, IFCC, ILAC, IUPAC, IUPAP, ISO, and OIML. 2012. “The International Vocabulary of Metrology – Basic and General Concepts and Associated Terms (VIM), 3rd edn. JCGM 200:2012.” <em>Joint Committee for Guides in Metrology</em>. <a href="http://www.bipm.org/vim">http://www.bipm.org/vim</a>.</p>
+</div>
 <div id="ref-Flatter:2018">
 <p>Flater, David. 2018. “Architecture for software-assisted quantity calculus.” <em>Computer Standards &amp; Interfaces</em> 56: 144–47. <a href="https://doi.org/10.1016/j.csi.2017.10.002">https://doi.org/10.1016/j.csi.2017.10.002</a>.</p>
+</div>
+<div id="ref-ni2014">
+<p>National Instruments. 2014. “Using a Unity Gain Buffer (Voltage Follower) with a DAQ Device.” White paper. <a href="http://www.ni.com/white-paper/4494/en/">http://www.ni.com/white-paper/4494/en/</a>.</p>
+</div>
+<div id="ref-Pathak2011">
+<p>Pathak, Abhinav, Y. Charlie Hu, and Ming Zhang. 2011. “Bootstrapping energy debugging on smartphones.” In <em>Proceedings of the 10th Acm Workshop on Hot Topics in Networks - Hotnets ’11</em>, 1–6. New York, New York, USA: ACM Press. <a href="https://doi.org/10.1145/2070562.2070567">https://doi.org/10.1145/2070562.2070567</a>.</p>
 </div>
 <div id="ref-CRAN:units">
 <p>Pebesma, Edzer, and Thomas Mailund. 2018. <em>Units: Measurement Units for R Vectors</em>. <a href="https://CRAN.R-project.org/package=units">https://CRAN.R-project.org/package=units</a>.</p>
@@ -625,20 +623,20 @@ Idle
 <div id="ref-Pebesma:2016:units">
 <p>Pebesma, Edzer, Thomas Mailund, and James Hiebert. 2016. “Measurement Units in R.” <em>The R Journal</em> 8 (2): 486–94. <a href="https://journal.r-project.org/archive/2016/RJ-2016-061/index.html">https://journal.r-project.org/archive/2016/RJ-2016-061/index.html</a>.</p>
 </div>
-<div id="ref-Arras:1998">
-<p>Arras, K.O. 1998. “An Introduction to Error Propagation: Derivation, Meaning and Examples of Cy = Fx Cx Fx’,” September.</p>
-</div>
-<div id="ref-R-errors">
-<p>Ucar, Iñaki. 2018. <em>Errors: Uncertainty Propagation for R Vectors</em>. <a href="https://CRAN.R-project.org/package=errors">https://CRAN.R-project.org/package=errors</a>.</p>
+<div id="ref-R-base">
+<p>R Core Team. 2017. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.</p>
 </div>
 <div id="ref-Serrano2014">
 <p>Serrano, P., A. Garcia-Saavedra, G. Bianchi, A. Banchs, and A. Azcorra. 2015. “Per-Frame Energy Consumption in 802.11 Devices and Its Implication on Modeling and Design.” <em>IEEE/ACM Transactions on Networking</em> 23 (4): 1243–56. <a href="https://doi.org/10.1109/TNET.2014.2322262">https://doi.org/10.1109/TNET.2014.2322262</a>.</p>
 </div>
-<div id="ref-Zhang2012">
-<p>Zhang, Xinyu, and Kang G. Shin. 2012. “E-MiLi: Energy-Minimizing Idle Listening in Wireless Networks.” <em>IEEE Transactions on Mobile Computing</em> 11 (9): 1441–54. <a href="https://doi.org/10.1109/TMC.2012.112">https://doi.org/10.1109/TMC.2012.112</a>.</p>
+<div id="ref-R-errors">
+<p>Ucar, Iñaki. 2018. <em>Errors: Uncertainty Propagation for R Vectors</em>. <a href="https://CRAN.R-project.org/package=errors">https://CRAN.R-project.org/package=errors</a>.</p>
 </div>
 <div id="ref-contrib-03">
 <p>Ucar, Iñaki, Edzer Pebesma, and Arturo Azcorra. 2018. “Measurement Errors in R.” <em>The R Journal</em> 10 (2): 549–57. <a href="https://doi.org/10.32614/RJ-2018-075">https://doi.org/10.32614/RJ-2018-075</a>.</p>
+</div>
+<div id="ref-Zhang2012">
+<p>Zhang, Xinyu, and Kang G. Shin. 2012. “E-MiLi: Energy-Minimizing Idle Listening in Wireless Networks.” <em>IEEE Transactions on Mobile Computing</em> 11 (9): 1441–54. <a href="https://doi.org/10.1109/TMC.2012.112">https://doi.org/10.1109/TMC.2012.112</a>.</p>
 </div>
 </div>
 <div class="footnotes">

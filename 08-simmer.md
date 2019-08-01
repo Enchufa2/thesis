@@ -56,7 +56,7 @@ Figure \@ref(fig:architecture) sketches a UML (Unified Modelling Language) descr
 (ref:architecture) UML diagram of the simulation core architecture. Blue classes represent how R encapsulates the C++ core. Blue circles represent how C++ interfaces with R.
 
 <div class="figure" style="text-align: center">
-<img src="img/08/jss-simmer-design.png" alt="(ref:architecture)"  />
+<img src="img/08/jss-simmer-design.png" alt="(ref:architecture)" width="962" />
 <p class="caption">(\#fig:architecture)(ref:architecture)</p>
 </div>
 
@@ -174,7 +174,7 @@ We consider the case of a massive Internet-of-Things (mIoT) scenario, a use case
 (ref:scenario3def) Description of the simulation scenario.
 
 <div class="figure" style="text-align: center">
-<img src="img/08/scenario.png" alt="(ref:scenario3def)"  />
+<img src="img/08/scenario.png" alt="(ref:scenario3def)" width="2659" />
 <p class="caption">(\#fig:scenario3def)(ref:scenario3def)</p>
 </div>
 
@@ -236,12 +236,6 @@ As soon as a new reading is signalled, the RA procedure starts by randomly selec
 Both sub-trajectories set the appropriate power levels $P$ for the appropriate amount of time. In this case, these power levels throughout the simulation time are retrieved with the `get_mon_attributes()` method. The energy is concisely computed and represented using the packages `dplyr` [@CRAN:dplyr] and `ggplot` [@CRAN:ggplot2].
 
 (ref:iot-energy) Energy consumption per transmission attempt for different traffic models and number of devices.
-
-
-```
-## Warning: Detecting old grouped_df format, replacing `vars` attribute by
-## `groups`
-```
 
 <div class="figure" style="text-align: center">
 <img src="08-simmer_files/figure-html/iot-energy-1.png" alt="(ref:iot-energy)" width="480" />

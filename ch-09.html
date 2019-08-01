@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>9 Conclusions and Future Work | Energy Efficiency in Wireless Communications for Mobile User Devices</title>
   <meta name="description" content="Tesis doctoral. Universidad Carlos III de Madrid.
-Departamento de Ingeniería Telemática.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+Departamento de Ingeniería Telemática." />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content="9 Conclusions and Future Work | Energy Efficiency in Wireless Communications for Mobile User Devices" />
   <meta property="og:type" content="book" />
@@ -25,14 +24,14 @@ Departamento de Ingeniería Telemática." />
 Departamento de Ingeniería Telemática." />
   <meta name="twitter:image" content="img/cover-front.png" />
 
-<meta name="author" content="Iñaki Úcar">
+<meta name="author" content="Iñaki Úcar" />
 
 
-<meta name="date" content="2019-03-16">
+<meta name="date" content="2019-08-01" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="ch-08.html">
@@ -70,7 +69,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -282,7 +280,7 @@ src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
 <p><span class="newthought">At a higher level</span> of the communication stack, we have revisited 802.11 rate adaptation (RA) and transmission power control (TPC) from the energy standpoint. Previous studies pointed out that MIMO rate adaptation under 802.11n poses a trade-off between throughput and energy efficiency maximisation. We have in turn demonstrated with an analytical model that, even for single spatial streams without interfering traffic, these are competing objectives.</p>
 <p>Our findings <span class="citation">(Ucar et al. <a href="#ref-contrib-06">2016</a>)</span> show that RA-TPC techniques may incur inefficiencies at mode transitions, which suggests that small goodput degradations may lead to energy efficiency gains. Several heuristics have been provided and discussed to manage those transitions in an energy-efficient manner. We have shown that transitions leading to a lower rate and transmission power are particularly challenging, as they imply predicting channel quality drops to trigger early transitions.</p>
 <p>We have extended <span class="citation">(Iñaki Ucar, Donato, et al. <a href="#ref-contrib-07">2018</a>)</span> these results by simulating several state-of-the-art RA-TPC algorithms and assessing their performance at mode transitions. The metric developed for such comparison confirms that certain <em>conservativeness</em> can resolve the trade-off between throughput and energy efficiency optimality, thus making a difference for properly designed energy-aware algorithms. Future work may delve into the proper heuristics to leverage these findings to develop novel energy-aware RA-TPC algorithms.</p>
-<p><span class="newthought">Finally</span>, our research experience on simulations with highly complex network simulators pointed us towards the need for new less-specialised tools enabling easier and faster prototyping. As a result, we have developed <code>simmer</code> <span class="citation">(Iñaki Ucar, Smeets, and Azcorra <a href="#ref-contrib-08a">2018</a>)</span>, an easy-to-use yet powerful process-oriented and trajectory-based discrete-event simulation framework for R. This package combines a flexible API and a robust and fast simulation core written in C++ with automatic monitoring capabilities, which enables the user to focus on the system model.</p>
+<p><span class="newthought">Finally</span>, our research experience on simulations with highly complex network simulators pointed us towards the need for new less-specialised tools enabling easier and faster prototyping. As a result, we have developed <code>simmer</code> <span class="citation">(Ucar, Smeets, and Azcorra <a href="#ref-contrib-08a">2019</a>)</span>, an easy-to-use yet powerful process-oriented and trajectory-based discrete-event simulation framework for R. This package combines a flexible API and a robust and fast simulation core written in C++ with automatic monitoring capabilities, which enables the user to focus on the system model.</p>
 
 <p>We have demonstrated <span class="citation">(Iñaki Ucar, Hernández, et al. <a href="#ref-contrib-08b">2018</a>)</span> the usability and suitability of <code>simmer</code> for fast prototyping of a 5G-inspired scenario, which consists of the energy modelling of thousands of IoT metering devices connected to an LTE macrocell. The model developed highlights in just a few lines of code the main characteristics that make <code>simmer</code> attractive for researchers and practitioners in communications research.</p>
 <p><span class="newthought">Future work</span> may include the application of the methodologies developed and lessons learned in this thesis to a wider range of battery-powered devices. Particularly, the Internet-of-Things has been receiving an increased attention, and the market of wearable devices as well as sensor networks for smart cities and smart homes is growing fast. All these devices are aimed at very specific tasks, and thus they share simplicity in terms of hardware and software architecture. As a result, the linear model can be applied to describe the energy behaviour of such devices, and the measurement methodologies developed in this work are well-suited for a complete characterisation.</p>
@@ -297,23 +295,20 @@ src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
 
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-Serrano2014">
-<p>Serrano, P., A. Garcia-Saavedra, G. Bianchi, A. Banchs, and A. Azcorra. 2015. “Per-Frame Energy Consumption in 802.11 Devices and Its Implication on Modeling and Design.” <em>IEEE/ACM Transactions on Networking</em> 23 (4): 1243–56. <a href="https://doi.org/10.1109/TNET.2014.2322262">https://doi.org/10.1109/TNET.2014.2322262</a>.</p>
-</div>
-<div id="ref-contrib-03">
-<p>Ucar, Iñaki, Edzer Pebesma, and Arturo Azcorra. 2018. “Measurement Errors in R.” <em>The R Journal</em> 10 (2): 549–57. <a href="https://doi.org/10.32614/RJ-2018-075">https://doi.org/10.32614/RJ-2018-075</a>.</p>
-</div>
-<div id="ref-contrib-04a">
-<p>Ucar, Iñaki, Arturo Azcorra, and Albert Banchs. 2014. “Deseeding Energy Consumption of Network Stacks.” In <em>6th Annual International Imdea Networks Workshop</em>.</p>
-</div>
-<div id="ref-contrib-04b">
-<p>Ucar, Iñaki, and Arturo Azcorra. 2015. “Deseeding energy consumption of network stacks.” In <em>IEEE 1st International Forum on Research and Technologies for Society and Industry Leveraging a Better Tomorrow (Rtsi)</em>, 7–16. <a href="https://doi.org/10.1109/RTSI.2015.7325085">https://doi.org/10.1109/RTSI.2015.7325085</a>.</p>
-</div>
 <div id="ref-contrib-05a">
 <p>Azcorra, Arturo, Iñaki Ucar, Albert Banchs, Francesco Gringoli, and Pablo Serrano. 2017. “<span class="math inline">\(\mu\)</span>Nap: Practical micro-sleeps for 802.11 WLANs.” <em>Computer Communications</em> 110 (September): 175–86. <a href="https://doi.org/10.1016/j.comcom.2017.06.008">https://doi.org/10.1016/j.comcom.2017.06.008</a>.</p>
 </div>
 <div id="ref-contrib-05b">
 <p>Azcorra, Arturo, Iñaki Ucar, Albert Banchs, Francesco Gringoli, and Pablo Serrano. 2018. Energy-saving method based on micro-shutdowns for a wireless device in a telecommunications network, issued January 2018. <a href="http://www.google.com/patents/WO2018015601">http://www.google.com/patents/WO2018015601</a>.</p>
+</div>
+<div id="ref-Serrano2014">
+<p>Serrano, P., A. Garcia-Saavedra, G. Bianchi, A. Banchs, and A. Azcorra. 2015. “Per-Frame Energy Consumption in 802.11 Devices and Its Implication on Modeling and Design.” <em>IEEE/ACM Transactions on Networking</em> 23 (4): 1243–56. <a href="https://doi.org/10.1109/TNET.2014.2322262">https://doi.org/10.1109/TNET.2014.2322262</a>.</p>
+</div>
+<div id="ref-contrib-04b">
+<p>Ucar, Iñaki, and Arturo Azcorra. 2015. “Deseeding energy consumption of network stacks.” In <em>IEEE 1st International Forum on Research and Technologies for Society and Industry Leveraging a Better Tomorrow (Rtsi)</em>, 7–16. <a href="https://doi.org/10.1109/RTSI.2015.7325085">https://doi.org/10.1109/RTSI.2015.7325085</a>.</p>
+</div>
+<div id="ref-contrib-04a">
+<p>Ucar, Iñaki, Arturo Azcorra, and Albert Banchs. 2014. “Deseeding Energy Consumption of Network Stacks.” In <em>6th Annual International Imdea Networks Workshop</em>.</p>
 </div>
 <div id="ref-contrib-06">
 <p>Ucar, Iñaki, Carlos Donato, Pablo Serrano, Andres Garcia-Saavedra, Arturo Azcorra, and Albert Banchs. 2016. “Revisiting 802.11 Rate Adaptation from Energy Consumption’s Perspective.” In <em>Proceedings of the 19th Acm International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems</em>, 27–34. MSWiM ’16. New York, NY, USA: ACM. <a href="https://doi.org/10.1145/2988287.2989149">https://doi.org/10.1145/2988287.2989149</a>.</p>
@@ -321,11 +316,14 @@ src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
 <div id="ref-contrib-07">
 <p>Ucar, Iñaki, Carlos Donato, Pablo Serrano, Andres Garcia-Saavedra, Arturo Azcorra, and Albert Banchs. 2018. “On the energy efficiency of rate and transmission power control in 802.11.” <em>Computer Communications</em> 117 (February): 164–74. <a href="https://doi.org/10.1016/j.comcom.2017.07.002">https://doi.org/10.1016/j.comcom.2017.07.002</a>.</p>
 </div>
-<div id="ref-contrib-08a">
-<p>Ucar, Iñaki, Bart Smeets, and Arturo Azcorra. 2018. “simmer: Discrete-Event Simulation for R.” <em>Journal of Statistical Software</em> (accepted for publication). <a href="https://arxiv.org/abs/1705.09746">https://arxiv.org/abs/1705.09746</a>.</p>
-</div>
 <div id="ref-contrib-08b">
 <p>Ucar, Iñaki, José Alberto Hernández, Pablo Serrano, and Arturo Azcorra. 2018. “Design and Analysis of 5G Scenarios with simmer: An R Package for Fast DES Prototyping.” <em>IEEE Communications Magazine</em> 56 (11): 145–51. <a href="https://doi.org/10.1109/MCOM.2018.1700960">https://doi.org/10.1109/MCOM.2018.1700960</a>.</p>
+</div>
+<div id="ref-contrib-03">
+<p>Ucar, Iñaki, Edzer Pebesma, and Arturo Azcorra. 2018. “Measurement Errors in R.” <em>The R Journal</em> 10 (2): 549–57. <a href="https://doi.org/10.32614/RJ-2018-075">https://doi.org/10.32614/RJ-2018-075</a>.</p>
+</div>
+<div id="ref-contrib-08a">
+<p>Ucar, Iñaki, Bart Smeets, and Arturo Azcorra. 2019. “simmer: Discrete-Event Simulation for R.” <em>Journal of Statistical Software</em> 90 (2): 1–30. <a href="https://doi.org/10.18637/jss.v090.i02">https://doi.org/10.18637/jss.v090.i02</a>.</p>
 </div>
 </div>
             </section>

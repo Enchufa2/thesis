@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>C Performance Evaluation of simmer | Energy Efficiency in Wireless Communications for Mobile User Devices</title>
   <meta name="description" content="Tesis doctoral. Universidad Carlos III de Madrid.
-Departamento de Ingeniería Telemática.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+Departamento de Ingeniería Telemática." />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content="C Performance Evaluation of simmer | Energy Efficiency in Wireless Communications for Mobile User Devices" />
   <meta property="og:type" content="book" />
@@ -25,14 +24,14 @@ Departamento de Ingeniería Telemática." />
 Departamento de Ingeniería Telemática." />
   <meta name="twitter:image" content="img/cover-front.png" />
 
-<meta name="author" content="Iñaki Úcar">
+<meta name="author" content="Iñaki Úcar" />
 
 
-<meta name="date" content="2019-03-16">
+<meta name="date" content="2019-08-01" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="experimental-validation-of-ra-tpc-inefficiencies.html">
@@ -70,7 +69,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -274,96 +272,96 @@ src="https://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a></li>
 <div id="comparison-with-similar-frameworks" class="section level2">
 <h2><span class="header-section-number">C.1</span> Comparison with Similar Frameworks</h2>
 <p>A significant effort has been put into the design of <code>simmer</code> in order to make it performant enough to run general and relatively large simulation models in a reasonable amount of time. In this regard, a relevant comparison can be made against other general-purpose DES frameworks such as <code>SimPy</code> and <code>SimJulia</code>. To this effect, we simulate a simple M/M/1 queueing system as follows:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;simmer&quot;</span>)
-
-test_mm1_simmer &lt;-<span class="st"> </span><span class="cf">function</span>(n, m, <span class="dt">mon=</span><span class="ot">FALSE</span>) {
-  mm1 &lt;-<span class="st"> </span><span class="kw">trajectory</span>() <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">seize</span>(<span class="st">&quot;server&quot;</span>, <span class="dv">1</span>) <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">timeout</span>(<span class="cf">function</span>() <span class="kw">rexp</span>(<span class="dv">1</span>, <span class="fl">1.1</span>)) <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">release</span>(<span class="st">&quot;server&quot;</span>, <span class="dv">1</span>)
-
-  env &lt;-<span class="st"> </span><span class="kw">simmer</span>() <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">add_resource</span>(<span class="st">&quot;server&quot;</span>, <span class="dv">1</span>, <span class="dt">mon=</span>mon) <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">add_generator</span>(<span class="st">&quot;customer&quot;</span>, mm1, <span class="cf">function</span>() <span class="kw">rexp</span>(m, <span class="dv">1</span>), <span class="dt">mon=</span>mon) <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">run</span>(<span class="dt">until=</span>n)
-}</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">library</span>(<span class="st">&quot;simmer&quot;</span>)</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">test_mm1_simmer &lt;-<span class="st"> </span><span class="cf">function</span>(n, m, <span class="dt">mon=</span><span class="ot">FALSE</span>) {</a>
+<a class="sourceLine" id="cb8-4" data-line-number="4">  mm1 &lt;-<span class="st"> </span><span class="kw">trajectory</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="st">    </span><span class="kw">seize</span>(<span class="st">&quot;server&quot;</span>, <span class="dv">1</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="st">    </span><span class="kw">timeout</span>(<span class="cf">function</span>() <span class="kw">rexp</span>(<span class="dv">1</span>, <span class="fl">1.1</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="st">    </span><span class="kw">release</span>(<span class="st">&quot;server&quot;</span>, <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb8-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9">  env &lt;-<span class="st"> </span><span class="kw">simmer</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="st">    </span><span class="kw">add_resource</span>(<span class="st">&quot;server&quot;</span>, <span class="dv">1</span>, <span class="dt">mon=</span>mon) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="st">    </span><span class="kw">add_generator</span>(<span class="st">&quot;customer&quot;</span>, mm1, <span class="cf">function</span>() <span class="kw">rexp</span>(m, <span class="dv">1</span>), <span class="dt">mon=</span>mon) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="st">    </span><span class="kw">run</span>(<span class="dt">until=</span>n)</a>
+<a class="sourceLine" id="cb8-13" data-line-number="13">}</a></code></pre></div>
 <p>With the selected arrival rate, <span class="math inline">\(\lambda=1\)</span>, this test simulates an average of <code>n</code> arrivals entering a nearly saturated system (<span class="math inline">\(\rho=1/1.1\)</span>). Given that <code>simmer</code> generators are able to create arrivals in batches (i.e., more than one arrival for each function call) for improved performance, the parameter <code>m</code> controls the size of the batch. Finally, the <code>mon</code> flag enables or disables monitoring.</p>
 <p>Let us build now the equivalent model using <code>SimPy</code>, with base Python for random number generation. We prepare the Python benchmark from R using the <code>rPython</code> package <span class="citation">(Bellosta <a href="#ref-CRAN:rPython">2015</a>)</span> as follows:</p>
-<pre class="sourceCode r"><code class="sourceCode r">rPython<span class="op">::</span><span class="kw">python.exec</span>(<span class="st">&quot;</span>
-<span class="st">import simpy, random, time</span>
-
-<span class="st">def test_mm1(n):</span>
-<span class="st">  def exp_source(env, lambd, server, mu):</span>
-<span class="st">      while True:</span>
-<span class="st">          dt = random.expovariate(lambd)</span>
-<span class="st">          yield env.timeout(dt)</span>
-<span class="st">          env.process(customer(env, server, mu))</span>
-
-<span class="st">  def customer(env, server, mu):</span>
-<span class="st">      with server.request() as req:</span>
-<span class="st">          yield req</span>
-<span class="st">          dt = random.expovariate(mu)</span>
-<span class="st">          yield env.timeout(dt)</span>
-
-<span class="st">  env = simpy.Environment()</span>
-<span class="st">  server = simpy.Resource(env, capacity=1)</span>
-<span class="st">  env.process(exp_source(env, 1, server, 1.1))</span>
-<span class="st">  env.run(until=n)</span>
-
-<span class="st">def benchmark(n, times):</span>
-<span class="st">  results = []</span>
-<span class="st">  for i in range(0, times):</span>
-<span class="st">    start = time.time()</span>
-<span class="st">    test_mm1(n)</span>
-<span class="st">    results.append(time.time() - start)</span>
-<span class="st">  return results</span>
-<span class="st">&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">rPython<span class="op">::</span><span class="kw">python.exec</span>(<span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="st">import simpy, random, time</span></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="st">def test_mm1(n):</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="st">  def exp_source(env, lambd, server, mu):</span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="st">      while True:</span></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="st">          dt = random.expovariate(lambd)</span></a>
+<a class="sourceLine" id="cb9-8" data-line-number="8"><span class="st">          yield env.timeout(dt)</span></a>
+<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="st">          env.process(customer(env, server, mu))</span></a>
+<a class="sourceLine" id="cb9-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb9-11" data-line-number="11"><span class="st">  def customer(env, server, mu):</span></a>
+<a class="sourceLine" id="cb9-12" data-line-number="12"><span class="st">      with server.request() as req:</span></a>
+<a class="sourceLine" id="cb9-13" data-line-number="13"><span class="st">          yield req</span></a>
+<a class="sourceLine" id="cb9-14" data-line-number="14"><span class="st">          dt = random.expovariate(mu)</span></a>
+<a class="sourceLine" id="cb9-15" data-line-number="15"><span class="st">          yield env.timeout(dt)</span></a>
+<a class="sourceLine" id="cb9-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb9-17" data-line-number="17"><span class="st">  env = simpy.Environment()</span></a>
+<a class="sourceLine" id="cb9-18" data-line-number="18"><span class="st">  server = simpy.Resource(env, capacity=1)</span></a>
+<a class="sourceLine" id="cb9-19" data-line-number="19"><span class="st">  env.process(exp_source(env, 1, server, 1.1))</span></a>
+<a class="sourceLine" id="cb9-20" data-line-number="20"><span class="st">  env.run(until=n)</span></a>
+<a class="sourceLine" id="cb9-21" data-line-number="21"></a>
+<a class="sourceLine" id="cb9-22" data-line-number="22"><span class="st">def benchmark(n, times):</span></a>
+<a class="sourceLine" id="cb9-23" data-line-number="23"><span class="st">  results = []</span></a>
+<a class="sourceLine" id="cb9-24" data-line-number="24"><span class="st">  for i in range(0, times):</span></a>
+<a class="sourceLine" id="cb9-25" data-line-number="25"><span class="st">    start = time.time()</span></a>
+<a class="sourceLine" id="cb9-26" data-line-number="26"><span class="st">    test_mm1(n)</span></a>
+<a class="sourceLine" id="cb9-27" data-line-number="27"><span class="st">    results.append(time.time() - start)</span></a>
+<a class="sourceLine" id="cb9-28" data-line-number="28"><span class="st">  return results</span></a>
+<a class="sourceLine" id="cb9-29" data-line-number="29"><span class="st">&quot;</span>)</a></code></pre></div>
 <p>Equivalently, this can be done for <code>SimJulia</code> using the <code>rjulia</code> package <span class="citation">(Gong, Keys, and Maechler <a href="#ref-GitHub:rJulia">2017</a>)</span>. Once more, <code>n</code> controls the average number of arrivals:</p>
-<pre class="sourceCode r"><code class="sourceCode r">rjulia<span class="op">::</span><span class="kw">julia_init</span>()
-rjulia<span class="op">::</span><span class="kw">julia_void_eval</span>(<span class="st">&quot;</span>
-<span class="st">using SimJulia, Distributions</span>
-
-<span class="st">function test_mm1(n::Float64)</span>
-<span class="st">  function exp_source(env::Environment, lambd::Float64,</span>
-<span class="st">                      server::Resource, mu::Float64)</span>
-<span class="st">    while true</span>
-<span class="st">      dt = rand(Exponential(1/lambd))</span>
-<span class="st">      yield(Timeout(env, dt))</span>
-<span class="st">      Process(env, customer, server, mu)</span>
-<span class="st">    end</span>
-<span class="st">  end</span>
-
-<span class="st">  function customer(env::Environment, server::Resource, mu::Float64)</span>
-<span class="st">    yield(Request(server))</span>
-<span class="st">    dt = rand(Exponential(1/mu))</span>
-<span class="st">    yield(Timeout(env, dt))</span>
-<span class="st">    yield(Release(server))</span>
-<span class="st">  end</span>
-
-<span class="st">  env = Environment()</span>
-<span class="st">  server = Resource(env, 1)</span>
-<span class="st">  Process(env, exp_source, 1.0, server, 1.1)</span>
-<span class="st">  run(env, n)</span>
-<span class="st">end</span>
-
-<span class="st">function benchmark(n::Float64, times::Int)</span>
-<span class="st">  results = Float64[]</span>
-<span class="st">  test_mm1(n)</span>
-<span class="st">  for i = 1:times</span>
-<span class="st">    push!(results, @elapsed test_mm1(n))</span>
-<span class="st">  end</span>
-<span class="st">  return(results)</span>
-<span class="st">end</span>
-<span class="st">&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">rjulia<span class="op">::</span><span class="kw">julia_init</span>()</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">rjulia<span class="op">::</span><span class="kw">julia_void_eval</span>(<span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="st">using SimJulia, Distributions</span></a>
+<a class="sourceLine" id="cb10-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="st">function test_mm1(n::Float64)</span></a>
+<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="st">  function exp_source(env::Environment, lambd::Float64,</span></a>
+<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="st">                      server::Resource, mu::Float64)</span></a>
+<a class="sourceLine" id="cb10-8" data-line-number="8"><span class="st">    while true</span></a>
+<a class="sourceLine" id="cb10-9" data-line-number="9"><span class="st">      dt = rand(Exponential(1/lambd))</span></a>
+<a class="sourceLine" id="cb10-10" data-line-number="10"><span class="st">      yield(Timeout(env, dt))</span></a>
+<a class="sourceLine" id="cb10-11" data-line-number="11"><span class="st">      Process(env, customer, server, mu)</span></a>
+<a class="sourceLine" id="cb10-12" data-line-number="12"><span class="st">    end</span></a>
+<a class="sourceLine" id="cb10-13" data-line-number="13"><span class="st">  end</span></a>
+<a class="sourceLine" id="cb10-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb10-15" data-line-number="15"><span class="st">  function customer(env::Environment, server::Resource, mu::Float64)</span></a>
+<a class="sourceLine" id="cb10-16" data-line-number="16"><span class="st">    yield(Request(server))</span></a>
+<a class="sourceLine" id="cb10-17" data-line-number="17"><span class="st">    dt = rand(Exponential(1/mu))</span></a>
+<a class="sourceLine" id="cb10-18" data-line-number="18"><span class="st">    yield(Timeout(env, dt))</span></a>
+<a class="sourceLine" id="cb10-19" data-line-number="19"><span class="st">    yield(Release(server))</span></a>
+<a class="sourceLine" id="cb10-20" data-line-number="20"><span class="st">  end</span></a>
+<a class="sourceLine" id="cb10-21" data-line-number="21"></a>
+<a class="sourceLine" id="cb10-22" data-line-number="22"><span class="st">  env = Environment()</span></a>
+<a class="sourceLine" id="cb10-23" data-line-number="23"><span class="st">  server = Resource(env, 1)</span></a>
+<a class="sourceLine" id="cb10-24" data-line-number="24"><span class="st">  Process(env, exp_source, 1.0, server, 1.1)</span></a>
+<a class="sourceLine" id="cb10-25" data-line-number="25"><span class="st">  run(env, n)</span></a>
+<a class="sourceLine" id="cb10-26" data-line-number="26"><span class="st">end</span></a>
+<a class="sourceLine" id="cb10-27" data-line-number="27"></a>
+<a class="sourceLine" id="cb10-28" data-line-number="28"><span class="st">function benchmark(n::Float64, times::Int)</span></a>
+<a class="sourceLine" id="cb10-29" data-line-number="29"><span class="st">  results = Float64[]</span></a>
+<a class="sourceLine" id="cb10-30" data-line-number="30"><span class="st">  test_mm1(n)</span></a>
+<a class="sourceLine" id="cb10-31" data-line-number="31"><span class="st">  for i = 1:times</span></a>
+<a class="sourceLine" id="cb10-32" data-line-number="32"><span class="st">    push!(results, @elapsed test_mm1(n))</span></a>
+<a class="sourceLine" id="cb10-33" data-line-number="33"><span class="st">  end</span></a>
+<a class="sourceLine" id="cb10-34" data-line-number="34"><span class="st">  return(results)</span></a>
+<a class="sourceLine" id="cb10-35" data-line-number="35"><span class="st">end</span></a>
+<a class="sourceLine" id="cb10-36" data-line-number="36"><span class="st">&quot;</span>)</a></code></pre></div>
 <p>It can be noted that in both cases there is no monitoring involved, because either <code>SimPy</code> nor <code>SimJulia</code> provide automatic monitoring as <code>simmer</code> does. Furthermore, the resulting code for <code>simmer</code> is more concise and expressive than the equivalent ones for <code>SimPy</code> and <code>SimJulia</code>, which are very similar.</p>
 <p>We obtain the reference benchmark with <code>n=1e4</code> and 20 replicas for both packages as follows:</p>
-<pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="fl">1e4</span>L
-times &lt;-<span class="st"> </span><span class="dv">20</span>
-
-ref &lt;-<span class="st"> </span><span class="kw">data.frame</span>(
-  <span class="dt">SimPy =</span> rPython<span class="op">::</span><span class="kw">python.call</span>(<span class="st">&quot;benchmark&quot;</span>, n, times),
-  <span class="dt">SimJulia =</span> rjulia<span class="op">::</span><span class="kw">j2r</span>(<span class="kw">paste0</span>(<span class="st">&quot;benchmark(&quot;</span>, n, <span class="st">&quot;.0, &quot;</span>, times, <span class="st">&quot;)&quot;</span>))
-)</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">n &lt;-<span class="st"> </span><span class="fl">1e4</span>L</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">times &lt;-<span class="st"> </span><span class="dv">20</span></a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb11-4" data-line-number="4">ref &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
+<a class="sourceLine" id="cb11-5" data-line-number="5">  <span class="dt">SimPy =</span> rPython<span class="op">::</span><span class="kw">python.call</span>(<span class="st">&quot;benchmark&quot;</span>, n, times),</a>
+<a class="sourceLine" id="cb11-6" data-line-number="6">  <span class="dt">SimJulia =</span> rjulia<span class="op">::</span><span class="kw">j2r</span>(<span class="kw">paste0</span>(<span class="st">&quot;benchmark(&quot;</span>, n, <span class="st">&quot;.0, &quot;</span>, times, <span class="st">&quot;)&quot;</span>))</a>
+<a class="sourceLine" id="cb11-7" data-line-number="7">)</a></code></pre></div>
 <p>As a matter of fact, we also tested a small DES skeleton in pure R provided in <span class="citation">Matloff (<a href="#ref-Matloff:2011:ARP:2090080">2011</a> s. 7.8.3)</span>. This code was formalised into an R package called <code>DES</code>, available on GitHub<a href="#fn60" class="footnote-ref" id="fnref60"><sup>60</sup></a> since 2014. The original code implemented the event queue as an ordered vector which was updated by performing a binary search. Thus, the execution time of this version was two orders of magnitude slower than the other frameworks. The most recent version on GitHub (as of 2017) takes another clever approach though: it supposes that the event vector will be short and approximately ordered; therefore, the event vector is not sorted anymore, and the next event is found using a simple linear search. These assumptions hold for many cases, and particularly for this M/M/1 scenario. As a result, the performance of this model is only <span class="math inline">\(\sim2.2\)</span> times slower than <code>SimPy</code>. Still, it is clear that pure R cannot compete with other languages in discrete-event simulation, and <code>DES</code> is not considered in our comparisons hereafter.</p>
 <p>Finally, we set a benchmark for <code>simmer</code> using the <code>microbenchmark</code> package <span class="citation">(Mersmann <a href="#ref-CRAN:microbenchmark">2015</a>)</span>, again with <code>n=1e4</code> and 20 replicas for each test. Figure <a href="performance-evaluation-of-simmer.html#fig:performance-mm1">C.1</a> (left) shows the output of this benchmark. <code>simmer</code> is tested both in monitored and in non-monitored mode. The results show that the performance of <code>simmer</code> is equivalent to <code>SimPy</code> and <code>SimJulia</code>. The non-monitored <code>simmer</code> shows a slightly better performance than these frameworks, while the monitored <code>simmer</code> shows a slightly worse performance.</p>
 
@@ -380,18 +378,18 @@ Figure C.1: Performance comparison. Boxplots for 20 runs of the M/M/1 test with 
 <h2><span class="header-section-number">C.2</span> The Cost of Calling R from C++</h2>
 <p>The C++ simulation core provided by <code>simmer</code> is quite fast, as we have demonstrated, but performance is adversely affected by numerous calls to R. The practice of calling R from C++ is generally strongly discouraged due to the overhead involved. However, in the case of <code>simmer</code>, it not only makes sense, but is even fundamental in order to provide the user with enough flexibility to build all kinds of simulation models. Nevertheless, this cost must be known, and taken into account whenever a higher performance is needed.</p>
 <p>To explore the cost of calling R from C++, let us define the following test:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;simmer&quot;</span>)
-
-test_simmer &lt;-<span class="st"> </span><span class="cf">function</span>(n, delay) {
-  test &lt;-<span class="st"> </span><span class="kw">trajectory</span>() <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">timeout</span>(delay)
-
-  env &lt;-<span class="st"> </span><span class="kw">simmer</span>() <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">add_generator</span>(<span class="st">&quot;test&quot;</span>, test, <span class="kw">at</span>(<span class="dv">1</span><span class="op">:</span>n)) <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">run</span>(<span class="ot">Inf</span>)
-
-  arrivals &lt;-<span class="st"> </span><span class="kw">get_mon_arrivals</span>(env)
-}</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">library</span>(<span class="st">&quot;simmer&quot;</span>)</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">test_simmer &lt;-<span class="st"> </span><span class="cf">function</span>(n, delay) {</a>
+<a class="sourceLine" id="cb12-4" data-line-number="4">  test &lt;-<span class="st"> </span><span class="kw">trajectory</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="st">    </span><span class="kw">timeout</span>(delay)</a>
+<a class="sourceLine" id="cb12-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb12-7" data-line-number="7">  env &lt;-<span class="st"> </span><span class="kw">simmer</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb12-8" data-line-number="8"><span class="st">    </span><span class="kw">add_generator</span>(<span class="st">&quot;test&quot;</span>, test, <span class="kw">at</span>(<span class="dv">1</span><span class="op">:</span>n)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb12-9" data-line-number="9"><span class="st">    </span><span class="kw">run</span>(<span class="ot">Inf</span>)</a>
+<a class="sourceLine" id="cb12-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb12-11" data-line-number="11">  arrivals &lt;-<span class="st"> </span><span class="kw">get_mon_arrivals</span>(env)</a>
+<a class="sourceLine" id="cb12-12" data-line-number="12">}</a></code></pre></div>
 
 <p>This toy example performs a very simple simulation in which <code>n</code> arrivals are attached (in one shot, thanks to the convenience function <code>at()</code>) to a <code>test</code> trajectory at <span class="math inline">\(t=1, 2, ..., n\)</span>. The trajectory consists of a single activity: a timeout with some configurable <code>delay</code> that may be a fixed value or a function call. Finally, after the simulation, the monitored data is extracted from the simulation core to R. Effectively, this is equivalent to generating a data frame of <code>n</code> rows (see the example output in Table <a href="performance-evaluation-of-simmer.html#tab:test-simmer-output-table">C.1</a>).</p>
 
@@ -485,43 +483,43 @@ TRUE
 </tbody>
 </table>
 <p>As a matter of comparison, the following <code>test_R_for()</code> function produces the very same data using base R:</p>
-<pre class="sourceCode r"><code class="sourceCode r">test_R_for &lt;-<span class="st"> </span><span class="cf">function</span>(n) {
-  name &lt;-<span class="st"> </span><span class="kw">character</span>(n)
-  start_time &lt;-<span class="st"> </span><span class="kw">numeric</span>(n)
-  end_time &lt;-<span class="st"> </span><span class="kw">numeric</span>(n)
-  activity_time &lt;-<span class="st"> </span><span class="kw">logical</span>(n)
-  finished &lt;-<span class="st"> </span><span class="kw">numeric</span>(n)
-
-  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n) {
-    name[i] &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;test&quot;</span>, i<span class="dv">-1</span>)
-    start_time[i] &lt;-<span class="st"> </span>i
-    end_time[i] &lt;-<span class="st"> </span>i<span class="op">+</span><span class="dv">1</span>
-    activity_time[i] &lt;-<span class="st"> </span><span class="dv">1</span>
-    finished[i] &lt;-<span class="st"> </span><span class="ot">TRUE</span>
-  }
-
-  arrivals &lt;-<span class="st"> </span><span class="kw">data.frame</span>(
-    <span class="dt">name=</span>name,
-    <span class="dt">start_time=</span>start_time,
-    <span class="dt">end_time=</span>end_time,
-    <span class="dt">activity_time=</span>activity_time,
-    <span class="dt">finished=</span>finished,
-    <span class="dt">replication =</span> <span class="dv">1</span>
-  )
-}</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">test_R_for &lt;-<span class="st"> </span><span class="cf">function</span>(n) {</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">  name &lt;-<span class="st"> </span><span class="kw">character</span>(n)</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">  start_time &lt;-<span class="st"> </span><span class="kw">numeric</span>(n)</a>
+<a class="sourceLine" id="cb13-4" data-line-number="4">  end_time &lt;-<span class="st"> </span><span class="kw">numeric</span>(n)</a>
+<a class="sourceLine" id="cb13-5" data-line-number="5">  activity_time &lt;-<span class="st"> </span><span class="kw">logical</span>(n)</a>
+<a class="sourceLine" id="cb13-6" data-line-number="6">  finished &lt;-<span class="st"> </span><span class="kw">numeric</span>(n)</a>
+<a class="sourceLine" id="cb13-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb13-8" data-line-number="8">  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>n) {</a>
+<a class="sourceLine" id="cb13-9" data-line-number="9">    name[i] &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;test&quot;</span>, i<span class="dv">-1</span>)</a>
+<a class="sourceLine" id="cb13-10" data-line-number="10">    start_time[i] &lt;-<span class="st"> </span>i</a>
+<a class="sourceLine" id="cb13-11" data-line-number="11">    end_time[i] &lt;-<span class="st"> </span>i<span class="op">+</span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb13-12" data-line-number="12">    activity_time[i] &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb13-13" data-line-number="13">    finished[i] &lt;-<span class="st"> </span><span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb13-14" data-line-number="14">  }</a>
+<a class="sourceLine" id="cb13-15" data-line-number="15"></a>
+<a class="sourceLine" id="cb13-16" data-line-number="16">  arrivals &lt;-<span class="st"> </span><span class="kw">data.frame</span>(</a>
+<a class="sourceLine" id="cb13-17" data-line-number="17">    <span class="dt">name=</span>name,</a>
+<a class="sourceLine" id="cb13-18" data-line-number="18">    <span class="dt">start_time=</span>start_time,</a>
+<a class="sourceLine" id="cb13-19" data-line-number="19">    <span class="dt">end_time=</span>end_time,</a>
+<a class="sourceLine" id="cb13-20" data-line-number="20">    <span class="dt">activity_time=</span>activity_time,</a>
+<a class="sourceLine" id="cb13-21" data-line-number="21">    <span class="dt">finished=</span>finished,</a>
+<a class="sourceLine" id="cb13-22" data-line-number="22">    <span class="dt">replication =</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb13-23" data-line-number="23">  )</a>
+<a class="sourceLine" id="cb13-24" data-line-number="24">}</a></code></pre></div>
 <p>Note that we are using a <code>for</code> loop to mimic the behaviour of <code>simmer</code>’s internals, of how monitoring is made, but we concede the advantage of pre-allocated vectors to R. A second base R implementation, which builts upon the <code>lapply()</code> function, is implemented as the <code>test_R_lapply()</code> function:</p>
-<pre class="sourceCode r"><code class="sourceCode r">test_R_lapply &lt;-<span class="st"> </span><span class="cf">function</span>(n) {
-  <span class="kw">as.data.frame</span>(<span class="kw">do.call</span>(rbind, <span class="kw">lapply</span>(<span class="dv">1</span><span class="op">:</span>n, <span class="cf">function</span>(i) {
-    <span class="kw">list</span>(
-      <span class="dt">name =</span> <span class="kw">paste0</span>(<span class="st">&quot;test&quot;</span>, i <span class="op">-</span><span class="st"> </span><span class="dv">1</span>),
-      <span class="dt">start_time =</span> i,
-      <span class="dt">end_time =</span> i <span class="op">+</span><span class="st"> </span><span class="dv">1</span>,
-      <span class="dt">activity_time =</span> <span class="dv">1</span>,
-      <span class="dt">finished =</span> <span class="ot">TRUE</span>,
-      <span class="dt">replication =</span> <span class="dv">1</span>
-    )
-  })))
-}</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">test_R_lapply &lt;-<span class="st"> </span><span class="cf">function</span>(n) {</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">  <span class="kw">as.data.frame</span>(<span class="kw">do.call</span>(rbind, <span class="kw">lapply</span>(<span class="dv">1</span><span class="op">:</span>n, <span class="cf">function</span>(i) {</a>
+<a class="sourceLine" id="cb14-3" data-line-number="3">    <span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb14-4" data-line-number="4">      <span class="dt">name =</span> <span class="kw">paste0</span>(<span class="st">&quot;test&quot;</span>, i <span class="op">-</span><span class="st"> </span><span class="dv">1</span>),</a>
+<a class="sourceLine" id="cb14-5" data-line-number="5">      <span class="dt">start_time =</span> i,</a>
+<a class="sourceLine" id="cb14-6" data-line-number="6">      <span class="dt">end_time =</span> i <span class="op">+</span><span class="st"> </span><span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb14-7" data-line-number="7">      <span class="dt">activity_time =</span> <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb14-8" data-line-number="8">      <span class="dt">finished =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb14-9" data-line-number="9">      <span class="dt">replication =</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb14-10" data-line-number="10">    )</a>
+<a class="sourceLine" id="cb14-11" data-line-number="11">  })))</a>
+<a class="sourceLine" id="cb14-12" data-line-number="12">}</a></code></pre></div>
 <p>The <code>test_simmer()</code>, <code>test_R_for()</code> and <code>test_R_lapply()</code> functions all produce exactly the same data in a similar manner (cfr. Table <a href="performance-evaluation-of-simmer.html#tab:test-simmer-output-table">C.1</a>). Now, we want to compare how a delay consisting of a function call instead of a fixed value impacts the performance of <code>simmer</code>, and we use <code>test_R_for()</code> and <code>test_R_lapply()</code> as yardsticks.</p>
 <p>The benchmark was executed with <code>n=1e5</code> and 20 replicas for each test. Table <a href="performance-evaluation-of-simmer.html#tab:performance-table">C.2</a> shows a summary of the resulting timings.</p>
 <table class="table" style="margin-left: auto; margin-right: auto;">
@@ -625,23 +623,23 @@ test_R_lapply(n)
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-SimPy">
-<p>Team SimPy. 2017. <em>SimPy: Discrete-Event Simulation for Python</em>. <a href="https://simpy.readthedocs.io/en/latest/">https://simpy.readthedocs.io/en/latest/</a>.</p>
-</div>
-<div id="ref-GitHub:SimJulia">
-<p>Lauwens, Ben. 2017. <em>SimJulia.jl: Combined Continuous-Time / Discrete-Event Process Oriented Simulation Framework Written in Julia</em>. <a href="https://github.com/BenLauwens/SimJulia.jl">https://github.com/BenLauwens/SimJulia.jl</a>.</p>
-</div>
 <div id="ref-CRAN:rPython">
 <p>Bellosta, Carlos J. Gil. 2015. <em>RPython: Package Allowing R to Call Python</em>. <a href="https://CRAN.R-project.org/package=rPython">https://CRAN.R-project.org/package=rPython</a>.</p>
 </div>
 <div id="ref-GitHub:rJulia">
 <p>Gong, Yu, Oliver Keys, and Martin Maechler. 2017. <em>Rjulia: Integrating R and Julia – Calling Julia from R</em>. <a href="https://github.com/armgong/rjulia">https://github.com/armgong/rjulia</a>.</p>
 </div>
+<div id="ref-GitHub:SimJulia">
+<p>Lauwens, Ben. 2017. <em>SimJulia.jl: Combined Continuous-Time / Discrete-Event Process Oriented Simulation Framework Written in Julia</em>. <a href="https://github.com/BenLauwens/SimJulia.jl">https://github.com/BenLauwens/SimJulia.jl</a>.</p>
+</div>
 <div id="ref-Matloff:2011:ARP:2090080">
 <p>Matloff, Norman. 2011. <em>The Art of R Programming: A Tour of Statistical Software Design</em>. 1st ed. San Francisco, CA, USA: No Starch Press.</p>
 </div>
 <div id="ref-CRAN:microbenchmark">
 <p>Mersmann, Olaf. 2015. <em>Microbenchmark: Accurate Timing Functions</em>. <a href="https://CRAN.R-project.org/package=microbenchmark">https://CRAN.R-project.org/package=microbenchmark</a>.</p>
+</div>
+<div id="ref-SimPy">
+<p>Team SimPy. 2017. <em>SimPy: Discrete-Event Simulation for Python</em>. <a href="https://simpy.readthedocs.io/en/latest/">https://simpy.readthedocs.io/en/latest/</a>.</p>
 </div>
 </div>
 <div class="footnotes">

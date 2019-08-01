@@ -24,7 +24,7 @@ This estimate could be considered valid for a time scale in the range of tens of
 (ref:timing) Generic sleep breakdown.
 
 <div class="figure" style="text-align: center">
-<img src="img/05/timing.png" alt="(ref:timing)"  />
+<img src="img/05/timing.png" alt="(ref:timing)" width="416" />
 <p class="caption">(\#fig:timing)(ref:timing)</p>
 </div>
 
@@ -427,7 +427,7 @@ Finally, after a micro-sleep, two possible situations arise:
 (ref:fragments) RTS/CTS-based fragmented transmission example and $\mu$Nap's behaviour.
 
 <div class="figure" style="text-align: center">
-<img src="img/05/fragments.png" alt="(ref:fragments)"  />
+<img src="img/05/fragments.png" alt="(ref:fragments)" width="606" />
 <p class="caption">(\#fig:fragments)(ref:fragments)</p>
 </div>
  
